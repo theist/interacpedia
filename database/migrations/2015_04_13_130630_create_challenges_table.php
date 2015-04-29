@@ -23,11 +23,18 @@ class CreateChallengesTable extends Migration {
             $table->text('solution');
             $table->text('benefits');
             $table->string('video');
+            $table->integer('user_id')->unsigned();
             $table->string('website');
             $table->enum('searching',['Funding', 'Advisor/Mentor', 'Intern', 'Development', 'Business Plan', 'Co founders',
                 'Marketing Plan', 'Sales', 'Networking', 'People', 'Ideas', 'Testing', 'Market Research']);
             $table->timestamps();
-		});
+
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
+
+        });
 	}
 
 	/**
