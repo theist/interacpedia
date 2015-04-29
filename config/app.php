@@ -135,6 +135,7 @@ return [
 		'Illuminate\Translation\TranslationServiceProvider',
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
+        'Collective\Html\HtmlServiceProvider',
 
 		/*
 		 * Application Service Providers...
@@ -202,6 +203,7 @@ return [
         'Toastr'    => 'Kamaln7\Toastr\Facades\Toastr',
         'Socialize' => 'Laravel\Socialite\Facades\Socialite',
         //'Socialize' => 'SocialiteProviders\Manager\Socialite\Facades\Socialite',
-
-	],
+        'Form'      => 'Collective\Html\FormFacade',
+        'Html'      => 'Collective\Html\HtmlFacade'
+    ],
 ];
