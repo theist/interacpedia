@@ -1,50 +1,36 @@
+
 @extends('app')
 
-@section('content')
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
-			<div class="panel panel-default">
-				<div class="panel-heading">Reset Password</div>
-				<div class="panel-body">
-					@if (session('status'))
-						<div class="alert alert-success">
-							{{ session('status') }}
-						</div>
-					@endif
-
-					@if (count($errors) > 0)
-						<div class="alert alert-danger">
-							<strong>Whoops!</strong> There were some problems with your input.<br><br>
-							<ul>
-								@foreach ($errors->all() as $error)
-									<li>{{ $error }}</li>
-								@endforeach
-							</ul>
-						</div>
-					@endif
-
-					<form class="form-horizontal" role="form" method="POST" action="{{ url('/password/email') }}">
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-						<div class="form-group">
-							<label class="col-md-4 control-label">E-Mail Address</label>
-							<div class="col-md-6">
-								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
-							</div>
-						</div>
-
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								<button type="submit" class="btn btn-primary">
-									Send Password Reset Link
-								</button>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+@section('highlight')
+    <div class="container register-form">
+        <div class="select-category text-center">
+            <h2 class="text-center">Forgot your password?</h2>
+        </div>
+        <div class="panel panel-default col-md-6 col-md-offset-5">
+            <div class="panel-body">
+                <h3>Reset Password</h3>
+                @if (session('status'))
+                    <?php Toastr::success( session('status'), $title ='', $options = [ ] ) ?>
+                @endif
+                <form action="{{ url('/password/email') }}" method="post" role="form">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <div class="form-group">
+                        <label class="sr-only">E-Mail Address</label>
+                        <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}"
+                               placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">
+                            Send Password Reset Link
+                        </button>
+                    </div>
+                    <h5 class="center-block text-center">
+                        <small>To try to login again, return <a href="{{ url('/auth/login') }}">here</a>.</small>
+                        <hr/>
+                        <small>Need to create an account? <a href="{{ url('/auth/register') }}">Sign Up</a></small>
+                    </h5>
+                </form>
+            </div>
+        </div>
+    </div>
 @endsection

@@ -144,6 +144,11 @@ return [
 		'App\Providers\ConfigServiceProvider',
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
+        'Kaom\Flash\FlashServiceProvider',
+        //'Laracasts\Flash\FlashServiceProvider',
+        'Kamaln7\Toastr\ToastrServiceProvider',
+        //'Laravel\Socialite\SocialiteServiceProvider',
+        'SocialiteProviders\Manager\ServiceProvider'
 
 	],
 
@@ -192,7 +197,11 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
+        //'Flash'     => 'Laracasts\Flash\Flash',
+        'Flash'     => 'Kaom\Flash\Flash',
+        'Toastr'    => 'Kamaln7\Toastr\Facades\Toastr',
+        'Socialize' => 'Laravel\Socialite\Facades\Socialite',
+        //'Socialize' => 'SocialiteProviders\Manager\Socialite\Facades\Socialite',
 
 	],
-
 ];

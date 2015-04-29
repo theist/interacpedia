@@ -1,17 +1,16 @@
 @extends('app')
 
-@section('content')
-<div class="container">
-	<div class="row">
-		<div class="col-md-10 col-md-offset-1">
-			<div class="panel panel-default">
-				<div class="panel-heading">Home</div>
-
-				<div class="panel-body">
-					You are logged in!
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+@section('highlight')
+    <div class="container">
+        <div class="select-category text-center">
+            <h2 class="text-center">Welcome back</h2>
+        </div>
+        <div class="panel panel-default col-md-6 col-md-offset-5">
+            <div class="panel-body">
+                <h3>Interacpedia</h3>
+                @include('errors.alerts')
+                You are now logged in!
+            </div>
+        </div>
+    </div>
 @endsection

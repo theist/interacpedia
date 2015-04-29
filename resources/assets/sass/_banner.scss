@@ -1,0 +1,21 @@
+#banner{
+  .banner-main{
+    height: 587px;
+    color: #ffffff;
+    background: url("../../images/backgrounds/banner-main.jpg") no-repeat center center;
+    padding: 200px 20px;
+    h1{
+      font-family: $font-exo2;
+      line-height: 40px;
+      font-weight: 400;
+      font-size: 65px;
+      text-transform: uppercase;
+      small{
+        text-transform: none;
+        font-size: 18px;
+        color: #ffffff;
+        font-family: $font-source;
+      }
+    }
+  }
+}

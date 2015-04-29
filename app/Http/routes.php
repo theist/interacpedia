@@ -11,10 +11,25 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', 'PagesController@index');
+//Route::get('home', 'HomeController@index');
 
-Route::get('home', 'HomeController@index');
+Route::get('profile/{userid?}', 'UserController@profile');
+/**
+ * PagesController - Static routes
+ */
+Route::get('terms-of-use','PagesController@terms');
+Route::get('privacy-policy','PagesController@privacy');
 
+/**
+ * Resource routes
+ */
+Route::resource('challenges','ChallengesController');
+
+/**
+ * Authentication routes
+ */
+//Route::get('auth/facebook');
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',

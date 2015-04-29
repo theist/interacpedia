@@ -1,0 +1,22 @@
+@import 'fonts';
+@import 'colors';
+
+$grid-columns: 16;
+$font-family-sans-serif: $font-sans;
+@import '../bootstrap-sass-official/assets/stylesheets/bootstrap';
+
+@import 'buttons';
+@import 'header';
+@import 'footer';
+@import 'forms';
+@import 'banner';
+#highlight {
+  background: $light-blue;
+}
+
+h2{
+  font-family: $font-exo2;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}

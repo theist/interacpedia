@@ -1,0 +1,21 @@
+{
+  "name": "interacpedia",
+  "version": "0.0.1",
+  "homepage": "https://github.com/Ideaminds/interacpedia",
+  "authors": [
+    "Juan Carlos Orrego <jcorrego@gmail.com>"
+  ],
+  "description": "The new innovative methodology and interactive crowd sourced platform",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass-official": "~3.3.4",
+    "bootstrap-fileinput": "~4.1.8"
+  }
+}

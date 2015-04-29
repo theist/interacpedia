@@ -1,6 +1,6 @@
 <?php namespace App\Services;
 
-use App\User;
+use App\Interacpedia\User;
 use Validator;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
 
@@ -16,8 +16,9 @@ class Registrar implements RegistrarContract {
 	{
 		return Validator::make($data, [
 			'name' => 'required|max:255',
-			'email' => 'required|email|max:255|unique:users',
+			'email' => 'required|email|max:255|unique:users|confirmed',
 			'password' => 'required|confirmed|min:6',
+            'category' => 'required',
 		]);
 	}
 
@@ -32,6 +33,8 @@ class Registrar implements RegistrarContract {
 		return User::create([
 			'name' => $data['name'],
 			'email' => $data['email'],
+            'category' => $data['category'],
+            'newsletter' => isset($data['newsletter'])?1:0,
 			'password' => bcrypt($data['password']),
 		]);
 	}

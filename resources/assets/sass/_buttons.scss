@@ -1,0 +1,49 @@
+.btn-primary,
+.btn-purple,
+.btn-green,
+.btn-blue{
+  text-transform: uppercase;
+  background: $light-green;
+  border-color: $light-green;
+  &:hover{
+    color: $light-green;
+    background: #ffffff;
+    border-color: $light-green;
+  }
+  &.facebook{
+    background: url("../../images/buttons/button-signup-facebook.png") no-repeat;
+    border: none;
+    &:hover{
+      color: white;
+    }
+  }
+}
+.btn-purple,
+.btn-green,
+.btn-blue{
+  padding: 20px 10px;
+  color: black;
+  margin: 10px;
+  font-family: $font-exo2;
+  font-weight: 700;
+}
+.btn-purple{
+  background: $light-purple;
+  border-color: $light-purple;
+  &:hover{
+    color: $light-purple;
+    border-color: $light-purple;
+  }
+}
+.btn-blue{
+  background: $blue-line;
+  border-color: $blue-line;
+  &:hover{
+    color: $blue-line;
+    border-color: $blue-line;
+  }
+}
+.btn{
+  font-family: $font-sans;
+  font-weight: 600;
+}
