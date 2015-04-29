@@ -12,9 +12,9 @@
 */
 
 Route::get('/', 'PagesController@index');
-//Route::get('home', 'HomeController@index');
-
+Route::get('home', 'PagesController@index');
 Route::get('profile/{userid?}', 'UserController@profile');
+
 /**
  * PagesController - Static routes
  */
