@@ -9,7 +9,7 @@
             <div class="panel-body">
                 <h3>Interacpedia</h3>
                 @include('errors.alerts')
-                You are now logged in!
+                -
             </div>
         </div>
     </div>
