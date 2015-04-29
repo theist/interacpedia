@@ -7,8 +7,10 @@ class Challenge extends Model {
     protected $fillable = [
         'name',
         'description',
-        'image'
+        'image',
+        'user_id'
     ];
+
     /**
      * Get the rewards associated with this challenge
      *
@@ -16,7 +18,7 @@ class Challenge extends Model {
      */
     public function rewards()
     {
-        return $this->belongsToMany('App\Interacpedia\Reward')->withTimestamps();
+        return $this->belongsToMany( 'App\Interacpedia\Reward' )->withTimestamps();
     }
 
     /**
@@ -26,6 +28,16 @@ class Challenge extends Model {
      */
     public function getRewardListAttribute()
     {
-        return $this->rewards->lists('id');
+        return $this->rewards->lists( 'id' );
     }
+
+    /**
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo( 'App\Interacpedia\User' );
+    }
+
 }
