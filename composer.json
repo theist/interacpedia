@@ -13,7 +13,8 @@
     "oriceon/toastr-5-laravel": "dev-master",
     "guzzlehttp/guzzle": "~4.0",
     "laravel/socialite": "~2.0",
-    "socialiteproviders/linkedin": "dev-master"
+    "socialiteproviders/linkedin": "dev-master",
+    "laravelcollective/html": "~5.0"
   },
   "require-dev": {
     "phpunit/phpunit": "~4.0",
