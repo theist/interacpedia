@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\Http\Requests\ChallengeRequest;
 use App\Interacpedia\Challenge;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -22,23 +23,27 @@ class ChallengesController extends Controller {
 
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new challenge.
      *
      * @return Response
      */
     public function create()
     {
-        //
+        return view( 'challenges.create' );
     }
 
     /**
      * Store a newly created resource in storage.
      *
+     * @param ChallengeRequest $request
      * @return Response
      */
-    public function store()
+    public function store( ChallengeRequest $request )
     {
-        //
+        $this->createChallenge( $request );
+        flash()->success( 'Your chellange has been created!.' );
+
+        return redirect( 'challenges' );
     }
 
     /**
@@ -85,4 +90,14 @@ class ChallengesController extends Controller {
         //
     }
 
+    /**
+     * @param ArticleRequest|ChallengeRequest $request
+     * @return mixed
+     */
+    private function createChallenge( ChallengeRequest $request )
+    {
+        $challenge = Auth::user()->chellenges()->create( $request->all() );
+
+        return $challenge;
+    }
 }
