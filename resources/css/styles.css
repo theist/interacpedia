@@ -5005,6 +5005,25 @@ h4 {
   .challenge .content .fields {
     padding: 20px; }
 
+.project .title {
+  margin-bottom: 10px; }
+  .project .title h4 {
+    text-transform: none;
+    font-family: 'Source Sans Pro', sans-serif; }
+.project .body {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #535353;
+  margin-bottom: 10px; }
+.project .more-link {
+  font-style: italic;
+  font-weight: 600; }
+  .project .more-link a {
+    color: #e133a6; }
+.project .content {
+  border: 1px solid #cdcdcd; }
+  .project .content .fields {
+    padding: 20px; }
+
 #section-highlight {
   background: #edfaff; }
 
