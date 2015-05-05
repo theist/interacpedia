@@ -14,11 +14,13 @@ class ChallengeTableSeeder extends Seeder {
             'image'       => 'images/challenges/carpooling.jpg',
             'user_id'     => 1
         ] );
-        Challenge::create( [
-            'name'        => 'Second Challenge',
-            'description' => 'Second Challenge description text.',
-            'image'       => 'images/icons/rewards/products.png',
-            'user_id'     => 1
-        ] );
+        for($i=2; $i<=4;$i++){
+            Challenge::create( [
+                'name'        => 'Challenge Number '.$i,
+                'description' => 'Random description text for a random challenge that is created with number '.$i.'.',
+                'image'       => 'images/challenges/ch0'.$i.'.jpg',
+                'user_id'     => 1
+            ] );
+        }
     }
 }

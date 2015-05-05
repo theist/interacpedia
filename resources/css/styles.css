@@ -4986,6 +4986,20 @@ h4 {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 14px; }
 
+.challenge .title {
+  margin-bottom: 10px; }
+  .challenge .title h4 {
+    text-transform: none;
+    font-family: 'Source Sans Pro', sans-serif; }
+.challenge .body {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #535353;
+  margin-bottom: 10px; }
+.challenge .more-link {
+  font-style: italic;
+  font-weight: 600; }
+  .challenge .more-link a {
+    color: #e133a6; }
 .challenge .content {
   border: 1px solid #cdcdcd; }
   .challenge .content .fields {
