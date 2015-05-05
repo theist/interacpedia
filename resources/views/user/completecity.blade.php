@@ -11,7 +11,7 @@
     <p class="lead">@lang('user/messages.complete_city')</p>
     {!! Form::model($user,['method' => 'PATCH', 'action' => ['UserController@update',$user->id]]) !!}
     <div>
-        <div class="panel panel-default col-md-4">
+        <div class="panel panel-default col-md-3">
             <div class="panel-body">
                 {!! Form::label('city','City:') !!}
                 {!! Form::select('city',$cities,null,['id' => 'city','class' => 'form-control']) !!}
@@ -19,7 +19,7 @@
             </div>
         </div>
         <div class="col-md-1"></div>
-        <div class="panel panel-default col-md-4">
+        <div class="panel panel-default col-md-3">
             <div class="panel-body">
                 {!! Form::label('city','Birth Date:') !!}
                 {!! Form::date('birthdate',null,['id' => 'birthdate','class' => 'form-control']) !!}
