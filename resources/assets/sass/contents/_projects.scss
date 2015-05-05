@@ -1,0 +1,30 @@
+.projects{
+
+}
+.project{
+  .title{
+    margin-bottom: $grid-gutter-width/2;
+    h4{
+      text-transform: none;
+      font-family: $font-source;
+    }
+  }
+  .body{
+    font-family: $font-source;
+    color: $light-gray;
+    margin-bottom: $grid-gutter-width/2;
+  }
+  .more-link{
+    font-style: italic;
+    font-weight: 600;
+    a{
+      color: $light-purple;
+    }
+  }
+  .content{
+    border: 1px solid $border-gray;
+    .fields{
+      padding: $grid-gutter-width;
+    }
+  }
+}
