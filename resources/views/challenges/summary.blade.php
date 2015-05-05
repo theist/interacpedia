@@ -1,4 +1,4 @@
-<div class="content">
+<div class="content raised">
     <div class="image"><img class="img-responsive" src="{{ imagestyle($challenge->image,'fit330x297') }}" alt="{{ $challenge->name }}"/></div>
     <div class="fields">
         <div class="title"><h4><a href="{{ action('ChallengesController@show',[$challenge->id]) }}">{{ $challenge->name }}</a></h4></div>

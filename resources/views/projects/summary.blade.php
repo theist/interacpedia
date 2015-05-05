@@ -1,4 +1,4 @@
-<div class="content">
+<div class="content raised">
     <div class="image"><img class="img-responsive" src="{{ imagestyle($project->image,'fit330x297') }}"
                             alt="{{ $project->name }}"/></div>
     <div class="fields">
