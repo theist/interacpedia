@@ -36,9 +36,9 @@ return [
     ],
 
     'facebook' => [
-        'client_id'     => '1579172622347450',
-        'client_secret' => '6b924a281cf18bf06e3808e041cb4b33',
-        'redirect'      => 'http://www.interacpedia.com/auth/facebook2'
+        'client_id' => env('FACEBOOK_KEY'),
+        'client_secret' => env('FACEBOOK_SECRET'),
+        'redirect' => env('FACEBOOK_REDIRECT_URI'),
     ],
     'linkedin' => [
         'client_id' => env('LINKEDIN_KEY'),
@@ -46,9 +46,9 @@ return [
         'redirect' => env('LINKEDIN_REDIRECT_URI'),
     ],
     'twitter' => [
-        'client_id'     => 'OCm0K2uiEigQ1Hiw728KHZIC5',
-        'client_secret' => 'SrKwExihmKW2k5f1V2MuW8iuAHi3H5nROta6dbHJb1aqKWmYSb',
-        'redirect'      => 'http://www.interacpedia.com/auth/twitter2'
+        'client_id' => env('TWITTER_KEY'),
+        'client_secret' => env('TWITTER_SECRET'),
+        'redirect' => env('TWITTER_REDIRECT_URI'),
     ],
     'google' => [
         'client_id' => env('GOOGLE_KEY'),
