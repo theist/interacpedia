@@ -26,8 +26,10 @@
 </div>
 <div class="container-fluid" id="featured">@yield('featured')</div>
 <div class="container-fluid" id="section-highlight">@yield('highlight')</div>
-<div class="container">
-    @yield('content')
+<div class="container-fluid" id="section-content">
+    <div class="container">
+        @yield('content')
+    </div>
 </div>
 <div class="container-fluid" id="section-partners">@yield('section-partners')</div>
 <script src="/js/app.js"></script>
