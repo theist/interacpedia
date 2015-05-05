@@ -1,4 +1,5 @@
 <?php
 return [
-    'challenges'=>'Challenges'
+    'challenges'=>'Challenges',
+    'recommended'=>'Recommended for you'
 ];
