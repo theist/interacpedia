@@ -1,5 +1,5 @@
 <div class="row story">
-    <div class="col-md-4">
+    <div class="col-md-4 image">
         <img class="img-responsive img-rounded" src="{{ imagestyle($story->image,'fit330x297') }}" alt="{{ $story->title }}"/>
     </div>
     <div class="col-md-8">

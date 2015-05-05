@@ -14,6 +14,14 @@
     color: $light-gray;
     margin-bottom: $grid-gutter-width/2;
   }
+  .image{
+    img{
+      @media (max-width: $screen-xs-max) {
+        width: 100%;
+      }
+    }
+
+  }
   .more-link{
     font-style: italic;
     font-weight: 600;

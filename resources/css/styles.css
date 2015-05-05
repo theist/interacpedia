@@ -4985,6 +4985,9 @@ h4 {
     color: #535353;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 14px; }
+  @media (max-width: 767px) {
+    .story .image img {
+      width: 100%; } }
 
 .challenge .title {
   margin-bottom: 10px; }
@@ -4995,6 +4998,9 @@ h4 {
   font-family: 'Source Sans Pro', sans-serif;
   color: #535353;
   margin-bottom: 10px; }
+@media (max-width: 767px) {
+  .challenge .image img {
+    width: 100%; } }
 .challenge .more-link {
   font-style: italic;
   font-weight: 600; }
@@ -5014,6 +5020,9 @@ h4 {
   font-family: 'Source Sans Pro', sans-serif;
   color: #535353;
   margin-bottom: 10px; }
+@media (max-width: 767px) {
+  .project .image img {
+    width: 100%; } }
 .project .more-link {
   font-style: italic;
   font-weight: 600; }
