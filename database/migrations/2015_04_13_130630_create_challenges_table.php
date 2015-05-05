@@ -16,17 +16,18 @@ class CreateChallengesTable extends Migration {
 		{
 			$table->increments('id');
             $table->string('name');
-            $table->text('image');
-            $table->text('description');
-            $table->enum('stage',['Idea', 'Business Plan Drafted', 'Prototype Built', 'Product Tested', 'Paying Customers']);
-            $table->text('problem');
-            $table->text('solution');
-            $table->text('benefits');
-            $table->string('video');
+            $table->text('image')->nullable();
+            $table->text('description')->nullable();
             $table->integer('user_id')->unsigned();
-            $table->string('website');
-            $table->enum('searching',['Funding', 'Advisor/Mentor', 'Intern', 'Development', 'Business Plan', 'Co founders',
-                'Marketing Plan', 'Sales', 'Networking', 'People', 'Ideas', 'Testing', 'Market Research']);
+            ////$table->enum('stage',['Idea', 'Business Plan Drafted', 'Prototype Built', 'Product Tested', 'Paying Customers'])->nullable();
+            //$table->text('problem')->nullable();
+            //$table->text('solution')->nullable();
+            //$table->text('benefits')->nullable();
+            //$table->string('video')->nullable();
+
+            //$table->string('website')->nullable();
+            //$table->enum('searching',['Funding', 'Advisor/Mentor', 'Intern', 'Development', 'Business Plan', 'Co founders',
+            //    'Marketing Plan', 'Sales', 'Networking', 'People', 'Ideas', 'Testing', 'Market Research'])->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')

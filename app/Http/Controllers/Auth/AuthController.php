@@ -47,35 +47,22 @@ class AuthController extends Controller {
 
     public function getFacebook2()
     {
-        $user = Socialize::with( 'facebook' )->user();
-        if ( $user )
-        {
-            $exists = User::where( 'email', '=', $user->getEmail() )->first();
-            if ( $exists )
-            {
-                Auth::login( $exists );
-                flash()->success( 'Succesfully logged in using your facebook account!' );
+        return $this->sociallogin( 'facebook', 'Facebook' );
+    }
 
-                return redirect()->intended( $this->redirectPath() );
-            } else
-            {
-                $new = User::create( [
-                    'name'   => $user->getName(),
-                    'email'  => $user->getEmail(),
-                    'avatar' => $user->getAvatar()
-                ] );
-                //dd($new);
-                Auth::login( $new );
-                flash()->success( 'New account created using your Facebook information.' );
+    public function getGoogle()
+    {
+        return Socialize::with( 'google' )->redirect();
+    }
 
-                return redirect()->intended( $this->redirectPath() );
-            }
-        } else
-        {
-            flash()->error( 'Sorry, we didn\'t receive appropiate response from Facebook.' );
-
-            return redirect( $this->loginPath() );
-        }
+    /**
+     * Gets user information from LinkedIn and logins or creates the local users.
+     *
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function getGoogle2()
+    {
+        return $this->sociallogin( 'google', 'Google+' );
     }
 
     public function getLinkedin()
@@ -90,33 +77,7 @@ class AuthController extends Controller {
      */
     public function getLinkedin2()
     {
-        $user = Socialize::with( 'linkedin' )->user();
-        if ( $user )
-        {
-            $exists = User::where( 'email', '=', $user->getEmail() )->first();
-            if ( $exists )
-            {
-                Auth::login( $exists );
-                flash()->success( 'Succesfully logged in using your LinkedIn account!' );
-            } else
-            {
-                $new = User::create( [
-                    'name'   => $user->getName(),
-                    'email'  => $user->getEmail(),
-                    'avatar' => $user->getAvatar()
-                ] );
-                Auth::login( $new );
-                flash()->success( 'New account created using your LinkedIn information.' );
-            }
-
-            return redirect()->intended( $this->redirectPath() );
-
-        } else
-        {
-            flash()->error( 'Sorry, we didn\'t receive appropiate response from LinkedIn.' );
-
-            return redirect( $this->loginPath() );
-        }
+        return $this->sociallogin( 'linkedin', 'LinkedIn' );
     }
 
     public function getTwitter()
@@ -126,20 +87,44 @@ class AuthController extends Controller {
 
     public function getTwitter2()
     {
-        $user = Socialize::with( 'twitter' )->user();
-        dd( $user );
-        $exists = User::where( 'email', '=', $user->getEmail() )->first();
-        if ( $exists )
-        {
-            Auth::login( $exists );
-            flash()->success( 'Succesfully logged in using your Twitter account!' );
+        return $this->sociallogin( 'twitter', 'Twitter' );
+        // Email not working: https://twittercommunity.com/t/twitter-oauth-after-connect-get-primary-email-address/1563/49
+    }
 
+    public function sociallogin( $provider, $name )
+    {
+        $user = Socialize::with( $provider )->user();
+        if ( $user && $user->getEmail() )
+        {
+            $exists = User::where( 'email', '=', $user->getEmail() )->first();
+            if ( $exists )
+            {
+                if ( $exists->avatar == "" )
+                {
+                    $exists->avatar = $user->getAvatar();
+                    $exists->save();
+                    flash()->success( 'Avatar updated from your ' . $name . ' account!' );
+                }
+                Auth::login( $exists );
+                flash()->success( 'Succesfully logged in using your ' . $name . ' account!' );
+            } else
+            {
+                $new = User::create( [
+                    'name'   => $user->getName(),
+                    'email'  => $user->getEmail(),
+                    'avatar' => $user->getAvatar()
+                ] );
+                Auth::login( $new );
+                flash()->success( 'New account created using your ' . $name . ' information.' );
+            }
             return redirect()->intended( $this->redirectPath() );
+
         } else
         {
-            flash()->error( 'Twitetr account not found on Interacpedia' );
+            flash()->error( 'Sorry, we didn\'t receive appropiate response from '.$name.'.' );
 
             return redirect( $this->loginPath() );
         }
+
     }
 }

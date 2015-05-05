@@ -18,10 +18,12 @@ class CreateUsersTable extends Migration {
 			$table->string('name');
 			$table->string('email')->unique();
 			$table->string('password', 60);
-            $table->boolean('newsletter');
-            $table->string('category');
-            $table->text('avatar');
+            $table->boolean('newsletter')->defaults(0);
+            $table->enum('category',['General Public','Student','Professor'])->nullable();
+            $table->text('avatar')->nullable();
 			$table->rememberToken();
+            $table->timestamp('birthdate')->nullable();
+            $table->string('city')->nullable();
 			$table->timestamps();
 		});
 	}

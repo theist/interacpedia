@@ -7,16 +7,18 @@ class ChallengeTableSeeder extends Seeder {
 
     public function run()
     {
-        DB::table('challenges')->delete();
-        Challenge::create([
-            'name' => 'First Challenge',
-            'description'=>'First Challenge description text.',
-            'image'=> 'images/icons/rewards/products.png'
-        ]);
-        Challenge::create([
-            'name' => 'Second Challenge',
-            'description'=>'Second Challenge description text.',
-            'image'=> 'images/icons/rewards/products.png'
-        ]);
+        DB::table( 'challenges' )->delete();
+        Challenge::create( [
+            'name'        => 'First Challenge',
+            'description' => 'First Challenge description text.',
+            'image'       => 'images/icons/rewards/products.png',
+            'user_id'     => 1
+        ] );
+        Challenge::create( [
+            'name'        => 'Second Challenge',
+            'description' => 'Second Challenge description text.',
+            'image'       => 'images/icons/rewards/products.png',
+            'user_id'     => 1
+        ] );
     }
 }

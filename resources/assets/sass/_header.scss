@@ -2,8 +2,7 @@
   padding: 10px 0;
   margin: 10px;
   .usermenu{
-    li, li.active {
-      a {
+      a.button {
         color: $light-gray;
         font-family: $font-exo2;
         font-weight: 500;
@@ -11,21 +10,6 @@
         text-transform: uppercase;
         background: none;
       }
-    }
   }
 }
 
-#navigation {
-  border-bottom: 1px solid $blue-line;
-  border-top: 1px solid $blue-line;
-  li, li.active {
-    a {
-      color: $dark-grey;
-      font-family: $font-exo2;
-      font-weight: 500;
-      font-size: 16px;
-      text-transform: uppercase;
-      background: none;
-    }
-  }
-}

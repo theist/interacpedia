@@ -20,13 +20,13 @@ class PasswordController extends Controller {
 
 	use ResetsPasswords;
     protected $redirectTo = '/';
-	/**
-	 * Create a new password controller instance.
-	 *
-	 * @param  \Illuminate\Contracts\Auth\Guard  $auth
-	 * @param  \Illuminate\Contracts\Auth\PasswordBroker  $passwords
-	 * @return void
-	 */
+
+    /**
+     * Create a new password controller instance.
+     *
+     * @param  \Illuminate\Contracts\Auth\Guard $auth
+     * @param  \Illuminate\Contracts\Auth\PasswordBroker $passwords
+     */
 	public function __construct(Guard $auth, PasswordBroker $passwords)
 	{
 		$this->auth = $auth;

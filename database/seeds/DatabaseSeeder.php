@@ -15,10 +15,13 @@ class DatabaseSeeder extends Seeder {
 	{
 		Model::unguard();
 
+        $this->call('UserTableSeeder');
+        $this->call('StoryTableSeeder');
+        $this->call('ProjectTableSeeder');
+        $this->call('PartnerTableSeeder');
         $this->call('RewardTableSeeder');
-        $this->command->info('Rewards table seeded!');
         $this->call('ChallengeTableSeeder');
-        $this->command->info('Challenge table seeded!');
+
 	}
 
 }

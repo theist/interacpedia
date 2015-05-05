@@ -1,0 +1,21 @@
+#section-nav{
+  .navbar-default{
+    background: none;
+    border: none;
+    margin-bottom: 0;
+    min-height: inherit;
+  }
+  border-bottom: 1px solid $blue-line;
+  border-top: 1px solid $blue-line;
+  li, li.active {
+    a {
+      color: $dark-grey;
+      font-family: $font-exo2;
+      font-weight: 500;
+      font-size: 16px;
+      text-transform: uppercase;
+      background: none;
+    }
+  }
+}
+

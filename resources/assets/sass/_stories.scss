@@ -1,0 +1,19 @@
+.stories{
+}
+.story{
+  margin-bottom: $grid-gutter-width;
+  padding-bottom: $grid-gutter-width;
+  border-bottom: 1px solid $dark-grey;
+  position: relative;
+  .published{
+    margin-bottom: $grid-gutter-width;
+    color: #000000;
+  }
+  .body{
+    color: $light-gray;
+    font-family: $font-source;
+    font-size: 14px;
+  }
+  .links{
+  }
+}

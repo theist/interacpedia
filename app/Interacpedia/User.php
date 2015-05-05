@@ -1,5 +1,6 @@
 <?php namespace App\Interacpedia;
 
+use Carbon\Carbon;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
@@ -10,6 +11,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
     use Authenticatable, CanResetPassword;
 
+    protected $dates = ['birthdate'];
     /**
      * The database table used by the model.
      *
@@ -22,7 +24,16 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      *
      * @var array
      */
-    protected $fillable = [ 'name', 'email', 'password', 'category', 'newsletter', 'avatar' ];
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+        'category',
+        'newsletter',
+        'avatar',
+        'birthdate',
+        'city'
+    ];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -37,6 +48,21 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     public function challenges()
     {
         return $this->hasMany( 'App\Interacpedia\Challenge' );
+    }
+
+    public function setBirthdateAttribute( $date )
+    {
+        $this->attributes['birthdate'] = Carbon::parse($date);
+    }
+
+    public function getBirthdateAttribute( $date )
+    {
+        if($date){
+            return Carbon::parse($date)->format('Y-m-d');
+        } else{
+            return null;
+        }
+
     }
 
 }

@@ -50,4 +50,9 @@ return [
         'client_secret' => 'SrKwExihmKW2k5f1V2MuW8iuAHi3H5nROta6dbHJb1aqKWmYSb',
         'redirect'      => 'http://interacpedia.dev:8888/auth/twitter2'
     ],
+    'google' => [
+        'client_id' => env('GOOGLE_KEY'),
+        'client_secret' => env('GOOGLE_SECRET'),
+        'redirect' => env('GOOGLE_REDIRECT_URI'),
+    ],
 ];

@@ -18,6 +18,7 @@ var paths = {
 elixir(function(mix) {
     mix.sass("styles.scss", 'resources/css/', {includePaths: [ paths.bootstrap + 'stylesheets/']})
         .copy(paths.bootstrap + 'fonts/bootstrap/**', 'public/fonts');
+
     mix.styles([
         'styles.css',
         'libs/googlefonts.css'

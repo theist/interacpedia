@@ -1,31 +1,50 @@
-.btn-primary,
-.btn-purple,
-.btn-green,
-.btn-blue{
+.btn{
   text-transform: uppercase;
   background: $light-green;
   border-color: $light-green;
+  color: white;
+  font-family: $font-exo2;
+  font-weight: 700;
+  margin: 10px 10px 10px 0;
   &:hover{
     color: $light-green;
     background: #ffffff;
     border-color: $light-green;
   }
-  &.facebook{
-    background: url("../../images/buttons/button-signup-facebook.png") no-repeat;
+  &.facebook,
+  &.linkedin,
+  &.twitter,
+  &.google{
+    background: #3b5999;
     border: none;
     &:hover{
       color: white;
+      background: lighten(#3b5999,10);
+    }
+    i{
+      font-size: 22px;
+      vertical-align: middle;
+      margin-right: 10px;
     }
   }
-}
-.btn-purple,
-.btn-green,
-.btn-blue{
-  padding: 20px 10px;
-  color: black;
-  margin: 10px;
-  font-family: $font-exo2;
-  font-weight: 700;
+  &.linkedin{
+    background: #2190ce;
+    &:hover{
+      background: lighten(#2190ce,10);
+    }
+  }
+  &.twitter{
+    background: #5ea9dd;
+    &:hover{
+      background: lighten(#5ea9dd,10);
+    }
+  }
+  &.google{
+    background: #e12f31;
+    &:hover{
+      background: lighten(#e12f31,10);
+    }
+  }
 }
 .btn-purple{
   background: $light-purple;
@@ -42,8 +61,4 @@
     color: $blue-line;
     border-color: $blue-line;
   }
-}
-.btn{
-  font-family: $font-sans;
-  font-weight: 600;
 }

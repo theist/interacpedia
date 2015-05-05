@@ -1,21 +1,48 @@
 @extends('app')
 
+@section('title')
+    @lang('auth/title.signup')
+    @parent
+@stop
+
 @section('highlight')
     <div class="container register-form">
         <div class="select-category text-center">
-            <h2 class="text-center">Select your Category</h2>
-            <ul>
-                <li class="text-center inactive" data-value="students"><img src="/images/icons/profiles/icon-students.png"><br>Students</li>
-                <li class="text-center inactive" data-value="university"><img src="/images/icons/profiles/icon-university.png"><br>University</li>
-                <li class="text-center inactive" data-value="industry"><img src="/images/icons/profiles/icon-industry.png"><br>Industry</li>
-                <li class="text-center inactive" data-value="goverment"><img src="/images/icons/profiles/icon-goverment.png"><br>Goverment</li>
-                <li class="text-center inactive" data-value="society"><img src="/images/icons/profiles/icon-society.png"><br>Society</li>
-                <li class="text-center inactive" data-value="mentors"><img src="/images/icons/profiles/icon-mentors.png"><br>Mentors</li>
-            </ul>
+            <h2 class="text-center">@lang('general/messages.welcome')</h2>
         </div>
-        <div class="panel panel-default col-md-6 col-md-offset-5">
+        <div class="panel panel-default col-md-12">
             <div class="panel-body">
-                <h3>Sign up</h3>
+                <h3>@lang('auth/title.signup')</h3>
+            </div>
+            <div class="col-md-6">
+                <p class="lead">
+                    @lang('auth/messages.using_social')
+                </blockquote>
+                <div class="form-group">
+                    <a href="/auth/facebook" type="submit" class="btn btn-primary btn-block facebook">
+                        <i class="fa fa-facebook"></i>  @lang('auth/forms.login') @lang('auth/forms.with_facebook')
+                    </a>
+                </div>
+                <div class="form-group">
+                    <a href="/auth/linkedin" type="submit" class="btn btn-primary btn-block linkedin">
+                        <i class="fa fa-linkedin-square"></i>  @lang('auth/forms.login') @lang('auth/forms.with_linkedin')
+                    </a>
+                </div>
+                <div class="form-group">
+                    <a href="/auth/twitter" type="submit" class="btn btn-primary btn-block twitter">
+                        <i class="fa fa-twitter"></i>  @lang('auth/forms.login') @lang('auth/forms.with_twitter')
+                    </a>
+                </div>
+                <div class="form-group">
+                    <a href="/auth/google" type="submit" class="btn btn-primary btn-block google">
+                        <i class="fa fa-google"></i>  @lang('auth/forms.login') @lang('auth/forms.with_google')
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <p class="lead">
+                    @lang('auth/messages.prefer_credentials')
+                </p>
                 <form action="{{ url('/auth/register') }}" method="post" role="form">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="form-group @if ($errors->has('name')) has-error @endif">
@@ -49,11 +76,9 @@
                                placeholder="Confirm Password">
                         @if ($errors->has('password_confirmation')) <p class="help-block">{{ $errors->first('password_confirmation') }}</p> @endif
                     </div>
-                    <input type="hidden" name="category" id="category" value="">
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" id="newsletter" name="newsletter" checked value="1"> Sign me up for weekly
-                            newsletter
+                            <input type="checkbox" id="newsletter" name="newsletter" checked value="1"> Sign me up for weekly newsletter
                         </label>
                     </div>
                     <div class="form-group">
@@ -61,15 +86,17 @@
                             Create an Account
                         </button>
                     </div>
-                    <h5 class="center-block text-center">
-                        <small>By signing up you agree to our <a href="{{ action('PagesController@terms',[]) }}">Terms
-                                of Use</a> and <a href="{{ action('PagesController@privacy',[]) }}">Privacy Policy</a>.
-                        </small>
-                        <hr/>
-                        <small>Already have an account? <a href="{{ url('/auth/login') }}">Log in</a></small>
-                    </h5>
                 </form>
             </div>
+            <hr/>
+            <h5 class="center-block text-center">
+
+                <small>By signing up you agree to our <a href="{{ action('PagesController@terms',[]) }}">Terms
+                        of Use</a> and <a href="{{ action('PagesController@privacy',[]) }}">Privacy Policy</a>.
+                </small>
+                <hr/>
+                <small>Already have an account? <a href="{{ url('/auth/login') }}">Log in</a></small>
+            </h5>
         </div>
     </div>
 @endsection

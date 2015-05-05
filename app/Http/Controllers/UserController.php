@@ -11,9 +11,13 @@ class UserController extends Controller {
 
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware( 'auth' );
     }
 
+    public function show( Authenticatable $user )
+    {
+        return $user;
+    }
 
     /**
      * Displays a user profile
@@ -21,9 +25,31 @@ class UserController extends Controller {
      * @param Authenticatable $user
      * @return Authenticatable
      */
-    public function profile(Authenticatable $user)
+    public function profile( Authenticatable $user )
     {
-        return $user;
-	}
+        return view('user.profile',compact('user'));
+    }
 
+    public function completecategory( Authenticatable $user )
+    {
+        return view( 'user.completecategory', compact('user') );
+    }
+
+    public function completecity( Authenticatable $user )
+    {
+        $cities = ['Undefined','Bogotá D.C.', 'Medellín','Cali'];
+        return view( 'user.completecity', compact('user','cities') );
+    }
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param Authenticatable $user
+     * @param Request $request
+     * @return Response
+     */
+    public function update( Authenticatable $user, Request $request  )
+    {
+        $user->update($request->all());
+        return redirect('user/profile');
+    }
 }

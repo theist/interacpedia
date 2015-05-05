@@ -1,5 +1,5 @@
 <body>
-<img src="<?php echo $message->embed( public_path() . "/images/logo-interacpedia.png" ); ?>">
+<img src="<?php echo $message->embed( public_path() . "/images/logos/logo-interacpedia.png" ); ?>">
 <hr/>
 <br>
 <br/>

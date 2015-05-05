@@ -4,10 +4,17 @@ use App\Http\Requests\ChallengeRequest;
 use App\Interacpedia\Challenge;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+
 
 use Illuminate\Http\Request;
 
 class ChallengesController extends Controller {
+
+    public function __construct()
+    {
+        $this->middleware('auth',['only'=>['create','edit']]);
+    }
 
     /**
      * Display a listing of the resource.
@@ -17,7 +24,6 @@ class ChallengesController extends Controller {
     public function index()
     {
         $challenges = Challenge::latest()->get();
-
         return view( 'challenges.index', compact( 'challenges' ) );
     }
 
@@ -41,7 +47,7 @@ class ChallengesController extends Controller {
     public function store( ChallengeRequest $request )
     {
         $this->createChallenge( $request );
-        flash()->success( 'Your chellange has been created!.' );
+        flash()->success( 'Your challenge has been created!.' );
 
         return redirect( 'challenges' );
     }
@@ -96,7 +102,7 @@ class ChallengesController extends Controller {
      */
     private function createChallenge( ChallengeRequest $request )
     {
-        $challenge = Auth::user()->chellenges()->create( $request->all() );
+        $challenge = Auth::user()->challenges()->create( $request->all() );
 
         return $challenge;
     }

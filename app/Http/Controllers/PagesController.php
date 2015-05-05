@@ -3,6 +3,8 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Interacpedia\Partner;
+use App\Interacpedia\Story;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller {
@@ -14,7 +16,9 @@ class PagesController extends Controller {
      */
     public function index()
     {
-        return view('home');
+        $stories = Story::latest()->take(2)->get();
+        $partners = Partner::latest()->take(4)->get();
+        return view('home', compact('stories','partners'));
     }
 
     /**
@@ -22,7 +26,7 @@ class PagesController extends Controller {
      */
     public function terms()
     {
-        return "Terms and Conditions";
+        return view('pages.terms');
     }
 
     /**
@@ -30,7 +34,7 @@ class PagesController extends Controller {
      */
     public function privacy()
     {
-        return "Privacy Policy";
+        return view('pages.privacy');
     }
 
 
