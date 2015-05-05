@@ -11,7 +11,7 @@ class ChallengeTableSeeder extends Seeder {
         Challenge::create( [
             'name'        => 'Crear aplicación de "Car Pooling" para universidades',
             'description' => 'Ayúdanos a mejorar la congestión de vehículos en nuestras universidades y en otros lugares.',
-            'image'       => 'images/challenges/carpooling.png',
+            'image'       => 'images/challenges/carpooling.jpg',
             'user_id'     => 1
         ] );
         Challenge::create( [
