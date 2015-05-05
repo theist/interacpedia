@@ -4834,6 +4834,13 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
+h1 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 67px;
+  color: #333333;
+  font-weight: 300;
+  margin-bottom: 40px; }
+
 h2, h3, h4 {
   font-family: 'Exo 2', sans-serif;
   font-weight: 600;
@@ -4965,6 +4972,7 @@ h4 {
     line-height: 40px;
     font-weight: 400;
     font-size: 65px;
+    color: #ffffff;
     text-transform: uppercase; }
     @media (max-width: 767px) {
       #banner .banner-main h1 {
@@ -4998,6 +5006,7 @@ h4 {
       width: 100%; } }
 
 .challenge .title {
+  height: 38px;
   margin-bottom: 10px; }
   .challenge .title h4 {
     text-transform: none;
@@ -5011,10 +5020,23 @@ h4 {
     width: 100%; } }
 .challenge .more-link {
   font-style: italic;
-  font-weight: 600; }
+  font-weight: 600;
+  margin-bottom: 10px; }
   .challenge .more-link a {
     color: #e133a6; }
+.challenge .links {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px; }
+  .challenge .links .count {
+    font-size: 14px; }
+  .challenge .links .label {
+    color: #222222; }
+  .challenge .links .btn {
+    font-size: 10px;
+    width: 100%;
+    padding: 6px; }
 .challenge .content {
+  background: white;
   border: 1px solid #cdcdcd; }
   .challenge .content .fields {
     padding: 20px; }
@@ -5047,6 +5069,11 @@ h4 {
 #section-partners {
   background: #edfaff;
   padding: 20px 0; }
+
+#section-content {
+  background: #efefef; }
+  #section-content .container {
+    padding-bottom: 20px; }
 
 #section-nav {
   border-bottom: 1px solid #16ecfe;

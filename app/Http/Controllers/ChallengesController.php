@@ -55,12 +55,13 @@ class ChallengesController extends Controller {
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param Challenge $challenge
      * @return Response
+     * @internal param int $id
      */
-    public function show( $id )
+    public function show( Challenge $challenge )
     {
-        //
+        return view('challenges.show',compact('challenge'));
     }
 
     /**
