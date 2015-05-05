@@ -9,9 +9,9 @@ class ChallengeTableSeeder extends Seeder {
     {
         DB::table( 'challenges' )->delete();
         Challenge::create( [
-            'name'        => 'First Challenge',
-            'description' => 'First Challenge description text.',
-            'image'       => 'images/icons/rewards/products.png',
+            'name'        => 'Crear aplicación de "Car Pooling" para universidades',
+            'description' => 'Ayúdanos a mejorar la congestión de vehículos en nuestras universidades y en otros lugares.',
+            'image'       => 'images/challenges/carpooling.png',
             'user_id'     => 1
         ] );
         Challenge::create( [
