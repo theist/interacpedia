@@ -1,4 +1,4 @@
-.btn{
+.btn {
   text-transform: uppercase;
   background: $light-green;
   border-color: $light-green;
@@ -6,7 +6,12 @@
   font-family: $font-exo2;
   font-weight: 700;
   margin: 10px 10px 10px 0;
-  &:hover{
+  i {
+    font-size: 1.6rem;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+  &:hover {
     color: $light-green;
     background: #ffffff;
     border-color: $light-green;
@@ -14,51 +19,57 @@
   &.facebook,
   &.linkedin,
   &.twitter,
-  &.google{
+  &.google {
     background: #3b5999;
     border: none;
-    &:hover{
+    &:hover {
       color: white;
-      background: lighten(#3b5999,10);
-    }
-    i{
-      font-size: 22px;
-      vertical-align: middle;
-      margin-right: 10px;
+      background: lighten(#3b5999, 10);
     }
   }
-  &.linkedin{
+  &.linkedin {
     background: #2190ce;
-    &:hover{
-      background: lighten(#2190ce,10);
+    &:hover {
+      background: lighten(#2190ce, 10);
     }
   }
-  &.twitter{
+  &.twitter {
     background: #5ea9dd;
-    &:hover{
-      background: lighten(#5ea9dd,10);
+    &:hover {
+      background: lighten(#5ea9dd, 10);
     }
   }
-  &.google{
+  &.google {
     background: #e12f31;
-    &:hover{
-      background: lighten(#e12f31,10);
+    &:hover {
+      background: lighten(#e12f31, 10);
     }
   }
 }
-.btn-purple{
+
+.btn-purple {
   background: $light-purple;
   border-color: $light-purple;
-  &:hover{
+  &:hover {
     color: $light-purple;
     border-color: $light-purple;
   }
 }
-.btn-blue{
+
+.btn-blue {
   background: $blue-line;
   border-color: $blue-line;
-  &:hover{
+  &:hover {
     color: $blue-line;
     border-color: $blue-line;
+  }
+}
+
+.btn-darkblue {
+  background: $dark-blue;
+  border-color: $dark-blue;
+  &:hover {
+    color: $dark-blue;
+    border-color: $dark-blue;
   }
 }

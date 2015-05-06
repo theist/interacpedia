@@ -1,55 +1,63 @@
-.challenges{
+.challenges {
 
 }
-.challenge{
-  .title{
+
+.challenge {
+  .title {
     height: 38px;
     margin-bottom: $grid-gutter-width/2;
-    h4{
+    h4 {
       text-transform: none;
       font-family: $font-source;
     }
   }
-  .body{
+  .body {
     font-family: $font-source;
     color: $light-gray;
     margin-bottom: $grid-gutter-width/2;
   }
-  .image{
-    img{
+  .image {
+    img {
       @media (max-width: $screen-xs-max) {
         width: 100%;
       }
     }
 
   }
-  .more-link{
+  .more-link {
     font-style: italic;
     font-weight: 600;
     margin-bottom: $grid-gutter-width/2;
-    a{
+    a {
       color: $light-purple;
     }
   }
-  .links{
+  .links {
     font-family: $font-sans;
     font-size: 12px;
-    .count{
+    .col-md-3,
+    .col-md-4,
+    .col-md-5{
+      padding-left: 2px;
+      padding-right: 2px;
+    }
+    .count {
       font-size: 14px;
     }
-    .label{
+    .label {
       color: $gray-darker;
     }
-    .btn{
-      font-size: 10px;
+    .btn {
+      font-size: 1rem;
       width: 100%;
-      padding: 6px;
+      padding: 7px;
+      height: 30px;
     }
   }
-  .content{
+  .content {
     background: white;
     border: 1px solid $border-gray;
-    .fields{
+    .fields {
       padding: $grid-gutter-width;
     }
   }

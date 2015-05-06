@@ -18,12 +18,12 @@
             <div class="col-md-3 text-center">
                 <div class="count">0</div>
                 <div class="label">Likes</div>
-                <a class="button btn " href="">Like</a>
+                <a class="button btn btn-darkblue" href=""><i class="fa fa-thumbs-o-up"></i> Like</a>
             </div>
             <div class="col-md-4 text-center">
                 <div class="count">0</div>
                 <div class="label">Shares</div>
-                <a class="button btn " href="">Share</a>
+                <a class="button btn" href=""><i class="fa fa-share-alt"></i> Share</a>
             </div>
             <div class="col-md-5 text-center">
                 <div class="count">0</div>

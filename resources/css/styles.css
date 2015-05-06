@@ -4874,6 +4874,10 @@ h4 {
   font-family: 'Exo 2', sans-serif;
   font-weight: 700;
   margin: 10px 10px 10px 0; }
+  .btn i {
+    font-size: 1.6rem;
+    vertical-align: middle;
+    margin-right: 5px; }
   .btn:hover {
     color: #45df61;
     background: #ffffff;
@@ -4884,10 +4888,6 @@ h4 {
     .btn.facebook:hover, .btn.linkedin:hover, .btn.twitter:hover, .btn.google:hover {
       color: white;
       background: #4d70ba; }
-    .btn.facebook i, .btn.linkedin i, .btn.twitter i, .btn.google i {
-      font-size: 22px;
-      vertical-align: middle;
-      margin-right: 10px; }
   .btn.linkedin {
     background: #2190ce; }
     .btn.linkedin:hover {
@@ -4914,6 +4914,13 @@ h4 {
   .btn-blue:hover {
     color: #16ecfe;
     border-color: #16ecfe; }
+
+.btn-darkblue {
+  background: #323095;
+  border-color: #323095; }
+  .btn-darkblue:hover {
+    color: #323095;
+    border-color: #323095; }
 
 #header {
   padding: 10px 0;
@@ -5027,14 +5034,18 @@ h4 {
 .challenge .links {
   font-family: 'Open Sans', sans-serif;
   font-size: 12px; }
+  .challenge .links .col-md-3, .challenge .links .col-md-4, .challenge .links .col-md-5 {
+    padding-left: 2px;
+    padding-right: 2px; }
   .challenge .links .count {
     font-size: 14px; }
   .challenge .links .label {
     color: #222222; }
   .challenge .links .btn {
-    font-size: 10px;
+    font-size: 1rem;
     width: 100%;
-    padding: 6px; }
+    padding: 7px;
+    height: 30px; }
 .challenge .content {
   background: white;
   border: 1px solid #cdcdcd; }
@@ -5059,6 +5070,7 @@ h4 {
   .project .more-link a {
     color: #e133a6; }
 .project .content {
+  background: white;
   border: 1px solid #cdcdcd; }
   .project .content .fields {
     padding: 20px; }
