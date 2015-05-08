@@ -1,6 +1,6 @@
 @extends('app')
 @section('content')
-    <h1>Create New Challenge</h1>
+    <h1>@lang('challenges/title.create')</h1>
 
     <hr/>
 

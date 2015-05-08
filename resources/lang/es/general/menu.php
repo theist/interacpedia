@@ -8,5 +8,6 @@ return[
     'stories'=>'Historias',
     'news'=>'Noticias',
     'blog'=>'Blog',
-    'contact'=>'Contacto'
+    'contact'=>'Contacto',
+    'profile'=>'Perfil'
 ];
