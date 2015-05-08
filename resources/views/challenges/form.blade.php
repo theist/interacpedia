@@ -5,7 +5,7 @@
                 <img src="/images/icons/forms/type.png" alt="@lang('challenges/forms.type')"/>@lang('challenges/forms.type')
             </div>
             <div class="form-group">
-                {!! Form::select('category_id',$categories,null,['id' => 'category_id','class' => 'form-control select2']) !!}
+                {!! Form::select('category_id',$categories,null,['id' => 'category_id','class' => 'form-control select2', 'style'=>'width:100%;']) !!}
             </div>
         </div>
         <div class="field-category">
@@ -13,7 +13,7 @@
                 <img src="/images/icons/forms/category.png" alt="@lang('challenges/forms.category')"/>@lang('challenges/forms.category')
             </div>
             <div class="form-group">
-                {!! Form::select('type_id',$types,null,['id' => 'type_id','class' => 'form-control select2']) !!}
+                {!! Form::select('type_id',$types,null,['id' => 'type_id','class' => 'form-control select2','style'=>'width:100%;']) !!}
             </div>
         </div>
     </div>
