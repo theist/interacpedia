@@ -5,7 +5,7 @@
     @parent
 @stop
 
-@section('highlight')
+@section('section-highlight')
     <div class="container register-form">
         <div class="select-category text-center">
             <h2 class="text-center">@lang('auth/forms.forgot')</h2>

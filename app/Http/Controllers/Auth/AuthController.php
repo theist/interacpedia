@@ -104,10 +104,10 @@ class AuthController extends Controller {
                 {
                     $exists->avatar = $user->getAvatar();
                     $exists->save();
-                    flash()->success( 'Avatar updated from your ' . $name . ' account!' );
+                    flash()->success( Lang::get('auth/messages.avatar_updated',['name'=>$name]) );
                 }
                 Auth::login( $exists );
-                flash()->success( 'Succesfully logged in using your ' . $name . ' account!' );
+                flash()->success( Lang::get('auth/messages.login_ok',['name'=>$name]) );
             } else
             {
                 //$new = User::create( [
@@ -123,7 +123,7 @@ class AuthController extends Controller {
 
         } else
         {
-            flash()->error( 'Sorry, we didn\'t receive appropiate response from '.$name.'.' );
+            flash()->error( Lang::get('auth/messages.social_error',['name'=>$name]) );
 
             return redirect( $this->loginPath() );
         }
