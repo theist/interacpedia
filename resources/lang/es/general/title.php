@@ -2,5 +2,7 @@
 return [
     'home'=>'Inicio',
     'terms'=>'Términos de Uso',
-    'privacy'=>'Política de Privacidad'
+    'privacy'=>'Política de Privacidad',
+    'start'=>'Comenzar',
+    'create'=>'Crear'
 ];

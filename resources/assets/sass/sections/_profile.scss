@@ -1,0 +1,23 @@
+#section-profile{
+  background: #000000;
+  color: white;
+  .profile{
+    padding: $grid-gutter-width;
+    color: $text-gray;
+    font-family: $font-sans;
+    .name{
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: white;
+    }
+    .location{
+
+      font-size: 1.5rem;
+      line-height: 3rem;
+    }
+    .social{
+      text-transform: uppercase;
+    }
+  }
+}
