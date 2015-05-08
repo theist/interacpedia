@@ -5,8 +5,8 @@ use Intervention\Image\Facades\Image;
 function imagestyle($image, $style="small"){
     if(strstr($image,"http")){
         $user = \Illuminate\Support\Facades\Auth::user();
-        $file = 'images/users/'.$user->id.'.jpg';
-        $img = Image::make($image)->encode('jpg')->save( public_path()."/". $file );
+        $file = '/images/users/'.$user->id.'.jpg';
+        $img = Image::make($image)->encode('jpg')->save( public_path(). $file );
         $user->avatar = $file;
         $user->save();
         $image = $file;
