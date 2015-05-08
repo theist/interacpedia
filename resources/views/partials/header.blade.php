@@ -10,15 +10,15 @@
             <div class="usermenu col-md-2 col-md-offset-9 col-xs-12 text-center">
                 <div class="row">
                     {{--<li role="presentation"><a href="#">English <span class="caret"></span></a></li>--}}
-                    <a class="button col-xs-12" href="{{ url('auth/logout') }}">Logout</a>
+                    <a class="button col-xs-12" href="{{ url('auth/logout') }}">@lang('auth/title.logout')</a>
                 </div>
             </div>
         @else
             <div class="usermenu col-md-2 col-md-offset-9 col-xs-12 text-center">
                 <div class="row">
                     {{--<li role="presentation"><a href="#">English <span class="caret"></span></a></li>--}}
-                    <a class="button col-xs-6" href="{{ url('auth/register') }}">Sign Up</a>
-                    <a class="button col-xs-6" href="{{ url('auth/login') }}">Login</a>
+                    <a class="button col-xs-6" href="{{ url('auth/register') }}">@lang('auth/title.signup')</a>
+                    <a class="button col-xs-6" href="{{ url('auth/login') }}">@lang('auth/title.login')</a>
                 </div>
             </div>
         @endif

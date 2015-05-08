@@ -1,5 +1,6 @@
 <?php
 return array(
     'login'  => 'Ingresar',
-    'signup' => 'Registrarse'
+    'signup' => 'Registrarse',
+    'logout' => 'Salir'
 );

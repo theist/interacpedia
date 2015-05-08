@@ -13,25 +13,25 @@
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav nav-pills nav-justified">
-                    <li role="presentation" class="active dropdown"><a href="{{ action('PagesController@index') }}">Home</a>
+                    <li role="presentation" class="active dropdown"><a href="{{ action('PagesController@index') }}">@lang('general/menu.home')</a>
                     </li>
                     @if(Auth::check())
-                        <li role="presentation"><a href="{{ action('UserController@profile') }}">Profile</a></li>
+                        <li role="presentation"><a href="{{ action('UserController@profile') }}">@lang('general/menu.profile')</a></li>
                     @endif
-                    <li role="presentation" class="dropdown"><a href="{{ action('ChallengesController@index') }}">Challenges
+                    <li role="presentation" class="dropdown"><a href="{{ action('ChallengesController@index') }}">@lang('general/menu.challenges')
                             <span class="caret"></span></a></li>
                     <li role="presentation" class="dropdown"><a
-                                href="{{ action('ProjectsController@index') }}">Projects <span
+                                href="{{ action('ProjectsController@index') }}">@lang('general/menu.projects') <span
                                     class="caret"></span></a></li>
-                    <li role="presentation" class="dropdown"><a href="#">Network <span class="caret"></span></a></li>
+                    <li role="presentation" class="dropdown"><a href="#">@lang('general/menu.network') <span class="caret"></span></a></li>
                     <li role="presentation" class="dropdown"><a
-                                href="{{ action('PartnersController@index') }}">Partners <span
+                                href="{{ action('PartnersController@index') }}">@lang('general/menu.partners') <span
                                     class="caret"></span></a></li>
-                    <li role="presentation" class="dropdown"><a href="{{ action('StoriesController@index') }}">Stories <span
+                    <li role="presentation" class="dropdown"><a href="{{ action('StoriesController@index') }}">@lang('general/menu.stories') <span
                                     class="caret"></span></a></li>
-                    <li role="presentation" class="dropdown"><a href="#">News <span class="caret"></span></a></li>
-                    <li role="presentation" class="dropdown"><a href="#">Blog <span class="caret"></span></a></li>
-                    <li role="presentation" class="dropdown"><a href="{{ action('PagesController@index') }}">Contact <span
+                    <li role="presentation" class="dropdown"><a href="#">@lang('general/menu.news') <span class="caret"></span></a></li>
+                    <li role="presentation" class="dropdown"><a href="#">@lang('general/menu.blog') <span class="caret"></span></a></li>
+                    <li role="presentation" class="dropdown"><a href="{{ action('PagesController@index') }}">@lang('general/menu.contact') <span
                                     class="caret"></span></a></li>
                 </ul>
             </div>
