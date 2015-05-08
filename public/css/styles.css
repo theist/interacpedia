@@ -4922,20 +4922,14 @@ h4 {
     color: #293896;
     border-color: #293896; }
 
-#header {
-  padding: 10px 0;
-  margin: 10px; }
-  #header .logo .label-danger {
-    position: absolute;
-    top: 0;
-    left: 220px; }
-  #header .usermenu a.button {
-    color: #535353;
-    font-family: 'Exo 2', sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    text-transform: uppercase;
-    background: none; }
+.btn-white {
+  background: white;
+  border-color: white;
+  color: #b5b5b5; }
+  .btn-white:hover {
+    background: #b5b5b5;
+    color: white;
+    border-color: white; }
 
 .select-category .panel-body {
   text-align: center; }
@@ -4962,15 +4956,15 @@ h4 {
     -ms-transform: scale(1.2);
         transform: scale(1.2); }
 
-#banner .banner-main {
+#section-banner .banner-main {
   height: 587px;
   color: #ffffff;
   background: url("../../images/backgrounds/banner-main.jpg") no-repeat center center;
   padding: 200px 20px; }
   @media (max-width: 767px) {
-    #banner .banner-main {
+    #section-banner .banner-main {
       padding: 80px 20px; } }
-  #banner .banner-main h1 {
+  #section-banner .banner-main h1 {
     font-family: 'Exo 2', sans-serif;
     line-height: 40px;
     font-weight: 400;
@@ -4978,17 +4972,17 @@ h4 {
     color: #ffffff;
     text-transform: uppercase; }
     @media (max-width: 767px) {
-      #banner .banner-main h1 {
+      #section-banner .banner-main h1 {
         font-size: 40px; } }
-    #banner .banner-main h1 small {
+    #section-banner .banner-main h1 small {
       text-transform: none;
       font-size: 18px;
       color: #ffffff;
       font-family: 'Source Sans Pro', sans-serif; }
       @media (max-width: 767px) {
-        #banner .banner-main h1 small {
+        #section-banner .banner-main h1 small {
           font-size: 15px; } }
-  #banner .banner-main .btn-purple, #banner .banner-main .btn-green, #banner .banner-main .btn-blue {
+  #section-banner .banner-main .btn-purple, #section-banner .banner-main .btn-green, #section-banner .banner-main .btn-blue {
     padding: 20px 10px;
     margin: 10px; }
 
@@ -5070,6 +5064,39 @@ h4 {
   border: 1px solid #cdcdcd; }
   .project .content .fields {
     padding: 20px; }
+
+#header {
+  padding: 10px 0;
+  margin: 10px; }
+  #header .logo .label-danger {
+    position: absolute;
+    top: 0;
+    left: 220px; }
+  #header .usermenu a.button {
+    color: #535353;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: uppercase;
+    background: none; }
+
+#section-profile {
+  background: #000000;
+  color: white; }
+  #section-profile .profile {
+    padding: 20px;
+    color: #b5b5b5;
+    font-family: 'Open Sans', sans-serif; }
+    #section-profile .profile .name {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: white; }
+    #section-profile .profile .location {
+      font-size: 1.5rem;
+      line-height: 3rem; }
+    #section-profile .profile .social {
+      text-transform: uppercase; }
 
 #section-footer {
   min-height: 200px;

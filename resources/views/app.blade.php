@@ -21,11 +21,10 @@
 <div class="container-fluid" id="section-nav">
     @include('partials.nav')
 </div>
-<div class="container-fluid" id="banner">
-    @yield('banner')
-</div>
-<div class="container-fluid" id="featured">@yield('featured')</div>
-<div class="container-fluid" id="section-highlight">@yield('highlight')</div>
+<div class="container-fluid" id="section-profile">@yield('section-profile')</div>
+<div class="container-fluid" id="section-banner">@yield('section-banner')</div>
+<div class="container-fluid" id="section-featured">@yield('section-featured')</div>
+<div class="container-fluid" id="section-highlight">@yield('section-highlight')</div>
 <div class="container-fluid" id="section-content">
     <div class="container">
         @yield('content')

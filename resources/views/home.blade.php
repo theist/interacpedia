@@ -5,7 +5,7 @@
     @parent
 @stop
 
-@section('banner')
+@section('section-banner')
     {{--@unless(Auth::check() || Request::path() != '/')--}}
     <div class="container">
         <div class="banner-main text-center">

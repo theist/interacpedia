@@ -73,3 +73,13 @@
     border-color: $blue;
   }
 }
+.btn-white {
+  background: white;
+  border-color: white;
+  color: $text-gray;
+  &:hover {
+    background: $text-gray;
+    color: white;
+    border-color: white;
+  }
+}

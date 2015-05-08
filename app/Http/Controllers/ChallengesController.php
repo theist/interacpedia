@@ -4,6 +4,8 @@ use App\Http\Requests\ChallengeRequest;
 use App\Interacpedia\Challenge;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+
+use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -33,9 +35,10 @@ class ChallengesController extends Controller {
      *
      * @return Response
      */
-    public function create()
+    public function create(Authenticatable $user)
     {
-        return view( 'challenges.create' );
+        $cities = ['Undefined','Bogotá D.C.', 'Medellín','Cali'];
+        return view( 'challenges.create', compact('user','cities') );
     }
 
     /**

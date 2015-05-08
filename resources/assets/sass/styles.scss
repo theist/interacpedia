@@ -8,13 +8,13 @@ $font-family-sans-serif: $font-sans;
 
 @import 'general';
 @import 'buttons';
-@import 'sections/header';
-
 @import 'forms';
-@import 'banner';
+@import 'sections/banner';
 @import 'contents/stories';
 @import 'contents/challenges';
 @import 'contents/projects';
+@import 'sections/header';
+@import 'sections/profile';
 @import 'sections/footer';
 @import 'sections/highlight';
 @import 'sections/partners';
