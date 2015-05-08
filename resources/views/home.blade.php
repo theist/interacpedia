@@ -9,12 +9,12 @@
     {{--@unless(Auth::check() || Request::path() != '/')--}}
     <div class="container">
         <div class="banner-main text-center">
-            <h1>The Future of Innovation <br/>
-                <small>“The new innovative methodology and interactive crowd sourced platform”</small>
+            <h1>@lang('general/banner.future') <br/>
+                <small>“@lang('general/banner.slogan')”</small>
             </h1>
-            <a href="{{ action('ChallengesController@index') }}" class="btn btn-purple">Search Challenge</a>
-            <a href="{{ action('ChallengesController@create') }}" class="btn btn-green">Create Challenge</a>
-            <button class="btn btn-blue">Discover Project</button>
+            <a href="{{ action('ChallengesController@index') }}" class="btn btn-purple">@lang('general/banner.search_challenge')</a>
+            <a href="{{ action('ChallengesController@create') }}" class="btn btn-green">@lang('general/banner.create_challenge')</a>
+            <button class="btn btn-blue">@lang('general/banner.discover_projects')</button>
         </div>
     </div>
     {{--@endunless--}}
