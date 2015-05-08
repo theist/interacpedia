@@ -109,13 +109,14 @@ class AuthController extends Controller {
                 flash()->success( 'Succesfully logged in using your ' . $name . ' account!' );
             } else
             {
-                $new = User::create( [
-                    'name'   => $user->getName(),
-                    'email'  => $user->getEmail(),
-                    'avatar' => $user->getAvatar()
-                ] );
-                Auth::login( $new );
-                flash()->success( 'New account created using your ' . $name . ' information.' );
+                //$new = User::create( [
+                //    'name'   => $user->getName(),
+                //    'email'  => $user->getEmail(),
+                //    'avatar' => $user->getAvatar()
+                //] );
+                //Auth::login( $new );
+                flash()->warning( Lang::get('auth/messages.sorry_invitation') );
+                return redirect( $this->loginPath() );
             }
             return redirect()->intended( $this->redirectPath() );
 
