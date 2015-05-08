@@ -4868,8 +4868,8 @@ h4 {
 
 .btn {
   text-transform: uppercase;
-  background: #45df61;
-  border-color: #45df61;
+  background: #8dc63f;
+  border-color: #8dc63f;
   color: white;
   font-family: 'Exo 2', sans-serif;
   font-weight: 700;
@@ -4879,9 +4879,9 @@ h4 {
     vertical-align: middle;
     margin-right: 5px; }
   .btn:hover {
-    color: #45df61;
+    color: #8dc63f;
     background: #ffffff;
-    border-color: #45df61; }
+    border-color: #8dc63f; }
   .btn.facebook, .btn.linkedin, .btn.twitter, .btn.google {
     background: #3b5999;
     border: none; }
@@ -4902,11 +4902,11 @@ h4 {
       background: #e75c5d; }
 
 .btn-purple {
-  background: #e133a6;
-  border-color: #e133a6; }
+  background: #ec008c;
+  border-color: #ec008c; }
   .btn-purple:hover {
-    color: #e133a6;
-    border-color: #e133a6; }
+    color: #ec008c;
+    border-color: #ec008c; }
 
 .btn-blue {
   background: #16ecfe;
@@ -4916,15 +4916,19 @@ h4 {
     border-color: #16ecfe; }
 
 .btn-darkblue {
-  background: #323095;
-  border-color: #323095; }
+  background: #293896;
+  border-color: #293896; }
   .btn-darkblue:hover {
-    color: #323095;
-    border-color: #323095; }
+    color: #293896;
+    border-color: #293896; }
 
 #header {
   padding: 10px 0;
   margin: 10px; }
+  #header .logo .label-danger {
+    position: absolute;
+    top: 0;
+    left: 220px; }
   #header .usermenu a.button {
     color: #535353;
     font-family: 'Exo 2', sans-serif;
@@ -4932,14 +4936,6 @@ h4 {
     font-size: 16px;
     text-transform: uppercase;
     background: none; }
-
-#footer {
-  min-height: 200px;
-  padding: 30px 0;
-  background: black;
-  color: #ffffff; }
-  #footer a {
-    color: white; }
 
 .select-category .panel-body {
   text-align: center; }
@@ -5030,7 +5026,7 @@ h4 {
   font-weight: 600;
   margin-bottom: 10px; }
   .challenge .more-link a {
-    color: #e133a6; }
+    color: #ec008c; }
 .challenge .links {
   font-family: 'Open Sans', sans-serif;
   font-size: 12px; }
@@ -5068,12 +5064,26 @@ h4 {
   font-style: italic;
   font-weight: 600; }
   .project .more-link a {
-    color: #e133a6; }
+    color: #ec008c; }
 .project .content {
   background: white;
   border: 1px solid #cdcdcd; }
   .project .content .fields {
     padding: 20px; }
+
+#section-footer {
+  min-height: 200px;
+  padding: 30px 0;
+  background: black;
+  color: #ffffff; }
+  #section-footer a {
+    color: #535353; }
+  #section-footer ul {
+    padding-left: 3px; }
+    #section-footer ul li {
+      list-style: none;
+      color: #535353;
+      font-family: 'Source Sans Pro', sans-serif; }
 
 #section-highlight {
   background: #edfaff; }

@@ -1,6 +1,13 @@
 #header {
   padding: 10px 0;
   margin: 10px;
+  .logo{
+    .label-danger{
+      position: absolute;
+      top: 0;
+      left: 220px;
+    }
+  }
   .usermenu{
       a.button {
         color: $light-gray;

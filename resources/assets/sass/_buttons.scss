@@ -1,7 +1,7 @@
 .btn {
   text-transform: uppercase;
-  background: $light-green;
-  border-color: $light-green;
+  background: $green;
+  border-color: $green;
   color: white;
   font-family: $font-exo2;
   font-weight: 700;
@@ -12,9 +12,9 @@
     margin-right: 5px;
   }
   &:hover {
-    color: $light-green;
+    color: $green;
     background: #ffffff;
-    border-color: $light-green;
+    border-color: $green;
   }
   &.facebook,
   &.linkedin,
@@ -48,11 +48,11 @@
 }
 
 .btn-purple {
-  background: $light-purple;
-  border-color: $light-purple;
+  background: $purple;
+  border-color: $purple;
   &:hover {
-    color: $light-purple;
-    border-color: $light-purple;
+    color: $purple;
+    border-color: $purple;
   }
 }
 
@@ -66,10 +66,10 @@
 }
 
 .btn-darkblue {
-  background: $dark-blue;
-  border-color: $dark-blue;
+  background: $blue;
+  border-color: $blue;
   &:hover {
-    color: $dark-blue;
-    border-color: $dark-blue;
+    color: $blue;
+    border-color: $blue;
   }
 }
