@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\Registrar;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Lang;
 use Socialize;
 
 class AuthController extends Controller {
@@ -115,7 +116,7 @@ class AuthController extends Controller {
                 //    'avatar' => $user->getAvatar()
                 //] );
                 //Auth::login( $new );
-                flash()->warning( Lang::get('auth/messages.sorry_invitation') );
+                flash()->error( Lang::get('auth/messages.sorry_invitation') );
                 return redirect( $this->loginPath() );
             }
             return redirect()->intended( $this->redirectPath() );
