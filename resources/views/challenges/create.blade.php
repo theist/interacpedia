@@ -5,7 +5,7 @@
             <div class="col-md-6">
                 <div class="col-md-3">
                     <div class="image">
-                        <img class="img-circle" src="{{ $user->avatar }}" alt="{{ $user->name }}"/>
+                        <img class="img-circle" src="{{ imagestyle($user->avatar,'fit100x100') }}" alt="{{ $user->name }}"/>
                     </div>
                 </div>
                 <div class="col-md-9">
