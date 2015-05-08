@@ -8,7 +8,9 @@ class Challenge extends Model {
         'name',
         'description',
         'image',
-        'user_id'
+        'user_id',
+        'type_id',
+        'category_id'
     ];
 
     /**

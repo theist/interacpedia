@@ -5,17 +5,27 @@ use App\Interacpedia\Challenge;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Interacpedia\ChallengeCategory;
+use App\Interacpedia\Repositories\ChallengeCategoriesRepositoryInterface;
+use App\Interacpedia\Repositories\ChallengeTypesRepositoryInterface;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Support\Facades\Auth;
-
 
 use Illuminate\Http\Request;
 
 class ChallengesController extends Controller {
 
-    public function __construct()
+    protected $categories;
+    protected $cities;
+    protected $types;
+
+    public function __construct( ChallengeCategoriesRepositoryInterface $categories,
+                                 ChallengeTypesRepositoryInterface $types )
     {
-        $this->middleware('auth',['only'=>['create','edit']]);
+        $this->categories = $categories;
+        $this->types = $types;
+        $this->cities = [ 'Undefined', 'Bogotá D.C.', 'Medellín', 'Cali' ];
+        $this->middleware( 'auth', [ 'only' => [ 'create', 'edit' ] ] );
     }
 
     /**
@@ -26,6 +36,7 @@ class ChallengesController extends Controller {
     public function index()
     {
         $challenges = Challenge::latest()->get();
+
         return view( 'challenges.index', compact( 'challenges' ) );
     }
 
@@ -35,10 +46,13 @@ class ChallengesController extends Controller {
      *
      * @return Response
      */
-    public function create(Authenticatable $user)
+    public function create( Authenticatable $user )
     {
-        $cities = ['Undefined','Bogotá D.C.', 'Medellín','Cali'];
-        return view( 'challenges.create', compact('user','cities') );
+        $categories = $this->categories->selectList();
+        $types = $this->types->selectList();
+        $cities = $this->cities;
+
+        return view( 'challenges.create', compact( 'user', 'cities', 'categories','types' ) );
     }
 
     /**
@@ -64,7 +78,7 @@ class ChallengesController extends Controller {
      */
     public function show( Challenge $challenge )
     {
-        return view('challenges.show',compact('challenge'));
+        return view( 'challenges.show', compact( 'challenge' ) );
     }
 
     /**

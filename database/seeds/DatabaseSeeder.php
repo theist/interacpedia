@@ -21,7 +21,8 @@ class DatabaseSeeder extends Seeder {
         $this->call('PartnerTableSeeder');
         $this->call('RewardTableSeeder');
         $this->call('ChallengeTableSeeder');
-
+        $this->call('ChallengeCategoryTableSeeder');
+        $this->call('ChallengeTypeTableSeeder');
 	}
 
 }

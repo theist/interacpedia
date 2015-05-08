@@ -62,3 +62,55 @@
     }
   }
 }
+
+.challenge_create{
+  .header{
+    margin-top: $grid-gutter-width;
+    padding: $grid-gutter-width;
+    background: $purple;
+    color: white;
+    text-align: center;
+    .title{
+      font-family: $font-exo2;
+      font-weight: 600;
+      font-size: 6rem;
+    }
+    small{
+      font-size: 3rem;
+      font-family: $font-sans;
+    }
+  }
+  .content{
+    background: white;
+    border: 1px solid $border-gray;
+    padding: $grid-gutter-width;
+  }
+  .label{
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 2.4rem;
+    font-family: $font-sans;
+    color: $title-gray;
+  }
+  .step_header{
+    margin: $grid-gutter-width 0;
+    position: relative;
+    background: $blue-forms;
+    color: white;
+    font-family: $font-exo2;
+    text-align: center;
+    font-weight: 500;
+    font-size: 3rem;
+    padding: $grid-gutter-width;
+    border-radius: 4px;
+    small{
+      position: absolute;
+      left: 10px;
+      top: $grid-gutter-width+10;
+      font-size: 1.8rem;
+      text-transform: uppercase;
+      font-family: $font-sans;
+      font-weight: 100;
+    }
+  }
+}

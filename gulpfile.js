@@ -20,6 +20,7 @@ elixir(function(mix) {
         .copy(paths.bootstrap + 'fonts/bootstrap/**', 'public/fonts');
 
     mix.styles([
+        'libs/select2.min.css',
         'styles.css',
         'libs/googlefonts.css'
     ],'public/css/styles.css');

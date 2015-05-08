@@ -1,4 +1,6 @@
 #section-partners {
   background: $light-blue;
-  padding: $grid-gutter-width 0;
+  .container{
+    padding: $grid-gutter-width 0;
+  }
 }

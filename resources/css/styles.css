@@ -5042,6 +5042,49 @@ h4 {
   .challenge .content .fields {
     padding: 20px; }
 
+.challenge_create .header {
+  margin-top: 20px;
+  padding: 20px;
+  background: #ec008c;
+  color: white;
+  text-align: center; }
+  .challenge_create .header .title {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 600;
+    font-size: 6rem; }
+  .challenge_create .header small {
+    font-size: 3rem;
+    font-family: 'Open Sans', sans-serif; }
+.challenge_create .content {
+  background: white;
+  border: 1px solid #cdcdcd;
+  padding: 20px; }
+.challenge_create .label {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 2.4rem;
+  font-family: 'Open Sans', sans-serif;
+  color: #333333; }
+.challenge_create .step_header {
+  margin: 20px 0;
+  position: relative;
+  background: #19c8d8;
+  color: white;
+  font-family: 'Exo 2', sans-serif;
+  text-align: center;
+  font-weight: 500;
+  font-size: 3rem;
+  padding: 20px;
+  border-radius: 4px; }
+  .challenge_create .step_header small {
+    position: absolute;
+    left: 10px;
+    top: 30px;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100; }
+
 .project .title {
   margin-bottom: 10px; }
   .project .title h4 {
@@ -5116,8 +5159,9 @@ h4 {
   background: #edfaff; }
 
 #section-partners {
-  background: #edfaff;
-  padding: 20px 0; }
+  background: #edfaff; }
+  #section-partners .container {
+    padding: 20px 0; }
 
 #section-content {
   background: #efefef; }
