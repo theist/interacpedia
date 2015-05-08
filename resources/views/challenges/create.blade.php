@@ -6,7 +6,7 @@
 
     {!! Form::model( $challenge = new \App\Interacpedia\Challenge, ['url' => 'challenges'] ) !!}
 
-    @include('challenges.form',['submitButtonText' => @lang('challenges/title.create')])
+    @include('challenges.form',['submitButtonText' => Lang::get('challenges/title.create')])
 
     {!! Form::close() !!}
 
