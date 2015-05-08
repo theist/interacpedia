@@ -9,7 +9,7 @@ class Fit100x100 implements FilterInterface
     public function applyFilter(Image $image)
     {
         return $image->fit(100, 100, function ($constraint) {
-            $constraint->upsize();
+            //$constraint->upsize();
         });
     }
 }
