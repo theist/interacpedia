@@ -17,7 +17,8 @@
     "socialiteproviders/linkedin": "dev-master",
     "laravelcollective/html": "~5.0",
     "socialiteproviders/google": "~1.0",
-    "intervention/imagecache": "~2.2"
+    "intervention/imagecache": "~2.2",
+    "enyo/dropzone": "~4.0"
   },
   "require-dev": {
     "phpunit/phpunit": "~4.0",

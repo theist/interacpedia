@@ -10,6 +10,6 @@ class Fit330x297 implements FilterInterface
     {
         return $image->fit(330, 297, function ($constraint) {
             $constraint->upsize();
-        });
+        })->resizeCanvas(330,297);
     }
 }

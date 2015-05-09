@@ -5038,35 +5038,40 @@ h4 {
     height: 30px; }
 .challenge .content {
   background: white;
-  border: 1px solid #cdcdcd; }
+  border: 1px solid #cdcdcd;
+  min-height: 523px;
+  margin-bottom: 15px; }
   .challenge .content .fields {
     padding: 20px; }
 
-.challenge_create .header {
+.challenge_create .header, .challenge_edit .header {
   margin-top: 20px;
   padding: 20px;
   background: #ec008c;
   color: white;
   text-align: center; }
-  .challenge_create .header .title {
+  .challenge_create .header .title, .challenge_edit .header .title {
     font-family: 'Exo 2', sans-serif;
     font-weight: 600;
     font-size: 6rem; }
-  .challenge_create .header small {
+  .challenge_create .header small, .challenge_edit .header small {
     font-size: 3rem;
     font-family: 'Open Sans', sans-serif; }
-.challenge_create .content {
+.challenge_create .content, .challenge_edit .content {
   background: white;
   border: 1px solid #cdcdcd;
   padding: 20px; }
-.challenge_create .label {
+.challenge_create .label, .challenge_edit .label {
   text-transform: uppercase;
   font-weight: 600;
   font-size: 2.4rem;
   font-family: 'Open Sans', sans-serif;
-  color: #333333; }
-.challenge_create .step_header {
-  margin: 20px 0;
+  color: #666666; }
+  .challenge_create .label small, .challenge_edit .label small {
+    color: #535353;
+    font-weight: 300; }
+.challenge_create .step_header, .challenge_edit .step_header {
+  margin: 20px 0 0 0;
   position: relative;
   background: #19c8d8;
   color: white;
@@ -5076,7 +5081,7 @@ h4 {
   font-size: 3rem;
   padding: 20px;
   border-radius: 4px; }
-  .challenge_create .step_header small {
+  .challenge_create .step_header small, .challenge_edit .step_header small {
     position: absolute;
     left: 10px;
     top: 30px;
@@ -5084,6 +5089,23 @@ h4 {
     text-transform: uppercase;
     font-family: 'Open Sans', sans-serif;
     font-weight: 100; }
+.challenge_create .step_content, .challenge_edit .step_content {
+  padding: 20px;
+  border: 1px solid #cdcdcd; }
+.challenge_create .field-image .zone, .challenge_edit .field-image .zone {
+  height: 190px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #cdcdcd; }
+  .challenge_create .field-image .zone .choose, .challenge_edit .field-image .zone .choose {
+    color: #21a3af;
+    font-weight: 600;
+    font-size: 2rem; }
+  .challenge_create .field-image .zone .help, .challenge_edit .field-image .zone .help {
+    max-width: 200px;
+    margin: 0 auto;
+    color: #393c44;
+    font-size: 1.2rem; }
 
 .project .title {
   margin-bottom: 10px; }

@@ -32,6 +32,7 @@ Route::resource('challenges','ChallengesController');
 Route::resource('stories','StoriesController');
 Route::resource('projects','ProjectsController');
 Route::resource('partners','PartnersController');
+Route::post('upload','UploadController@store');
 
 /**
  * Authentication routes

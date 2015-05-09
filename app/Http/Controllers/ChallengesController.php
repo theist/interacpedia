@@ -12,6 +12,7 @@ use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Lang;
 
 class ChallengesController extends Controller {
 
@@ -84,34 +85,48 @@ class ChallengesController extends Controller {
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
+     * @param Challenge $challenge
+     * @param Authenticatable $user
      * @return Response
+     * @internal param int $id
      */
-    public function edit( $id )
+    public function edit( Challenge $challenge, Authenticatable $user )
     {
-        //
+        $categories = $this->categories->selectList();
+        $types = $this->types->selectList();
+        $cities = $this->cities;
+
+        return view( 'challenges.edit', compact( 'user', 'challenge', 'cities', 'categories','types' ) );
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  int $id
+     * @param Challenge $challenge
+     * @param Request $request
      * @return Response
+     * @internal param int $id
      */
-    public function update( $id )
+    public function update( Challenge $challenge, Request $request  )
     {
-        //
+        $challenge->update($request->all());
+        flash()->success( Lang::get('challenges/messages.edit_ok') );
+        return redirect('challenges');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param Challenge $challenge
      * @return Response
+     * @throws \Exception
+     * @internal param int $id
      */
-    public function destroy( $id )
+    public function destroy( Challenge $challenge )
     {
-        //
+        $challenge->delete();
+        flash()->success( Lang::get('challenges/messages.delete_ok') );
+        return redirect('challenges');
     }
 
     /**
@@ -121,7 +136,7 @@ class ChallengesController extends Controller {
     private function createChallenge( ChallengeRequest $request )
     {
         $challenge = Auth::user()->challenges()->create( $request->all() );
-
+        flash()->success( Lang::get('challenges/messages.create_ok') );
         return $challenge;
     }
 }

@@ -37,7 +37,7 @@
     font-size: 12px;
     .col-md-3,
     .col-md-4,
-    .col-md-5{
+    .col-md-5 {
       padding-left: 2px;
       padding-right: 2px;
     }
@@ -57,43 +57,50 @@
   .content {
     background: white;
     border: 1px solid $border-gray;
+    min-height: 523px;
+    margin-bottom: 15px;
     .fields {
       padding: $grid-gutter-width;
     }
   }
 }
 
-.challenge_create{
-  .header{
+.challenge_create,
+.challenge_edit {
+  .header {
     margin-top: $grid-gutter-width;
     padding: $grid-gutter-width;
     background: $purple;
     color: white;
     text-align: center;
-    .title{
+    .title {
       font-family: $font-exo2;
       font-weight: 600;
       font-size: 6rem;
     }
-    small{
+    small {
       font-size: 3rem;
       font-family: $font-sans;
     }
   }
-  .content{
+  .content {
     background: white;
     border: 1px solid $border-gray;
     padding: $grid-gutter-width;
   }
-  .label{
+  .label {
     text-transform: uppercase;
     font-weight: 600;
     font-size: 2.4rem;
     font-family: $font-sans;
-    color: $title-gray;
+    color: $title-gray2;
+    small {
+      color: $light-gray;
+      font-weight: 300;
+    }
   }
-  .step_header{
-    margin: $grid-gutter-width 0;
+  .step_header {
+    margin: $grid-gutter-width 0 0 0;
     position: relative;
     background: $blue-forms;
     color: white;
@@ -103,7 +110,7 @@
     font-size: 3rem;
     padding: $grid-gutter-width;
     border-radius: 4px;
-    small{
+    small {
       position: absolute;
       left: 10px;
       top: $grid-gutter-width+10;
@@ -112,5 +119,29 @@
       font-family: $font-sans;
       font-weight: 100;
     }
+  }
+  .step_content {
+    padding: $grid-gutter-width;
+    border: 1px solid $border-gray;
+  }
+  .field-image {
+    .zone {
+      height: 190px;
+      padding: $grid-gutter-width;
+      text-align: center;
+      border: 1px solid $border-gray;
+      .choose{
+        color: $blue-messages;
+        font-weight: 600;
+        font-size: 2rem;
+      }
+      .help{
+        max-width: 200px;
+        margin: 0 auto;
+        color: $dark-grey;
+  font-size: 1.2rem;
+      }
+    }
+
   }
 }
