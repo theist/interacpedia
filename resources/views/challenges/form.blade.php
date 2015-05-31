@@ -28,8 +28,9 @@
                      alt="@lang('challenges/forms.name')"/>@lang('challenges/forms.name')
             </div>
             <div class="form-group">
-                {!! Form::textarea('name',null,['class' => 'form-control','rows'=>'6']) !!}
+                {!! Form::textarea('name',null,['id' => 'name', 'maxlength' => 50, 'class' => 'form-control maxlength','rows'=>'4']) !!}
             </div>
+            <div class="help">Este nombre ayudará a otros a encontrar tu reto. Recuerda usar las pablabras más importantes!</div>
         </div>
     </div>
 </div>
@@ -115,7 +116,13 @@
                 $('#image').val(response);
             });
         })
-
+        $('.maxlength').maxlength({
+            alwaysShow: true,
+            warningClass: "label label-success",
+            limitReachedClass: "label label-danger",
+            appendToParent: true,
+            placement: "bottom-right"
+        });
 
     </script>
 @stop

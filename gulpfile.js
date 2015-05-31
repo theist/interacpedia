@@ -38,6 +38,7 @@ elixir(function(mix) {
         'libs/bootstrap.js',
         'libs/dropzone.js',
         'libs/select2.min.js',
+        'libs/bootstrap-maxlength.min.js',
         'app.js'
     ],'public/js/app.js');
 

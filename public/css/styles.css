@@ -4957,6 +4957,17 @@ h4 {
     -ms-transform: scale(1.2);
         transform: scale(1.2); }
 
+.help {
+  font-size: 13px; }
+
+.bootstrap-maxlength {
+  color: #ffffff !important;
+  font-size: 14px !important;
+  top: auto !important;
+  bottom: 10px !important;
+  left: auto !important;
+  right: 10px !important; }
+
 #section-banner .banner-main {
   height: 587px;
   color: #ffffff;
