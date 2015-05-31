@@ -6,10 +6,9 @@
         </a>
     </div>
     <div class="fields">
-        <div class="title"><h4><a
-                        href="{{ action('ChallengesController@show',[$challenge->id]) }}">{{ $challenge->name }}</a>
+        <div class="title"><h4><a href="{{ action('ChallengesController@show',[$challenge->id]) }}">{{ $challenge->name }}</a>
             </h4></div>
-        <div class="body">{{ $challenge->description}}</div>
+        <div class="body">{{ str_limit( $challenge->description,100 )}}</div>
         @unless($challenge->rewards->isEmpty())
             <div class="rewards">
                 <h5>Rewards:</h5>
