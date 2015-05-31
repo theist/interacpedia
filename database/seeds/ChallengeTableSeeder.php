@@ -22,8 +22,8 @@ class ChallengeTableSeeder extends Seeder {
         ] );
         for($i=2; $i<=4;$i++){
             Challenge::create( [
-                'name'        => 'Challenge Number '.$i,
-                'description' => 'Random description text for a random challenge that is created with number '.$i.'.',
+                'name'        => 'Reto número'.$i,
+                'description' => 'Texto descriptivo creado de manera aleatoria para un reto aleatorio creado con el número '.$i.'.',
                 'image'       => '/images/challenges/ch0'.$i.'.jpg',
                 'user_id'     => 1
             ] );
