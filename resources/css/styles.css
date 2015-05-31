@@ -5093,9 +5093,6 @@ h4 {
   padding: 20px;
   border-radius: 4px; }
   .challenge_create .step_header small, .challenge_edit .step_header small {
-    position: absolute;
-    left: 10px;
-    top: 30px;
     font-size: 1.8rem;
     text-transform: uppercase;
     font-family: 'Open Sans', sans-serif;

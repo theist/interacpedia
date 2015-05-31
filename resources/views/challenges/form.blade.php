@@ -34,17 +34,17 @@
         </div>
     </div>
 </div>
-<div class="step_header">
-    <small>@lang('challenges/forms.step',['step'=>2,'total'=>5])</small>
-    @lang('challenges/forms.add_creators')
+<div class="step_header row">
+    <div class="col-md-2"><small>@lang('challenges/forms.step',['step'=>2,'total'=>5])</small></div>
+    <div class="col-md-8">@lang('challenges/forms.add_creators')</div>
 </div>
-<div class="step_header">
-    <small>@lang('challenges/forms.step',['step'=>3,'total'=>5])</small>
-    @lang('challenges/forms.select_universities')
+<div class="step_header row">
+    <div class="col-md-2"><small>@lang('challenges/forms.step',['step'=>3,'total'=>5])</small></div>
+    <div class="col-md-8">@lang('challenges/forms.select_universities')</div>
 </div>
-<div class="step_header">
-    <small>@lang('challenges/forms.step',['step'=>4,'total'=>5])</small>
-    @lang('challenges/forms.challenge_details')
+<div class="step_header row">
+    <div class="col-md-2"><small>@lang('challenges/forms.step',['step'=>4,'total'=>5])</small></div>
+    <div class="col-md-8">@lang('challenges/forms.challenge_details')</div>
 </div>
 <div class="step_content">
     <div class="field-description">
@@ -53,9 +53,7 @@
                  alt="@lang('challenges/forms.description')"/>@lang('challenges/forms.description')
         </div>
         <div class="form-group">
-            {!! Form::textarea('description',null,['class' =>
-            'form-control','placeholder'=>Lang::get('challenges/forms.description') . ' ' .
-            Lang::get('challenges/forms.in_140_chars')]) !!}
+            {!! Form::textarea('description',null,['maxlength'=>140,'class' => 'form-control maxlength','placeholder'=>Lang::get('challenges/forms.description') . ' ' .Lang::get('challenges/forms.in_140_chars')]) !!}
         </div>
     </div>
     <div class="row">
@@ -85,9 +83,9 @@
         </div>
     </div>
 </div>
-<div class="step_header">
-    <small>@lang('challenges/forms.step',['step'=>5,'total'=>5])</small>
-    @lang('challenges/forms.looking_for')
+<div class="step_header row">
+    <div class="col-md-2"><small>@lang('challenges/forms.step',['step'=>5,'total'=>5])</small></div>
+    <div class="col-md-8">@lang('challenges/forms.looking_for')</div>
 </div>
 
 <div class="form-group">
