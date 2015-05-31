@@ -6,7 +6,7 @@
                      alt="@lang('challenges/forms.type')"/>@lang('challenges/forms.type')
             </div>
             <div class="form-group">
-                {!! Form::select('category_id',$categories,null,['id' => 'category_id','class' => 'form-control
+                {!! Form::select('type_id',$types,null,['id' => 'type_id','class' => 'form-control
                 select2', 'style'=>'width:100%;']) !!}
             </div>
         </div>
@@ -16,7 +16,7 @@
                      alt="@lang('challenges/forms.category')"/>@lang('challenges/forms.category')
             </div>
             <div class="form-group">
-                {!! Form::select('type_id',$types,null,['id' => 'type_id','class' => 'form-control
+                {!! Form::select('category_id',$categories,null,['id' => 'category_id','class' => 'form-control
                 select2','style'=>'width:100%;']) !!}
             </div>
         </div>
