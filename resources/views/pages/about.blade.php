@@ -43,10 +43,10 @@
             </div>
         </div>
         <div class="row text-center phrase">“Algunos de los mayores proyectos en la historia de la humanidad necesitaron más de 100.000 personas"</div>
-        <div class="row text-center"><img src="/images/backgrounds/neurons.png" alt="Interacpedia"/></div>
+        <div class="row text-center"><img class="img-responsive" src="/images/backgrounds/neurons.png" alt="Interacpedia"/></div>
         <div class="row text-center phrase2">¿Que podríamos lograr si unimos 1.4 billones de estudiantes en el mundo?</div>
 
-        <div class="row text-center"><img src="/images/backgrounds/our-team.jpg" alt="Interacpedia"/></div>
+        <div class="row text-center"><img class="img-responsive" src="/images/backgrounds/our-team.jpg" alt="Interacpedia"/></div>
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="row our-team">
@@ -80,9 +80,9 @@
                 </div>
             </div>
         </div>
-        <div class="row text-center"><img src="/images/backgrounds/neurons-2.png" alt="Interacpedia"/></div>
+        <div class="row text-center"><img class="img-responsive" src="/images/backgrounds/neurons-2.png" alt="Interacpedia"/></div>
         <div class="row text-center phrase">Asesores Expertos en relaciones internacionales, operaciones, finanzas, estrategia, comunicaciones, emprendimiento y educación.</div>
-        <div class="row text-center"><img src="/images/backgrounds/aboutus-creativity.jpg" alt="Ideaminds"/></div>
+        <div class="row text-center"><img class="img-responsive" src="/images/backgrounds/aboutus-creativity.jpg" alt="Ideaminds"/></div>
         <div class="row text-center ideaminds">
             <div class="created">Creado por:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
             <div class="logo"><img src="/images/backgrounds/aboutus-ideaminds.png" alt="Ideaminds"/></div>

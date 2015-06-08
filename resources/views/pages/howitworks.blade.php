@@ -34,7 +34,9 @@
             </a>
         </div>
     </div>
-    <script>//Stop intro slider on last item
+@stop
+@section('footer')
+    <script>
         var cnt = $('#carousel_howitworks .item').length;
         $('#carousel_howitworks').on('slid', '', function() {
             cnt--;
