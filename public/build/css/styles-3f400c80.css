@@ -5477,7 +5477,7 @@ h4 {
 .about-us h3 {
   font-family: 'Open Sans', sans-serif;
   margin: 5px 0; }
-.about-us h4 {
+.about-us .phrase {
   font-size: 3rem; }
 .about-us .text {
   font-size: 1.6rem;
@@ -5486,6 +5486,15 @@ h4 {
   color: #da0080;
   font-size: 3rem;
   font-weight: 700; }
+.about-us .our-team {
+  margin-top: 60px; }
+  .about-us .our-team .name {
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    margin-top: 20px; }
+  .about-us .our-team .position {
+    margin-top: 20px;
+    color: #b5b5b5; }
 
 
 /*# sourceMappingURL=styles.css.map */

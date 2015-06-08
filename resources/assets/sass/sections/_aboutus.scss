@@ -10,8 +10,11 @@
     font-family: $font-sans;
     margin: 5px 0;
   }
-  h4{
+  .phrase{
     font-size: 3rem;
+  }
+  h4{
+
   }
   .text{
     font-size: 1.6rem;
@@ -21,5 +24,17 @@
     color: $purple;
     font-size: 3rem;
     font-weight: 700;
+  }
+  .our-team{
+    margin-top: $grid-gutter-width*3;
+    .name{
+      text-transform: uppercase;
+      margin-bottom: $grid-gutter-width/2;
+      margin-top: $grid-gutter-width;
+    }
+    .position{
+      margin-top: $grid-gutter-width;
+      color: $text-gray;
+    }
   }
 }
