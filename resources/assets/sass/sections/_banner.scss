@@ -83,13 +83,16 @@
     .carousel-control {
       .glyphicon-chevron-left{
         left: 30%;
+        font-size: 5rem;
       }
       .glyphicon-chevron-right{
         right: 30%;
+        font-size: 5rem;
       }
     }
 
     .carousel-indicators {
+      top: 0;
       li{
         border: 1px solid $purple;
         &.active{

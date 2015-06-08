@@ -7,7 +7,7 @@
 
 @section('section-banner')
     <div class="container">
-        <div id="carousel-howitworks" class="carousel slide" data-ride="carousel">
+        <div id="carousel-howitworks" class="carousel slide" data-ride="carousel" data-interval="false" data-wrap="false">
             <!-- Indicators -->
             <ol class="carousel-indicators">
                 @for($i=0;$i<7;$i++)
@@ -20,9 +20,6 @@
                 @for($i=0;$i<7;$i++)
                 <div class="item {{ ($i==0)?"active":"" }}">
                     <img src="/images/how-it-works/como-funciona-v4-{{ $i+1 }}.jpg" alt="Interacpedia">
-                    <div class="carousel-caption">
-                        Paso {{ $i+1 }}
-                    </div>
                 </div>
                 @endfor
             </div>
@@ -37,4 +34,13 @@
             </a>
         </div>
     </div>
+    <script>//Stop intro slider on last item
+        var cnt = $('#carousel_howitworks .item').length;
+        $('#carousel_howitworks').on('slid', '', function() {
+            cnt--;
+            if (cnt == 1) {
+                $('#carousel_howitworks').carousel('pause');
+            }
+        });
+    </script>
 @stop

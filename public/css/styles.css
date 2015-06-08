@@ -5117,13 +5117,17 @@ h4 {
     #section-banner .banner-about h1 .sociedad {
       background: url("../../images/icons/about-us/sociedad.png") no-repeat center center; }
 #section-banner #carousel-howitworks .carousel-control .glyphicon-chevron-left {
-  left: 30%; }
+  left: 30%;
+  font-size: 5rem; }
 #section-banner #carousel-howitworks .carousel-control .glyphicon-chevron-right {
-  right: 30%; }
-#section-banner #carousel-howitworks .carousel-indicators li {
-  border: 1px solid #da0080; }
-  #section-banner #carousel-howitworks .carousel-indicators li.active {
-    background-color: #da0080; }
+  right: 30%;
+  font-size: 5rem; }
+#section-banner #carousel-howitworks .carousel-indicators {
+  top: 0; }
+  #section-banner #carousel-howitworks .carousel-indicators li {
+    border: 1px solid #da0080; }
+    #section-banner #carousel-howitworks .carousel-indicators li.active {
+      background-color: #da0080; }
 #section-banner #carousel-howitworks .carousel-control.left, #section-banner #carousel-howitworks .carousel-control.right {
   background: none;
   color: #da0080; }
