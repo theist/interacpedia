@@ -5477,7 +5477,8 @@ h4 {
   font-family: 'Open Sans', sans-serif;
   margin: 5px 0; }
 .about-us .phrase {
-  font-size: 3rem; }
+  font-size: 3rem;
+  margin: 40px 0; }
 .about-us .text {
   font-size: 1.6rem;
   line-height: 2.4rem; }
