@@ -1,14 +1,22 @@
 <?php namespace App\Http\Controllers;
 
 use App\Http\Requests\ChallengeRequest;
+use App\Interacpedia\Career;
 use App\Interacpedia\Challenge;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Interacpedia\ChallengeCategory;
+use App\Interacpedia\Course;
 use App\Interacpedia\Repositories\ChallengeCategoriesRepositoryInterface;
 use App\Interacpedia\Repositories\ChallengeTypesRepositoryInterface;
+use App\Interacpedia\Reward;
+use App\Interacpedia\Searching;
+use App\Interacpedia\Tag;
+use App\Interacpedia\University;
+use App\Interacpedia\User;
 use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
@@ -52,34 +60,25 @@ class ChallengesController extends Controller {
         $categories = $this->categories->selectList();
         $types = $this->types->selectList();
         $cities = $this->cities;
+        $rewards = Reward::all();
+        $searchings = Searching::all();
+        $actual_stages = Challenge::getValues( 'actual_stage' );
+        $desired_stages = Challenge::getValues( 'desired_stage' );
+        $universities = University::lists( 'name', 'id' );
+        $careers = Career::lists( 'name', 'id' );;
+        $courses = Course::lists( 'name', 'id' );
+        $professors = [ ];
+        $creators = User::lists( 'name', 'id' );
+        $tags = Tag::lists( 'name', 'id' );
+        $ch_universities = [];
+        $ch_careers = [];
+        $ch_courses = [];
+        $ch_creators = [$user->id];
 
-        return view( 'challenges.create', compact( 'user', 'cities', 'categories','types' ) );
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param ChallengeRequest $request
-     * @return Response
-     */
-    public function store( ChallengeRequest $request )
-    {
-        $this->createChallenge( $request );
-        flash()->success( 'Your challenge has been created!.' );
-
-        return redirect( 'challenges' );
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param Challenge $challenge
-     * @return Response
-     * @internal param int $id
-     */
-    public function show( Challenge $challenge )
-    {
-        return view( 'challenges.show', compact( 'challenge' ) );
+        return view( 'challenges.create', compact( 'user',
+            'cities', 'categories', 'types', 'rewards', 'searchings',
+            'actual_stages', 'desired_stages', 'tags', 'universities', 'careers', 'courses', 'professors', 'creators',
+            'ch_universities', 'ch_careers', 'ch_courses', 'ch_creators' ) );
     }
 
     /**
@@ -95,8 +94,40 @@ class ChallengesController extends Controller {
         $categories = $this->categories->selectList();
         $types = $this->types->selectList();
         $cities = $this->cities;
+        $rewards = Reward::all();
+        $searchings = Searching::all();
+        $actual_stages = $challenge->getValues( 'actual_stage' );
+        $desired_stages = $challenge->getValues( 'desired_stage' );
+        $universities = University::lists( 'name', 'id' );
+        $careers = Career::lists( 'name', 'id' );;
+        $courses = Course::lists( 'name', 'id' );
+        $professors = [ ];
+        $creators = User::lists( 'name', 'id' );
+        $tags = Tag::lists( 'name', 'id' );
+        $ch_universities = $challenge->universities()->lists( 'id' );
+        $ch_careers = $challenge->careers()->lists( 'id' );
+        $ch_courses = $challenge->courses()->lists( 'id' );
+        $ch_creators = $challenge->creators()->lists( 'id' );
 
-        return view( 'challenges.edit', compact( 'user', 'challenge', 'cities', 'categories','types' ) );
+
+        return view( 'challenges.edit', compact( 'user',
+            'challenge', 'cities', 'categories', 'types', 'rewards', 'searchings',
+            'actual_stages', 'desired_stages', 'tags', 'universities', 'careers', 'courses', 'professors', 'creators',
+            'ch_universities', 'ch_careers', 'ch_courses', 'ch_creators' ) );
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param ChallengeRequest $request
+     * @return Response
+     */
+    public function store( ChallengeRequest $request )
+    {
+        $this->createChallenge( $request );
+        flash()->success( Lang::get( 'challenges/messages.create_ok' ) );
+
+        return redirect( 'challenges' );
     }
 
     /**
@@ -107,11 +138,84 @@ class ChallengesController extends Controller {
      * @return Response
      * @internal param int $id
      */
-    public function update( Challenge $challenge, Request $request  )
+    public function update( Challenge $challenge, Request $request )
     {
-        $challenge->update($request->all());
-        flash()->success( Lang::get('challenges/messages.edit_ok') );
-        return redirect('challenges');
+        $challenge->update( $request->all() );
+        $this->syncRewards( $challenge, $request->input( 'rewards_list', array() ) );
+        $this->syncSearchings( $challenge, $request->input( 'searchings_list', array() ) );
+        $this->syncTags( $challenge, $request->input( 'tag_list', array() ) );
+        $this->syncUniversities( $challenge, $request->input( 'university_list', array() ) );
+        $this->syncCareers( $challenge, $request->input( 'career_list', array() ) );
+        $this->syncCourses( $challenge, $request->input( 'course_list', array() ) );
+        $this->syncCreators( $challenge, $request->input( 'creator_list', array() ) );
+        flash()->success( Lang::get( 'challenges/messages.edit_ok' ) );
+        if ( $challenge->image == "" )
+        {
+            $challenge->image = "/images/challenges/challenge.jpg";
+            $challenge->save();
+        }
+
+        return redirect( 'challenges' );
+    }
+
+
+    /**
+     * @param ArticleRequest|ChallengeRequest $request
+     * @return mixed
+     */
+    private function createChallenge( ChallengeRequest $request )
+    {
+        $challenge = Auth::user()->challenges()->create( $request->all() );
+        $this->syncRewards( $challenge, $request->input( 'rewards_list', array() ) );
+        $this->syncSearchings( $challenge, $request->input( 'searchings_list', array() ) );
+        $this->syncTags( $challenge, $request->input( 'tag_list', array() ) );
+        $this->syncUniversities( $challenge, $request->input( 'university_list', array() ) );
+        $this->syncCareers( $challenge, $request->input( 'career_list', array() ) );
+        $this->syncCourses( $challenge, $request->input( 'course_list', array() ) );
+        $this->syncCreators( $challenge, $request->input( 'creator_list', array() ) );
+        flash()->success( Lang::get( 'challenges/messages.create_ok' ) );
+
+        if ( $challenge->image == "" )
+        {
+            $challenge->image = "/images/challenges/challenge.jpg";
+            $challenge->save();
+        }
+
+        return $challenge;
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param Challenge $challenge
+     * @return Response
+     * @internal param int $id
+     */
+    public function show( Challenge $challenge )
+    {
+        $user = $challenge->user()->getResults();
+
+
+        /* TO DO: move this relations into one object with properties.
+         * */
+        $universities = [];
+        $items = $challenge->universities()->lists( 'name','id' );
+        foreach($items as $id=>$name){
+            $universities[] = ["id"=>$id,"name"=>$name];
+        }
+        $careers = [];
+        $items = $challenge->careers()->lists( 'name','id' );
+        foreach($items as $id=>$name){
+            $careers[] = ["id"=>$id,"name"=>$name];
+        }
+        $courses = [];
+        $items = $challenge->courses()->lists( 'name','id' );
+        foreach($items as $id=>$name){
+            $courses[] = ["id"=>$id,"name"=>$name];
+        }
+        $professors = [];
+
+        return view( 'challenges.show', compact( 'challenge', 'user', 'universities','careers','courses','professors' ) );
     }
 
     /**
@@ -125,18 +229,104 @@ class ChallengesController extends Controller {
     public function destroy( Challenge $challenge )
     {
         $challenge->delete();
-        flash()->success( Lang::get('challenges/messages.delete_ok') );
-        return redirect('challenges');
+        flash()->success( Lang::get( 'challenges/messages.delete_ok' ) );
+
+        return redirect( 'challenges' );
     }
 
     /**
-     * @param ArticleRequest|ChallengeRequest $request
-     * @return mixed
+     * @param Challenge $challenge
+     * @param array $rewards
      */
-    private function createChallenge( ChallengeRequest $request )
+    public function syncRewards( Challenge $challenge, array $rewards )
     {
-        $challenge = Auth::user()->challenges()->create( $request->all() );
-        flash()->success( Lang::get('challenges/messages.create_ok') );
-        return $challenge;
+        $challenge->rewards()->sync( $rewards );
+    }
+
+    /**
+     * @param Challenge $challenge
+     * @param array $searchings
+     */
+    public function syncSearchings( Challenge $challenge, array $searchings )
+    {
+        $challenge->searchings()->sync( $searchings );
+    }
+
+    /**
+     * @param Challenge $challenge
+     * @param array $universities
+     */
+    public function syncUniversities( Challenge $challenge, array $universities )
+    {
+        $unis = [ ];
+        foreach ( $universities as $university )
+        {
+            if ( $university != "" ) $unis[ ] = $university;
+        }
+        $challenge->universities()->sync( $unis );
+    }
+
+    /**
+     * @param Challenge $challenge
+     * @param array $careers
+     */
+    public function syncCareers( Challenge $challenge, array $careers )
+    {
+        $items = [ ];
+        foreach ( $careers as $car )
+        {
+            if ( $car != "" ) $items[ ] = $car;
+        }
+        $challenge->careers()->sync( $items );
+    }
+
+    /**
+     * @param Challenge $challenge
+     * @param array $courses
+     */
+    public function syncCourses( Challenge $challenge, array $courses )
+    {
+        $items = [ ];
+        foreach ( $courses as $course )
+        {
+            if ( $course != "" ) $items[ ] = $course;
+        }
+        $challenge->courses()->sync( $items );
+    }
+    /**
+     * @param Challenge $challenge
+     * @param array $creators
+     */
+    public function syncCreators( Challenge $challenge, array $creators )
+    {
+        $items = [ ];
+        foreach ( $creators as $creator )
+        {
+            if ( $creator != "" ) $items[ ] = $creator;
+        }
+        $challenge->creators()->sync( $items );
+    }
+
+
+    /**
+     * @param Challenge $challenge
+     * @param array $tags
+     */
+    public function syncTags( Challenge $challenge, array $tags )
+    {
+        $newtags = [ ];
+        foreach ( $tags as $tag )
+        {
+            if ( $model = Challenge::find( $tag ) )
+            {
+                $newtags[ ] = $model->id;
+            } else
+            {
+                $model = Tag::firstOrCreate( [ 'name' => $tag ] );
+                $newtags[ ] = $model->id;
+            }
+        }
+
+        $challenge->tags()->sync( $newtags );
     }
 }

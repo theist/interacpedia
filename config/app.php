@@ -206,6 +206,6 @@ return [
         //'Socialize' => 'SocialiteProviders\Manager\Socialite\Facades\Socialite',
         'Form'      => 'Collective\Html\FormFacade',
         'Html'      => 'Collective\Html\HtmlFacade',
-        'Image'     => 'Intervention\Image\Facedes\Image'
+        'Image'     => 'Intervention\Image\Facades\Image'
     ],
 ];

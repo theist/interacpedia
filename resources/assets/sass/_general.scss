@@ -31,3 +31,19 @@ h4{  margin-bottom: 5px;  }
     transition-delay: 0s;
   }
 }
+.hidden{
+  display: none;
+}
+.img-responsive{
+  margin: 0 auto;
+}
+.main,
+.sidebar{
+  .content{
+    border: 1px solid $border-gray;
+    background: #ffffff;
+    margin-top: $grid-gutter-width;
+    padding: $grid-gutter-width;
+  }
+
+}

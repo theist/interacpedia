@@ -8,7 +8,7 @@ class ChallengeTypeTableSeeder extends Seeder {
     public function run()
     {
         DB::table( 'challenge_types' )->delete();
-        $names = [ 'Creative', 'Tech', 'Engineering', 'Social', 'Business' ];
+        $names = [ 'Creatividad', 'Tecnología', 'Ingeniería', 'Social', 'Negocios' ];
         foreach ( $names as $name )
         {
             ChallengeType::create( [

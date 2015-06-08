@@ -1,14 +1,110 @@
-.challenges {
-
-}
-
 .challenge {
-  .title {
-    height: 38px;
-    margin-bottom: $grid-gutter-width/2;
-    h4 {
-      text-transform: none;
-      font-family: $font-source;
+  .gray_zone{
+    background-color: $background-gray;
+    margin: -20px -10px 100px -20px;
+    padding: $grid-gutter-width;
+    height: 150px;
+    &.right{
+      margin: -20px -20px 30px -10px;
+    }
+  }
+  .user{
+    font-family: $font-sans;
+    .contact{
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-top: $grid-gutter-width/2;
+    }
+    .username{
+      font-weight: 700;
+    }
+    .website,
+    .career{
+      color: $title-gray2;
+    }
+    .website{
+      background: url("../../images/icons/11x11/website.png") no-repeat left center;
+      padding-left: 15px;
+    }
+    .links{
+      a{
+        color: $purple;
+        text-transform: uppercase;
+        font-family: $font-source;
+        font-weight: 600;
+        font-size: 1.4rem;
+      }
+    }
+  }
+  h5{
+    font-family: $font-sans;
+    font-weight: 600;
+    font-size: 1.9rem;
+    margin: $grid-gutter-width 0;
+  }
+  .data1,
+  .data2{
+    font-family: $font-sans;
+    font-size: 1.5rem;
+    h6{
+      font-family: $font-sans;
+      font-weight: 600;
+      font-size: 1.5rem;
+      margin: 0;
+      display: inline-block;
+      min-width: 100px;
+    }
+  }
+  .data2{
+    margin-top: $grid-gutter-width;
+    margin-bottom: $grid-gutter-width;
+    h6{
+      text-transform: uppercase;
+      color: $title-gray2;
+      font-size: 1.2rem;
+    }
+    small{
+      font-size: 1rem;
+    }
+  }
+  .university{
+    border-bottom: 1px solid $border-gray;
+    padding-bottom: $grid-gutter-width*2;
+    margin-bottom: $grid-gutter-width*2;
+    h4{
+      font-family: $font-sans;
+    }
+  }
+  &.summary{
+    .title {
+      height: 38px;
+      margin-bottom: $grid-gutter-width/2;
+      h4 {
+        text-transform: none;
+        font-family: $font-source;
+      }
+    }
+    .content{
+      min-height: 523px;
+    }
+  }
+  &.full{
+    .image {
+      border: 1px solid $border-gray;
+      padding: $grid-gutter-width/2;
+      background: white;
+      img{
+
+      }
+    }
+  }
+  .name{
+    h1{
+      font-family: $font-exo2;
+      font-weight: 300;
+      color: $purple;
+      font-size: 4rem;
+      margin: 0;
     }
   }
   .body {
@@ -22,7 +118,6 @@
         width: 100%;
       }
     }
-
   }
   .more-link {
     font-style: italic;
@@ -57,7 +152,6 @@
   .content {
     background: white;
     border: 1px solid $border-gray;
-    min-height: 523px;
     margin-bottom: 15px;
     .fields {
       padding: $grid-gutter-width;
@@ -74,6 +168,7 @@
     color: white;
     text-align: center;
     .title {
+      color: white;
       font-family: $font-exo2;
       font-weight: 600;
       font-size: 6rem;
@@ -88,15 +183,25 @@
     border: 1px solid $border-gray;
     padding: $grid-gutter-width;
   }
-  .label {
+  .subtitle {
     text-transform: uppercase;
     font-weight: 600;
-    font-size: 2.4rem;
+    font-size: 2.2rem;
     font-family: $font-sans;
-    color: $title-gray2;
+    color: $title-gray;
+    margin-bottom: $grid-gutter-width/2;
+    margin-top: $grid-gutter-width/2;
     small {
-      color: $light-gray;
+      text-transform: none;
+      float: right;
+      color: $text-gray;
       font-weight: 300;
+      font-size: 1.5rem;
+    }
+    img {
+    }
+    .text {
+      white-space: normal;
     }
   }
   .step_header {
@@ -120,25 +225,95 @@
   .step_content {
     padding: $grid-gutter-width;
     border: 1px solid $border-gray;
+    margin-bottom: $grid-gutter-width;
+    border-radius: 5px;
   }
-  .field-image {
+  .field-image,
+  .field-images {
     .zone {
       height: 190px;
       padding: $grid-gutter-width;
       text-align: center;
       border: 1px solid $border-gray;
-      .choose{
+      .choose {
         color: $blue-messages;
         font-weight: 600;
         font-size: 2rem;
       }
-      .help{
+      .help {
         max-width: 200px;
         margin: 0 auto;
         color: $dark-grey;
-  font-size: 1.2rem;
+        font-size: 1.2rem;
+      }
+      .dz-image-preview,
+      .preview {
+        display: inline-block;
+      }
+      .preview {
+        width: 100px;
+        text-align: center;
       }
     }
-
+  }
+  .field-files{
+    .zone{
+      height: 60px;
+      border: 1px solid $border-gray;
+      border-radius: 5px;
+      .help {
+        max-width: 200px;
+        margin: 0 auto;
+        color: $dark-grey;
+        font-size: 1.2rem;
+      }
+      .dz-preview,
+      .preview{
+        font-size: 0.9rem;
+        .dz-image{
+          display: none;
+        }
+        .btn-danger{
+          font-size: 1rem;
+          padding: 1px;
+          margin: 2px;
+        }
+      }
+    }
+  }
+  .field-rewards,
+  .field-searchings,
+  .field-desired_stage,
+  .field-actual_stage{
+    .reward,
+    .search,
+    .stage{
+      cursor: pointer;
+      display: inline-block;
+      text-align: center;
+      padding: $grid-gutter-width/2;
+      margin: $grid-gutter-width/2;
+      -webkit-transition: all .2s ease-in-out;
+      -moz-transition: all .2s ease-in-out;
+      -o-transition: all .2s ease-in-out;
+      -ms-transition: all .2s ease-in-out;
+      &.active {
+        opacity: 1;
+      }
+      &.inactive {
+        opacity: 0.4;
+      }
+      &.transition {
+        -webkit-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        -o-transform: scale(1.2);
+        transform: scale(1.2);
+      }
+    }
+    .stage{
+      padding: $grid-gutter-width/4;
+      margin: $grid-gutter-width/4;
+    }
   }
 }
+

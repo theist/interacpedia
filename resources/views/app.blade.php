@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="/favicon.ico"/>
     <link href="{{ elixir('css/styles.css') }}" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
-    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+    <link href="/js/toastr.min.css" rel="stylesheet">
 </head>
 <body>
 <div class="container-fluid" id="header">

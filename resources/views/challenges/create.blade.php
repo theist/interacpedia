@@ -1,4 +1,10 @@
 @extends('app')
+
+@section('title')
+    @lang('challenges/title.start')
+    @parent
+@stop
+
 @section('section-profile')
     @include('partials.profile')
 @stop

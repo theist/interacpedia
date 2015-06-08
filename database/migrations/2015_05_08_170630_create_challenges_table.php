@@ -17,36 +17,44 @@ class CreateChallengesTable extends Migration {
 			$table->increments('id');
             $table->string('name');
             $table->text('image')->nullable();
+            $table->text('images')->nullable();
+            $table->text('files')->nullable();
             $table->text('description')->nullable();
+            $table->text('solution')->nullable();
+            $table->text('benefits')->nullable();
             $table->integer('user_id')->unsigned();
             $table->integer('type_id')->unsigned()->nullable();
             $table->integer('category_id')->unsigned()->nullable();
-            ////$table->enum('stage',['Idea', 'Business Plan Drafted', 'Prototype Built', 'Product Tested', 'Paying Customers'])->nullable();
-            //$table->text('problem')->nullable();
-            //$table->text('solution')->nullable();
-            //$table->text('benefits')->nullable();
-            //$table->string('video')->nullable();
+            $table->enum('actual_stage',['idea', 'businessplan', 'prototype', 'product', 'customers'])->nullable();
+            $table->enum('desired_stage',['businessplan', 'prototype', 'product', 'customers'])->nullable();
+            $table->string('website')->nullable();
+            $table->string('video')->nullable();
 
-            //$table->string('website')->nullable();
-            //$table->enum('searching',['Funding', 'Advisor/Mentor', 'Intern', 'Development', 'Business Plan', 'Co founders',
-            //    'Marketing Plan', 'Sales', 'Networking', 'People', 'Ideas', 'Testing', 'Market Research'])->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')
                 ->onDelete('cascade');
-            //$table->foreign('type_id')
-            //    ->references('id')
-            //    ->on('challenge_types')
-            //    ->onDelete('set null');
-            //$table->foreign('category_id')
-            //    ->references('id')
-            //    ->on('challenge_categories')
-            //    ->onDelete('set null');
-
+            $table->foreign('type_id')
+                ->references('id')
+                ->on('challenge_types')
+                ->onDelete('set null');
+            $table->foreign('category_id')
+                ->references('id')
+                ->on('challenge_categories')
+                ->onDelete('set null');
         });
-	}
+        Schema::create('challenge_user', function(Blueprint $table)
+        {
+            $table->integer('challenge_id')->unsigned()->index();
+            $table->integer('user_id')->unsigned()->index();
+            $table->timestamps();
+            $table->foreign('challenge_id')->references('id')->on('challenges')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+        });
+
+    }
 
 	/**
 	 * Reverse the migrations.
@@ -55,7 +63,8 @@ class CreateChallengesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('challenges');
+        Schema::drop('challenge_user');
+        Schema::drop('challenges');
 	}
 
 }

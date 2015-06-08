@@ -11,7 +11,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
     use Authenticatable, CanResetPassword;
 
-    protected $dates = ['birthdate'];
+    protected $dates = [ 'birthdate' ];
     /**
      * The database table used by the model.
      *
@@ -47,19 +47,24 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     public function challenges()
     {
-        return $this->hasMany( 'App\Interacpedia\Challenge' );
+        $challenges = $this->hasMany( 'App\Interacpedia\Challenge' );
+
+        return $challenges;//->merge( $this->belongsToMany( 'App\Interacpedia\Challenge' )->withTimestamps() );
     }
+
 
     public function setBirthdateAttribute( $date )
     {
-        $this->attributes['birthdate'] = Carbon::parse($date);
+        $this->attributes[ 'birthdate' ] = Carbon::parse( $date );
     }
 
     public function getBirthdateAttribute( $date )
     {
-        if($date){
-            return Carbon::parse($date)->format('Y-m-d');
-        } else{
+        if ( $date )
+        {
+            return Carbon::parse( $date )->format( 'Y-m-d' );
+        } else
+        {
             return null;
         }
 

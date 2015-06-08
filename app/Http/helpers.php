@@ -12,9 +12,13 @@ function imagestyle($image, $style="small"){
         $image = $file;
     }
 
-    if(strstr($image,"images/")){
-        return str_replace("images/","images/cache/".$style."/",$image);
-    } else{
-        return "/images/cache/".$style."/".$image;
+    if(file_exists(public_path()."/".$image) && $image !=""){
+        if(strstr($image,"images/")){
+            return str_replace("images/","images/cache/".$style."/",$image);
+        } else{
+            return "/images/cache/".$style."/".$image;
+        }
+    } else {
+        return "/images/cache/".$style."/users/generic.png";
     }
 }

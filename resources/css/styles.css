@@ -4866,10 +4866,22 @@ h4 {
     box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
     transition-delay: 0s; }
 
+.hidden {
+  display: none; }
+
+.img-responsive {
+  margin: 0 auto; }
+
+.main .content, .sidebar .content {
+  border: 1px solid #cdcdcd;
+  background: #ffffff;
+  margin-top: 20px;
+  padding: 20px; }
+
 .btn {
   text-transform: uppercase;
-  background: #8dc63f;
-  border-color: #8dc63f;
+  background: #00c853;
+  border-color: #00c853;
   color: white;
   font-family: 'Exo 2', sans-serif;
   font-weight: 700;
@@ -4879,9 +4891,9 @@ h4 {
     vertical-align: middle;
     margin-right: 5px; }
   .btn:hover {
-    color: #8dc63f;
+    color: #00c853;
     background: #ffffff;
-    border-color: #8dc63f; }
+    border-color: #00c853; }
   .btn.facebook, .btn.linkedin, .btn.twitter, .btn.google {
     background: #3b5999;
     border: none; }
@@ -4902,11 +4914,11 @@ h4 {
       background: #e75c5d; }
 
 .btn-purple {
-  background: #ec008c;
-  border-color: #ec008c; }
+  background: #da0080;
+  border-color: #da0080; }
   .btn-purple:hover {
-    color: #ec008c;
-    border-color: #ec008c; }
+    color: #da0080;
+    border-color: #da0080; }
 
 .btn-blue {
   background: #16ecfe;
@@ -4928,6 +4940,56 @@ h4 {
   color: #b5b5b5; }
   .btn-white:hover {
     background: #b5b5b5;
+    color: white;
+    border-color: white; }
+
+.btn-danger {
+  color: white;
+  background-color: #d9534f;
+  border-color: #d9534f; }
+  .btn-danger:hover {
+    color: #d9534f;
+    border-color: #d9534f; }
+
+.btn-gray {
+  color: #535353;
+  background-color: #efefef;
+  border-color: #535353; }
+  .btn-gray:hover {
+    background-color: #535353;
+    color: #efefef;
+    border-color: #efefef; }
+
+.btn-big {
+  padding: 10px; }
+
+.btn-fixed-purple {
+  width: 100%;
+  color: #da0080;
+  border-color: #da0080;
+  background: white; }
+  .btn-fixed-purple:hover {
+    background-color: #da0080;
+    color: white;
+    border-color: white; }
+
+.btn-fixed-blue {
+  width: 100%;
+  color: #323095;
+  border-color: #323095;
+  background: white; }
+  .btn-fixed-blue:hover {
+    background-color: #323095;
+    color: white;
+    border-color: white; }
+
+.btn-fixed-green {
+  width: 100%;
+  color: #00c853;
+  border-color: #00c853;
+  background: white; }
+  .btn-fixed-green:hover {
+    background-color: #00c853;
     color: white;
     border-color: white; }
 
@@ -4957,7 +5019,8 @@ h4 {
         transform: scale(1.2); }
 
 .help {
-  font-size: 13px; }
+  font-size: 13px;
+  color: #535353; }
 
 .bootstrap-maxlength {
   color: #ffffff !important;
@@ -4966,6 +5029,28 @@ h4 {
   bottom: 10px !important;
   left: auto !important;
   right: 10px !important; }
+
+.dz-success-mark, .dz-error-mark {
+  display: none; }
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+  background: #8bf7fb;
+  font-family: 'Open Sans', sans-serif;
+  margin-right: 10px;
+  font-weight: 600;
+  padding: 10px 20px 10px 11px;
+  font-size: 16px;
+  border: none;
+  margin-top: 5px;
+  height: 42px; }
+  .select2-container--default .select2-selection--multiple .select2-selection__choice.select2-search {
+    background: #ddd;
+    border-radius: 4px;
+    font-size: 12px; }
+  .select2-container--default .select2-selection--multiple .select2-selection__choice .space {
+    width: 9.1px;
+    height: 14px;
+    display: inline-block; }
 
 #section-banner .banner-main {
   height: 587px;
@@ -4996,6 +5081,55 @@ h4 {
   #section-banner .banner-main .btn-purple, #section-banner .banner-main .btn-green, #section-banner .banner-main .btn-blue {
     padding: 20px 10px;
     margin: 10px; }
+#section-banner .banner-about {
+  height: 596px;
+  color: #ffffff;
+  background: url("../../images/backgrounds/banner-about.jpg") no-repeat center center; }
+  @media (max-width: 767px) {
+    #section-banner .banner-about {
+      padding: 80px 20px; } }
+  #section-banner .banner-about h1 {
+    font-family: 'Exo 2', sans-serif;
+    text-transform: none;
+    font-size: 2.5rem;
+    line-height: 4rem;
+    padding-top: 310px;
+    margin-top: 0;
+    color: white; }
+    @media (max-width: 767px) {
+      #section-banner .banner-about h1 {
+        font-size: 1rem; } }
+    #section-banner .banner-about h1 .empresas, #section-banner .banner-about h1 .universidades, #section-banner .banner-about h1 .estudiantes, #section-banner .banner-about h1 .gobierno, #section-banner .banner-about h1 .sociedad {
+      display: inline-block;
+      height: 110px;
+      width: 110px;
+      vertical-align: middle;
+      background: url("../../images/icons/about-us/empresas.png") no-repeat center center;
+      font-size: 0px;
+      color: transparent; }
+    #section-banner .banner-about h1 .universidades {
+      background: url("../../images/icons/about-us/universidades.png") no-repeat center center; }
+    #section-banner .banner-about h1 .estudiantes {
+      background: url("../../images/icons/about-us/estudiantes.png") no-repeat center center; }
+    #section-banner .banner-about h1 .gobierno {
+      background: url("../../images/icons/about-us/gobierno.png") no-repeat center center; }
+    #section-banner .banner-about h1 .sociedad {
+      background: url("../../images/icons/about-us/sociedad.png") no-repeat center center; }
+#section-banner #carousel-howitworks .carousel-control .glyphicon-chevron-left {
+  left: 30%; }
+#section-banner #carousel-howitworks .carousel-control .glyphicon-chevron-right {
+  right: 30%; }
+#section-banner #carousel-howitworks .carousel-indicators li {
+  border: 1px solid #da0080; }
+  #section-banner #carousel-howitworks .carousel-indicators li.active {
+    background-color: #da0080; }
+#section-banner #carousel-howitworks .carousel-control.left, #section-banner #carousel-howitworks .carousel-control.right {
+  background: none;
+  color: #da0080; }
+#section-banner #carousel-howitworks .carousel-caption {
+  color: #393c44;
+  font-family: 'Exo 2', sans-serif;
+  text-shadow: none; }
 
 .story {
   margin-bottom: 20px;
@@ -5013,12 +5147,80 @@ h4 {
     .story .image img {
       width: 100%; } }
 
-.challenge .title {
+.challenge .gray_zone {
+  background-color: #efefef;
+  margin: -20px -10px 100px -20px;
+  padding: 20px;
+  height: 150px; }
+  .challenge .gray_zone.right {
+    margin: -20px -20px 30px -10px; }
+.challenge .user {
+  font-family: 'Open Sans', sans-serif; }
+  .challenge .user .contact {
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 10px; }
+  .challenge .user .username {
+    font-weight: 700; }
+  .challenge .user .website, .challenge .user .career {
+    color: #666666; }
+  .challenge .user .website {
+    background: url("../../images/icons/11x11/website.png") no-repeat left center;
+    padding-left: 15px; }
+  .challenge .user .links a {
+    color: #da0080;
+    text-transform: uppercase;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    font-size: 1.4rem; }
+.challenge h5 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1.9rem;
+  margin: 20px 0; }
+.challenge .data1, .challenge .data2 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5rem; }
+  .challenge .data1 h6, .challenge .data2 h6 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin: 0;
+    display: inline-block;
+    min-width: 100px; }
+.challenge .data2 {
+  margin-top: 20px;
+  margin-bottom: 20px; }
+  .challenge .data2 h6 {
+    text-transform: uppercase;
+    color: #666666;
+    font-size: 1.2rem; }
+  .challenge .data2 small {
+    font-size: 1rem; }
+.challenge .university {
+  border-bottom: 1px solid #cdcdcd;
+  padding-bottom: 40px;
+  margin-bottom: 40px; }
+  .challenge .university h4 {
+    font-family: 'Open Sans', sans-serif; }
+.challenge.summary .title {
   height: 38px;
   margin-bottom: 10px; }
-  .challenge .title h4 {
+  .challenge.summary .title h4 {
     text-transform: none;
     font-family: 'Source Sans Pro', sans-serif; }
+.challenge.summary .content {
+  min-height: 523px; }
+.challenge.full .image {
+  border: 1px solid #cdcdcd;
+  padding: 10px;
+  background: white; }
+.challenge .name h1 {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 300;
+  color: #da0080;
+  font-size: 4rem;
+  margin: 0; }
 .challenge .body {
   font-family: 'Source Sans Pro', sans-serif;
   color: #535353;
@@ -5031,7 +5233,7 @@ h4 {
   font-weight: 600;
   margin-bottom: 10px; }
   .challenge .more-link a {
-    color: #ec008c; }
+    color: #da0080; }
 .challenge .links {
   font-family: 'Open Sans', sans-serif;
   font-size: 12px; }
@@ -5050,7 +5252,6 @@ h4 {
 .challenge .content {
   background: white;
   border: 1px solid #cdcdcd;
-  min-height: 523px;
   margin-bottom: 15px; }
   .challenge .content .fields {
     padding: 20px; }
@@ -5058,10 +5259,11 @@ h4 {
 .challenge_create .header, .challenge_edit .header {
   margin-top: 20px;
   padding: 20px;
-  background: #ec008c;
+  background: #da0080;
   color: white;
   text-align: center; }
   .challenge_create .header .title, .challenge_edit .header .title {
+    color: white;
     font-family: 'Exo 2', sans-serif;
     font-weight: 600;
     font-size: 6rem; }
@@ -5072,15 +5274,22 @@ h4 {
   background: white;
   border: 1px solid #cdcdcd;
   padding: 20px; }
-.challenge_create .label, .challenge_edit .label {
+.challenge_create .subtitle, .challenge_edit .subtitle {
   text-transform: uppercase;
   font-weight: 600;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   font-family: 'Open Sans', sans-serif;
-  color: #666666; }
-  .challenge_create .label small, .challenge_edit .label small {
-    color: #535353;
-    font-weight: 300; }
+  color: #333333;
+  margin-bottom: 10px;
+  margin-top: 10px; }
+  .challenge_create .subtitle small, .challenge_edit .subtitle small {
+    text-transform: none;
+    float: right;
+    color: #b5b5b5;
+    font-weight: 300;
+    font-size: 1.5rem; }
+  .challenge_create .subtitle .text, .challenge_edit .subtitle .text {
+    white-space: normal; }
 .challenge_create .step_header, .challenge_edit .step_header {
   margin: 20px 0 0 0;
   position: relative;
@@ -5099,21 +5308,66 @@ h4 {
     font-weight: 100; }
 .challenge_create .step_content, .challenge_edit .step_content {
   padding: 20px;
-  border: 1px solid #cdcdcd; }
-.challenge_create .field-image .zone, .challenge_edit .field-image .zone {
+  border: 1px solid #cdcdcd;
+  margin-bottom: 20px;
+  border-radius: 5px; }
+.challenge_create .field-image .zone, .challenge_create .field-images .zone, .challenge_edit .field-image .zone, .challenge_edit .field-images .zone {
   height: 190px;
   padding: 20px;
   text-align: center;
   border: 1px solid #cdcdcd; }
-  .challenge_create .field-image .zone .choose, .challenge_edit .field-image .zone .choose {
+  .challenge_create .field-image .zone .choose, .challenge_create .field-images .zone .choose, .challenge_edit .field-image .zone .choose, .challenge_edit .field-images .zone .choose {
     color: #21a3af;
     font-weight: 600;
     font-size: 2rem; }
-  .challenge_create .field-image .zone .help, .challenge_edit .field-image .zone .help {
+  .challenge_create .field-image .zone .help, .challenge_create .field-images .zone .help, .challenge_edit .field-image .zone .help, .challenge_edit .field-images .zone .help {
     max-width: 200px;
     margin: 0 auto;
     color: #393c44;
     font-size: 1.2rem; }
+  .challenge_create .field-image .zone .dz-image-preview, .challenge_create .field-image .zone .preview, .challenge_create .field-images .zone .dz-image-preview, .challenge_create .field-images .zone .preview, .challenge_edit .field-image .zone .dz-image-preview, .challenge_edit .field-image .zone .preview, .challenge_edit .field-images .zone .dz-image-preview, .challenge_edit .field-images .zone .preview {
+    display: inline-block; }
+  .challenge_create .field-image .zone .preview, .challenge_create .field-images .zone .preview, .challenge_edit .field-image .zone .preview, .challenge_edit .field-images .zone .preview {
+    width: 100px;
+    text-align: center; }
+.challenge_create .field-files .zone, .challenge_edit .field-files .zone {
+  height: 60px;
+  border: 1px solid #cdcdcd;
+  border-radius: 5px; }
+  .challenge_create .field-files .zone .help, .challenge_edit .field-files .zone .help {
+    max-width: 200px;
+    margin: 0 auto;
+    color: #393c44;
+    font-size: 1.2rem; }
+  .challenge_create .field-files .zone .dz-preview, .challenge_create .field-files .zone .preview, .challenge_edit .field-files .zone .dz-preview, .challenge_edit .field-files .zone .preview {
+    font-size: 0.9rem; }
+    .challenge_create .field-files .zone .dz-preview .dz-image, .challenge_create .field-files .zone .preview .dz-image, .challenge_edit .field-files .zone .dz-preview .dz-image, .challenge_edit .field-files .zone .preview .dz-image {
+      display: none; }
+    .challenge_create .field-files .zone .dz-preview .btn-danger, .challenge_create .field-files .zone .preview .btn-danger, .challenge_edit .field-files .zone .dz-preview .btn-danger, .challenge_edit .field-files .zone .preview .btn-danger {
+      font-size: 1rem;
+      padding: 1px;
+      margin: 2px; }
+.challenge_create .field-rewards .reward, .challenge_create .field-rewards .search, .challenge_create .field-rewards .stage, .challenge_create .field-searchings .reward, .challenge_create .field-searchings .search, .challenge_create .field-searchings .stage, .challenge_create .field-desired_stage .reward, .challenge_create .field-desired_stage .search, .challenge_create .field-desired_stage .stage, .challenge_create .field-actual_stage .reward, .challenge_create .field-actual_stage .search, .challenge_create .field-actual_stage .stage, .challenge_edit .field-rewards .reward, .challenge_edit .field-rewards .search, .challenge_edit .field-rewards .stage, .challenge_edit .field-searchings .reward, .challenge_edit .field-searchings .search, .challenge_edit .field-searchings .stage, .challenge_edit .field-desired_stage .reward, .challenge_edit .field-desired_stage .search, .challenge_edit .field-desired_stage .stage, .challenge_edit .field-actual_stage .reward, .challenge_edit .field-actual_stage .search, .challenge_edit .field-actual_stage .stage {
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  -ms-transition: all .2s ease-in-out; }
+  .challenge_create .field-rewards .reward.active, .challenge_create .field-rewards .search.active, .challenge_create .field-rewards .stage.active, .challenge_create .field-searchings .reward.active, .challenge_create .field-searchings .search.active, .challenge_create .field-searchings .stage.active, .challenge_create .field-desired_stage .reward.active, .challenge_create .field-desired_stage .search.active, .challenge_create .field-desired_stage .stage.active, .challenge_create .field-actual_stage .reward.active, .challenge_create .field-actual_stage .search.active, .challenge_create .field-actual_stage .stage.active, .challenge_edit .field-rewards .reward.active, .challenge_edit .field-rewards .search.active, .challenge_edit .field-rewards .stage.active, .challenge_edit .field-searchings .reward.active, .challenge_edit .field-searchings .search.active, .challenge_edit .field-searchings .stage.active, .challenge_edit .field-desired_stage .reward.active, .challenge_edit .field-desired_stage .search.active, .challenge_edit .field-desired_stage .stage.active, .challenge_edit .field-actual_stage .reward.active, .challenge_edit .field-actual_stage .search.active, .challenge_edit .field-actual_stage .stage.active {
+    opacity: 1; }
+  .challenge_create .field-rewards .reward.inactive, .challenge_create .field-rewards .search.inactive, .challenge_create .field-rewards .stage.inactive, .challenge_create .field-searchings .reward.inactive, .challenge_create .field-searchings .search.inactive, .challenge_create .field-searchings .stage.inactive, .challenge_create .field-desired_stage .reward.inactive, .challenge_create .field-desired_stage .search.inactive, .challenge_create .field-desired_stage .stage.inactive, .challenge_create .field-actual_stage .reward.inactive, .challenge_create .field-actual_stage .search.inactive, .challenge_create .field-actual_stage .stage.inactive, .challenge_edit .field-rewards .reward.inactive, .challenge_edit .field-rewards .search.inactive, .challenge_edit .field-rewards .stage.inactive, .challenge_edit .field-searchings .reward.inactive, .challenge_edit .field-searchings .search.inactive, .challenge_edit .field-searchings .stage.inactive, .challenge_edit .field-desired_stage .reward.inactive, .challenge_edit .field-desired_stage .search.inactive, .challenge_edit .field-desired_stage .stage.inactive, .challenge_edit .field-actual_stage .reward.inactive, .challenge_edit .field-actual_stage .search.inactive, .challenge_edit .field-actual_stage .stage.inactive {
+    opacity: 0.4; }
+  .challenge_create .field-rewards .reward.transition, .challenge_create .field-rewards .search.transition, .challenge_create .field-rewards .stage.transition, .challenge_create .field-searchings .reward.transition, .challenge_create .field-searchings .search.transition, .challenge_create .field-searchings .stage.transition, .challenge_create .field-desired_stage .reward.transition, .challenge_create .field-desired_stage .search.transition, .challenge_create .field-desired_stage .stage.transition, .challenge_create .field-actual_stage .reward.transition, .challenge_create .field-actual_stage .search.transition, .challenge_create .field-actual_stage .stage.transition, .challenge_edit .field-rewards .reward.transition, .challenge_edit .field-rewards .search.transition, .challenge_edit .field-rewards .stage.transition, .challenge_edit .field-searchings .reward.transition, .challenge_edit .field-searchings .search.transition, .challenge_edit .field-searchings .stage.transition, .challenge_edit .field-desired_stage .reward.transition, .challenge_edit .field-desired_stage .search.transition, .challenge_edit .field-desired_stage .stage.transition, .challenge_edit .field-actual_stage .reward.transition, .challenge_edit .field-actual_stage .search.transition, .challenge_edit .field-actual_stage .stage.transition {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+        transform: scale(1.2); }
+.challenge_create .field-rewards .stage, .challenge_create .field-searchings .stage, .challenge_create .field-desired_stage .stage, .challenge_create .field-actual_stage .stage, .challenge_edit .field-rewards .stage, .challenge_edit .field-searchings .stage, .challenge_edit .field-desired_stage .stage, .challenge_edit .field-actual_stage .stage {
+  padding: 5px;
+  margin: 5px; }
 
 .project .title {
   margin-bottom: 10px; }
@@ -5131,7 +5385,7 @@ h4 {
   font-style: italic;
   font-weight: 600; }
   .project .more-link a {
-    color: #ec008c; }
+    color: #da0080; }
 .project .content {
   background: white;
   border: 1px solid #cdcdcd; }
@@ -5186,7 +5440,7 @@ h4 {
       font-family: 'Source Sans Pro', sans-serif; }
 
 #section-highlight {
-  background: #edfaff; }
+  background: #efefef; }
 
 #section-partners {
   background: #edfaff; }
@@ -5194,7 +5448,7 @@ h4 {
     padding: 20px 0; }
 
 #section-content {
-  background: #efefef; }
+  background: #edfaff; }
   #section-content .container {
     padding-bottom: 20px; }
 

@@ -34,4 +34,79 @@
       margin: 10px;
     }
   }
+  .banner-about {
+    height: 596px;
+    color: #ffffff;
+    background: url("../../images/backgrounds/banner-about.jpg") no-repeat center center;
+    @media (max-width: $screen-xs-max) {
+      padding: 80px 20px;
+    }
+    h1 {
+      font-family: $font-exo2;
+      text-transform: none;
+      font-size: 2.5rem;
+      line-height: 4rem;
+      padding-top: 310px;
+      margin-top: 0;
+      color: white;
+      @media (max-width: $screen-xs-max) {
+        font-size: 1rem;
+      }
+      .empresas,
+      .universidades,
+      .estudiantes,
+      .gobierno,
+      .sociedad{
+        display: inline-block;
+        height: 110px;
+        width: 110px;
+        vertical-align: middle;
+        background: url("../../images/icons/about-us/empresas.png") no-repeat center center;
+        font-size: 0px;
+        color: transparent;
+      }
+      .universidades{
+        background: url("../../images/icons/about-us/universidades.png") no-repeat center center;
+      }
+      .estudiantes{
+        background: url("../../images/icons/about-us/estudiantes.png") no-repeat center center;
+      }
+      .gobierno{
+        background: url("../../images/icons/about-us/gobierno.png") no-repeat center center;
+      }
+      .sociedad{
+        background: url("../../images/icons/about-us/sociedad.png") no-repeat center center;
+      }
+    }
+  }
+  #carousel-howitworks{
+    .carousel-control {
+      .glyphicon-chevron-left{
+        left: 30%;
+      }
+      .glyphicon-chevron-right{
+        right: 30%;
+      }
+    }
+
+    .carousel-indicators {
+      li{
+        border: 1px solid $purple;
+        &.active{
+          background-color: $purple;
+        }
+      }
+    }
+    .carousel-control.left,
+    .carousel-control.right{
+      background: none;
+      color: $purple;
+    }
+    .carousel-caption{
+      color: $dark-grey;
+      font-family: $font-exo2;
+      text-shadow: none;
+    }
+  }
+
 }

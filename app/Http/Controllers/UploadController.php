@@ -33,14 +33,40 @@ class UploadController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
         if (Input::hasFile('image')) {
             $file = Input::file('image');
-            $name = Input::file('image')->getClientOriginalName();
-            $path = public_path()."/images/upload/";
+            $name = date("Ymd-") . Input::file('image')->getClientOriginalName();
+            $dir = $request->header('upload_dir');
+            if(!$dir)$dir = "upload";
+            $path = public_path()."/images/".$dir . "/";
             Input::file('image')->move($path, $name);
-            return "/images/upload/" . $name;
+            //$image = imagestyle("/images/" . $dir . "/" . $name,'height150') ;
+            $image = "/images/" . $dir . "/" . $name;
+            return $image;
+        } else if (Input::hasFile('images')) {
+            $files = Input::file('images');
+            foreach($files as $file){
+                $name = date("Ymd-") . $file->getClientOriginalName();
+                $dir = $request->header('upload_dir');
+                if(!$dir)$dir = "upload";
+                $path = public_path()."/images/".$dir . "/";
+                $file->move($path, $name);
+                $image = "/images/" . $dir . "/" . $name;
+                return $image;
+            }
+        } else if (Input::hasFile('files')) {
+            $files = Input::file('files');
+            foreach($files as $file){
+                $name = date("Ymd-") . $file->getClientOriginalName();
+                $dir = $request->header('upload_dir');
+                if(!$dir)$dir = "upload";
+                $path = public_path()."/images/".$dir . "/";
+                $file->move($path, $name);
+                $image = "/images/" . $dir . "/" . $name;
+                return $image;
+            }
         }
         return "";
 	}

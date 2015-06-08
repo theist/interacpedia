@@ -7,12 +7,12 @@ class RewardTableSeeder extends Seeder {
     public function run()
     {
         DB::table( 'rewards' )->delete();
-        Reward::create( [ 'name' => 'Productos', 'image' => 'images/icons/rewards/products.png' ] );
-        Reward::create( [ 'name' => 'Beca', 'image' => 'images/icons/rewards/scholarship.png' ] );
-        Reward::create( [ 'name' => 'Internado', 'image' => 'images/icons/rewards/internship.png' ] );
-        Reward::create( [ 'name' => 'Fondos', 'image' => 'images/icons/rewards/funds.png' ] );
-        Reward::create( [ 'name' => 'Premios', 'image' => 'images/icons/rewards/prizes.png' ] );
-        Reward::create( [ 'name' => 'Patrocinio', 'image' => 'images/icons/rewards/sponsorships.png' ] );
-        Reward::create( [ 'name' => 'Bonos de grado', 'image' => 'images/icons/rewards/grade-bonus.png' ] );
+        Reward::create( [ 'name' => 'Productos', 'image' => '/images/buttons/round/75x75/products-off.png' ] );
+        Reward::create( [ 'name' => 'Becas', 'image' => '/images/buttons/round/75x75/scholarship-off.png' ] );
+        Reward::create( [ 'name' => 'Prácticas', 'image' => '/images/buttons/round/75x75/internship-off.png' ] );
+        Reward::create( [ 'name' => 'Fondos', 'image' => '/images/buttons/round/75x75/funds-off.png' ] );
+        Reward::create( [ 'name' => 'Premios', 'image' => '/images/buttons/round/75x75/prizes-off.png' ] );
+        Reward::create( [ 'name' => 'Patrocinios', 'image' => '/images/buttons/round/75x75/sponsorships-off.png' ] );
+        Reward::create( [ 'name' => 'Bono de nota', 'image' => '/images/buttons/round/75x75/grade-bonus-off.png' ] );
     }
 }

@@ -83,3 +83,59 @@
     border-color: white;
   }
 }
+
+.btn-danger{
+  color: white;
+  background-color: $dark-red;
+  border-color: $dark-red;
+  &:hover {
+    color: $dark-red;
+    border-color: $dark-red;
+  }
+}
+.btn-gray{
+  color: $light-gray;
+  background-color: $background-gray;
+  border-color: $light-gray;
+  &:hover {
+    background-color: $light-gray;
+    color: $background-gray;
+    border-color: $background-gray;
+  }
+}
+.btn-big{
+  padding: $grid-gutter-width/2;
+}
+.btn-fixed-purple{
+  width: 100%;
+  color: $purple;
+  border-color: $purple;
+  background: white;
+  &:hover {
+    background-color: $purple;
+    color: white;
+    border-color: white;
+  }
+}
+.btn-fixed-blue{
+  width: 100%;
+  color: $dark-blue;
+  border-color: $dark-blue;
+  background: white;
+  &:hover {
+    background-color: $dark-blue;
+    color: white;
+    border-color: white;
+  }
+}
+.btn-fixed-green{
+  width: 100%;
+  color: $green;
+  border-color: $green;
+  background: white;
+  &:hover {
+    background-color: $green;
+    color: white;
+    border-color: white;
+  }
+}

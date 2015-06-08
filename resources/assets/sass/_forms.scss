@@ -31,9 +31,9 @@
     }
   }
 }
-
 .help{
   font-size: 13px;
+  color: $light-gray;
 }
 .bootstrap-maxlength{
   color: #ffffff !important;
@@ -42,5 +42,30 @@
   bottom: 10px !important;
   left: auto !important;
   right: 10px !important;
-
 }
+.dz-success-mark,
+.dz-error-mark{
+  display: none;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background: #8bf7fb;
+    font-family: $font-sans;
+    margin-right: 10px;
+    font-weight: 600;
+    padding: 10px 20px 10px 11px;
+    font-size: 16px;
+    border: none;
+    margin-top: 5px;
+    height: 42px;
+    &.select2-search {
+      background: #ddd;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+    .space{
+      width: 9.1px;
+      height: 14px;
+      display: inline-block;
+    }
+  }

@@ -13,6 +13,8 @@
 
 Route::get('/', 'PagesController@index');
 Route::get('home', 'PagesController@index');
+Route::get('how-it-works', 'PagesController@howitworks');
+Route::get('about-us', 'PagesController@about');
 
 /**
  * PagesController - Static routes

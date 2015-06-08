@@ -9,23 +9,30 @@ class ChallengeTableSeeder extends Seeder {
     {
         DB::table( 'challenges' )->delete();
         Challenge::create( [
-            'name'        => 'StreetAdventure',
-            'description' => 'Como aprender a recorrer ciudades de una forma divertida, utilizando una metodología preventiva que permita aprender que hacer en caso de un desastre.',
-            'image'       => '/images/challenges/streetadventure.png',
-            'user_id'     => 3
+            'name'          => 'StreetAdventure',
+            'description'   => 'Como aprender a recorrer ciudades de una forma divertida, utilizando una metodología preventiva que permita aprender que hacer en caso de un desastre.',
+            'image'         => '/images/challenges/streetadventure.png',
+            'user_id'       => 3,
+            'actual_stage'  => 'idea',
+            'desired_stage' => 'businessplan'
         ] );
         Challenge::create( [
-            'name'        => 'Crear aplicación de "Car Pooling" para universidades',
-            'description' => 'Ayúdanos a mejorar la congestión de vehículos en nuestras universidades y en otros lugares.',
-            'image'       => '/images/challenges/carpooling.jpg',
-            'user_id'     => 1
+            'name'          => 'Crear aplicación de "Car Pooling" para universidades',
+            'description'   => 'Ayúdanos a mejorar la congestión de vehículos en nuestras universidades y en otros lugares.',
+            'image'         => '/images/challenges/carpooling.jpg',
+            'user_id'       => 1,
+            'actual_stage'  => 'idea',
+            'desired_stage' => 'businessplan'
         ] );
-        for($i=2; $i<=4;$i++){
+        for ( $i = 2; $i <= 4; $i ++ )
+        {
             Challenge::create( [
-                'name'        => 'Reto número '.$i,
-                'description' => 'Texto descriptivo creado de manera aleatoria para un reto aleatorio creado con el número '.$i.'.',
-                'image'       => '/images/challenges/ch0'.$i.'.jpg',
-                'user_id'     => 1
+                'name'          => 'Reto número ' . $i,
+                'description'   => 'Texto descriptivo creado de manera aleatoria para un reto aleatorio creado con el número ' . $i . '.',
+                'image'         => '/images/challenges/ch0' . $i . '.jpg',
+                'user_id'       => 1,
+                'actual_stage'  => 'idea',
+                'desired_stage' => 'businessplan'
             ] );
         }
     }

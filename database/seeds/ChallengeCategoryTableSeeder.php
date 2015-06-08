@@ -8,7 +8,7 @@ class ChallengeCategoryTableSeeder extends Seeder {
     public function run()
     {
         DB::table( 'challenge_categories' )->delete();
-        $names = [ 'Animals',
+        $names = [ 'Animales',
             'Arte',
             'Comics',
             'Comunidad',

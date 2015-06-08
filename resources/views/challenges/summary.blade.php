@@ -9,16 +9,6 @@
         <div class="title"><h4><a href="{{ action('ChallengesController@show',[$challenge->id]) }}">{{ $challenge->name }}</a>
             </h4></div>
         <div class="body">{{ str_limit( $challenge->description,100 )}}</div>
-        @unless($challenge->rewards->isEmpty())
-            <div class="rewards">
-                <h5>Rewards:</h5>
-                <ul>
-                    @foreach($challenge->rewards as $reward)
-                        <li>{{ $reward->name }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endunless
         <div class="more-link"><a href="{{ action('ChallengesController@show',[$challenge->id]) }}">Read more +</a>
         </div>
         <div class="links row">

@@ -5,5 +5,6 @@ return [
     'create'      => 'Crear nuevo Reto',
     'start'       => 'Comienza un reto',
     'share'       => 'Comparte tus fabulosas ideas!',
-    'edit'=>'Actualiza tu reto'
+    'edit'        => 'Actualiza tu reto',
+    'show'        => 'Detalle Reto'
 ];

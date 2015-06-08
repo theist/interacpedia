@@ -12,7 +12,9 @@
                 </div>
                 <div class="location">
                     <img class="" src="/images/icons/flags/co.png" alt="Colombia"/>
-                    {{ $cities[$user->city] }}, Colombia <br/>
+                    @if($user->city)
+                        {{ $cities[$user->city] }}, Colombia <br/>
+                    @endif
                     Universidad: Sin especificar
                 </div>
             </div>
