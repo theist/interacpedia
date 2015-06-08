@@ -10,8 +10,8 @@ return [
     'blog'         => 'Blog',
     'contact'      => 'Contacto',
     'profile'      => 'Perfil',
-    'howitworks'   => '¿Cómo funciona?',
-    'whatis'       => '¿Qué es?',
+    'howitworks'   => 'Cómo funciona',
+    'whatis'       => 'Qué es Interacpedia',
     'about'        => 'Acerca de',
     'interacpedia' => 'Interacpedia',
     'toggle'       => 'Mostrar navegación' //Toggle navigation
