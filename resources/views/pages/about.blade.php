@@ -16,6 +16,7 @@
                 <strong>tengan un uso real en la sociedad</strong>
             </h1>
         </div>
+        <div class="row text-center"><a class="btn btn-blue" href="#" data-toggle="modal" data-target="#myModal">Ver Infographic</a></div>
         <div class="row text-center"><h2>Transformamos</h2></div>
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
@@ -43,7 +44,7 @@
         </div>
         <div class="row text-center phrase">“Algunos de los mayores proyectos en la historia de la humanidad necesitaron más de 100.000 personas"</div>
         <div class="row text-center"><img src="/images/backgrounds/neurons.png" alt="Interacpedia"/></div>
-        <div class="row text-center"><h4>¿Que podríamos lograr si unimos 1.4 billones de estudiantes en el mundo?</h4></div>
+        <div class="row text-center phrase2">¿Que podríamos lograr si unimos 1.4 billones de estudiantes en el mundo?</div>
 
         <div class="row text-center"><img src="/images/backgrounds/our-team.jpg" alt="Interacpedia"/></div>
         <div class="row">
@@ -78,15 +79,31 @@
                     </div>
                 </div>
             </div>
-
         </div>
         <div class="row text-center"><img src="/images/backgrounds/neurons-2.png" alt="Interacpedia"/></div>
         <div class="row text-center phrase">Asesores Expertos en relaciones internacionales, operaciones, finanzas, estrategia, comunicaciones, emprendimiento y educación.</div>
         <div class="row text-center"><img src="/images/backgrounds/aboutus-creativity.jpg" alt="Ideaminds"/></div>
-        <div class="row text-center">
-            Creado por: <br/>
-            <img src="/images/backgrounds/aboutus-ideaminds.png" alt="Ideaminds"/>
-            &copy;{{ date("Y") }} IDEAMINDS. Todos los derechos reservados. <br/>
-            www.ideaminds.net
+        <div class="row text-center ideaminds">
+            <div class="created">Creado por:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+            <div class="logo"><img src="/images/backgrounds/aboutus-ideaminds.png" alt="Ideaminds"/></div>
+            <div class="copyright">&copy;{{ date("Y") }} IDEAMINDS. Todos los derechos reservados.</div>
+            <div class="web">www.ideaminds.net</div>
         </div>
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Interacpedia Infographic</h4>
+                    </div>
+                    <div class="modal-body">
+                        <img src="/images/infographics/infographic-interacpedia-web.jpg" alt="Infographic"/>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @stop

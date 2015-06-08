@@ -13,6 +13,13 @@
   .phrase{
     font-size: 3rem;
     margin: $grid-gutter-width*2 0;
+    color: $text-gray;
+  }
+  .phrase2{
+    color: $purple;
+    font-size: 3rem;
+    font-family: $font-exo2;
+    margin: $grid-gutter-width*2 0;
   }
   h4{
 
@@ -26,12 +33,29 @@
     font-size: 3rem;
     font-weight: 700;
   }
+  .modal-body{
+    padding: 0;
+  }
+  .ideaminds{
+    margin: $grid-gutter-width 0;
+    color: $text-gray;
+    .created{
+      margin: $grid-gutter-width 0;
+    }
+    .web{
+      color: black;
+    }
+    .logo{
+      margin: $grid-gutter-width 0;
+    }
+  }
   .our-team{
     margin-top: $grid-gutter-width*3;
     .name{
       text-transform: uppercase;
       margin-bottom: $grid-gutter-width/2;
       margin-top: $grid-gutter-width;
+      font-weight: 600;
     }
     .position{
       margin-top: $grid-gutter-width;
