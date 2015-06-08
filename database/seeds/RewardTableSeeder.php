@@ -13,6 +13,5 @@ class RewardTableSeeder extends Seeder {
         Reward::create( [ 'name' => 'Fondos', 'image' => '/images/buttons/round/75x75/funds-off.png' ] );
         Reward::create( [ 'name' => 'Premios', 'image' => '/images/buttons/round/75x75/prizes-off.png' ] );
         Reward::create( [ 'name' => 'Patrocinios', 'image' => '/images/buttons/round/75x75/sponsorships-off.png' ] );
-        Reward::create( [ 'name' => 'Bono de nota', 'image' => '/images/buttons/round/75x75/grade-bonus-off.png' ] );
     }
 }
