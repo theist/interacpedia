@@ -8,6 +8,7 @@
 @section('section-banner')
     <div class="container about-us">
         <div class="banner-about text-center">
+            <img class="logo img-responsive" src="/images/logos/que-es-interacpedia-logo.png" alt="Interacpedia"/>
             <h1>Plataforma colaborativa y metodología de innovación que une: <br/>
                 <span class="empresas">Empresas</span> + <span class="universidades">Universidades</span> +
                 <span class="estudiantes">Estudiantes</span> + <span class="gobierno">Gobierno</span> +
@@ -97,7 +98,7 @@
                         <h4 class="modal-title" id="myModalLabel">Interacpedia Infographic</h4>
                     </div>
                     <div class="modal-body">
-                        <img src="/images/infographics/infographic-interacpedia-web.jpg" alt="Infographic"/>
+                        <img class="img-responsive" src="/images/infographics/infographic-interacpedia-web.jpg" alt="Infographic"/>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
