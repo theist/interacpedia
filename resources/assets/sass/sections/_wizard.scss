@@ -1,0 +1,85 @@
+.wizard{
+  .header{
+    background: $purple;
+    color: white;
+    font-family: $font-exo2;
+    padding: $grid-gutter-width/2 $grid-gutter-width*2;
+    font-size: 2rem;
+    img{
+      margin-right: $grid-gutter-width;
+    }
+  }
+  .body{
+    height: 587px;
+    background: url("../../images/backgrounds/banner-main.jpg") no-repeat center center;
+    @media (max-width: $screen-xs-max) {
+      height: auto;
+      background: none;
+    }
+    .wizard_content{
+      margin-top: $grid-gutter-width;
+      background: white;border-radius: 5px;
+      h1{
+        font-family: $font-exo2;
+        font-size: 4rem;
+        &.steps{
+          font-family: $font-sans;
+          opacity: 0.8;
+          margin-bottom: $grid-gutter-width;
+        }
+      }
+      .subtitle{
+        font-size: 2rem;
+        margin: $grid-gutter-width 0;
+        opacity: 0.8;
+      }
+      h2{
+        font-size: 2.5rem;
+        font-family: $font-exo2;
+        font-weight: 300;
+      }
+    }
+  }
+  .btn.disabled{
+    background-color: $light-gray;
+    border: none;
+  }
+}
+
+.select-category {
+  p{
+    opacity: 0.4;
+  }
+
+  li {
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    cursor: pointer;
+    padding: 10px;
+    color: $light-gray;
+    font-family: $font-exo2;
+    font-weight: 500;
+    line-height: 30px;
+    text-transform: uppercase;
+    display: inline-block;
+    list-style: none;
+    &.active {
+      img{
+        opacity: 1;
+      }
+    }
+    &.inactive {
+      img{
+        opacity: 0.4;
+      }
+    }
+    &.transition {
+      -webkit-transform: scale(1.2);
+      -moz-transform: scale(1.2);
+      -o-transform: scale(1.2);
+      transform: scale(1.2);
+    }
+  }
+}

@@ -1,11 +1,44 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0a1080eb2fd6425bd819e8939aa48f85",
+    "hash": "0077faa205c59cbace9251254cb6e278",
     "packages": [
+        {
+            "name": "alakkad/world-countries-cities",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AAlakkad/Laravel-Countries-Cities.git",
+                "reference": "7802488b7eea2cdd0b0bed3e5f3eda52b4e17187"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AAlakkad/Laravel-Countries-Cities/zipball/7802488b7eea2cdd0b0bed3e5f3eda52b4e17187",
+                "reference": "7802488b7eea2cdd0b0bed3e5f3eda52b4e17187",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.0.*",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Alakkad\\WorldCountriesCities": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Ammar Alakkad",
+                    "email": "am.alakkad@gmail.com"
+                }
+            ],
+            "time": "2015-05-30 16:15:10"
+        },
         {
             "name": "classpreloader/classpreloader",
             "version": "1.4.0",
@@ -477,12 +510,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Intervention/image.git",
-                "reference": "1f33a7c6c5847ddaa4c0c347be375d38ee4c2f43"
+                "reference": "f388f8cbdecb28e960d257c975dc9b5254c4c7ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Intervention/image/zipball/1f33a7c6c5847ddaa4c0c347be375d38ee4c2f43",
-                "reference": "1f33a7c6c5847ddaa4c0c347be375d38ee4c2f43",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/f388f8cbdecb28e960d257c975dc9b5254c4c7ba",
+                "reference": "f388f8cbdecb28e960d257c975dc9b5254c4c7ba",
                 "shasum": ""
             },
             "require": {
@@ -525,7 +558,7 @@
                 "thumbnail",
                 "watermark"
             ],
-            "time": "2015-05-14 08:43:38"
+            "time": "2015-06-05 13:31:06"
         },
         {
             "name": "intervention/imagecache",
@@ -1029,19 +1062,20 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.3",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "3c2400a99ccc3be6884d40361890010449c6b447"
+                "reference": "56862959b45131ad33e5a7727a25db19f2cf090b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/3c2400a99ccc3be6884d40361890010449c6b447",
-                "reference": "3c2400a99ccc3be6884d40361890010449c6b447",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/56862959b45131ad33e5a7727a25db19f2cf090b",
+                "reference": "56862959b45131ad33e5a7727a25db19f2cf090b",
                 "shasum": ""
             },
             "require": {
+                "ext-mbstring": "*",
                 "php": ">=5.4.0"
             },
             "require-dev": {
@@ -1108,7 +1142,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2015-03-29 14:01:43"
+            "time": "2015-06-07 21:27:37"
         },
         {
             "name": "league/oauth1-client",
@@ -1616,20 +1650,20 @@
         },
         {
             "name": "socialiteproviders/manager",
-            "version": "0.1.9",
+            "version": "0.1.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SocialiteProviders/Manager.git",
-                "reference": "59d736befa35932a09690437743458c619139c48"
+                "reference": "a9640be0ee30d7f822f4662f1a698fe053361504"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SocialiteProviders/Manager/zipball/59d736befa35932a09690437743458c619139c48",
-                "reference": "59d736befa35932a09690437743458c619139c48",
+                "url": "https://api.github.com/repos/SocialiteProviders/Manager/zipball/a9640be0ee30d7f822f4662f1a698fe053361504",
+                "reference": "a9640be0ee30d7f822f4662f1a698fe053361504",
                 "shasum": ""
             },
             "require": {
-                "laravel/framework": "5.0.*",
+                "laravel/framework": "~5.0",
                 "laravel/socialite": "~2.0",
                 "php": ">=5.4.0"
             },
@@ -1654,27 +1688,27 @@
                 }
             ],
             "description": "Easily add new or override built-in providers in Laravel Socialite.",
-            "time": "2015-02-26 18:47:15"
+            "time": "2015-05-03 14:45:51"
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v5.4.0",
+            "version": "v5.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "31454f258f10329ae7c48763eb898a75c39e0a9f"
+                "reference": "0697e6aa65c83edf97bb0f23d8763f94e3f11421"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/31454f258f10329ae7c48763eb898a75c39e0a9f",
-                "reference": "31454f258f10329ae7c48763eb898a75c39e0a9f",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/0697e6aa65c83edf97bb0f23d8763f94e3f11421",
+                "reference": "0697e6aa65c83edf97bb0f23d8763f94e3f11421",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
             "require-dev": {
-                "mockery/mockery": "~0.9.1"
+                "mockery/mockery": "~0.9.1,<0.9.4"
             },
             "type": "library",
             "extra": {
@@ -1703,10 +1737,11 @@
             "description": "Swiftmailer, free feature-rich PHP mailer",
             "homepage": "http://swiftmailer.org",
             "keywords": [
+                "email",
                 "mail",
                 "mailer"
             ],
-            "time": "2015-03-14 06:06:39"
+            "time": "2015-06-06 14:19:39"
         },
         {
             "name": "symfony/console",
@@ -2787,16 +2822,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "2.1.1",
+            "version": "2.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "60991776b3994cd8297b861e8ddc7f9c9500dedc"
+                "reference": "3703c4bb67c8700957dd41c843254658539d091d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/60991776b3994cd8297b861e8ddc7f9c9500dedc",
-                "reference": "60991776b3994cd8297b861e8ddc7f9c9500dedc",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/3703c4bb67c8700957dd41c843254658539d091d",
+                "reference": "3703c4bb67c8700957dd41c843254658539d091d",
                 "shasum": ""
             },
             "require": {
@@ -2845,7 +2880,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-05-31 03:14:06"
+            "time": "2015-06-06 08:33:23"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -3033,16 +3068,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.6.9",
+            "version": "4.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "816d12536a7a032adc3b68737f82cfbbf98b79c1"
+                "reference": "8e0c63329c8c4185296b8d357daa5c6bae43080f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/816d12536a7a032adc3b68737f82cfbbf98b79c1",
-                "reference": "816d12536a7a032adc3b68737f82cfbbf98b79c1",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/8e0c63329c8c4185296b8d357daa5c6bae43080f",
+                "reference": "8e0c63329c8c4185296b8d357daa5c6bae43080f",
                 "shasum": ""
             },
             "require": {
@@ -3053,7 +3088,7 @@
                 "ext-spl": "*",
                 "php": ">=5.3.3",
                 "phpspec/prophecy": "~1.3,>=1.3.1",
-                "phpunit/php-code-coverage": "~2.0,>=2.0.11",
+                "phpunit/php-code-coverage": "~2.1",
                 "phpunit/php-file-iterator": "~1.4",
                 "phpunit/php-text-template": "~1.2",
                 "phpunit/php-timer": "~1.0",
@@ -3075,7 +3110,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.6.x-dev"
+                    "dev-master": "4.7.x-dev"
                 }
             },
             "autoload": {
@@ -3101,7 +3136,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-05-29 06:00:03"
+            "time": "2015-06-06 08:36:08"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
