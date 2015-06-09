@@ -1,5 +1,6 @@
 <?php namespace App\Interacpedia;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
@@ -116,4 +117,11 @@ class Challenge extends Model {
     {
         return $this->belongsTo( 'App\Interacpedia\ChallengeCategory' );
     }
+
+    public function getCreatedAtAttribute( $date )
+    {
+        setlocale(LC_ALL, 'es_ES');
+        return Carbon::parse($date)->formatLocalized('%B %e, %G');
+    }
+
 }

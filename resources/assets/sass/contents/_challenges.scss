@@ -8,6 +8,12 @@
       margin: -20px -20px 30px -10px;
     }
   }
+  .location{
+    float: right;
+    .created{
+      text-transform: capitalize;
+    }
+  }
   .user{
     font-family: $font-sans;
     .contact{
@@ -63,8 +69,15 @@
       color: $title-gray2;
       font-size: 1.2rem;
     }
+    h4{
+      color: $link-color;
+    }
     small{
       font-size: 1rem;
+    }
+    .file{
+      font-size: 1rem;
+      margin-top: $grid-gutter-width/2;
     }
   }
   .university{
