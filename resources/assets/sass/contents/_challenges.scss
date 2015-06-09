@@ -1,6 +1,6 @@
 .challenge {
   .gray_zone{
-    background-color: $background-gray;
+    background-color: $light-green;
     margin: -20px -10px 100px -20px;
     padding: $grid-gutter-width;
     height: 150px;
@@ -123,13 +123,16 @@
     }
   }
   .legend{
-    background-color: $link-color;
-    color: white;
+    background-color: white;
+    color: $purple;
+    opacity: 0.8;
     text-align: center;
     padding: $grid-gutter-width;
-    font-family: $font-exo2;
-    font-size: 2.5rem;
-    border-radius: 5px;
+    font-family: $font-exo;
+    text-transform: uppercase;
+    font-size: 2rem;
+    position: absolute;
+    bottom: -10px;
   }
   .body {
     font-family: $font-source;
