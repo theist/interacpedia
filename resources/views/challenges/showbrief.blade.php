@@ -22,15 +22,6 @@
                         <div class="gray_zone right">
                             <div class="name"><h1>{{ $challenge->name }}</h1></div>
                         </div>
-                        <div class="location text-right">
-                            {{ ($user->city)?$user->city->name:"" }}{{ ($user->city && $user->country)?", ":"" }}
-                            @if($user->country)
-                                {{ $user->country->name }}
-                                <img src="/images/icons/flags/{{ $user->country->code2 or "co" }}.png" alt=" {{ $user->country->name or "-" }}"/>
-                            @endif
-                            <div class="created">Creado: {{ $challenge->created_at }}</div>
-
-                        </div>
                         @if($challenge->type)
                             <div class="data1"><h6>@lang('general/labels.type')
                                     :</h6>{{ $challenge->type->name }}</div>
@@ -60,6 +51,20 @@
                                 {{ $challenge->website }}
                             </div>
                         @endif
+                        <div class="row">
+                            <div class="col-md-6">
+                                <small>
+                                    @if($user->country)
+                                        <img src="/images/icons/flags/{{ $user->country->code2 or "co" }}.png" alt=" {{ $user->country->name or "-" }}"/>
+                                    @endif
+                                    {{ ($user->city)?$user->city->name:"" }}{{ ($user->city && $user->country)?", ":"" }}
+                                    {{ $user->country->name }}
+                                </small>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <div class="created"><small>Creado: {{ $challenge->created_at }}</small></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="row" style="margin-top: 20px">
@@ -79,10 +84,19 @@
                             <h4>@lang('general/labels.problem') @lang('general/labels.or') @lang('general/labels.need')</h4>
                             <div class="text">{{ $challenge->description }}</div>
                         </div>
+                        <div class="data2" style="position: relative">
+                            <h4>@lang('general/labels.solution') / @lang('general/labels.idea')</h4>
+                            @if($challenge->solution)
+                                <div class="text">{{ $challenge->solution }}</div>
+                            @else
+                                <div class="text">@lang('challenges/messages.no_solution')</div>
+                            @endif
+                            <div class="col-md-12 legend">
+                                Ingresa o Regístrate para conocer más
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-12 legend">
-                        Para conocer más sobre este reto, Ingresa o Regístrate
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -159,6 +173,15 @@
                                     Create an Account
                                 </button>
                             </div>
+                            <hr/>
+                            <div class="center-block text-center">
+                                <small>By signing up you agree to our <a href="{{ action('PagesController@terms',[]) }}">Terms
+                                        of Use</a> and <a href="{{ action('PagesController@privacy',[]) }}">Privacy Policy</a>.
+                                </small>
+                                <hr/>
+                                <small>Already have an account? <a href="{{ url('/auth/login') }}">Log in</a></small>
+                            </div>
+
                         </form>
                     </div>
                 </div>
