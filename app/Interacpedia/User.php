@@ -48,11 +48,23 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     public function challenges()
     {
-        $challenges = $this->hasMany( 'App\Interacpedia\Challenge' );
-
-        return $challenges;//->merge( $this->belongsToMany( 'App\Interacpedia\Challenge' )->withTimestamps() );
+        return $this->hasMany( 'App\Interacpedia\Challenge' );
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function occupations()
+    {
+        return $this->hasMany( 'App\Interacpedia\Occupation' );
+    }
+
+    public function occupation()
+    {
+        $occ = Occupation::firstOrCreate(['user_id'=>$this->id]);
+        //dd($occ);
+        return $occ;
+    }
 
     public function setBirthdateAttribute( $date )
     {
@@ -85,6 +97,5 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     {
         return $this->belongsTo( 'App\Interacpedia\Country' );
     }
-
 
 }

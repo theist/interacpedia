@@ -25,6 +25,7 @@ Route::get('privacy-policy','PagesController@privacy');
 Route::get('user/profile', 'UserController@profile');
 Route::get('user/completecategory', 'UserController@completecategory');
 Route::get('user/completecity', 'UserController@completecity');
+Route::get('user/completeoccupations', 'UserController@completeoccupations');
 /**
  * Resource routes
  */

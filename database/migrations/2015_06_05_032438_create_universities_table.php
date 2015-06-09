@@ -18,6 +18,12 @@ class CreateUniversitiesTable extends Migration {
             $table->string('name');
 			$table->timestamps();
 		});
+        Schema::create('companies', function(Blueprint $table)
+        {
+            $table->increments('id');
+            $table->string('name');
+            $table->timestamps();
+        });
         Schema::create('challenge_university', function(Blueprint $table)
         {
             $table->integer('challenge_id')->unsigned()->index();
@@ -32,6 +38,12 @@ class CreateUniversitiesTable extends Migration {
             $table->string('name');
             $table->timestamps();
         });
+        Schema::create('positions', function(Blueprint $table)
+        {
+            $table->increments('id');
+            $table->string('name');
+            $table->timestamps();
+        });
         Schema::create('career_challenge', function(Blueprint $table)
         {
             $table->integer('challenge_id')->unsigned()->index();
@@ -41,6 +53,12 @@ class CreateUniversitiesTable extends Migration {
             $table->foreign('career_id')->references('id')->on('careers')->onDelete('cascade');
         });
         Schema::create('courses', function(Blueprint $table)
+        {
+            $table->increments('id');
+            $table->string('name');
+            $table->timestamps();
+        });
+        Schema::create('sectors', function(Blueprint $table)
         {
             $table->increments('id');
             $table->string('name');
@@ -65,10 +83,13 @@ class CreateUniversitiesTable extends Migration {
 	{
         Schema::drop('challenge_university');
         Schema::drop('universities');
+        Schema::drop('companies');
         Schema::drop('career_challenge');
         Schema::drop('careers');
+        Schema::drop('positions');
         Schema::drop('challenge_course');
         Schema::drop('courses');
+        Schema::drop('sectors');
 	}
 
 }

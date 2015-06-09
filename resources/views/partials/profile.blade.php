@@ -11,10 +11,8 @@
                     {{ $user->name }}
                 </div>
                 <div class="location">
-                    <img class="" src="/images/icons/flags/co.png" alt="Colombia"/>
-                    @if($user->city)
-                        {{ $cities[$user->city] }}, Colombia <br/>
-                    @endif
+                    <img class="" src="/images/icons/flags/{{ $user->country->code2 or "co" }}.png" alt=" {{ $user->country->name or "-" }}"/>
+                    {{ $user->city->name or "-" }}, {{ $user->country->name or "-" }} <br/>
                     Universidad: Sin especificar
                 </div>
             </div>
