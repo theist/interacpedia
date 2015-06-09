@@ -23,7 +23,7 @@
 
                             <div class="contact">@lang('general/labels.contact')</div>
                             <div class="username">{{ $user->name }}</div>
-                            <div class="career">Ingeniería de Sistemas</div>
+                            <div class="career">{{ $user->occupation()->career->name or "-" }}</div>
                             <div class="website">http://</div>
                             <div class="row links">
                                 <div class="col-md-6"><a href="">@lang('challenges/forms.full_bio')</a></div>

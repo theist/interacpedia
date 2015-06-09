@@ -41,12 +41,12 @@ class CompleteProfile {
         {
             $user = $this->auth->user();
 
-            if ( !$user->category )
-            {
+            if ( !$user->category ){
                 return new RedirectResponse( url( 'user/completecategory' ) );
-            } else if ( !$user->birthdate || !$user->country || !$user->city )
-            {
+            } else if ( !$user->birthdate || !$user->country || !$user->city ){
                 return new RedirectResponse( url( 'user/completecity' ) );
+            } else if ( !$user->occupations ){
+                return new RedirectResponse( url( 'user/completeoccupations' ) );
             }
         }
         return $response;

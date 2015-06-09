@@ -36,5 +36,8 @@ return [
     'options'       => 'Opciones',
     'participate'   => 'Participar',
     'previous'      => 'Anterior',
-    'next'          => 'Siguiente'
+    'next'          => 'Siguiente',
+    'student'       => 'Estudiante',
+    'employee'      => 'Empleado',
+    'other'         => 'Otro'
 ];
