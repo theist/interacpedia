@@ -29,7 +29,7 @@
                         </select>
                     </div>
                     <div class="col-md-4 text-left">
-                        <div class="career {{ ($occupation->type=="student")?"":"hidden" }}">
+                        <div class="career {{ ($occupation->type=="student"||$occupation->type=="")?"":"hidden" }}">
                             Carrera: <br/>
                             <select name="career_id" id="career_id" class="form-control select2">
                                 @foreach($careers as $id=>$car)
@@ -37,7 +37,7 @@
                                 @endforeach
                             </select>
                         </div>
-                        <div class="sector {{ ($occupation->type!="student")?"":"hidden" }}">
+                        <div class="sector {{ ($occupation->type!="student" && $occupation->type!="")?"":"hidden" }}">
                             Sector: <br/>
                             <select name="sector_id" id="sector_id" class="form-control select2">
                                 @foreach($sectors as $id=>$sec)
@@ -47,13 +47,13 @@
                         </div>
                     </div>
                     <div class="col-md-2 text-left">
-                        {{ ($occupation->type=="student")?"Semestre":"Experiencia" }}:<br/>
+                        {{ ($occupation->type=="student"||$occupation->type=="")?"Semestre":"Experiencia" }}:<br/>
                         <input type="text" value="{{ $occupation->experience }}" placeholder="Años" name="experience" id="experience" class="form-control"/>
                     </div>
                 </div>
                 <div class="row" style="margin-bottom: 30px">
                     <div class="col-md-4 col-md-offset-1 text-left">
-                        <div class="university {{ ($occupation->type=="student")?"":"hidden" }}">
+                        <div class="university {{ ($occupation->type=="student"||$occupation->type=="")?"":"hidden" }}">
                             Institución Educativa: <br/>
                             <select name="university_id" id="university_id" class="form-control select2">
                                 @foreach($universities as $id=>$uni)
@@ -61,7 +61,7 @@
                                 @endforeach
                             </select>
                         </div>
-                        <div class="company {{ ($occupation->type!="student")?"":"hidden" }}">
+                        <div class="company {{ ($occupation->type!="student"&&$occupation->type!="")?"":"hidden" }}">
                             Empresa: <br/>
                             <select name="company_id" id="company_id" class="form-control select2">
                                 @foreach($companies as $id=>$com)
@@ -71,7 +71,7 @@
                         </div>
                     </div>
                     <div class="col-md-4 text-left">
-                        <div class="course {{ ($occupation->type=="student")?"":"hidden" }}">
+                        <div class="course {{ ($occupation->type=="student"||$occupation->type=="")?"":"hidden" }}">
                             Curso: <br/>
                             <select name="course_id" id="course_id" class="form-control select2">
                                 @foreach($courses as $id=>$cou)
@@ -79,7 +79,7 @@
                                 @endforeach
                             </select>
                         </div>
-                        <div class="position {{ ($occupation->type!="student")?"":"hidden" }}">
+                        <div class="position {{ ($occupation->type!="student"&&$occupation->type!="")?"":"hidden" }}">
                             Cargo: <br/>
                             <select name="position_id" id="position_id" class="form-control select2">
                                 @foreach($positions as $id=>$pos)
