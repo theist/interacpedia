@@ -13,14 +13,15 @@ var elixir = require('laravel-elixir');
 var paths = {
     'jquery': 'resources/assets/jquery/',
     'bootstrap': 'resources/assets/bootstrap-sass-official/assets/',
-    'dropzone': 'resources/assets/dropzone/dist/'
+    'dropzone': 'resources/assets/dropzone/dist/',
+    'bootstraphover': 'resources/assets/bootstrap-hover-dropdown/'
 }
 
 elixir(function(mix) {
     mix.sass("styles.scss", 'resources/css/', {includePaths: [ paths.bootstrap + 'stylesheets/']})
         .copy(paths.bootstrap + 'fonts/bootstrap/**', 'public/fonts')
         .copy(paths.dropzone + 'dropzone.css', 'resources/css/libs')
-        .copy(paths.dropzone + "dropzone.js",'resources/js/libs')
+        .copy(paths.bootstraphover + "bootstrap-hover-dropdown.min.js",'resources/js/libs')
         .copy(paths.bootstrap + "javascripts/bootstrap.js",'resources/js/libs')
         .copy(paths.jquery + "dist/jquery.js",'resources/js/libs');
 
@@ -39,6 +40,7 @@ elixir(function(mix) {
         'libs/dropzone.js',
         'libs/select2.min.js',
         'libs/bootstrap-maxlength.min.js',
+        'libs/bootstrap-hover-dropdown.min.js',
         'app.js'
     ],'public/js/app.js');
 
