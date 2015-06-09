@@ -4,6 +4,9 @@
   }
   h2{
     font-size: 5rem;
+    @media (max-width: $screen-xs-max) {
+      font-size: 4rem;
+    }
     margin: $grid-gutter-width*2 0;
   }
   h3{

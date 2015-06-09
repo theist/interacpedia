@@ -5049,24 +5049,25 @@ h4 {
     padding: 20px 10px;
     margin: 10px; }
 #section-banner .banner-about {
-  height: 596px;
+  height: 597px;
   color: #ffffff;
   background: url("../../images/backgrounds/banner-about.jpg") no-repeat center center; }
-  @media (max-width: 767px) {
-    #section-banner .banner-about {
-      padding: 0; } }
+  #section-banner .banner-about .logo {
+    margin-top: 20px; }
+    @media (max-width: 767px) {
+      #section-banner .banner-about .logo {
+        margin: 0; } }
   #section-banner .banner-about h1 {
     font-family: 'Exo 2', sans-serif;
     text-transform: none;
     font-size: 2.5rem;
-    line-height: 4rem;
-    padding-top: 310px;
+    line-height: 2.5rem;
     margin-top: 0;
+    padding: 0 10px;
     color: white; }
     @media (max-width: 767px) {
       #section-banner .banner-about h1 {
-        font-size: 2rem;
-        padding-top: 110px; } }
+        font-size: 2rem; } }
     #section-banner .banner-about h1 .empresas, #section-banner .banner-about h1 .universidades, #section-banner .banner-about h1 .estudiantes, #section-banner .banner-about h1 .gobierno, #section-banner .banner-about h1 .sociedad {
       display: inline-block;
       height: 110px;
@@ -5075,6 +5076,10 @@ h4 {
       background: url("../../images/icons/about-us/empresas.png") no-repeat center center;
       font-size: 0px;
       color: transparent; }
+      @media (max-width: 767px) {
+        #section-banner .banner-about h1 .empresas, #section-banner .banner-about h1 .universidades, #section-banner .banner-about h1 .estudiantes, #section-banner .banner-about h1 .gobierno, #section-banner .banner-about h1 .sociedad {
+          height: 90px;
+          width: 90px; } }
     #section-banner .banner-about h1 .universidades {
       background: url("../../images/icons/about-us/universidades.png") no-repeat center center; }
     #section-banner .banner-about h1 .estudiantes {
@@ -5476,6 +5481,9 @@ h4 {
 .about-us h2 {
   font-size: 5rem;
   margin: 40px 0; }
+  @media (max-width: 767px) {
+    .about-us h2 {
+      font-size: 4rem; } }
 .about-us h3 {
   font-family: 'Open Sans', sans-serif;
   margin: 5px 0; }

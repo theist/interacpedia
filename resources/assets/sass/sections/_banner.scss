@@ -26,23 +26,25 @@
     }
   }
   .banner-about {
-    height: 596px;
+    height: 597px;
     color: #ffffff;
     background: url("../../images/backgrounds/banner-about.jpg") no-repeat center center;
-    @media (max-width: $screen-xs-max) {
-      padding: 0;
+    .logo{
+      margin-top: $grid-gutter-width;
+      @media (max-width: $screen-xs-max) {
+        margin: 0;
+      }
     }
     h1 {
       font-family: $font-exo2;
       text-transform: none;
       font-size: 2.5rem;
-      line-height: 4rem;
-      padding-top: 310px;
+      line-height: 2.5rem;
       margin-top: 0;
+      padding: 0 $grid-gutter-width/2;
       color: white;
       @media (max-width: $screen-xs-max) {
         font-size: 2rem;
-        padding-top: 110px;
       }
       .empresas,
       .universidades,
@@ -52,6 +54,11 @@
         display: inline-block;
         height: 110px;
         width: 110px;
+        @media (max-width: $screen-xs-max) {
+          height: 90px;
+          width: 90px;
+
+        }
         vertical-align: middle;
         background: url("../../images/icons/about-us/empresas.png") no-repeat center center;
         font-size: 0px;
