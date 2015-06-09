@@ -15,7 +15,7 @@
                 <ul class="nav nav-pills nav-justified">
                     <li><a href="{{ action('PagesController@index') }}">@lang('general/menu.home')</a></li>
                     <li>
-                        <a href="{{ action('PagesController@howitworks') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        <a href="{{ action('PagesController@howitworks') }}" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown" role="button" aria-expanded="false">
                             @lang('general/menu.interacpedia') <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
