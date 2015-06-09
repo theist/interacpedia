@@ -194,8 +194,6 @@ class ChallengesController extends Controller {
     public function show( Challenge $challenge )
     {
         $user = $challenge->user()->getResults();
-
-
         /* TO DO: move this relations into one object with properties.
          * */
         $universities = [];
@@ -214,8 +212,12 @@ class ChallengesController extends Controller {
             $courses[] = ["id"=>$id,"name"=>$name];
         }
         $professors = [];
+        if(Auth::check()){
+            return view( 'challenges.show', compact( 'challenge', 'user', 'universities','careers','courses','professors' ) );
+        } else {
+            return view( 'challenges.showbrief', compact( 'challenge', 'user', 'universities','careers','courses','professors' ) );
+        }
 
-        return view( 'challenges.show', compact( 'challenge', 'user', 'universities','careers','courses','professors' ) );
     }
 
     /**

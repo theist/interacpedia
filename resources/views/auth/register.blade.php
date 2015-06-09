@@ -17,7 +17,7 @@
             <div class="col-md-6">
                 <p class="lead">
                     @lang('auth/messages.using_social')
-                </blockquote>
+                </p>
                 <div class="form-group">
                     <a href="/auth/facebook" type="submit" class="btn btn-primary btn-block facebook">
                         <i class="fa fa-facebook"></i>  @lang('auth/forms.login') @lang('auth/forms.with_facebook')

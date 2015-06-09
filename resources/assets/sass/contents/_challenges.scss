@@ -112,6 +112,8 @@
     }
   }
   .name{
+    max-height: 130px;
+    overflow: hidden;
     h1{
       font-family: $font-exo2;
       font-weight: 300;
@@ -119,6 +121,15 @@
       font-size: 4rem;
       margin: 0;
     }
+  }
+  .legend{
+    background-color: $link-color;
+    color: white;
+    text-align: center;
+    padding: $grid-gutter-width;
+    font-family: $font-exo2;
+    font-size: 2.5rem;
+    border-radius: 5px;
   }
   .body {
     font-family: $font-source;
