@@ -39,7 +39,11 @@
       font-family: $font-exo2;
       text-transform: none;
       font-size: 2.5rem;
-      line-height: 2.5rem;
+      line-height: 4rem;
+      @media (max-width: $screen-xs-max) {
+        line-height: 2.5rem;
+      }
+
       margin-top: 0;
       padding: 0 $grid-gutter-width/2;
       color: white;
