@@ -5185,6 +5185,7 @@ h4 {
     display: inline-block;
     min-width: 100px; }
 .challenge .data2 {
+  border-top: 1px solid #cdcdcd;
   margin-top: 20px;
   margin-bottom: 20px; }
   .challenge .data2 h6 {
