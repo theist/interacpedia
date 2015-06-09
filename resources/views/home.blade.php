@@ -9,14 +9,15 @@
     {{--@unless(Auth::check() || Request::path() != '/')--}}
     <div class="container">
         <div class="banner-main text-center">
-            <h1>@lang('general/banner.future') <br/>
-                <small>@lang('general/banner.slogan')</small>
-            </h1>
+            <div class="row text-center">
+                <img src="/images/icons/interacpedia/co-creacion-interactiva.png" alt="Co-Creación Interactiva"/>
+            </div>
+            <h1>@lang('general/banner.cocreation')</h1>
             <a href="{{ action('ChallengesController@index') }}"
-               class="btn btn-purple">@lang('general/banner.search_challenge')</a>
+               class="btn btn-blue">@lang('general/banner.search_challenge')</a>
             <a href="{{ action('ChallengesController@create') }}"
-               class="btn btn-green">@lang('general/banner.create_challenge')</a>
-            <button class="btn btn-blue">@lang('general/banner.discover_projects')</button>
+               class="btn btn-purple">@lang('general/banner.create_challenge')</a>
+            <button class="btn btn-green">@lang('general/banner.discover_projects')</button>
         </div>
     </div>
     {{--@endunless--}}
