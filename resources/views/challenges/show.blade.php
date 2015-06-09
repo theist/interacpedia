@@ -50,21 +50,43 @@
                         <div class="gray_zone right">
                             <div class="name"><h1>{{ $challenge->name }}</h1></div>
                         </div>
+                        <div class="location text-right">
+                            {{ ($user->city)?$user->city->name:"" }}{{ ($user->city && $user->country)?", ":"" }}
+                            @if($user->country)
+                                {{ $user->country->name }}
+                                <img src="/images/icons/flags/{{ $user->country->code2 or "co" }}.png" alt=" {{ $user->country->name or "-" }}"/>
+                            @endif
+                            <div class="created">Creado: {{ $challenge->created_at }}</div>
+
+                        </div>
                         @if($challenge->type)
-                            <div class="data1"><h6 class="">@lang('general/labels.type')
+                            <div class="data1"><h6>@lang('general/labels.type')
                                     :</h6>{{ $challenge->type->name }}</div>
                         @endif
                         @if($challenge->category)
-                            <div class="data1"><h6 class="">@lang('general/labels.category')
+                            <div class="data1"><h6>@lang('general/labels.category')
                                     :</h6>{{ $challenge->category->name }}</div>
                         @endif
-                        @if($challenge->user)
-                            <div class="data1"><h6 class="">@lang('general/labels.creator')
-                                    :</h6>{{ $challenge->user->name }}</div>
+                        @if($creators = $challenge->creators)
+                            @for($i=0;$i<count($creators);$i++)
+                                <div class="data1">
+                                    <h6>
+                                        @if($i==0)
+                                            @lang('general/labels.creators'):
+                                        @endif
+                                    </h6>
+                                    <a href="{{ action("UserController@show",["id"=>$creators[$i]->id]) }}">{{ $creators[$i]->name }}</a>
+                                </div>
+                            @endfor
+                        @elseif($challenge->user)
+                            <div class="data1"><h6>@lang('general/labels.creator'):</h6>
+                                {{ $challenge->user->name }}
+                            </div>
                         @endif
                         @if($challenge->website)
-                            <div class="data1"><h6 class="">@lang('general/labels.website')
-                                    :</h6>{{ $challenge->website }}</div>
+                            <div class="data1"><h6>@lang('general/labels.website'):</h6>
+                                {{ $challenge->website }}
+                            </div>
                         @endif
                         <div class="data2">
                             <h4>@lang('general/labels.problem') @lang('general/labels.or') @lang('general/labels.need')</h4>
@@ -102,17 +124,43 @@
                                 <small>@lang('challenges/forms.'.$challenge->desired_stage)</small>
                             </div>
                         </div>
-                        <h4>@lang('general/labels.searching')</h4>
-
-                        <div class="data2 row">
-                            @foreach($challenge->searchings as $search)
-                                <div class="col-md-3 text-center">
-                                    <img src="{{ str_replace('-off.png','-on.png',$search->image) }}"
-                                         alt="{{ $search->name }}" height="75" width="75"/><br/>
-                                    <small>{{ $search->name }}</small>
+                        @if(count($challenge->searchings)>0 )
+                            <div class="data2">
+                                <h4>@lang('general/labels.searching')</h4>
+                                <div class="row">
+                                    @foreach($challenge->searchings as $search)
+                                        <div class="col-md-3 text-center">
+                                            <img src="{{ str_replace('-off.png','-on.png',$search->image) }}"
+                                                 alt="{{ $search->name }}" height="75" width="75"/><br/>
+                                            <small>{{ $search->name }}</small>
+                                        </div>
+                                    @endforeach
                                 </div>
-                            @endforeach
-                        </div>
+                            </div>
+                        @endif
+                        @if($challenge->images != "")
+                            <div class="data2">
+                                <h4>@lang('general/labels.more_images')</h4>
+                                <div class="row">
+                                    @foreach(explode(",",$challenge->images ) as $image)
+                                        <div class="images">
+                                            <img class="img-thumbnail" src="{{ imagestyle($image,'height120') }}"
+                                                 alt="{{ $challenge->name }}"/>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        @endif
+                        @if($challenge->files != "")
+                            <div class="data2">
+                                <h4>@lang('general/labels.files')</h4>
+                                <div class="row">
+                                    @foreach(explode(",",$challenge->files ) as $file)
+                                        <div class="file col-md-11 col-md-offset-1">{{ substr($file,strrpos($file,"/")+1) }}</div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        @endif
                     </div>
                 </div>
 

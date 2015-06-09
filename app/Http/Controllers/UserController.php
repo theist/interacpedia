@@ -12,6 +12,8 @@ use App\Interacpedia\Occupation;
 use App\Interacpedia\Position;
 use App\Interacpedia\Sector;
 use App\Interacpedia\University;
+use App\Interacpedia\User;
+use Illuminate\Auth\Guard;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -23,10 +25,13 @@ class UserController extends Controller {
         $this->middleware( 'auth' );
     }
 
-    public function show( Authenticatable $user )
+    public function show( $id )
     {
-        return $user;
+        $user = User::find($id);
+        return view( 'user.profile', compact( 'user' ) );
+        //return $user;
     }
+
 
     /**
      * Displays a user profile

@@ -22,6 +22,7 @@ return [
     'professor'     => 'Profesor',
     'website'       => 'Sitio Web',
     'creator'       => 'Creador',
+    'creators'      => 'Creador(es)',
     'problem'       => 'Problema',
     'or'            => 'o',
     'need'          => 'Necesidad',
@@ -39,5 +40,7 @@ return [
     'next'          => 'Siguiente',
     'student'       => 'Estudiante',
     'employee'      => 'Empleado',
-    'other'         => 'Otro'
+    'other'         => 'Otro',
+    'more_images'   => 'Más imágenes',
+    'files'         => 'Archivos'
 ];

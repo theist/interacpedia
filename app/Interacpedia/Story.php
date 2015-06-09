@@ -26,7 +26,8 @@ class Story extends Model {
 
     public function getPublishedAttribute( $date )
     {
-        return Carbon::parse($date)->format('F j, Y');
+        setlocale(LC_ALL, 'es_ES');
+        return Carbon::parse($date)->formatLocalized('%B %e, %G');
     }
 
 
