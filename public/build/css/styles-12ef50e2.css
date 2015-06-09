@@ -5208,12 +5208,23 @@ h4 {
   border: 1px solid #cdcdcd;
   padding: 10px;
   background: white; }
-.challenge .name h1 {
+.challenge .name {
+  max-height: 130px;
+  overflow: hidden; }
+  .challenge .name h1 {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 300;
+    color: #da0080;
+    font-size: 4rem;
+    margin: 0; }
+.challenge .legend {
+  background-color: #2db4b7;
+  color: white;
+  text-align: center;
+  padding: 20px;
   font-family: 'Exo 2', sans-serif;
-  font-weight: 300;
-  color: #da0080;
-  font-size: 4rem;
-  margin: 0; }
+  font-size: 2.5rem;
+  border-radius: 5px; }
 .challenge .body {
   font-family: 'Source Sans Pro', sans-serif;
   color: #535353;
