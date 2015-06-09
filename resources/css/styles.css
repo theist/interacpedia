@@ -5031,28 +5031,20 @@ h4 {
   height: 587px;
   color: #ffffff;
   background: url("../../images/backgrounds/banner-main.jpg") no-repeat center center;
-  padding: 200px 20px; }
+  padding: 100px 20px; }
   @media (max-width: 767px) {
     #section-banner .banner-main {
       padding: 80px 20px; } }
   #section-banner .banner-main h1 {
+    text-transform: none;
     font-family: 'Exo 2', sans-serif;
     line-height: 40px;
     font-weight: 400;
     font-size: 65px;
-    color: #ffffff;
-    text-transform: uppercase; }
+    color: #ffffff; }
     @media (max-width: 767px) {
       #section-banner .banner-main h1 {
         font-size: 40px; } }
-    #section-banner .banner-main h1 small {
-      text-transform: none;
-      font-size: 18px;
-      color: #ffffff;
-      font-family: 'Source Sans Pro', sans-serif; }
-      @media (max-width: 767px) {
-        #section-banner .banner-main h1 small {
-          font-size: 15px; } }
   #section-banner .banner-main .btn-purple, #section-banner .banner-main .btn-green, #section-banner .banner-main .btn-blue {
     padding: 20px 10px;
     margin: 10px; }
@@ -5567,6 +5559,8 @@ h4 {
     -webkit-transform: scale(1.2);
     -ms-transform: scale(1.2);
         transform: scale(1.2); }
+.select-category .hidden {
+  visibility: hidden; }
 
 
 /*# sourceMappingURL=styles.css.map */
