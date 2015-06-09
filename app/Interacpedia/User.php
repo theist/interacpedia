@@ -32,7 +32,8 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         'newsletter',
         'avatar',
         'birthdate',
-        'city'
+        'city_id',
+        'country_id'
     ];
 
     /**
@@ -67,7 +68,23 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         {
             return null;
         }
-
     }
+    /**
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function city()
+    {
+        return $this->belongsTo( 'App\Interacpedia\City' );
+    }
+    /**
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function country()
+    {
+        return $this->belongsTo( 'App\Interacpedia\Country' );
+    }
+
 
 }

@@ -23,9 +23,20 @@ class CreateUsersTable extends Migration {
             $table->text('avatar')->nullable();
 			$table->rememberToken();
             $table->timestamp('birthdate')->nullable();
-            $table->string('city')->nullable();
+            $table->integer('city_id')->unsigned()->nullable();
+            $table->integer('country_id')->unsigned()->nullable();
 			$table->timestamps();
-		});
+
+            $table->foreign('country_id')
+                ->references('id')
+                ->on('countries')
+                ->onDelete('set null');
+            $table->foreign('city_id')
+                ->references('id')
+                ->on('cities')
+                ->onDelete('set null');
+        });
+
 	}
 
 	/**

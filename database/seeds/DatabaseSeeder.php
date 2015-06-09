@@ -26,6 +26,8 @@ class DatabaseSeeder extends Seeder {
         $this->call('ChallengeTypeTableSeeder');
         $this->call('TagTableSeeder');
         $this->call('UniversityTableSeeder');
-	}
+        $this->call('Alakkad\WorldCountriesCities\CitiesSeeder');
+        $this->call('Alakkad\WorldCountriesCities\CountriesSeeder');
+    }
 
 }
