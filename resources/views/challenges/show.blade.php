@@ -132,8 +132,9 @@
                                 <div class="row">
                                     @foreach(explode(",",$challenge->images ) as $image)
                                         <div class="images">
-                                            <img class="img-thumbnail" src="{{ imagestyle($image,'height120') }}"
-                                                 alt="{{ $challenge->name }}"/>
+                                            <a class="images_link" href="{{ $image }}" data-toggle="lightbox" data-gallery="multiimages" data-title="{{ $challenge->name }}">
+                                                <img class="img-thumbnail img-responsive" src="{{ imagestyle($image,'height120') }}"
+                                                 alt="{{ $challenge->name }}"/></a>
                                         </div>
                                     @endforeach
                                 </div>
@@ -144,7 +145,9 @@
                                 <h4>@lang('general/labels.files')</h4>
                                 <div class="row">
                                     @foreach(explode(",",$challenge->files ) as $file)
-                                        <div class="file col-md-11 col-md-offset-1">{{ substr($file,strrpos($file,"/")+1) }}</div>
+                                        <div class="file col-md-1 text-right"><img
+                                                    src="/images/icons/20x20/document.png" alt="Documento"/></div>
+                                        <div class="file col-md-11"><a href="{{ $file }}">{{ substr($file,strrpos($file,"/")+1) }}</a></div>
                                     @endforeach
                                 </div>
                             </div>
@@ -212,5 +215,16 @@
             @endunless
         </div>
     </div>
-
+@stop
+@section('footer')
+    <script>
+        $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox({
+                always_show_close: true,
+                left_arrow_class: 'fa fa-chevron-left glyphicon-chevron-left',
+                right_arrow_class: 'fa fa-chevron-right glyphicon-chevron-right'
+            });
+        });
+    </script>
 @stop

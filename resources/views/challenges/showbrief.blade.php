@@ -58,7 +58,9 @@
                                         <img src="/images/icons/flags/{{ $user->country->code2 or "co" }}.png" alt=" {{ $user->country->name or "-" }}"/>
                                     @endif
                                     {{ ($user->city)?$user->city->name:"" }}{{ ($user->city && $user->country)?", ":"" }}
-                                    {{ $user->country->name }}
+                                        @if($user->country)
+                                            {{ $user->country->name }}
+                                        @endif
                                 </small>
                             </div>
                             <div class="col-md-6 text-right">

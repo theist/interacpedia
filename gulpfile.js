@@ -29,7 +29,9 @@ elixir(function(mix) {
         'libs/select2.min.css',
         'styles.css',
         'libs/googlefonts.css',
-        'libs/dropzone.css'
+        'libs/dropzone.css',
+        'libs/ekko-lightbox-built.css',
+        'libs/dark.css'
     ],'public/css/styles.css');
 
     mix.version('public/css/styles.css');
@@ -41,6 +43,7 @@ elixir(function(mix) {
         'libs/select2.min.js',
         'libs/bootstrap-maxlength.min.js',
         'libs/bootstrap-hover-dropdown.min.js',
+        'libs/ekko-lightbox-built.js',
         'app.js'
     ],'public/js/app.js');
 
