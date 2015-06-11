@@ -16,7 +16,16 @@ class AddFieldsToUsersTable extends Migration {
 		{
             $table->text('vision')->after('country_id')->nullable();
 		});
-	}
+        Schema::create('tag_user', function(Blueprint $table)
+        {
+            $table->integer('user_id')->unsigned()->index();
+            $table->integer('tag_id')->unsigned()->index();
+            $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
+        });
+
+    }
 
 	/**
 	 * Reverse the migrations.
@@ -29,6 +38,8 @@ class AddFieldsToUsersTable extends Migration {
 		{
             $table->dropColumn('vision');
 		});
-	}
+        Schema::drop('tag_user');
+
+    }
 
 }

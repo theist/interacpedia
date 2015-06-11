@@ -70,10 +70,10 @@ class ChallengesController extends Controller {
         $professors = [ ];
         $creators = User::lists( 'name', 'id' );
         $tags = Tag::lists( 'name', 'id' );
-        $ch_universities = [];
-        $ch_careers = [];
-        $ch_courses = [];
-        $ch_creators = [$user->id];
+        $ch_universities = [ ];
+        $ch_careers = [ ];
+        $ch_courses = [ ];
+        $ch_creators = [ $user->id ];
 
         return view( 'challenges.create', compact( 'user',
             'cities', 'categories', 'types', 'rewards', 'searchings',
@@ -103,7 +103,7 @@ class ChallengesController extends Controller {
         $courses = Course::lists( 'name', 'id' );
         $professors = [ ];
         $creators = User::lists( 'name', 'id' );
-        $tags = Tag::lists( 'name', 'id' );
+        $tags = Tag::where( 'type', 'challenge' )->lists( 'name', 'id' );
         $ch_universities = $challenge->universities()->lists( 'id' );
         $ch_careers = $challenge->careers()->lists( 'id' );
         $ch_courses = $challenge->courses()->lists( 'id' );
@@ -196,26 +196,31 @@ class ChallengesController extends Controller {
         $user = $challenge->user()->getResults();
         /* TO DO: move this relations into one object with properties.
          * */
-        $universities = [];
-        $items = $challenge->universities()->lists( 'name','id' );
-        foreach($items as $id=>$name){
-            $universities[] = ["id"=>$id,"name"=>$name];
+        $universities = [ ];
+        $items = $challenge->universities()->lists( 'name', 'id' );
+        foreach ( $items as $id => $name )
+        {
+            $universities[ ] = [ "id" => $id, "name" => $name ];
         }
-        $careers = [];
-        $items = $challenge->careers()->lists( 'name','id' );
-        foreach($items as $id=>$name){
-            $careers[] = ["id"=>$id,"name"=>$name];
+        $careers = [ ];
+        $items = $challenge->careers()->lists( 'name', 'id' );
+        foreach ( $items as $id => $name )
+        {
+            $careers[ ] = [ "id" => $id, "name" => $name ];
         }
-        $courses = [];
-        $items = $challenge->courses()->lists( 'name','id' );
-        foreach($items as $id=>$name){
-            $courses[] = ["id"=>$id,"name"=>$name];
+        $courses = [ ];
+        $items = $challenge->courses()->lists( 'name', 'id' );
+        foreach ( $items as $id => $name )
+        {
+            $courses[ ] = [ "id" => $id, "name" => $name ];
         }
-        $professors = [];
-        if(Auth::check()){
-            return view( 'challenges.show', compact( 'challenge', 'user', 'universities','careers','courses','professors' ) );
-        } else {
-            return view( 'challenges.showbrief', compact( 'challenge', 'user', 'universities','careers','courses','professors' ) );
+        $professors = [ ];
+        if ( Auth::check() )
+        {
+            return view( 'challenges.show', compact( 'challenge', 'user', 'universities', 'careers', 'courses', 'professors' ) );
+        } else
+        {
+            return view( 'challenges.showbrief', compact( 'challenge', 'user', 'universities', 'careers', 'courses', 'professors' ) );
         }
 
     }
@@ -295,6 +300,7 @@ class ChallengesController extends Controller {
         }
         $challenge->courses()->sync( $items );
     }
+
     /**
      * @param Challenge $challenge
      * @param array $creators
@@ -319,12 +325,12 @@ class ChallengesController extends Controller {
         $newtags = [ ];
         foreach ( $tags as $tag )
         {
-            if ( $model = Challenge::find( $tag ) )
+            if ( $model = Tag::where( 'id', $tag )->andWhere( 'type', 'challenge' ) )
             {
                 $newtags[ ] = $model->id;
             } else
             {
-                $model = Tag::firstOrCreate( [ 'name' => $tag ] );
+                $model = Tag::firstOrCreate( [ 'name' => $tag, 'type' => 'challenge' ] );
                 $newtags[ ] = $model->id;
             }
         }

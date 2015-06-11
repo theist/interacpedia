@@ -11,6 +11,7 @@ use App\Interacpedia\Course;
 use App\Interacpedia\Occupation;
 use App\Interacpedia\Position;
 use App\Interacpedia\Sector;
+use App\Interacpedia\Tag;
 use App\Interacpedia\University;
 use App\Interacpedia\User;
 use Illuminate\Auth\Guard;
@@ -29,7 +30,8 @@ class UserController extends Controller {
     {
         $user = User::find($id);
         $option = 'info';
-        return view( 'user.profile', compact( 'user', 'option' ) );
+        $tags_vision = $user->tags()->where('type','personal_vision')->lists('name','id');
+        return view( 'user.profile', compact( 'user', 'option','tags_vision' ) );
         //return $user;
     }
 
@@ -42,7 +44,8 @@ class UserController extends Controller {
      */
     public function edit( Authenticatable $user)
     {
-        return view( 'user.edit', compact( 'user'));
+        $tags_vision = Tag::where('type','personal_vision')->lists( 'name', 'id' );
+        return view( 'user.edit', compact( 'user','tags_vision'));
     }
     /**
      * Displays a user profile
@@ -54,7 +57,8 @@ class UserController extends Controller {
     {
         if($id) $user = User::find($id);
         if(!$option)$option = "info";
-        return view( 'user.profile', compact( 'user','option' ) );
+        $tags_vision = $user->tags()->where('type','personal_vision')->lists('name','id');
+        return view( 'user.profile', compact( 'user','option','tags_vision' ) );
     }
 
     /**
@@ -107,6 +111,7 @@ class UserController extends Controller {
      */
     public function update( Authenticatable $user, Request $request )
     {
+        $this->syncTags( $user, 'personal_vision',$request->input( 'tags_vision_list', array() ) );
         if ( $request->input( 'completeoccupations', false ) ){
             $occ = Occupation::firstOrNew( [ 'user_id' => $user->id ] );
             $occ->user_id = $user->id;
@@ -127,5 +132,28 @@ class UserController extends Controller {
                 return redirect( 'user/completeoccupations' );
         }
         return redirect( 'user/profile' );
+    }
+
+    /**
+     * @param Authenticatable $user
+     * @param $type
+     * @param array $tags
+     */
+    public function syncTags( Authenticatable $user, $type, array $tags )
+    {
+        $ids = Tag::where('type',$type)->get()->lists('id');
+        //dd($ids);
+        $user->tags()->detach($ids);
+        foreach ( $tags as $tag )
+        {
+            if ( $model = Tag::where( 'id', $tag )->where('type',$type)->first() )
+            {
+                $user->tags()->attach($tag);
+            } else
+            {
+                $model = Tag::firstOrCreate( [ 'name' => $tag, 'type'=>$type ] );
+                $user->tags()->attach($model->id);
+            }
+        }
     }
 }

@@ -19,9 +19,9 @@
                         'placeholder'=>Lang::get('user/forms.personal_vision') . ' '
                         .Lang::get('general/forms.in_chars',['chars'=>140])]) !!}
                     </div>
-                    <div class="tags">
-                        <li class="label label-tag small">Cambiar el mundo</li>
-                        <li class="label label-tag small">Hacer la diferencia en la sociedad</li>
+                    <div class="form-group">
+                        {!! Form::select('tags_vision_list[]',$tags_vision,$user->tags()->where('type','personal_vision')->lists('id'),['id' => 'tags_vision_list','class' =>
+                        'form-control select2','multiple','data-tags'=>'true']) !!}
                     </div>
                 </div>
             </div>
@@ -185,6 +185,12 @@
                 parent.history.back();
                 return false;
             });
+            $('.select2').select2({
+                placeholder: "Escoja una opción",
+                allowClear: true,
+                language: "es"
+            });
+
             $('.maxlength').maxlength({
                 alwaysShow: true,
                 warningClass: "label label-success",

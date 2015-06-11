@@ -15,9 +15,13 @@
                 </div>
                 <div class="col-md-7">
                     <div class="data">{{ $user->vision }}</div>
-                    <div class="tags"><li class="label label-tag small">Cambiar el mundo</li>
-                        <li class="label label-tag small">Hacer la diferencia en la sociedad</li>
+                    @if(count($tags_vision)>0)
+                    <div class="tags">
+                        @foreach($tags_vision as $tag)
+                            <li class="label label-tag small">{{ $tag }}</li>
+                        @endforeach
                     </div>
+                    @endif
                 </div>
             </div>
             <hr/>

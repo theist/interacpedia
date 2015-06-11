@@ -74,7 +74,19 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         //dd($occ);
         return $occ;
     }
+    /**
+     * Get all the tags associated with this user
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function tags()
+    {
+        return $this->belongsToMany('App\Interacpedia\Tag')->withTimestamps();
+    }
 
+    /**
+     * @param $date
+     */
     public function setBirthdateAttribute( $date )
     {
         $this->attributes[ 'birthdate' ] = Carbon::parse( $date );
