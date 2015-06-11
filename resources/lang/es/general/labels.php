@@ -68,5 +68,6 @@ return [
     'projects_ended'                => 'Proyectos finalizados',
     'edit'                          => 'Editar',
     'my_profile'                    => 'Mi Perfil',
-    'update'                        => 'Actualizar'
+    'update'                        => 'Actualizar',
+    'my_companies'                  => 'Mis Empresas'
 ];

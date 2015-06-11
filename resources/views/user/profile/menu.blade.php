@@ -12,6 +12,7 @@
                 @if($user->id == Auth::user()->id)
                     <li class="divider"></li>
                     <li class="btn"><a href="/user/{{ $user->id }}/edit">@lang('general/labels.edit') @lang('general/labels.my_profile')</a></li>
+                    <li class="btn btn-purple"><a href="/user/companies">@lang('general/labels.edit') @lang('general/labels.my_companies')</a></li>
                 @endif
 
         </ul>

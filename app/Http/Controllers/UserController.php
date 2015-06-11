@@ -100,6 +100,11 @@ class UserController extends Controller {
             'tags_searching_resources','tags_searching_experts','tags_searching_personal' ) );
     }
 
+    public function companies(Authenticatable $user)
+    {
+        $companies = Company::all();
+        return view('user.companies',compact('user','companies'));
+    }
     /**
      * @param Authenticatable $user
      * @return \Illuminate\View\View

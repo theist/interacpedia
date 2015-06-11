@@ -30,15 +30,25 @@
               color: $green;
               background: none;
             }
-
           }
-
           a{
             color: white;
             padding: 0;
             &:hover{
               color: $green;
               background: none;
+            }
+          }
+          &.btn-purple{
+            &:hover{
+              a{
+                color: $purple;
+              }
+            }
+            a{
+              &:hover{
+                color: $purple;
+              }
             }
           }
         }
