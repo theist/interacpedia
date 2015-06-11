@@ -64,6 +64,14 @@
     border-color: $blue-line;
   }
 }
+.btn-blue2 {
+  background: $blue-forms;
+  border-color: $blue-forms;
+  &:hover {
+    color: $blue-forms;
+    border-color: $blue-forms;
+  }
+}
 
 .btn-darkblue {
   background: $blue;
@@ -105,6 +113,10 @@
 }
 .btn-big{
   padding: $grid-gutter-width/2;
+}
+.btn-capital{
+  text-transform: none;
+  font-weight: 300;
 }
 .btn-fixed-purple{
   width: 100%;

@@ -61,5 +61,9 @@ return [
     'things_i_love'                 => 'Cosas que amo',
     'personal_vision'               => 'Visión personal',
     'my_dreams'                     => 'Mis sueños',
-    'main_competences'              => 'Principales competencias'
+    'main_competences'              => 'Principales competencias',
+    'challenges_in_process'         => 'Retos en proceso',
+    'challenges_ended'              => 'Retos finalizados',
+    'projects_in_process'         => 'Proyectos en proceso',
+    'projects_ended'              => 'Proyectos finalizados'
 ];
