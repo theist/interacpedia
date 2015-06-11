@@ -33,8 +33,11 @@ class UserController extends Controller {
         $tags_vision = $user->tags()->where('type','personal_vision')->lists('name','id');
         $tags_dreams = $user->tags()->where('type','dreams')->lists('name','id');
         $tags_likes = $user->tags()->where('type','likes')->lists('name','id');
-        return view( 'user.profile', compact( 'user', 'option','tags_vision','tags_dreams' ) );
-        //return $user;
+        $tags_work_in = Tag::where('type','work_in')->lists( 'name', 'id' );
+        $tags_work_areas = Tag::where('type','work_areas')->lists( 'name', 'id' );
+        return view( 'user.profile', compact( 'user', 'option',
+            'tags_vision','tags_dreams','tags_likes',
+            'tags_work_in','tags_work_areas' ) );
     }
     /**
      * Displays a user profile
@@ -49,7 +52,11 @@ class UserController extends Controller {
         $tags_vision = $user->tags()->where('type','personal_vision')->lists('name','id');
         $tags_dreams = $user->tags()->where('type','dreams')->lists('name','id');
         $tags_likes = $user->tags()->where('type','likes')->lists('name','id');
-        return view( 'user.profile', compact( 'user','option','tags_vision','tags_dreams','tags_likes' ) );
+        $tags_work_in = Tag::where('type','work_in')->lists( 'name', 'id' );
+        $tags_work_areas = Tag::where('type','work_areas')->lists( 'name', 'id' );
+        return view( 'user.profile', compact( 'user','option',
+                                            'tags_vision','tags_dreams','tags_likes',
+                                            'tags_work_in','tags_work_areas' ) );
     }
 
     /**
@@ -64,7 +71,11 @@ class UserController extends Controller {
         $tags_vision = Tag::where('type','personal_vision')->lists( 'name', 'id' );
         $tags_dreams = Tag::where('type','dreams')->lists( 'name', 'id' );
         $tags_likes = Tag::where('type','likes')->lists( 'name', 'id' );
-        return view( 'user.edit', compact( 'user','tags_vision','tags_dreams','tags_likes'));
+        $tags_work_in = Tag::where('type','work_in')->lists( 'name', 'id' );
+        $tags_work_areas = Tag::where('type','work_areas')->lists( 'name', 'id' );
+        return view( 'user.edit', compact( 'user',
+                                            'tags_vision','tags_dreams','tags_likes',
+                                            'tags_work_in','tags_work_areas'));
     }
 
     /**
@@ -120,6 +131,8 @@ class UserController extends Controller {
         $this->syncTags( $user, 'personal_vision',$request->input( 'tags_vision_list', array() ) );
         $this->syncTags( $user, 'dreams',$request->input( 'tags_dreams_list', array() ) );
         $this->syncTags( $user, 'likes',$request->input( 'tags_likes_list', array() ) );
+        $this->syncTags( $user, 'work_in',$request->input( 'tags_work_in_list', array() ) );
+        $this->syncTags( $user, 'work_areas',$request->input( 'tags_work_areas_list', array() ) );
         if ( $request->input( 'completeoccupations', false ) ){
             $occ = Occupation::firstOrNew( [ 'user_id' => $user->id ] );
             $occ->user_id = $user->id;

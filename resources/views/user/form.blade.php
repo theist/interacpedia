@@ -44,23 +44,6 @@
                 'form-control select2','multiple','data-tags'=>'true']) !!}
             </div>
         </div>
-        <div class="form-group">
-            {!! Form::submit($submitButtonText,['class' => 'btn btn-purple btn-big']) !!}
-            <a class="btn btn-gray btn-big cancel">@lang('general/labels.cancel')</a>
-        </div>
-        <div class="subtitle">
-            <img src="/images/icons/40x40/academic_information.png" alt="@lang('general/labels.academic_information')"/>
-            @lang('general/labels.academic_information')
-        </div>
-        <div class="area">
-            @foreach($user->occupations->where('type','student') as $occ)
-                <div class="record">
-                    <div class="data"><strong>Institución:</strong> {{ $occ->university->name }}</div>
-                    <div class="data"><strong>Carrera:</strong> {{ $occ->career->name }}</div>
-                    <div class="data"><strong>Semestre(s):</strong> {{ $occ->experience }}</div>
-                </div>
-            @endforeach
-        </div>
         <div class="subtitle">
             <img src="/images/icons/40x40/goals.png" alt="@lang('general/labels.goals')"/>
             @lang('general/labels.goals')
@@ -69,10 +52,10 @@
             <div class="subtitle">
                 @lang('general/labels.would_like_to_work_in')
             </div>
-            <ul class="tags">
-                <li class="label label-tag">Compañía local</li>
-                <li class="label label-tag">Multinacional</li>
-            </ul>
+            <div class="form-group">
+                {!! Form::select('tags_work_in_list[]',$tags_work_in,$user->tags()->where('type','work_in')->lists('id'),['id' => 'tags_work_in_list','class' =>
+                'form-control select2','multiple','data-tags'=>'true']) !!}
+            </div>
             <hr/>
             <div class="subtitle">
                 @lang('general/labels.favorite_companies_to_work_in')
@@ -85,11 +68,14 @@
             <div class="subtitle">
                 @lang('general/labels.preferred_areas_to_work_in')
             </div>
-            <ul class="tags">
-                <li class="label label-tag">Mercadeo</li>
-                <li class="label label-tag">Gestión de proyectos</li>
-                <li class="label label-tag">Planeación estratégica</li>
-            </ul>
+            <div class="form-group">
+                {!! Form::select('tags_work_areas_list[]',$tags_work_areas,$user->tags()->where('type','work_areas')->lists('id'),['id' => 'tags_work_areas_list','class' =>
+                'form-control select2','multiple','data-tags'=>'true']) !!}
+            </div>
+        </div>
+        <div class="form-group">
+            {!! Form::submit($submitButtonText,['class' => 'btn btn-purple btn-big']) !!}
+            <a class="btn btn-gray btn-big cancel">@lang('general/labels.cancel')</a>
         </div>
         <div class="subtitle">
             <img src="/images/icons/40x40/offer.png" alt="@lang('general/labels.what_can_i_offer')"/>

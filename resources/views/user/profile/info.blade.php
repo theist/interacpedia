@@ -32,7 +32,7 @@
             @if(count($tags_dreams)>0)
                 <div class="tags">
                     @foreach($tags_dreams as $tag)
-                        <li class="label label-tag small">{{ $tag }}</li>
+                        <li class="label label-tag">{{ $tag }}</li>
                     @endforeach
                 </div>
             @endif
@@ -44,7 +44,7 @@
             @if(count($tags_likes)>0)
                 <div class="tags">
                     @foreach($tags_likes as $tag)
-                        <li class="label label-tag small">{{ $tag }}</li>
+                        <li class="label label-tag">{{ $tag }}</li>
                     @endforeach
                 </div>
             @endif
@@ -70,10 +70,13 @@
             <div class="subtitle">
                 @lang('general/labels.would_like_to_work_in')
             </div>
-            <ul class="tags">
-                <li class="label label-tag">Compañía local</li>
-                <li class="label label-tag">Multinacional</li>
-            </ul>
+            @if(count($tags_work_in)>0)
+                <div class="tags">
+                    @foreach($tags_work_in as $tag)
+                        <li class="label label-tag ">{{ $tag }}</li>
+                    @endforeach
+                </div>
+            @endif
             <hr/>
             <div class="subtitle">
                 @lang('general/labels.favorite_companies_to_work_in')
@@ -86,11 +89,13 @@
             <div class="subtitle">
                 @lang('general/labels.preferred_areas_to_work_in')
             </div>
-            <ul class="tags">
-                <li class="label label-tag">Mercadeo</li>
-                <li class="label label-tag">Gestión de proyectos</li>
-                <li class="label label-tag">Planeación estratégica</li>
-            </ul>
+            @if(count($tags_work_areas)>0)
+                <div class="tags">
+                    @foreach($tags_work_areas as $tag)
+                        <li class="label label-tag ">{{ $tag }}</li>
+                    @endforeach
+                </div>
+            @endif
         </div>
         <div class="subtitle">
             <img src="/images/icons/40x40/offer.png" alt="@lang('general/labels.what_can_i_offer')"/>
