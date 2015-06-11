@@ -44,6 +44,7 @@
     }
     .data{
       font-size: 2rem;
+      margin-bottom: 10px;
     }
     .gray_zone{
       background: $background-gray;
@@ -77,4 +78,24 @@
       }
     }
   }
+}
+.user_edit{
+  .header {
+    margin-top: $grid-gutter-width;
+    padding: $grid-gutter-width;
+    background: $purple;
+    color: white;
+    text-align: center;
+    .title {
+      color: white;
+      font-family: $font-exo2;
+      font-weight: 600;
+      font-size: 4rem;
+    }
+    small {
+      font-size: 3rem;
+      font-family: $font-sans;
+    }
+  }
+
 }

@@ -9,6 +9,12 @@
                 <li role="presentation" class="{{ ($active==$tag)?"active":"" }}"><a href="{{ $item['link'] }}">{{ $item['label'] }}</a></li>
                 <?php $i++?>
             @endforeach
+                @if($user->id == Auth::user()->id)
+                    <li class="divider"></li>
+                    <li class="btn"><a href="/user/{{ $user->id }}/edit">@lang('general/labels.edit') @lang('general/labels.my_profile')</a></li>
+                @endif
+
         </ul>
+
     </div>
 </div>

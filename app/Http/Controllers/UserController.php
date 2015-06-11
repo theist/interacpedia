@@ -33,7 +33,17 @@ class UserController extends Controller {
         //return $user;
     }
 
-
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param Authenticatable $user
+     * @return Response
+     * @internal param int $id
+     */
+    public function edit( Authenticatable $user)
+    {
+        return view( 'user.edit', compact( 'user'));
+    }
     /**
      * Displays a user profile
      *
@@ -97,7 +107,6 @@ class UserController extends Controller {
      */
     public function update( Authenticatable $user, Request $request )
     {
-
         if ( $request->input( 'completeoccupations', false ) ){
             $occ = Occupation::firstOrNew( [ 'user_id' => $user->id ] );
             $occ->user_id = $user->id;
@@ -110,7 +119,6 @@ class UserController extends Controller {
             $occ->course_id = $request->input('course_id');
             $occ->position_id = $request->input('position_id');
             $occ->save();
-
         } else {
             $user->update( $request->all() );
             if ( $request->input( 'completecategory', false ) )
@@ -118,6 +126,6 @@ class UserController extends Controller {
             else if ( $request->input( 'completecity', false ) )
                 return redirect( 'user/completeoccupations' );
         }
-        return redirect( 'challenges' );
+        return redirect( 'user/profile' );
     }
 }

@@ -5471,7 +5471,8 @@ h4 {
       text-transform: none;
       font-weight: 300; }
     .user-profile .area .data {
-      font-size: 2rem; }
+      font-size: 2rem;
+      margin-bottom: 10px; }
     .user-profile .area .gray_zone {
       background: #efefef;
       padding: 20px;
@@ -5497,6 +5498,21 @@ h4 {
         .user-profile .area .tags .label-tag.small {
           padding: 6.66667px;
           font-size: 1.2rem; }
+
+.user_edit .header {
+  margin-top: 20px;
+  padding: 20px;
+  background: #da0080;
+  color: white;
+  text-align: center; }
+  .user_edit .header .title {
+    color: white;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 600;
+    font-size: 4rem; }
+  .user_edit .header small {
+    font-size: 3rem;
+    font-family: 'Open Sans', sans-serif; }
 
 #section-footer {
   min-height: 200px;
@@ -5674,6 +5690,17 @@ h4 {
       #section-submenu .container .nav-pills li.active a {
         color: #da0080;
         background: none; }
+      #section-submenu .container .nav-pills li.btn {
+        margin: 4px 0 4px 20px; }
+        #section-submenu .container .nav-pills li.btn:hover a {
+          color: #00c853;
+          background: none; }
+        #section-submenu .container .nav-pills li.btn a {
+          color: white;
+          padding: 0; }
+          #section-submenu .container .nav-pills li.btn a:hover {
+            color: #00c853;
+            background: none; }
 
 
 /*# sourceMappingURL=styles.css.map */

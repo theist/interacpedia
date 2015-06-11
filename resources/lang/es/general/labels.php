@@ -64,6 +64,9 @@ return [
     'main_competences'              => 'Principales competencias',
     'challenges_in_process'         => 'Retos en proceso',
     'challenges_ended'              => 'Retos finalizados',
-    'projects_in_process'         => 'Proyectos en proceso',
-    'projects_ended'              => 'Proyectos finalizados'
+    'projects_in_process'           => 'Proyectos en proceso',
+    'projects_ended'                => 'Proyectos finalizados',
+    'edit'                          => 'Editar',
+    'my_profile'                    => 'Mi Perfil',
+    'update'                        => 'Actualizar'
 ];

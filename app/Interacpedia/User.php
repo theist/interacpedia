@@ -33,7 +33,8 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         'avatar',
         'birthdate',
         'city_id',
-        'country_id'
+        'country_id',
+        'vision'
     ];
 
     /**

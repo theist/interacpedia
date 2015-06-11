@@ -111,7 +111,7 @@
         <div class="form-group">
             {!! Form::textarea('description', null, ['maxlength'=>140,'class' => 'form-control maxlength', 'rows'=>7,
             'placeholder'=>Lang::get('challenges/forms.description') . ' '
-            .Lang::get('challenges/forms.in_chars',['chars'=>140])]) !!}
+            .Lang::get('general/forms.in_chars',['chars'=>140])]) !!}
         </div>
     </div>
     <div class="field-solution">
@@ -123,7 +123,7 @@
         <div class="form-group">
             {!! Form::textarea('solution', null, ['maxlength'=>140,'class' => 'form-control maxlength', 'rows'=>7,
             'placeholder'=>Lang::get('challenges/forms.solution') . ' '
-            .Lang::get('challenges/forms.in_chars',['chars'=>140])]) !!}
+            .Lang::get('general/forms.in_chars',['chars'=>140])]) !!}
         </div>
     </div>
     <div class="field-benefits">
@@ -135,7 +135,7 @@
         <div class="form-group">
             {!! Form::textarea('benefits',null,['maxlength'=>500,'class' => 'form-control maxlength', 'rows'=>7,
             'placeholder'=>Lang::get('challenges/forms.benefits') . ' '
-            .Lang::get('challenges/forms.in_chars',['chars'=>500])]) !!}
+            .Lang::get('general/forms.in_chars',['chars'=>500])]) !!}
         </div>
     </div>
     <div class="row">

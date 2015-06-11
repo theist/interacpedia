@@ -14,8 +14,13 @@
                     <img class="img-responsive" src="/images/users/generic.png" alt="{{ $user->name }}"/>
                 </div>
                 <div class="col-md-7">
-                    <div class="data">{{ $user->vision }}</div>
-                    <div class="tags"><li class="label label-tag small">Cambiar el mundo</li>
+                    <div class="form-group">
+                        {!! Form::textarea('vision', null, ['maxlength'=>140,'class' => 'form-control maxlength', 'rows'=>7,
+                        'placeholder'=>Lang::get('user/forms.personal_vision') . ' '
+                        .Lang::get('general/forms.in_chars',['chars'=>140])]) !!}
+                    </div>
+                    <div class="tags">
+                        <li class="label label-tag small">Cambiar el mundo</li>
                         <li class="label label-tag small">Hacer la diferencia en la sociedad</li>
                     </div>
                 </div>
@@ -40,6 +45,10 @@
                 <li class="label label-tag">Música</li>
                 <li class="label label-tag">Tecnología</li>
             </ul>
+        </div>
+        <div class="form-group">
+            {!! Form::submit($submitButtonText,['class' => 'btn btn-purple btn-big']) !!}
+            <a class="btn btn-gray btn-big cancel">@lang('general/labels.cancel')</a>
         </div>
         <div class="subtitle">
             <img src="/images/icons/40x40/academic_information.png" alt="@lang('general/labels.academic_information')"/>
@@ -167,33 +176,23 @@
         </div>
     </div>
 </div>
-<div class="col-md-5">
-    <div class="content">
-        <div class="subtitle row">
-            <img src="/images/icons/40x40/competences.png" alt="@lang('general/labels.validated_competences')"/>
-            @lang('general/labels.validated_competences')
-        </div>
-        <div class="area">
-            <div class="subtitle">
-                <img src="/images/icons/32x32/rewards.png" alt="@lang('general/labels.main_competences')"/>
-                @lang('general/labels.main_competences')
-            </div>
-            <div class="row">
-                <div class="col-md-2">
-                    <div class="tags"><div class="label label-tag">Generación de ideas</div></div>
-                </div>
-                <div class="col-md-10"></div>
-            </div>
-            <hr/>
-            <div class="row">
-                <div class="col-md-2">
-                    <div class="tags"><div class="label label-tag">Análisis Estratégico</div></div>
-                </div>
-                <div class="col-md-10"></div>
-            </div>
-        </div>
-    </div>
-</div>
 
 
+@section('footer')
+    <script>
+        $(function () {
+            $("a.cancel").click( function(){
+                parent.history.back();
+                return false;
+            });
+            $('.maxlength').maxlength({
+                alwaysShow: true,
+                warningClass: "label label-success",
+                limitReachedClass: "label label-danger",
+                appendToParent: true,
+                placement: "bottom-right"
+            });
+        });
+    </script>
+@stop
 

@@ -11,7 +11,6 @@ return [
     'description'         => 'Describa el problema o necesidad',
     'solution'            => 'Describa su solución o idea',
     'benefits'            => 'Describa los beneficios',
-    'in_chars'            => 'en :chars caracteres...',
     'image'               => 'Imagen del reto',
     'more_images'         => 'Más imágenes',
     'select_image'        => 'Escoja una imagen',

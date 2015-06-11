@@ -22,7 +22,25 @@
             color: $purple;
             background: none;
           }
+        }
+        &.btn{
+          margin: 4px 0 4px $grid-gutter-width;
+          &:hover{
+            a{
+              color: $green;
+              background: none;
+            }
 
+          }
+
+          a{
+            color: white;
+            padding: 0;
+            &:hover{
+              color: $green;
+              background: none;
+            }
+          }
         }
       }
     }
