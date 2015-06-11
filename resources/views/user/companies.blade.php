@@ -21,8 +21,9 @@
 @section('content')
     <div class="row user-profile">
         @foreach($companies as $company)
-            {{ $company->name }}<br/>
+            <div class="area">{{ $company->name }}</div>
         @endforeach
+            <a class="btn btn-purple" href="{{ action('CompanyController@create') }}">Crear Nueva Empresa</a>
     </div>
 
 @stop

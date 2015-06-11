@@ -25,6 +25,7 @@ class RouteServiceProvider extends ServiceProvider {
 		parent::boot($router);
         $router->model('stories', 'App\Interacpedia\Story');
         $router->model('challenges', 'App\Interacpedia\Challenge');
+        $router->model('companies', 'App\Interacpedia\Company');
         $router->model('projects', 'App\Interacpedia\Project');
 
 //

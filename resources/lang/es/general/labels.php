@@ -67,7 +67,10 @@ return [
     'projects_in_process'           => 'Proyectos en proceso',
     'projects_ended'                => 'Proyectos finalizados',
     'edit'                          => 'Editar',
+    'create'                        => 'Crear',
+    'manage'                        => 'Administrar',
     'my_profile'                    => 'Mi Perfil',
     'update'                        => 'Actualizar',
-    'my_companies'                  => 'Mis Empresas'
+    'companies'                     => 'Empresas',
+    'company'                       => 'Empresa'
 ];
