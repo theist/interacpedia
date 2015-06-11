@@ -21,3 +21,60 @@
     }
   }
 }
+.user-profile{
+  padding-top: $grid-gutter-width;
+  .subtitle{
+    font-family: $font-exo2;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: $grid-gutter-width/2 0;
+    img{
+      vertical-align: text-bottom;
+    }
+  }
+  .area{
+    background: white;
+    border: 1px solid $border-gray;
+    padding: $grid-gutter-width;
+    .subtitle{
+      font-family: $font-sans;
+      text-transform: none;
+      font-weight: 300;
+    }
+    .data{
+      font-size: 2rem;
+    }
+    .gray_zone{
+      background: $background-gray;
+      padding: $grid-gutter-width;
+      font-size: 1.5rem;
+      .title1{
+        font-size: 1.8rem;
+      }
+      .title2{
+        font-size: 1.6rem;
+        font-weight: 600;
+      }
+    }
+    .tags{
+      padding-left: 0;
+      .label-tag{
+        display: inline-block;
+        font-family: $font-sans;
+        padding: $grid-gutter-width/2;
+        border-radius: 5px;
+        font-weight: 300;
+        font-size: 1.7rem;
+        background-color: $blue-tags;
+        color: $text-color;
+        margin-right: $grid-gutter-width/2;
+        margin-bottom: $grid-gutter-width/2;
+        &.small{
+          padding: $grid-gutter-width/3;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}

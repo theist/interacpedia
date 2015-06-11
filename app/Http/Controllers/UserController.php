@@ -28,7 +28,8 @@ class UserController extends Controller {
     public function show( $id )
     {
         $user = User::find($id);
-        return view( 'user.profile', compact( 'user' ) );
+        $option = 'info';
+        return view( 'user.profile', compact( 'user', 'option' ) );
         //return $user;
     }
 
@@ -39,9 +40,11 @@ class UserController extends Controller {
      * @param Authenticatable $user
      * @return Authenticatable
      */
-    public function profile( Authenticatable $user )
+    public function profile( Authenticatable $user, $id = null, $option = null )
     {
-        return view( 'user.profile', compact( 'user' ) );
+        if($id) $user = User::find($id);
+        if(!$option)$option = "info";
+        return view( 'user.profile', compact( 'user','option' ) );
     }
 
     /**
@@ -78,7 +81,7 @@ class UserController extends Controller {
         $courses = Course::where('name','<>','Todos')->lists('name','id');
         $positions = Position::where('name','<>','Todos')->lists('name','id');
         $sectors = Sector::where('name','<>','Todos')->lists('name','id');
-        $occupation = Occupation::firstOrCreate( [ 'user_id' => $user->id ] );
+        $occupation = Occupation::firstOrNew( [ 'user_id' => $user->id ] );
 
         return view( 'user.completeoccupations', compact( 'user', 'occupation','types', 'universities','companies',
             'careers','positions','courses','sectors'
@@ -96,7 +99,7 @@ class UserController extends Controller {
     {
 
         if ( $request->input( 'completeoccupations', false ) ){
-            $occ = Occupation::firstOrCreate( [ 'user_id' => $user->id ] );
+            $occ = Occupation::firstOrNew( [ 'user_id' => $user->id ] );
             $occ->user_id = $user->id;
             $occ->type = $request->input('type');
             $occ->experience = $request->input('experience',0);

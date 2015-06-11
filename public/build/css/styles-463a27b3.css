@@ -5441,6 +5441,52 @@ h4 {
     #section-profile .profile .social {
       text-transform: uppercase; }
 
+.user-profile {
+  padding-top: 20px; }
+  .user-profile .subtitle {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px 0; }
+    .user-profile .subtitle img {
+      vertical-align: text-bottom; }
+  .user-profile .area {
+    background: white;
+    border: 1px solid #cdcdcd;
+    padding: 20px; }
+    .user-profile .area .subtitle {
+      font-family: 'Open Sans', sans-serif;
+      text-transform: none;
+      font-weight: 300; }
+    .user-profile .area .data {
+      font-size: 2rem; }
+    .user-profile .area .gray_zone {
+      background: #efefef;
+      padding: 20px;
+      font-size: 1.5rem; }
+      .user-profile .area .gray_zone .title1 {
+        font-size: 1.8rem; }
+      .user-profile .area .gray_zone .title2 {
+        font-size: 1.6rem;
+        font-weight: 600; }
+    .user-profile .area .tags {
+      padding-left: 0; }
+      .user-profile .area .tags .label-tag {
+        display: inline-block;
+        font-family: 'Open Sans', sans-serif;
+        padding: 10px;
+        border-radius: 5px;
+        font-weight: 300;
+        font-size: 1.7rem;
+        background-color: #8bf7fb;
+        color: #333333;
+        margin-right: 10px;
+        margin-bottom: 10px; }
+        .user-profile .area .tags .label-tag.small {
+          padding: 6.66667px;
+          font-size: 1.2rem; }
+
 #section-footer {
   min-height: 200px;
   padding: 30px 0;
@@ -5597,6 +5643,26 @@ h4 {
         transform: scale(1.2); }
 .select-category .hidden {
   visibility: hidden; }
+
+#section-submenu {
+  border-bottom: 1px solid #cdcdcd;
+  background: white; }
+  #section-submenu .container {
+    padding: 10px 0; }
+    #section-submenu .container .nav-pills {
+      font-family: 'Exo 2', sans-serif;
+      text-transform: uppercase;
+      font-size: 1.6rem; }
+      #section-submenu .container .nav-pills li.divider {
+        width: 2px;
+        height: 20px;
+        background-color: #ccc;
+        margin-top: 11px; }
+      #section-submenu .container .nav-pills li a {
+        color: #666666; }
+      #section-submenu .container .nav-pills li.active a {
+        color: #da0080;
+        background: none; }
 
 
 /*# sourceMappingURL=styles.css.map */

@@ -21,7 +21,8 @@
 <div class="container-fluid" id="section-nav">
     @include('partials.nav')
 </div>
-<div class="container-fluid" id="section-profile">@yield('section-profile')</div>
+@yield('section-profile')
+@yield('section-submenu')
 <div class="container-fluid" id="section-banner">@yield('section-banner')</div>
 <div class="container-fluid" id="section-featured">@yield('section-featured')</div>
 <div class="container-fluid" id="section-highlight">@yield('section-highlight')</div>

@@ -24,7 +24,7 @@
                         </ul>
                     </li>
                     @if(Auth::check())
-                        <li><a href="{{ action('UserController@profile') }}">@lang('general/menu.profile')</a></li>
+                        <li><a href="/user/profile">@lang('general/menu.profile')</a></li>
                     @endif
                     <li class="dropdown"><a href="{{ action('ChallengesController@index') }}">@lang('general/menu.challenges')</a></li>
                     <li class="dropdown"><a

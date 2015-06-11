@@ -27,4 +27,12 @@ class Occupation extends Model {
         return $this->belongsTo( 'App\Interacpedia\Career' );
     }
 
+    /**
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function university()
+    {
+        return $this->belongsTo( 'App\Interacpedia\University' );
+    }
 }

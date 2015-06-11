@@ -1,0 +1,30 @@
+#section-submenu{
+  border-bottom: 1px solid $border-gray;
+  background: white;
+  .container{
+    padding: $grid-gutter-width/2 0;
+    .nav-pills{
+      font-family: $font-exo2;
+      text-transform: uppercase;
+      font-size: 1.6rem;
+      li{
+        &.divider{
+          width: 2px;
+          height: 20px;
+          background-color: #ccc;
+          margin-top: 11px;
+        }
+        a{
+          color: $title-gray2;
+        }
+        &.active{
+          a{
+            color: $purple;
+            background: none;
+          }
+
+        }
+      }
+    }
+  }
+}
