@@ -69,7 +69,7 @@ class ChallengesController extends Controller {
         $courses = Course::lists( 'name', 'id' );
         $professors = [ ];
         $creators = User::lists( 'name', 'id' );
-        $tags = Tag::lists( 'name', 'id' );
+        $tags = Tag::where( 'type', 'challenge' )->lists( 'name', 'id' );
         $ch_universities = [ ];
         $ch_careers = [ ];
         $ch_courses = [ ];
