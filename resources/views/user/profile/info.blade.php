@@ -106,23 +106,25 @@
                 <img src="/images/icons/32x32/contribution.png" alt="@lang('general/labels.my_contribution')"/>
                 @lang('general/labels.my_contribution')
             </div>
-            <ul class="tags">
-                <li class="label label-tag">Ideas</li>
-                <li class="label label-tag">Prototipo</li>
-                <li class="label label-tag">Trabajo</li>
-                <li class="label label-tag">Motivación</li>
-                <li class="label label-tag">Contactos</li>
-            </ul>
+            @if(count($tags_contribution)>0)
+                <div class="tags">
+                    @foreach($tags_contribution as $tag)
+                        <li class="label label-tag">{{ $tag }}</li>
+                    @endforeach
+                </div>
+            @endif
             <hr/>
             <div class="subtitle">
                 <img src="/images/icons/32x32/areas.png" alt="@lang('general/labels.in_this_areas')"/>
                 @lang('general/labels.in_this_areas')
             </div>
-            <ul class="tags">
-                <li class="label label-tag">Creatividad</li>
-                <li class="label label-tag">Investigación</li>
-                <li class="label label-tag">Diseño</li>
-            </ul>
+            @if(count($tags_in_areas)>0)
+                <div class="tags">
+                    @foreach($tags_in_areas as $tag)
+                        <li class="label label-tag">{{ $tag }}</li>
+                    @endforeach
+                </div>
+            @endif
             <hr/>
             <div class="subtitle">
                 <img src="/images/icons/32x32/achievements.png" alt="@lang('general/labels.my_achievements')"/>
@@ -155,28 +157,37 @@
                 <img src="/images/icons/32x32/resources.png" alt="@lang('general/labels.resources')"/>
                 @lang('general/labels.resources')
             </div>
-            <ul class="tags">
-                <li class="label label-tag">Fondos</li>
-                <li class="label label-tag">Contactos de negocios</li>
-            </ul>
+            @if(count($tags_searching_resources)>0)
+                <div class="tags">
+                    @foreach($tags_searching_resources as $tag)
+                        <li class="label label-tag">{{ $tag }}</li>
+                    @endforeach
+                </div>
+            @endif
             <hr/>
             <div class="subtitle">
                 <img src="/images/icons/32x32/experts.png" alt="@lang('general/labels.experts')"/>
                 @lang('general/labels.experts')
             </div>
-            <ul class="tags">
-                <li class="label label-tag">Asesoría legal</li>
-                <li class="label label-tag">Asesoría técnica</li>
-            </ul>
+            @if(count($tags_searching_experts)>0)
+                <div class="tags">
+                    @foreach($tags_searching_experts as $tag)
+                        <li class="label label-tag">{{ $tag }}</li>
+                    @endforeach
+                </div>
+            @endif
             <hr/>
             <div class="subtitle">
                 <img src="/images/icons/32x32/personal.png" alt="@lang('general/labels.personal')"/>
                 @lang('general/labels.personal')
             </div>
-            <ul class="tags">
-                <li class="label label-tag">Mentoría</li>
-                <li class="label label-tag">Socios de negocios</li>
-            </ul>
+            @if(count($tags_searching_personal)>0)
+                <div class="tags">
+                    @foreach($tags_searching_personal as $tag)
+                        <li class="label label-tag">{{ $tag }}</li>
+                    @endforeach
+                </div>
+            @endif
         </div>
     </div>
 </div>

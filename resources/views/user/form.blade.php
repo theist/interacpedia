@@ -73,10 +73,6 @@
                 'form-control select2','multiple','data-tags'=>'true']) !!}
             </div>
         </div>
-        <div class="form-group">
-            {!! Form::submit($submitButtonText,['class' => 'btn btn-purple btn-big']) !!}
-            <a class="btn btn-gray btn-big cancel">@lang('general/labels.cancel')</a>
-        </div>
         <div class="subtitle">
             <img src="/images/icons/40x40/offer.png" alt="@lang('general/labels.what_can_i_offer')"/>
             @lang('general/labels.what_can_i_offer')
@@ -86,23 +82,19 @@
                 <img src="/images/icons/32x32/contribution.png" alt="@lang('general/labels.my_contribution')"/>
                 @lang('general/labels.my_contribution')
             </div>
-            <ul class="tags">
-                <li class="label label-tag">Ideas</li>
-                <li class="label label-tag">Prototipo</li>
-                <li class="label label-tag">Trabajo</li>
-                <li class="label label-tag">Motivación</li>
-                <li class="label label-tag">Contactos</li>
-            </ul>
+            <div class="form-group">
+                {!! Form::select('tags_contribution_list[]',$tags_contribution,$user->tags()->where('type','contribution')->lists('id'),['id' => 'tags_contribution_list','class' =>
+                'form-control select2','multiple','data-tags'=>'true']) !!}
+            </div>
             <hr/>
             <div class="subtitle">
                 <img src="/images/icons/32x32/areas.png" alt="@lang('general/labels.in_this_areas')"/>
                 @lang('general/labels.in_this_areas')
             </div>
-            <ul class="tags">
-                <li class="label label-tag">Creatividad</li>
-                <li class="label label-tag">Investigación</li>
-                <li class="label label-tag">Diseño</li>
-            </ul>
+            <div class="form-group">
+                {!! Form::select('tags_in_areas_list[]',$tags_in_areas,$user->tags()->where('type','in_areas')->lists('id'),['id' => 'tags_in_areas_list','class' =>
+                'form-control select2','multiple','data-tags'=>'true']) !!}
+            </div>
             <hr/>
             <div class="subtitle">
                 <img src="/images/icons/32x32/achievements.png" alt="@lang('general/labels.my_achievements')"/>
@@ -135,28 +127,32 @@
                 <img src="/images/icons/32x32/resources.png" alt="@lang('general/labels.resources')"/>
                 @lang('general/labels.resources')
             </div>
-            <ul class="tags">
-                <li class="label label-tag">Fondos</li>
-                <li class="label label-tag">Contactos de negocios</li>
-            </ul>
+            <div class="form-group">
+                {!! Form::select('tags_searching_resources_list[]',$tags_searching_resources,$user->tags()->where('type','searching_resources')->lists('id'),['id' => 'tags_searching_resources_list','class' =>
+                'form-control select2','multiple','data-tags'=>'true']) !!}
+            </div>
             <hr/>
             <div class="subtitle">
                 <img src="/images/icons/32x32/experts.png" alt="@lang('general/labels.experts')"/>
                 @lang('general/labels.experts')
             </div>
-            <ul class="tags">
-                <li class="label label-tag">Asesoría legal</li>
-                <li class="label label-tag">Asesoría técnica</li>
-            </ul>
+            <div class="form-group">
+                {!! Form::select('tags_searching_experts_list[]',$tags_searching_experts,$user->tags()->where('type','searching_experts')->lists('id'),['id' => 'tags_searching_experts_list','class' =>
+                'form-control select2','multiple','data-tags'=>'true']) !!}
+            </div>
             <hr/>
             <div class="subtitle">
                 <img src="/images/icons/32x32/personal.png" alt="@lang('general/labels.personal')"/>
                 @lang('general/labels.personal')
             </div>
-            <ul class="tags">
-                <li class="label label-tag">Mentoría</li>
-                <li class="label label-tag">Socios de negocios</li>
-            </ul>
+            <div class="form-group">
+                {!! Form::select('tags_searching_personal_list[]',$tags_searching_personal,$user->tags()->where('type','searching_personal')->lists('id'),['id' => 'tags_searching_personal_list','class' =>
+                'form-control select2','multiple','data-tags'=>'true']) !!}
+            </div>
+        </div>
+        <div class="form-group">
+            {!! Form::submit($submitButtonText,['class' => 'btn btn-purple btn-big']) !!}
+            <a class="btn btn-gray btn-big cancel">@lang('general/labels.cancel')</a>
         </div>
     </div>
 </div>
