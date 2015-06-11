@@ -5705,5 +5705,48 @@ h4 {
         #section-submenu .container .nav-pills li.btn.btn-purple a:hover {
           color: #da0080; }
 
+.company_edit .header {
+  margin: 20px 0;
+  padding: 20px;
+  background: #da0080;
+  color: white;
+  text-align: center; }
+  .company_edit .header .title {
+    color: white;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 600;
+    font-size: 4rem; }
+.company_edit .content .area {
+  background: white;
+  border: 1px solid #cdcdcd;
+  padding: 20px; }
+  .company_edit .content .area .subtitle {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2.5rem;
+    text-transform: none;
+    font-weight: 300;
+    margin: 10px 0; }
+    .company_edit .content .area .subtitle img {
+      vertical-align: text-bottom; }
+.company_edit .content .field-image .zone, .company_edit .content .field-images .zone {
+  height: 190px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #cdcdcd; }
+  .company_edit .content .field-image .zone .choose, .company_edit .content .field-images .zone .choose {
+    color: #21a3af;
+    font-weight: 600;
+    font-size: 2rem; }
+  .company_edit .content .field-image .zone .help, .company_edit .content .field-images .zone .help {
+    max-width: 200px;
+    margin: 0 auto;
+    color: #393c44;
+    font-size: 1.2rem; }
+  .company_edit .content .field-image .zone .dz-image-preview, .company_edit .content .field-image .zone .preview, .company_edit .content .field-images .zone .dz-image-preview, .company_edit .content .field-images .zone .preview {
+    display: inline-block; }
+  .company_edit .content .field-image .zone .preview, .company_edit .content .field-images .zone .preview {
+    width: 100px;
+    text-align: center; }
+
 
 /*# sourceMappingURL=styles.css.map */

@@ -55,6 +55,13 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
+    public function companies()
+    {
+        return $this->hasMany( 'App\Interacpedia\Company' );
+    }
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function projects()
     {
         return $this->hasMany( 'App\Interacpedia\Project' );

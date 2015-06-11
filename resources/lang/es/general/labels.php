@@ -72,5 +72,6 @@ return [
     'my_profile'                    => 'Mi Perfil',
     'update'                        => 'Actualizar',
     'companies'                     => 'Empresas',
-    'company'                       => 'Empresa'
+    'company'                       => 'Empresa',
+    'image'                         => 'Imagen'
 ];

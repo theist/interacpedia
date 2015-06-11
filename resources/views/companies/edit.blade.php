@@ -12,11 +12,11 @@
 @section('content')
     <div class="company_edit">
         <div class="header">
-            <div class="title">@lang('general/labels.create') @lang('general/labels.company')</div>
+            <div class="title ">@lang('general/labels.edit') @lang('general/labels.company')</div>
         </div>
         <div class="content">
-            {!! Form::model( $company = new \App\Interacpedia\Company, ['url' => 'companies'] ) !!}
-            @include('companies.form',['submitButtonText' => Lang::get('general/labels.create')])
+            {!! Form::model($company,['method' => 'PATCH', 'action' => ['CompanyController@update',$company->id]]) !!}
+            @include('companies.form',['submitButtonText' => Lang::get('general/labels.update')])
             {!! Form::close() !!}
             @include('errors.alerts')
         </div>

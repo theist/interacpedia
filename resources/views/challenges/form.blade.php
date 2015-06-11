@@ -360,10 +360,6 @@
 </div>
 @section('footer')
     <script>
-        $("a.cancel").click( function(){
-            parent.history.back();
-            return false;
-        });
         $(".reward").click(function () {
             var src = $(this).find('img').attr('src');
             if ($('#rewards_list option[value="' + this.getAttribute('data-value') + '"]').is(':selected')) {
@@ -405,6 +401,10 @@
         });
         Dropzone.autoDiscover = false;
         $(function () {
+            $("a.cancel").click( function(){
+                parent.history.back();
+                return false;
+            });
             var creatorCounter = {{ count($ch_creators)==0?0:count($ch_creators)-1 }};
             $('#addCreator').click(function () {
                 creatorCounter++;

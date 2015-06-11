@@ -1,0 +1,60 @@
+.company_edit{
+  .header {
+    margin: $grid-gutter-width 0;
+    padding: $grid-gutter-width;
+    background: $purple;
+    color: white;
+    text-align: center;
+    .title {
+      color: white;
+      font-family: $font-exo2;
+      font-weight: 600;
+      font-size: 4rem;
+    }
+  }
+  .content{
+    .area{
+      background: white;
+      border: 1px solid $border-gray;
+      padding: $grid-gutter-width;
+      .subtitle{
+        font-family: $font-sans;
+        font-size: 2.5rem;
+        text-transform: none;
+        font-weight: 300;
+        margin: $grid-gutter-width/2 0;
+        img{
+          vertical-align: text-bottom;
+        }
+      }
+    }
+    .field-image,
+    .field-images {
+      .zone {
+        height: 190px;
+        padding: $grid-gutter-width;
+        text-align: center;
+        border: 1px solid $border-gray;
+        .choose {
+          color: $blue-messages;
+          font-weight: 600;
+          font-size: 2rem;
+        }
+        .help {
+          max-width: 200px;
+          margin: 0 auto;
+          color: $dark-grey;
+          font-size: 1.2rem;
+        }
+        .dz-image-preview,
+        .preview {
+          display: inline-block;
+        }
+        .preview {
+          width: 100px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
