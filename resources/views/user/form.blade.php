@@ -30,21 +30,19 @@
                 <img src="/images/icons/32x32/dreams.png" alt="@lang('general/labels.my_dreams')"/>
                 @lang('general/labels.my_dreams')
             </div>
-            <ul class="tags">
-                <li class="label label-tag">Encontrar un buen trabajo</li>
-                <li class="label label-tag">Estudiar un MBA</li>
-                <li class="label label-tag">Ayudar a mi familia</li>
-            </ul>
+            <div class="form-group">
+                {!! Form::select('tags_dreams_list[]',$tags_dreams,$user->tags()->where('type','dreams')->lists('id'),['id' => 'tags_dreams_list','class' =>
+                'form-control select2','multiple','data-tags'=>'true']) !!}
+            </div>
             <hr/>
             <div class="subtitle">
                 <img src="/images/icons/32x32/love.png" alt="@lang('general/labels.things_i_love')"/>
                 @lang('general/labels.things_i_love')
             </div>
-            <ul class="tags">
-                <li class="label label-tag">Deportes</li>
-                <li class="label label-tag">Música</li>
-                <li class="label label-tag">Tecnología</li>
-            </ul>
+            <div class="form-group">
+                {!! Form::select('tags_likes_list[]',$tags_likes,$user->tags()->where('type','likes')->lists('id'),['id' => 'tags_likes_list','class' =>
+                'form-control select2','multiple','data-tags'=>'true']) !!}
+            </div>
         </div>
         <div class="form-group">
             {!! Form::submit($submitButtonText,['class' => 'btn btn-purple btn-big']) !!}

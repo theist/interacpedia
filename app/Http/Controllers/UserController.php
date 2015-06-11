@@ -31,21 +31,10 @@ class UserController extends Controller {
         $user = User::find($id);
         $option = 'info';
         $tags_vision = $user->tags()->where('type','personal_vision')->lists('name','id');
-        return view( 'user.profile', compact( 'user', 'option','tags_vision' ) );
+        $tags_dreams = $user->tags()->where('type','dreams')->lists('name','id');
+        $tags_likes = $user->tags()->where('type','likes')->lists('name','id');
+        return view( 'user.profile', compact( 'user', 'option','tags_vision','tags_dreams' ) );
         //return $user;
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param Authenticatable $user
-     * @return Response
-     * @internal param int $id
-     */
-    public function edit( Authenticatable $user)
-    {
-        $tags_vision = Tag::where('type','personal_vision')->lists( 'name', 'id' );
-        return view( 'user.edit', compact( 'user','tags_vision'));
     }
     /**
      * Displays a user profile
@@ -58,7 +47,24 @@ class UserController extends Controller {
         if($id) $user = User::find($id);
         if(!$option)$option = "info";
         $tags_vision = $user->tags()->where('type','personal_vision')->lists('name','id');
-        return view( 'user.profile', compact( 'user','option','tags_vision' ) );
+        $tags_dreams = $user->tags()->where('type','dreams')->lists('name','id');
+        $tags_likes = $user->tags()->where('type','likes')->lists('name','id');
+        return view( 'user.profile', compact( 'user','option','tags_vision','tags_dreams','tags_likes' ) );
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param Authenticatable $user
+     * @return Response
+     * @internal param int $id
+     */
+    public function edit( Authenticatable $user)
+    {
+        $tags_vision = Tag::where('type','personal_vision')->lists( 'name', 'id' );
+        $tags_dreams = Tag::where('type','dreams')->lists( 'name', 'id' );
+        $tags_likes = Tag::where('type','likes')->lists( 'name', 'id' );
+        return view( 'user.edit', compact( 'user','tags_vision','tags_dreams','tags_likes'));
     }
 
     /**
@@ -112,6 +118,8 @@ class UserController extends Controller {
     public function update( Authenticatable $user, Request $request )
     {
         $this->syncTags( $user, 'personal_vision',$request->input( 'tags_vision_list', array() ) );
+        $this->syncTags( $user, 'dreams',$request->input( 'tags_dreams_list', array() ) );
+        $this->syncTags( $user, 'likes',$request->input( 'tags_likes_list', array() ) );
         if ( $request->input( 'completeoccupations', false ) ){
             $occ = Occupation::firstOrNew( [ 'user_id' => $user->id ] );
             $occ->user_id = $user->id;
@@ -141,9 +149,11 @@ class UserController extends Controller {
      */
     public function syncTags( Authenticatable $user, $type, array $tags )
     {
+
         $ids = Tag::where('type',$type)->get()->lists('id');
-        //dd($ids);
-        $user->tags()->detach($ids);
+        //if($type=='likes') dd($ids);
+        if(count($ids)>0)
+            $user->tags()->detach($ids);
         foreach ( $tags as $tag )
         {
             if ( $model = Tag::where( 'id', $tag )->where('type',$type)->first() )

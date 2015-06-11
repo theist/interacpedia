@@ -29,21 +29,25 @@
                 <img src="/images/icons/32x32/dreams.png" alt="@lang('general/labels.my_dreams')"/>
                 @lang('general/labels.my_dreams')
             </div>
-            <ul class="tags">
-                <li class="label label-tag">Encontrar un buen trabajo</li>
-                <li class="label label-tag">Estudiar un MBA</li>
-                <li class="label label-tag">Ayudar a mi familia</li>
-            </ul>
+            @if(count($tags_dreams)>0)
+                <div class="tags">
+                    @foreach($tags_dreams as $tag)
+                        <li class="label label-tag small">{{ $tag }}</li>
+                    @endforeach
+                </div>
+            @endif
             <hr/>
             <div class="subtitle">
                 <img src="/images/icons/32x32/love.png" alt="@lang('general/labels.things_i_love')"/>
                 @lang('general/labels.things_i_love')
             </div>
-            <ul class="tags">
-                <li class="label label-tag">Deportes</li>
-                <li class="label label-tag">Música</li>
-                <li class="label label-tag">Tecnología</li>
-            </ul>
+            @if(count($tags_likes)>0)
+                <div class="tags">
+                    @foreach($tags_likes as $tag)
+                        <li class="label label-tag small">{{ $tag }}</li>
+                    @endforeach
+                </div>
+            @endif
         </div>
         <div class="subtitle">
             <img src="/images/icons/40x40/academic_information.png" alt="@lang('general/labels.academic_information')"/>
