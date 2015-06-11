@@ -60,5 +60,6 @@ return [
     'preferred_areas_to_work_in'    => 'Áreas preferidas para trabajar',
     'things_i_love'                 => 'Cosas que amo',
     'personal_vision'               => 'Visión personal',
-    'my_dreams'                     => 'Mis sueños'
+    'my_dreams'                     => 'Mis sueños',
+    'main_competences'              => 'Principales competencias'
 ];

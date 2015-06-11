@@ -14,7 +14,7 @@
                     <div class="location">
                         <img class="" src="/images/icons/flags/{{ $user->country->code2 or "co" }}.png" alt=" {{ $user->country->name or "-" }}"/>
                         {{ $user->city->name or "-" }}, {{ $user->country->name or "-" }} <br/>
-                        Universidad: Sin especificar
+                        Universidad: {{ $user->occupations->where('type','student')->first()->university->name  or "Sin Especificar" }}
                     </div>
                 </div>
             </div>
