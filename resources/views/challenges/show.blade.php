@@ -192,7 +192,7 @@
                     !!}
                     <a class="btn"
                        href="{{ action('ChallengesController@edit',[$challenge->id]) }}">@lang('challenges/forms.edit')</a>
-                    <input type="submit" class="btn btn-purple" value="@lang('challenges/forms.delete')">
+                    <input  id="deleteChallenge" type="submit" class="btn btn-purple" value="@lang('challenges/forms.delete')">
                     {!! Form::close() !!}
                 </div>
             </div>
@@ -218,6 +218,9 @@
 @stop
 @section('footer')
     <script>
+        $('#deleteChallenge').on('click',function(){
+            return confirm('¿Estás seguro que quieres eliminar este reto del sistema?');
+        });
         $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
             event.preventDefault();
             $(this).ekkoLightbox({
