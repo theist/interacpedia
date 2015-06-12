@@ -145,9 +145,12 @@
                                 <h4>@lang('general/labels.files')</h4>
                                 <div class="row">
                                     @foreach(explode(",",$challenge->files ) as $file)
-                                        <div class="file col-md-1 text-right"><img
-                                                    src="/images/icons/20x20/document.png" alt="Documento"/></div>
-                                        <div class="file col-md-11"><a href="{{ $file }}">{{ substr($file,strrpos($file,"/")+1) }}</a></div>
+                                        <div class="row">
+                                            <div class="file col-md-1 text-right"><img
+                                                        src="/images/icons/20x20/document.png" alt="Documento"/></div>
+                                            <div class="file col-md-11"><a href="{{ $file }}">{{ substr($file,strrpos($file,"/")+1) }}</a></div>
+
+                                        </div>
                                     @endforeach
                                 </div>
                             </div>
