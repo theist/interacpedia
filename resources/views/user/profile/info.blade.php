@@ -82,8 +82,9 @@
                 @lang('general/labels.favorite_companies_to_work_in')
             </div>
             <div class="tags">
-                <img src="/images/companies/cocacola.png" alt="Coca Cola"/>
-                <img src="/images/companies/isa.png" alt="Isa"/>
+                <img style="margin:10px" height="60" src="/images/logos/grupo-sura.png" alt="Grupo Sura"/>
+                <img style="margin:10px" height="60" src="/images/logos/grupo-bancolombia.png" alt="Grupo Bancolombia"/>
+                <img style="margin:10px" height="60" src="/images/logos/proteccion.jpg" alt="Protección"/>
             </div>
             <hr/>
             <div class="subtitle">
