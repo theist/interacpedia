@@ -151,7 +151,8 @@ return [
         //'Laravel\Socialite\SocialiteServiceProvider',
         'SocialiteProviders\Manager\ServiceProvider',
         'Intervention\Image\ImageServiceProvider',
-        'Alakkad\WorldCountriesCities\WorldCountriesCitiesServiceProvider'
+        'Alakkad\WorldCountriesCities\WorldCountriesCitiesServiceProvider',
+        'Spatie\Backup\BackupServiceProvider'
     ],
 
     /*

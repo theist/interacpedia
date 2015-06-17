@@ -50,10 +50,10 @@ return [
 
 		's3' => [
 			'driver' => 's3',
-			'key'    => 'your-key',
-			'secret' => 'your-secret',
-			'region' => 'your-region',
-			'bucket' => 'your-bucket',
+			'key'    => 'AKIAJJS2IEJSR2WASZJQ',
+			'secret' => 'EqdooVmMdDRKmfABC61eHwnYrUM+hfXBvb/WvuR/',
+			'region' => 'us-west-2',
+			'bucket' => 'dayscript-backups',
 		],
 
 		'rackspace' => [
