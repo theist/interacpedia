@@ -50,8 +50,8 @@ return [
 
 		's3' => [
 			'driver' => 's3',
-			'key'    => 'AKIAJJS2IEJSR2WASZJQ',
-			'secret' => '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',
+			'key'    => env('AMAZONS3_KEY', ''),
+			'secret' => env('AMAZONS3_SECRET', ''),
 			'region' => 'us-west-2',
 			'bucket' => 'dayscript-backups',
 		],
