@@ -2,6 +2,7 @@
 
 class TestCase extends Illuminate\Foundation\Testing\TestCase {
 
+    protected $baseUrl = 'http://interacpedia.dev:8888';
 	/**
 	 * Creates the application.
 	 *
