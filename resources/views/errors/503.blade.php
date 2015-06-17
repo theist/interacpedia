@@ -34,7 +34,9 @@
 	<body>
 		<div class="container">
 			<div class="content">
-				<div class="title">Be right back.</div>
+				<div class="title"><img src="/images/icons/interacpedia/co-creacion-interactiva.png" alt="Co-Creación Interactiva"><br/>
+                    Interacpedia <br/>
+                    Ya regresamos...</div>
 			</div>
 		</div>
 	</body>
