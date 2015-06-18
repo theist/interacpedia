@@ -13,9 +13,9 @@
                     <img src="/images/icons/32x32/describe.png" alt="@lang('general/labels.description')"/>
                     @lang('general/labels.description')
                 </div>
-                {!! Form::textarea('description', null, ['maxlength'=>140,'class' => 'form-control maxlength', 'rows'=>7,
+                {!! Form::textarea('description', null, ['maxlength'=>400,'class' => 'form-control maxlength', 'rows'=>7,
                 'placeholder'=>Lang::get('general/labels.description') . ' '
-                .Lang::get('general/forms.in_chars',['chars'=>140])]) !!}
+                .Lang::get('general/forms.in_chars',['chars'=>400])]) !!}
             </div>
         </div>
     </div>
