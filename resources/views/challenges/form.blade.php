@@ -325,8 +325,8 @@
         <div class="step_content row text-center">
             @foreach($searchings as $search)
                 <div class="search" data-value="{{ $search->id }}">
-                    <img src="{{ in_array($search->id,$challenge->searchings->lists('id'))?str_replace('-off.png','-on.png',$search->image):$search->image }}"
-                         alt="{{ $search->name }}" height="75" width="75"/><br/>
+
+                    <img src="{{ in_array($search->id,$challenge->searchings->lists('id')->all())?str_replace('-off.png','-on.png',$search->image):$search->image }}" alt="{{ $search->name }}" height="75" width="75"/><br/>
                     <small>{{ $search->name }}</small>
                 </div>
             @endforeach
@@ -344,8 +344,7 @@
         <div class="step_content row text-center">
             @foreach($rewards as $reward)
                 <div class="reward" data-value="{{ $reward->id }}">
-                    <img src="{{ in_array($reward->id,$challenge->rewards->lists('id'))?str_replace('-off.png','-on.png',$reward->image):$reward->image }}"
-                         alt="{{ $reward->name }}" height="75" width="75"/><br/>
+                    <img src="{{ in_array($reward->id,$challenge->rewards->lists('id')->all())?str_replace('-off.png','-on.png',$reward->image):$reward->image }}" alt="{{ $reward->name }}" height="75" width="75"/><br/>
                     <small>{{ $reward->name }}</small>
                 </div>
             @endforeach
