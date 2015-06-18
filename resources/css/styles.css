@@ -5418,6 +5418,25 @@ h4 {
   .project .content .fields {
     padding: 20px; }
 
+.comment {
+  padding: 10px;
+  font-family: 'Open Sans', sans-serif; }
+  .comment .title {
+    margin: 0 0 5px 0;
+    font-size: 1.8rem;
+    font-weight: 600; }
+  .comment .author {
+    font-size: 1.3rem; }
+  .comment .created {
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    margin-bottom: 5px;
+    color: #b5b5b5; }
+  .comment .text {
+    font-size: 1.5rem; }
+  .comment hr {
+    margin-bottom: 0; }
+
 #header {
   padding: 10px 0;
   margin: 10px; }

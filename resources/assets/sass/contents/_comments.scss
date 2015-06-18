@@ -1,0 +1,24 @@
+.comment{
+  padding: $grid-gutter-width/2;
+  font-family: $font-sans;
+  .title{
+    margin: 0 0 $grid-gutter-width/4 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+  .author{
+    font-size: 1.3rem;
+  }
+  .created{
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    margin-bottom: $grid-gutter-width/4;
+    color: $text-gray;
+  }
+  .text{
+    font-size: 1.5rem;
+  }
+  hr{
+    margin-bottom: 0;
+  }
+}

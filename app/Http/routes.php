@@ -36,6 +36,7 @@ Route::get('user/completeoccupations', 'UserController@completeoccupations');
  */
 Route::resource('user','UserController');
 Route::resource('challenges','ChallengesController');
+Route::resource('comments','CommentsController');
 Route::resource('stories','StoriesController');
 Route::resource('projects','ProjectsController');
 Route::resource('partners','PartnersController');

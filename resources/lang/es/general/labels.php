@@ -73,5 +73,11 @@ return [
     'update'                        => 'Actualizar',
     'companies'                     => 'Empresas',
     'company'                       => 'Empresa',
-    'image'                         => 'Imagen'
+    'image'                         => 'Imagen',
+    'comments'                      => 'Comentarios',
+    'comment'                       => 'Comentario',
+    'write_comment'                 => 'Escribe un comentario',
+    'write_title'                   => 'Escribe un título',
+    'add'                           => 'Agregar',
+    'delete'                        => 'Eliminar'
 ];
