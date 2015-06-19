@@ -39,6 +39,7 @@ Route::resource('challenges','ChallengesController');
 Route::resource('comments','CommentsController');
 Route::resource('likes','LikesController');
 Route::resource('follows','FollowsController');
+Route::resource('groups','GroupsController');
 Route::resource('stories','StoriesController');
 Route::resource('projects','ProjectsController');
 Route::resource('partners','PartnersController');

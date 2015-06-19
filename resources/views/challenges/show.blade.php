@@ -193,9 +193,15 @@
                     <a class="btn btn-purple">@lang('general/labels.participate')</a>
                 </div>
             </div>
+            <div class="content part1">
+                <h4>{{ trans_choice('general/labels.participants', 2 ) }}</h4>
+            </div>
+            <div class="content part2 groups">
+                @include('groups.index',['groups'=>$challenge->groups,'model'=>$challenge])
+            </div>
+
             <div class="content">
                 <h4>@lang('general/labels.options')</h4>
-
                 <div class="text-center">
                     {!! Form::open(array('route' => array('challenges.destroy', $challenge->id), 'method' => 'delete'))
                     !!}

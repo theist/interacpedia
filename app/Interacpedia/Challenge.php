@@ -156,4 +156,12 @@ class Challenge extends Model {
     {
         return $this->morphMany('App\Interacpedia\Follow', 'model');
     }
+    /**
+     * Get all of the challenge groups.
+     */
+    public function groups()
+    {
+        return $this->morphMany('App\Interacpedia\Group', 'model')->orderBy('name', 'asc');
+    }
+
 }

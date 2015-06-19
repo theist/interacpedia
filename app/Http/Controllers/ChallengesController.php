@@ -154,6 +154,7 @@ class ChallengesController extends Controller {
             $challenge->image = "/images/challenges/challenge.jpg";
             $challenge->save();
         }
+        $challenge->groups()->where('name','Grupo general')->where('private',false)->firstOrCreate(['name'=>'Grupo general','private'=>false]);
 
         return redirect( 'challenges' );
     }
@@ -180,6 +181,7 @@ class ChallengesController extends Controller {
             $challenge->image = "/images/challenges/challenge.jpg";
             $challenge->save();
         }
+        $challenge->groups()->where('name','Grupo general')->where('private',false)->firstOrCreate(['name'=>'Grupo general','private'=>false]);
 
         return $challenge;
     }

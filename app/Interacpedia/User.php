@@ -113,6 +113,15 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     {
         return $this->belongsToMany('App\Interacpedia\Tag')->withTimestamps();
     }
+    /**
+     * Get all the groups associated with this user
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function groups()
+    {
+        return $this->belongsToMany('App\Interacpedia\Group');
+    }
 
     /**
      * @param $date

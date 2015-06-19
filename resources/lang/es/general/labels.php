@@ -85,5 +85,10 @@ return [
     'you_like'                      => 'Te gusta',
     'follow'                        => 'Seguir',
     'followers'                     => 'Seguidor|Seguidores',
-    'you_follow'=>'Lo Sigues'
+    'participants'                  => 'Participante|Participantes',
+    'you_follow'                    => 'Lo Sigues',
+    'groups'                        => 'Grupo|Grupos',
+    'group_name'                    => 'Nombre del grupo',
+    'new_group'                     => 'Nuevo grupo',
+    'private'                       => 'Privado'
 ];

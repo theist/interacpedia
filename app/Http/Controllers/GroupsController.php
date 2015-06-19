@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Interacpedia\Follow;
+use App\Interacpedia\Group;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
 
-class FollowsController extends Controller {
-
+class GroupsController extends Controller
+{
     /**
      * Display a listing of the resource.
      *
@@ -18,9 +17,10 @@ class FollowsController extends Controller {
      */
     public function index()
     {
-        $follows = Follow::latest()->get();
+        $groups = Group::latest()->get();
 
-        return view( 'follows.index', compact( 'follows' ) );
+        return view( 'groups.index', compact( 'groups' ) );
+
     }
 
     /**
@@ -43,10 +43,9 @@ class FollowsController extends Controller {
     {
         if ( $request->ajax() )
         {
-            $follow = Auth::user()->follows()->create( $request->all() );
-            $model = $follow->model;
-
-            return view( 'follows.show', compact( 'model' ) );
+            $group = Group::create( $request->all() );
+            $model = $group->model;
+            return view( 'groups.show', compact( 'group','model') );
         } else
         {
             return [ 'fail' => true ];
@@ -56,21 +55,21 @@ class FollowsController extends Controller {
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param Group $group
      * @return Response
      */
-    public function show( $id )
+    public function show( Group $group )
     {
-        //
+        return view( 'groups.show', compact( 'group' ) );
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return Response
      */
-    public function edit( $id )
+    public function edit($id)
     {
         //
     }
@@ -78,10 +77,10 @@ class FollowsController extends Controller {
     /**
      * Update the specified resource in storage.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return Response
      */
-    public function update( $id )
+    public function update($id)
     {
         //
     }
@@ -89,15 +88,14 @@ class FollowsController extends Controller {
     /**
      * Remove the specified resource from storage.
      *
-     * @param Follow $follow
+     * @param Group $group
      * @return Response
      * @throws \Exception
      */
-    public function destroy( Follow $follow )
+    public function destroy( Group $group )
     {
-        $model = $follow->model;
-        $follow->delete();
-
-        return view( 'follows.show', compact( 'model' ) );
+        $id = $group->id;
+        $group->delete();
+        return ['id'=>$id];
     }
 }
