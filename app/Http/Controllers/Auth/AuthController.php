@@ -33,6 +33,29 @@ class AuthController extends Controller {
         $this->middleware( 'guest', [ 'except' => 'getLogout' ] );
     }
 
+    public function getLogout()
+    {
+        $user = Auth::user();
+        Segment::identify( [
+            "userId" => $user->id,
+            "traits" => [
+                "name"  => $user->name,
+                "email" => $user->email,
+            ]
+        ] );
+
+        Segment::track( [
+            "userId"     => $user->id,
+            "event"      => "Logged Out",
+            "properties" => [
+            ]
+        ] );
+
+        Auth::logout();
+        flash()->success( Lang::get( 'auth/messages.logout_ok') );
+        return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/');
+
+    }
     /**
      * Get a validator for an incoming registration request.
      *
