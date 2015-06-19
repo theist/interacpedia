@@ -90,5 +90,6 @@ return [
     'groups'                        => 'Grupo|Grupos',
     'group_name'                    => 'Nombre del grupo',
     'new_group'                     => 'Nuevo grupo',
-    'private'                       => 'Privado'
+    'private'                       => 'Privado',
+    'without_users'                 => 'Sin Usuarios'
 ];

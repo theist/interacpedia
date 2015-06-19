@@ -15,7 +15,7 @@
             <div class="title ">@lang('general/labels.edit') @lang('general/labels.company')</div>
         </div>
         <div class="content">
-            {!! Form::model($company,['method' => 'PATCH', 'action' => ['CompanyController@update',$company->id]]) !!}
+            {!! Form::model($company,['method' => 'PATCH', 'action' => ['CompaniesController@update',$company->id]]) !!}
             @include('companies.form',['submitButtonText' => Lang::get('general/labels.update')])
             {!! Form::close() !!}
             @include('errors.alerts')

@@ -200,7 +200,10 @@
         padding: $grid-gutter-width/4 $grid-gutter-width;
         font-size: 1.6rem;
         font-family: $font-exo2;
-      }
+        .delete-group{
+          display: block;
+        }
+        }
       .name{
         font-size: 1.2rem;
         padding: $grid-gutter-width/2 $grid-gutter-width $grid-gutter-width/2 $grid-gutter-width*2;
