@@ -1,6 +1,7 @@
 <?php namespace App\Interacpedia;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Company extends Model {
 
