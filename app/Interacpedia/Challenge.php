@@ -2,9 +2,12 @@
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\DB;
 
 class Challenge extends Model {
+
+    use SoftDeletes;
 
     protected $fillable = [
         'name',
@@ -22,6 +25,13 @@ class Challenge extends Model {
         'video',
         'files'
     ];
+
+    /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var array
+     */
+    protected $dates = ['deleted_at'];
 
     /**
      * Get possible values for enum field

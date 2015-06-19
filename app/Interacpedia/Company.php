@@ -4,6 +4,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Company extends Model {
 
+    use SoftDeletes;
+
     protected $fillable = [
         'name',
         'description',
@@ -11,5 +13,10 @@ class Company extends Model {
         'image',
         'images'
     ];
-
+    /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var array
+     */
+    protected $dates = ['deleted_at'];
 }
