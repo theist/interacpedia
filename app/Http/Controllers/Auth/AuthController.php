@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Socialite\Facades\Socialite;
+use Segment;
 
 class AuthController extends Controller {
 
@@ -124,6 +125,23 @@ class AuthController extends Controller {
                     flash()->success( Lang::get( 'auth/messages.avatar_updated', [ 'name' => $name ] ) );
                 }
                 Auth::login( $exists );
+
+                Segment::identify( [
+                    "userId" => $exists->id,
+                    "traits" => [
+                        "name"  => $exists->name,
+                        "email" => $exists->email,
+                    ]
+                ] );
+
+                Segment::track( [
+                    "userId"     => $exists->id,
+                    "event"      => "Logged In",
+                    "properties" => [
+                        "social" => true,
+                        "source" => $name
+                    ]
+                ] );
                 flash()->success( Lang::get( 'auth/messages.login_ok', [ 'name' => $name ] ) );
             } else
             {

@@ -153,7 +153,8 @@ return [
         'SocialiteProviders\Manager\ServiceProvider',
         'Intervention\Image\ImageServiceProvider',
         'Alakkad\WorldCountriesCities\WorldCountriesCitiesServiceProvider',
-        'Spatie\Backup\BackupServiceProvider'
+        'Spatie\Backup\BackupServiceProvider',
+        'CachetHQ\Segment\SegmentServiceProvider'
     ],
 
     /*
@@ -209,6 +210,7 @@ return [
         //'Socialize' => 'SocialiteProviders\Manager\Socialite\Facades\Socialite',
         'Form'      => 'Collective\Html\FormFacade',
         'Html'      => 'Collective\Html\HtmlFacade',
-        'Image'     => 'Intervention\Image\Facades\Image'
+        'Image'     => 'Intervention\Image\Facades\Image',
+        'Segment'  => 'CachetHQ\Segment\Facades\Segment'
     ],
 ];
