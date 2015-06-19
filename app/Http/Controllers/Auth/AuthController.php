@@ -6,7 +6,7 @@ use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Validator;
-use Socialize;
+use Laravel\Socialite\Facades\Socialite;
 
 class AuthController extends Controller {
 
@@ -27,7 +27,7 @@ class AuthController extends Controller {
      * Create a new authentication controller instance.
      *
      */
-    public function __construct( )
+    public function __construct()
     {
         $this->middleware( 'guest', [ 'except' => 'getLogout' ] );
     }
@@ -35,41 +35,42 @@ class AuthController extends Controller {
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    public function validator(array $data)
+    public function validator( array $data )
     {
-        return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users|confirmed',
+        return Validator::make( $data, [
+            'name'     => 'required|max:255',
+            'email'    => 'required|email|max:255|unique:users|confirmed',
             'password' => 'required|confirmed|min:6',
             'category' => 'required',
-        ]);
+        ] );
     }
 
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return User
      */
-    public function create(array $data)
+    public function create( array $data )
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'category' => $data['category'],
-            'newsletter' => isset($data['newsletter'])?1:0,
-            'password' => bcrypt($data['password']),
-        ]);
+        return User::create( [
+            'name'       => $data[ 'name' ],
+            'email'      => $data[ 'email' ],
+            'category'   => $data[ 'category' ],
+            'newsletter' => isset( $data[ 'newsletter' ] ) ? 1 : 0,
+            'password'   => bcrypt( $data[ 'password' ] ),
+        ] );
     }
+
     /**
      * @return mixed
      */
     public function getFacebook()
     {
-        return Socialize::with( 'facebook' )->redirect();
+        return Socialite::driver( 'facebook' )->redirect();
     }
 
     public function getFacebook2()
@@ -79,14 +80,9 @@ class AuthController extends Controller {
 
     public function getGoogle()
     {
-        return Socialize::with( 'google' )->redirect();
+        return Socialite::driver( 'google' )->redirect();
     }
 
-    /**
-     * Gets user information from LinkedIn and logins or creates the local users.
-     *
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
-     */
     public function getGoogle2()
     {
         return $this->sociallogin( 'google', 'Google+' );
@@ -94,14 +90,9 @@ class AuthController extends Controller {
 
     public function getLinkedin()
     {
-        return Socialize::with( 'linkedin' )->redirect();
+        return Socialite::driver( 'linkedin' )->redirect();
     }
 
-    /**
-     * Gets user information from LinkedIn and logins or creates the local users.
-     *
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
-     */
     public function getLinkedin2()
     {
         return $this->sociallogin( 'linkedin', 'LinkedIn' );
@@ -109,7 +100,7 @@ class AuthController extends Controller {
 
     public function getTwitter()
     {
-        return Socialize::with( 'twitter' )->redirect();
+        return Socialite::driver( 'twitter' )->redirect();
     }
 
     public function getTwitter2()
@@ -120,7 +111,7 @@ class AuthController extends Controller {
 
     public function sociallogin( $provider, $name )
     {
-        $user = Socialize::with( $provider )->user();
+        $user = Socialite::driver( $provider )->user();
         if ( $user && $user->getEmail() )
         {
             $exists = User::where( 'email', '=', $user->getEmail() )->first();
@@ -130,10 +121,10 @@ class AuthController extends Controller {
                 {
                     $exists->avatar = $user->getAvatar();
                     $exists->save();
-                    flash()->success( Lang::get('auth/messages.avatar_updated',['name'=>$name]) );
+                    flash()->success( Lang::get( 'auth/messages.avatar_updated', [ 'name' => $name ] ) );
                 }
                 Auth::login( $exists );
-                flash()->success( Lang::get('auth/messages.login_ok',['name'=>$name]) );
+                flash()->success( Lang::get( 'auth/messages.login_ok', [ 'name' => $name ] ) );
             } else
             {
                 //$new = User::create( [
@@ -142,14 +133,16 @@ class AuthController extends Controller {
                 //    'avatar' => $user->getAvatar()
                 //] );
                 //Auth::login( $new );
-                flash()->error( Lang::get('auth/messages.sorry_invitation') );
+                flash()->error( Lang::get( 'auth/messages.sorry_invitation' ) );
+
                 return redirect( $this->loginPath() );
             }
+
             return redirect()->intended( $this->redirectPath() );
 
         } else
         {
-            flash()->error( Lang::get('auth/messages.social_error',['name'=>$name]) );
+            flash()->error( Lang::get( 'auth/messages.social_error', [ 'name' => $name ] ) );
 
             return redirect( $this->loginPath() );
         }

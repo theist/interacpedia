@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3d2be4cc55bd309e04e1ace5a86baf36",
+    "hash": "c82cfa1530171ff4b9a2f5891835da81",
     "packages": [
         {
             "name": "alakkad/world-countries-cities",
@@ -43,16 +43,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.0.4",
+            "version": "3.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "4647fbbc2530dc08cc614909dbe1697cf0031050"
+                "reference": "9f8de576b9adf94ab482453722b9e33f2c91d440"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/4647fbbc2530dc08cc614909dbe1697cf0031050",
-                "reference": "4647fbbc2530dc08cc614909dbe1697cf0031050",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/9f8de576b9adf94ab482453722b9e33f2c91d440",
+                "reference": "9f8de576b9adf94ab482453722b9e33f2c91d440",
                 "shasum": ""
             },
             "require": {
@@ -111,7 +111,74 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2015-06-12 00:06:34"
+            "time": "2015-06-19 01:12:54"
+        },
+        {
+            "name": "cachethq/segment",
+            "version": "2.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cachethq/Laravel-Segment.git",
+                "reference": "cbc9c61c9c9483e91b88d681f46485f7d97fc88a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cachethq/Laravel-Segment/zipball/cbc9c61c9c9483e91b88d681f46485f7d97fc88a",
+                "reference": "cbc9c61c9c9483e91b88d681f46485f7d97fc88a",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/config": "5.0.*|5.1.*",
+                "illuminate/support": "5.0.*|5.1.*",
+                "php": ">=5.5.9",
+                "segmentio/analytics-php": "1.1.*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "CachetHQ\\Segment\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "James Brooks",
+                    "email": "james@cachethq.io"
+                },
+                {
+                    "name": "Joseph Cohen",
+                    "email": "joe@cachethq.io"
+                },
+                {
+                    "name": "Graham Campbell",
+                    "email": "graham@cachethq.io"
+                }
+            ],
+            "description": "Segment.com wrapper written for Laravel",
+            "keywords": [
+                "Cachet HQ",
+                "CachetHQ",
+                "Laravel Segment",
+                "api",
+                "cachet",
+                "framework",
+                "laravel",
+                "segment",
+                "segment.com",
+                "segment.io"
+            ],
+            "time": "2015-05-25 22:41:20"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -1046,16 +1113,16 @@
         },
         {
             "name": "laravel/socialite",
-            "version": "v2.0.5",
+            "version": "v2.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/socialite.git",
-                "reference": "15f36da073454d630bac20afef815aa9cfa4cf8f"
+                "reference": "31685e257ad092fb1a37f9d5d0d87f343e63c568"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/socialite/zipball/15f36da073454d630bac20afef815aa9cfa4cf8f",
-                "reference": "15f36da073454d630bac20afef815aa9cfa4cf8f",
+                "url": "https://api.github.com/repos/laravel/socialite/zipball/31685e257ad092fb1a37f9d5d0d87f343e63c568",
+                "reference": "31685e257ad092fb1a37f9d5d0d87f343e63c568",
                 "shasum": ""
             },
             "require": {
@@ -1096,7 +1163,7 @@
                 "laravel",
                 "oauth"
             ],
-            "time": "2015-06-03 18:14:09"
+            "time": "2015-06-18 16:36:42"
         },
         {
             "name": "laravelcollective/html",
@@ -1344,16 +1411,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.13.1",
+            "version": "1.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "c31a2c4e8db5da8b46c74cf275d7f109c0f249ac"
+                "reference": "b287fbbe1ca27847064beff2bad7fb6920bf08cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/c31a2c4e8db5da8b46c74cf275d7f109c0f249ac",
-                "reference": "c31a2c4e8db5da8b46c74cf275d7f109c0f249ac",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/b287fbbe1ca27847064beff2bad7fb6920bf08cc",
+                "reference": "b287fbbe1ca27847064beff2bad7fb6920bf08cc",
                 "shasum": ""
             },
             "require": {
@@ -1364,12 +1431,14 @@
                 "psr/log-implementation": "1.0.0"
             },
             "require-dev": {
-                "aws/aws-sdk-php": "~2.4, >2.4.8",
+                "aws/aws-sdk-php": "^2.4.9",
                 "doctrine/couchdb": "~1.0@dev",
                 "graylog2/gelf-php": "~1.0",
-                "phpunit/phpunit": "~4.0",
-                "raven/raven": "~0.5",
-                "ruflin/elastica": "0.90.*",
+                "php-console/php-console": "^3.1.3",
+                "phpunit/phpunit": "~4.5",
+                "phpunit/phpunit-mock-objects": "2.3.0",
+                "raven/raven": "~0.8",
+                "ruflin/elastica": ">=0.90 <3.0",
                 "swiftmailer/swiftmailer": "~5.3",
                 "videlalvaro/php-amqplib": "~2.4"
             },
@@ -1379,6 +1448,7 @@
                 "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
                 "ext-mongo": "Allow sending log messages to a MongoDB server",
                 "graylog2/gelf-php": "Allow sending log messages to a GrayLog2 server",
+                "php-console/php-console": "Allow sending log messages to Google Chrome",
                 "raven/raven": "Allow sending log messages to a Sentry server",
                 "rollbar/rollbar": "Allow sending log messages to Rollbar",
                 "ruflin/elastica": "Allow sending log messages to an Elastic Search server",
@@ -1387,7 +1457,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.13.x-dev"
+                    "dev-master": "1.14.x-dev"
                 }
             },
             "autoload": {
@@ -1413,7 +1483,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2015-03-09 09:58:04"
+            "time": "2015-06-19 13:29:54"
         },
         {
             "name": "mtdowling/cron-expression",
@@ -1814,107 +1884,30 @@
             "time": "2015-03-26 18:43:54"
         },
         {
-            "name": "socialiteproviders/google",
-            "version": "v1.0.7",
+            "name": "segmentio/analytics-php",
+            "version": "1.1.3",
             "source": {
                 "type": "git",
-                "url": "https://github.com/SocialiteProviders/Google-Plus.git",
-                "reference": "eee4e759db4ae61a4bc68003212ab6e6141b5134"
+                "url": "https://github.com/segmentio/analytics-php.git",
+                "reference": "be9bda98e56848fc1e1a498e4724103dbba2fd13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SocialiteProviders/Google-Plus/zipball/eee4e759db4ae61a4bc68003212ab6e6141b5134",
-                "reference": "eee4e759db4ae61a4bc68003212ab6e6141b5134",
+                "url": "https://api.github.com/repos/segmentio/analytics-php/zipball/be9bda98e56848fc1e1a498e4724103dbba2fd13",
+                "reference": "be9bda98e56848fc1e1a498e4724103dbba2fd13",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4.0",
-                "socialiteproviders/manager": "0.1.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "SocialiteProviders\\Google\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "DraperStudio",
-                    "email": "hello@draperstud.io"
-                }
-            ],
-            "description": "Google OAuth2 Provider for Laravel Socialite",
-            "time": "2015-03-07 10:59:24"
-        },
-        {
-            "name": "socialiteproviders/linkedin",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/SocialiteProviders/LinkedIn.git",
-                "reference": "813cc60fc1fe23de667e9ad50d347d9358c924a9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/SocialiteProviders/LinkedIn/zipball/813cc60fc1fe23de667e9ad50d347d9358c924a9",
-                "reference": "813cc60fc1fe23de667e9ad50d347d9358c924a9",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4.0",
-                "socialiteproviders/manager": "0.1.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "SocialiteProviders\\LinkedIn\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "DraperStudio",
-                    "email": "hello@draperstud.io"
-                }
-            ],
-            "description": "LinkedIn OAuth2 Provider for Laravel Socialite",
-            "time": "2015-03-07 10:59:41"
-        },
-        {
-            "name": "socialiteproviders/manager",
-            "version": "0.1.10",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/SocialiteProviders/Manager.git",
-                "reference": "a9640be0ee30d7f822f4662f1a698fe053361504"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/SocialiteProviders/Manager/zipball/a9640be0ee30d7f822f4662f1a698fe053361504",
-                "reference": "a9640be0ee30d7f822f4662f1a698fe053361504",
-                "shasum": ""
-            },
-            "require": {
-                "laravel/framework": "~5.0",
-                "laravel/socialite": "~2.0",
-                "php": ">=5.4.0"
+                "php": ">=5.3.3"
             },
             "require-dev": {
-                "mockery/mockery": "0.9.*",
-                "phpunit/phpunit": "4.5.*"
+                "phpunit/phpunit": "~4.0"
             },
             "type": "library",
             "autoload": {
-                "psr-4": {
-                    "SocialiteProviders\\Manager\\": "src/"
-                }
+                "files": [
+                    "lib/Segment.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -1922,12 +1915,18 @@
             ],
             "authors": [
                 {
-                    "name": "Andy Wendt",
-                    "email": "andy@awendt.com"
+                    "name": "Segment.io <friends@segment.io>",
+                    "homepage": "https://segment.io/"
                 }
             ],
-            "description": "Easily add new or override built-in providers in Laravel Socialite.",
-            "time": "2015-05-03 14:45:51"
+            "description": "Segmentio Analytics PHP Library",
+            "homepage": "https://segment.io/libraries/php",
+            "keywords": [
+                "analytics",
+                "analytics.js",
+                "segmentio"
+            ],
+            "time": "2015-03-03 11:51:21"
         },
         {
             "name": "spatie/laravel-backup",
@@ -3160,16 +3159,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "2.1.5",
+            "version": "2.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "be2286cb8c7e1773eded49d9719219e6f74f9e3e"
+                "reference": "631e365cf26bb2c078683e8d9bcf8bc631ac4d44"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/be2286cb8c7e1773eded49d9719219e6f74f9e3e",
-                "reference": "be2286cb8c7e1773eded49d9719219e6f74f9e3e",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/631e365cf26bb2c078683e8d9bcf8bc631ac4d44",
+                "reference": "631e365cf26bb2c078683e8d9bcf8bc631ac4d44",
                 "shasum": ""
             },
             "require": {
@@ -3218,7 +3217,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-06-09 13:05:42"
+            "time": "2015-06-19 07:11:55"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -3354,16 +3353,16 @@
         },
         {
             "name": "phpunit/php-token-stream",
-            "version": "1.4.2",
+            "version": "1.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-token-stream.git",
-                "reference": "db63be1159c81df649cd0260e30249a586d4129e"
+                "reference": "7a9b0969488c3c54fd62b4d504b3ec758fd005d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/db63be1159c81df649cd0260e30249a586d4129e",
-                "reference": "db63be1159c81df649cd0260e30249a586d4129e",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/7a9b0969488c3c54fd62b4d504b3ec758fd005d9",
+                "reference": "7a9b0969488c3c54fd62b4d504b3ec758fd005d9",
                 "shasum": ""
             },
             "require": {
@@ -3399,20 +3398,20 @@
             "keywords": [
                 "tokenizer"
             ],
-            "time": "2015-06-12 07:34:24"
+            "time": "2015-06-19 03:43:16"
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.7.3",
+            "version": "4.7.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "41fea1e84ed84d373f5ac099a1276c4358c90708"
+                "reference": "e5f851f324f7add846316f39e668e9deac97a103"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/41fea1e84ed84d373f5ac099a1276c4358c90708",
-                "reference": "41fea1e84ed84d373f5ac099a1276c4358c90708",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/e5f851f324f7add846316f39e668e9deac97a103",
+                "reference": "e5f851f324f7add846316f39e668e9deac97a103",
                 "shasum": ""
             },
             "require": {
@@ -3426,7 +3425,7 @@
                 "phpunit/php-code-coverage": "~2.1",
                 "phpunit/php-file-iterator": "~1.4",
                 "phpunit/php-text-template": "~1.2",
-                "phpunit/php-timer": "~1.0",
+                "phpunit/php-timer": ">=1.0.6",
                 "phpunit/phpunit-mock-objects": "~2.3",
                 "sebastian/comparator": "~1.1",
                 "sebastian/diff": "~1.2",
@@ -3471,7 +3470,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-06-11 16:20:25"
+            "time": "2015-06-18 13:33:26"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -3954,7 +3953,6 @@
     "stability-flags": {
         "oriceon/toastr-5-laravel": 20,
         "intervention/image": 20,
-        "socialiteproviders/linkedin": 20,
         "alakkad/world-countries-cities": 20
     },
     "prefer-stable": false,
