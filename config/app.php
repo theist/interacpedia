@@ -149,8 +149,8 @@ return [
         //'Laracasts\Flash\FlashServiceProvider',
         'Kamaln7\Toastr\ToastrServiceProvider',
         //'Laravel\Socialite\SocialiteServiceProvider',
-        Laravel\Socialite\SocialiteServiceProvider::class,
-        //'SocialiteProviders\Manager\ServiceProvider',
+        //Laravel\Socialite\SocialiteServiceProvider::class,
+        'SocialiteProviders\Manager\ServiceProvider',
         'Intervention\Image\ImageServiceProvider',
         'Alakkad\WorldCountriesCities\WorldCountriesCitiesServiceProvider',
         'Spatie\Backup\BackupServiceProvider'
