@@ -7,6 +7,7 @@ use App\Interacpedia\Partner;
 use App\Interacpedia\Story;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Segment;
 
 class PagesController extends Controller {
 
@@ -17,12 +18,28 @@ class PagesController extends Controller {
      */
     public function index()
     {
-        Segment::page(array(
-            "userId" => Auth::user()->id,
-            "category" => "General",
-            "name"=>"Home",
-            "properties" => [ ]
-        ));
+        if($user = Auth::user()){
+            Segment::identify( [
+                "userId" => $user->id,
+                "traits" => [
+                    "name"  => $user->name,
+                    "email" => $user->email,
+                ]
+            ] );
+            Segment::page([
+                "userId" => $user->id,
+                "category" => "General",
+                "name"=>"Home",
+                "properties" => [ ]
+            ]);
+        } else {
+            Segment::page([
+                "category" => "General",
+                "name"=>"Home",
+                "properties" => [ ]
+            ]);
+
+        }
         $stories = Story::latest()->take(2)->get();
         $partners = Partner::latest()->take(4)->get();
         return view('home', compact('stories','partners'));
