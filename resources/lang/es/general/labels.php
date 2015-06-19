@@ -79,5 +79,11 @@ return [
     'write_comment'                 => 'Escribe un comentario',
     'write_title'                   => 'Escribe un título',
     'add'                           => 'Agregar',
-    'delete'                        => 'Eliminar'
+    'delete'                        => 'Eliminar',
+    'likes'                         => 'Me gusta',
+    'like'                          => 'Me gusta',
+    'you_like'                      => 'Te gusta',
+    'follow'                        => 'Seguir',
+    'followers'                     => 'Seguidor|Seguidores',
+    'you_follow'=>'Lo Sigues'
 ];

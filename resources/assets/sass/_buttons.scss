@@ -123,7 +123,8 @@
   color: $purple;
   border-color: $purple;
   background: white;
-  &:hover {
+  &:hover,
+  &.active{
     background-color: $purple;
     color: white;
     border-color: white;
@@ -134,7 +135,8 @@
   color: $dark-blue;
   border-color: $dark-blue;
   background: white;
-  &:hover {
+  &:hover,
+  &.active{
     background-color: $dark-blue;
     color: white;
     border-color: white;

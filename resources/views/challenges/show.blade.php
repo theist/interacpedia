@@ -168,28 +168,17 @@
         </div>
         <div class="col-md-3 sidebar">
             <div class="content">
+                <div id="model-follows">
+                    @include('follows.show',['model'=>$challenge])
+                </div>
+                <div id="model-likes">
+                    @include('likes.show',['model'=>$challenge])
+                </div>
+                <div class="text-center row" style="margin: 10px;">
+                    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                    <div class="addthis_sharing_toolbox"></div>
+                </div>
                 <div class="text-center row">
-                    <div class="col-md-5 text-right">
-                        <div class="count">0</div>
-                        <small>Followers</small>
-                    </div>
-                    <div class="col-md-7 text-left">
-                        <a class="btn btn-fixed-purple" href=""><i class="fa fa-share"></i> Follow</a>
-                    </div>
-                    <div class="col-md-5 text-right">
-                        <div class="count">0</div>
-                        <small>Likes</small>
-                    </div>
-                    <div class="col-md-7 text-left">
-                        <a class="btn btn-fixed-blue" href=""><i class="fa fa-thumbs-o-up"></i> Like</a>
-                    </div>
-                    <div class="col-md-5 text-right">
-                        <div class="count">0</div>
-                        <small>Shares</small>
-                    </div>
-                    <div class="col-md-7 text-left">
-                        <a class="btn btn-fixed-green" href=""><i class="fa fa-share-alt"></i> Share</a>
-                    </div>
                     <a class="btn btn-purple">@lang('general/labels.participate')</a>
                 </div>
             </div>

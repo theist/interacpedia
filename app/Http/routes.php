@@ -37,10 +37,12 @@ Route::get('user/completeoccupations', 'UserController@completeoccupations');
 Route::resource('user','UserController');
 Route::resource('challenges','ChallengesController');
 Route::resource('comments','CommentsController');
+Route::resource('likes','LikesController');
+Route::resource('follows','FollowsController');
 Route::resource('stories','StoriesController');
 Route::resource('projects','ProjectsController');
 Route::resource('partners','PartnersController');
-Route::resource('companies','CompanyController');
+Route::resource('companies','CompaniesController');
 Route::post('upload','UploadController@store');
 
 /**

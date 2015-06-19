@@ -4979,7 +4979,7 @@ h4 {
   color: #da0080;
   border-color: #da0080;
   background: white; }
-  .btn-fixed-purple:hover {
+  .btn-fixed-purple:hover, .btn-fixed-purple.active {
     background-color: #da0080;
     color: white;
     border-color: white; }
@@ -4989,7 +4989,7 @@ h4 {
   color: #323095;
   border-color: #323095;
   background: white; }
-  .btn-fixed-blue:hover {
+  .btn-fixed-blue:hover, .btn-fixed-blue.active {
     background-color: #323095;
     color: white;
     border-color: white; }

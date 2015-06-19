@@ -142,4 +142,18 @@ class Challenge extends Model {
         return $this->morphMany('App\Interacpedia\Comment', 'model')->orderBy('created_at', 'desc');
     }
 
+    /**
+     * Get all of the challenge likes.
+     */
+    public function likes()
+    {
+        return $this->morphMany('App\Interacpedia\Like', 'model');
+    }
+    /**
+     * Get all of the challenge follows.
+     */
+    public function follows()
+    {
+        return $this->morphMany('App\Interacpedia\Follow', 'model');
+    }
 }

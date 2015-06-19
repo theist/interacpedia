@@ -37,6 +37,9 @@
 @include('flash::messages')
 {!! Toastr::render() !!}
 <script>$('#flash-overlay-modal').modal();</script>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-558390bd5379e247" async="async"></script>
+
 <div class="container-fluid" id="section-footer">
     @include('partials.footer')
     @yield('footer')
