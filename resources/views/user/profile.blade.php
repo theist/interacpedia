@@ -4,7 +4,6 @@
     @lang('user/title.profile')
     @parent
 @stop
-
 @section('section-profile')
     @include('partials.profile')
 @stop

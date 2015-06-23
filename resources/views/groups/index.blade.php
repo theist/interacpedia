@@ -27,6 +27,7 @@
     </div>
 </div>
 @section('footer')
+    @parent
     <script>
         $('#addUser').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget) ;
