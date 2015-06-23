@@ -197,7 +197,7 @@
                 <h4>{{ trans_choice('general/labels.participants', 2 ) }}</h4>
             </div>
             <div class="content part2 groups">
-                @include('groups.index',['groups'=>$challenge->groups,'model'=>$challenge])
+                @include('groups.index',['groups'=>$challenge->groups,'model'=>$challenge,'users'=>$users])
             </div>
 
             <div class="content">

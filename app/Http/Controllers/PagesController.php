@@ -21,7 +21,7 @@ class PagesController extends Controller {
 
         $stories = Story::latest()->take(2)->get();
         $partners = Partner::latest()->take(4)->get();
-        return view('home', compact('stories','partners'));
+        return view('home', compact('stories','partners','user'));
     }
 
     /**

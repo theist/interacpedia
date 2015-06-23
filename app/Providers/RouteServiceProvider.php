@@ -31,6 +31,7 @@ class RouteServiceProvider extends ServiceProvider {
         $router->model('likes', 'App\Interacpedia\Like');
         $router->model('follows', 'App\Interacpedia\Follow');
         $router->model('groups', 'App\Interacpedia\Group');
+        $router->model('messages', 'App\Interacpedia\Message');
 
 //
 	}

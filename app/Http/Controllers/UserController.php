@@ -40,8 +40,9 @@ class UserController extends Controller {
         $tags_searching_resources = Tag::where( 'type', 'searching_resources' )->lists( 'name', 'id' );
         $tags_searching_experts = Tag::where( 'type', 'searching_experts' )->lists( 'name', 'id' );
         $tags_searching_personal = Tag::where( 'type', 'searching_personal' )->lists( 'name', 'id' );
+        $users = User::lists( 'name', 'id' );
 
-        return view( 'user.profile', compact( 'user', 'option',
+        return view( 'user.profile', compact( 'user', 'option', 'users',
             'tags_vision', 'tags_dreams', 'tags_likes',
             'tags_work_in', 'tags_work_areas', 'tags_contribution', 'tags_in_areas',
             'tags_searching_resources', 'tags_searching_experts', 'tags_searching_personal' ) );
@@ -67,8 +68,9 @@ class UserController extends Controller {
         $tags_searching_resources = Tag::where( 'type', 'searching_resources' )->lists( 'name', 'id' );
         $tags_searching_experts = Tag::where( 'type', 'searching_experts' )->lists( 'name', 'id' );
         $tags_searching_personal = Tag::where( 'type', 'searching_personal' )->lists( 'name', 'id' );
+        $users = User::lists( 'name', 'id' );
 
-        return view( 'user.profile', compact( 'user', 'option',
+        return view( 'user.profile', compact( 'user', 'option', 'users',
             'tags_vision', 'tags_dreams', 'tags_likes',
             'tags_work_in', 'tags_work_areas', 'tags_contribution', 'tags_in_areas',
             'tags_searching_resources', 'tags_searching_experts', 'tags_searching_personal' ) );
@@ -97,14 +99,16 @@ class UserController extends Controller {
         return view( 'user.edit', compact( 'user',
             'tags_vision', 'tags_dreams', 'tags_likes',
             'tags_work_in', 'tags_work_areas', 'tags_contribution', 'tags_in_areas',
-            'tags_searching_resources','tags_searching_experts','tags_searching_personal' ) );
+            'tags_searching_resources', 'tags_searching_experts', 'tags_searching_personal' ) );
     }
 
-    public function companies(Authenticatable $user)
+    public function companies( Authenticatable $user )
     {
         $companies = Company::all();
-        return view('user.companies',compact('user','companies'));
+
+        return view( 'user.companies', compact( 'user', 'companies' ) );
     }
+
     /**
      * @param Authenticatable $user
      * @return \Illuminate\View\View

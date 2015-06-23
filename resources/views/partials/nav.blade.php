@@ -21,25 +21,41 @@
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="{{ action('PagesController@about') }}">@lang('general/menu.whatis')</a></li>
                             <li><a href="{{ action('PagesController@howitworks') }}">@lang('general/menu.howitworks')</a></li>
+                            <li><a href="{{ action('PagesController@index') }}">@lang('general/menu.contact')</a></li>
                         </ul>
                     </li>
                     @if(Auth::check())
                         <li><a href="/user/profile">@lang('general/menu.profile')</a></li>
                     @endif
-                    <li class="dropdown"><a href="{{ action('ChallengesController@index') }}">@lang('general/menu.challenges')</a></li>
-                    <li class="dropdown"><a
-                                href="{{ action('ProjectsController@index') }}">@lang('general/menu.projects') <span
-                                    class="caret"></span></a></li>
-                    <li class="dropdown"><a href="#">@lang('general/menu.network') <span class="caret"></span></a></li>
-                    <li class="dropdown"><a
-                                href="{{ action('PartnersController@index') }}">@lang('general/menu.partners') <span
-                                    class="caret"></span></a></li>
-                    <li class="dropdown"><a href="{{ action('StoriesController@index') }}">@lang('general/menu.stories') <span
-                                    class="caret"></span></a></li>
+                    <li><a href="{{ action('ChallengesController@index') }}">@lang('general/menu.challenges')</a></li>
+                    <li><a href="{{ action('ProjectsController@index') }}">@lang('general/menu.projects')</a></li>
+                    <li><a href="#">@lang('general/menu.network')</a></li>
 {{--                    <li class="dropdown"><a href="#">@lang('general/menu.news') <span class="caret"></span></a></li>--}}
                     {{--<li class="dropdown"><a href="#">@lang('general/menu.blog') <span class="caret"></span></a></li>--}}
-                    <li class="dropdown"><a href="{{ action('PagesController@index') }}">@lang('general/menu.contact') <span
-                                    class="caret"></span></a></li>
+                    <li>
+                        <a href="{{ action('PagesController@howitworks') }}" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown" role="button" aria-expanded="false">
+                            @lang('general/menu.more') <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{ action('StoriesController@index') }}">@lang('general/menu.stories')</a></li>
+                            <li><a href="{{ action('PartnersController@index') }}">@lang('general/menu.partners')</a></li>
+                        </ul>
+                    </li>
+                    @if(Auth::check())
+                    <li class="icon">
+                        <a href=""><img src="/images/icons/40x40/usermenu-notifications.png" alt="Notifications"/></a>
+                    </li>
+                    <li class="icon">
+                        <a href="/user/{{ Auth::user()->id }}/messages"><img src="/images/icons/40x40/usermenu-messages.png" alt="Messages"/></a>
+                    </li>
+                    <li class="icon">
+                        <a href="/user/{{ Auth::user()->id }}/notifications"><img src="/images/icons/40x40/usermenu-profile.png" alt="Messages"/></a>
+                    </li>
+                    <li class="icon">
+                        <a href=""><img src="/images/icons/40x40/usermenu-down.png" alt="Messages"/></a>
+                    </li>
+                    @endif
+
                 </ul>
             </div>
         </div>

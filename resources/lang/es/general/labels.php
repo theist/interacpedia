@@ -91,5 +91,12 @@ return [
     'group_name'                    => 'Nombre del grupo',
     'new_group'                     => 'Nuevo grupo',
     'private'                       => 'Privado',
-    'without_users'                 => 'Sin Usuarios'
+    'without_users'                 => 'Sin Usuarios',
+    'close'                         => 'Cerrar',
+    'users'                         => 'Usuario|Usuario',
+    'messages'                      => 'Mensaje|Mensajes',
+    'notifications'                 => 'Notificación|Notificaciones',
+    'write'                         => 'Escribir',
+    'new'                           => 'Nuevo',
+    'send'                          => 'Enviar'
 ];

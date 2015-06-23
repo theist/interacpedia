@@ -16,6 +16,11 @@
       text-transform: uppercase;
       background: none;
     }
+    &.icon{
+      a{
+        padding: 0;
+      }
+    }
   }
 }
 

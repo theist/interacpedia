@@ -14,5 +14,7 @@ return [
     'whatis'       => 'Qué es Interacpedia',
     'about'        => 'Acerca de',
     'interacpedia' => 'Interacpedia',
-    'toggle'       => 'Mostrar navegación' //Toggle navigation
+    'toggle'       => 'Mostrar navegación',
+    'more'         => 'Más'
+
 ];

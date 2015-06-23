@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Interacpedia\Group;
+use App\Interacpedia\Message;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class GroupsController extends Controller
+class MessagesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,10 +17,7 @@ class GroupsController extends Controller
      */
     public function index()
     {
-        $groups = Group::latest()->get();
-
-        return view( 'groups.index', compact( 'groups' ) );
-
+        //
     }
 
     /**
@@ -36,16 +33,14 @@ class GroupsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
      * @return Response
      */
     public function store( Request $request )
     {
         if ( $request->ajax() )
         {
-            $group = Group::create( $request->all() );
-            $model = $group->model;
-            return view( 'groups.show', compact( 'group','model') );
+            $message = Message::create( $request->all() );
+            return $message;
         } else
         {
             return [ 'fail' => true ];
@@ -55,12 +50,12 @@ class GroupsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param Group $group
+     * @param  int  $id
      * @return Response
      */
-    public function show( Group $group )
+    public function show($id)
     {
-        return view( 'groups.show', compact( 'group' ) );
+        //
     }
 
     /**
@@ -88,22 +83,11 @@ class GroupsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param Group $group
+     * @param  int  $id
      * @return Response
-     * @throws \Exception
      */
-    public function destroy( Group $group )
+    public function destroy($id)
     {
-        $id = $group->id;
-        $group->delete();
-        return ['id'=>$id];
-    }
-
-    public function adduser( Request $request ){
-        //return $request->all();
-        $group = Group::findOrNew($request->get('groupid'));
-        $group->users()->detach($request->get('userid'));
-        $group->users()->attach($request->get('userid'));
-        return $group->users;
+        //
     }
 }

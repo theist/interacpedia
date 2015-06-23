@@ -23,7 +23,9 @@
                     <br/>
                     0 @lang('user/profile.followers') / 0 @lang('user/profile.following')<br/>
                     <a class="btn" href="">@lang('user/profile.follow')</a>
-                    <a class="btn btn-darkblue" href="">@lang('user/profile.contact')</a>
+                    @if(Auth::user()->id != $user->id)
+                        <a class="btn btn-darkblue" href="">@lang('user/profile.contact')</a>
+                    @endif
                 </div>
             </div>
         </div>

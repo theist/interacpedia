@@ -154,7 +154,7 @@ class ChallengesController extends Controller {
             $challenge->image = "/images/challenges/challenge.jpg";
             $challenge->save();
         }
-        $challenge->groups()->where('name','Grupo general')->where('private',false)->firstOrCreate(['name'=>'Grupo general','private'=>false]);
+        $challenge->groups()->where( 'name', 'Grupo general' )->where( 'private', false )->firstOrCreate( [ 'name' => 'Grupo general', 'private' => false ] );
 
         return redirect( 'challenges' );
     }
@@ -181,7 +181,7 @@ class ChallengesController extends Controller {
             $challenge->image = "/images/challenges/challenge.jpg";
             $challenge->save();
         }
-        $challenge->groups()->where('name','Grupo general')->where('private',false)->firstOrCreate(['name'=>'Grupo general','private'=>false]);
+        $challenge->groups()->where( 'name', 'Grupo general' )->where( 'private', false )->firstOrCreate( [ 'name' => 'Grupo general', 'private' => false ] );
 
         return $challenge;
     }
@@ -217,12 +217,13 @@ class ChallengesController extends Controller {
             $courses[ ] = [ "id" => $id, "name" => $name ];
         }
         $professors = [ ];
+        $users = User::lists( 'name', 'id' );
         if ( Auth::check() )
         {
-            return view( 'challenges.show', compact( 'challenge', 'user', 'universities', 'careers', 'courses', 'professors' ) );
+            return view( 'challenges.show', compact( 'challenge', 'user', 'universities', 'careers', 'courses', 'professors', 'users' ) );
         } else
         {
-            return view( 'challenges.showbrief', compact( 'challenge', 'user', 'universities', 'careers', 'courses', 'professors' ) );
+            return view( 'challenges.showbrief', compact( 'challenge', 'user', 'universities', 'careers', 'courses', 'professors', 'users' ) );
         }
 
     }
