@@ -18,28 +18,29 @@ class PagesController extends Controller {
      */
     public function index()
     {
-        if($user = Auth::user()){
-            Segment::identify( [
-                "userId" => $user->id,
-                "traits" => [
-                    "name"  => $user->name,
-                    "email" => $user->email,
-                ]
-            ] );
-            Segment::page([
-                "userId" => $user->id,
-                "category" => "General",
-                "name"=>"Home",
-                "properties" => [ ]
-            ]);
-        } else {
-            Segment::page([
-                "category" => "General",
-                "name"=>"Home",
-                "properties" => [ ]
-            ]);
-
-        }
+        //if( $user = Auth::user() ){
+        //    Segment::identify( [
+        //        "userId" => $user->id,
+        //        "traits" => [
+        //            "name"  => $user->name,
+        //            "email" => $user->email,
+        //        ]
+        //    ] );
+        //    Segment::page([
+        //        "userId" => $user->id,
+        //        "category" => "General",
+        //        "name"=>"Home",
+        //        "properties" => [ ]
+        //    ]);
+        //} else {
+        //    Segment::page([
+        //        "anonymousId" => "",
+        //        "category" => "General",
+        //        "name"=>"Home",
+        //        "properties" => [ ]
+        //    ]);
+        //
+        //}
         $stories = Story::latest()->take(2)->get();
         $partners = Partner::latest()->take(4)->get();
         return view('home', compact('stories','partners'));
