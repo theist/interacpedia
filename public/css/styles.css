@@ -5213,6 +5213,8 @@ h4 {
   .challenge .data2 .file {
     font-size: 1rem;
     margin-top: 10px; }
+  .challenge .data2 .images {
+    display: inline-block; }
 .challenge .university {
   border-bottom: 1px solid #cdcdcd;
   padding-bottom: 40px;

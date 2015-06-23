@@ -84,6 +84,9 @@
       font-size: 1rem;
       margin-top: $grid-gutter-width/2;
     }
+    .images{
+      display: inline-block;
+    }
   }
   .university{
     border-bottom: 1px solid $border-gray;
