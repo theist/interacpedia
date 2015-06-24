@@ -25,6 +25,7 @@
     @include('partials.nav')
 </div>
 @yield('section-profile')
+@yield('section-profile-blue')
 @yield('section-submenu')
 <div class="container-fluid" id="section-banner">@yield('section-banner')</div>
 <div class="container-fluid" id="section-featured">@yield('section-featured')</div>

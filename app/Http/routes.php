@@ -31,6 +31,7 @@ Route::get('user/completecategory', 'UserController@completecategory');
 Route::get('user/completecity', 'UserController@completecity');
 Route::get('user/completeoccupations', 'UserController@completeoccupations');
 
+Route::get('challenges/{challenge}/{option}', 'ChallengesController@show');
 /**
  * Resource routes
  */

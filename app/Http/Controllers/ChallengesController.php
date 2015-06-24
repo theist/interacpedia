@@ -193,9 +193,11 @@ class ChallengesController extends Controller {
      * @return Response
      * @internal param int $id
      */
-    public function show( Challenge $challenge )
+    public function show( Challenge $challenge, $id = null, $option = null )
     {
+        if ( $id ) $challenge = Challenge::find( $id );
         $user = $challenge->user()->getResults();
+        if ( !$option ) $option = "info";
         /* TO DO: move this relations into one object with properties.
          * */
         $universities = [ ];
@@ -218,9 +220,10 @@ class ChallengesController extends Controller {
         }
         $professors = [ ];
         $users = User::lists( 'name', 'id' );
+
         if ( Auth::check() )
         {
-            return view( 'challenges.show', compact( 'challenge', 'user', 'universities', 'careers', 'courses', 'professors', 'users' ) );
+            return view( 'challenges.show', compact( 'challenge', 'user', 'universities', 'careers', 'courses', 'professors', 'users','option' ) );
         } else
         {
             return view( 'challenges.showbrief', compact( 'challenge', 'user', 'universities', 'careers', 'courses', 'professors', 'users' ) );
