@@ -19,7 +19,7 @@
     @parent
     <script>
         $(function () {
-            function follows(){
+            function follows{{ $formid_suffix }}(){
                 $('#follows-form{{ $formid_suffix }} .submit').on('click', function (e) {
                     e.preventDefault();
                     $.post(
@@ -35,7 +35,7 @@
                                 if (data.fail) {
                                 } else {
                                     $("#model-follows{{ $formid_suffix }}").html(data);
-                                    follows();
+                                    follows{{ $formid_suffix }}();
                                 }
                             }
                     );
@@ -55,7 +55,7 @@
                                     if (data.fail) {
                                     } else {
                                         $("#model-follows{{ $formid_suffix }}").html(data);
-                                        follows();
+                                        follows{{ $formid_suffix }}();
                                     }
                                 }
                             }
@@ -63,7 +63,7 @@
                     return false;
                 });
             }
-            follows();
+            follows{{ $formid_suffix }}();
         })
     </script>
 @stop
