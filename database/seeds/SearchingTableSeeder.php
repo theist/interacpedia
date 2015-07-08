@@ -10,7 +10,7 @@ class SearchingTableSeeder extends Seeder {
         Searching::create( [ 'name' => 'Fondos', 'image' => '/images/buttons/round/75x75/funds-off.png' ] );
         Searching::create( [ 'name' => 'Mentor', 'image' => '/images/buttons/round/75x75/mentor-off.png' ] );
         Searching::create( [ 'name' => 'Pasantía', 'image' => '/images/buttons/round/75x75/internship-off.png' ] );
-        Searching::create( [ 'name' => 'Plan de Negocios', 'image' => '/images/buttons/round/75x75/businessplan-off.png' ] );
+        Searching::create( [ 'name' => 'Plan de Negocios', 'image' => '/images/buttons/round/75x75/solutionplan-off.png' ] );
         Searching::create( [ 'name' => 'Desarrollo', 'image' => '/images/buttons/round/75x75/development-off.png' ] );
         Searching::create( [ 'name' => 'Socios', 'image' => '/images/buttons/round/75x75/founders-off.png' ] );
         Searching::create( [ 'name' => 'Plan Mercadeo', 'image' => '/images/buttons/round/75x75/plan-off.png' ] );
