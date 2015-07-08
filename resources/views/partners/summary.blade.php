@@ -1,4 +1,14 @@
-<a href="{{ action('PartnersController@show',[$partner->id]) }}">
-    <img class="img-responsive center-block" src="{{ imagestyle($partner->logo,'fit200x100') }}" alt="{{ $partner->name }}"/>
-</a>
-
+<div class="content raised">
+    <div class="image">
+        <a href="{{ action('PartnersController@show',[$partner->id]) }}">
+            <img class="img-responsive" src="{{ imagestyle($partner->image,'fit270x214') }}"
+                 alt="{{ $partner->name }}"/>
+        </a>
+    </div>
+    <div class="fields">
+        <div class="title"><h4><a href="{{ action('PartnersController@show',[$partner->id]) }}">{{ $partner->name }}</a>
+            </h4></div>
+        <div class="body">{{ $partner->description }}</div>
+        </div>
+    </div>
+</div>

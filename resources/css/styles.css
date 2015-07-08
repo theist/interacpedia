@@ -5467,6 +5467,23 @@ h4 {
   font-style: italic;
   font-size: 1.2rem; }
 
+.partners .partner.summary .title {
+  height: 38px;
+  margin-bottom: 10px; }
+  .partners .partner.summary .title h4 {
+    text-transform: none;
+    font-family: 'Source Sans Pro', sans-serif; }
+.partners .partner.summary .content {
+  min-height: 523px;
+  background: white;
+  border: 1px solid #cdcdcd;
+  margin-bottom: 15px; }
+  .partners .partner.summary .content .fields {
+    padding: 20px; }
+@media (max-width: 767px) {
+  .partners .image img {
+    width: 100%; } }
+
 #header {
   padding: 10px 0;
   margin: 10px; }

@@ -1,0 +1,30 @@
+.partners{
+  .partner{
+    &.summary{
+      .title {
+        height: 38px;
+        margin-bottom: $grid-gutter-width/2;
+        h4 {
+          text-transform: none;
+          font-family: $font-source;
+        }
+      }
+      .content {
+        min-height: 523px;
+        background: white;
+        border: 1px solid $border-gray;
+        margin-bottom: 15px;
+        .fields {
+          padding: $grid-gutter-width;
+        }
+      }
+    }
+  }
+  .image {
+    img {
+      @media (max-width: $screen-xs-max) {
+        width: 100%;
+      }
+    }
+  }
+}
