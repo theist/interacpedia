@@ -45,6 +45,7 @@ Route::post('groups/adduser','GroupsController@adduser');
 Route::resource('stories','StoriesController');
 Route::resource('projects','ProjectsController');
 Route::resource('partners','PartnersController');
+Route::resource('mentors','MentorsController');
 Route::resource('companies','CompaniesController');
 Route::resource('messages','MessagesController');
 Route::resource('blogs','BlogController');

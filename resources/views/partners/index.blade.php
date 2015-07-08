@@ -23,4 +23,12 @@
             </div>
         @endforeach
     </div>
+    <div class="row mentors">
+        <div class="col-md-12 text-center"><h3>@lang('general/labels.mentors')</h3></div>
+        @foreach($mentors as $mentor)
+            <div class="mentor summary col-md-3">
+                @include('mentors.summary',['mentor'=>$mentor])
+            </div>
+        @endforeach
+    </div>
 @stop

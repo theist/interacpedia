@@ -105,5 +105,8 @@ return [
     'universities'                  => 'Universidades',
     'location'                      => 'Ubicación',
     'sector'                        => 'Sector',
-    'size'                          => 'Tamaño'
+    'size'                          => 'Tamaño',
+    'achievements'                  => 'Logros',
+    'experience'                    => 'Experiencia',
+    'mentors'                       => 'Mentores'
 ];

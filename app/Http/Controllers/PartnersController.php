@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Interacpedia\Mentor;
 use App\Interacpedia\Partner;
 use Illuminate\Http\Request;
 
@@ -16,9 +17,10 @@ class PartnersController extends Controller {
 	public function index()
 	{
 		$partners = Partner::latest()->get();
+        $mentors = Mentor::latest()->get();
         $companies = Partner::where('type','company')->latest()->get();
         $universities = Partner::where('type','university')->latest()->get();
-        return view('partners.index',compact('partners','companies','universities'));
+        return view('partners.index',compact('partners','companies','universities','mentors'));
 	}
 
 	/**

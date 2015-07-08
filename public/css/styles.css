@@ -5494,6 +5494,33 @@ h4 {
   .partners .image img {
     width: 100%; } }
 
+.mentors .mentor.summary .title h4 {
+  text-transform: none;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 0;
+  color: #535353; }
+.mentors .mentor.summary .subtitle {
+  color: #535353;
+  font-weight: 600; }
+.mentors .mentor.summary .body {
+  font-size: 1.3rem;
+  color: #535353;
+  margin-bottom: 10px; }
+.mentors .mentor.summary .location {
+  font-size: 1.3rem;
+  color: #535353;
+  margin-bottom: 10px; }
+.mentors .mentor.summary .content {
+  min-height: 539px;
+  background: white;
+  border: 1px solid #cdcdcd;
+  margin-bottom: 15px; }
+  .mentors .mentor.summary .content .fields {
+    padding: 20px; }
+@media (max-width: 767px) {
+  .mentors .image img {
+    width: 100%; } }
+
 #header {
   padding: 10px 0;
   margin: 10px; }
