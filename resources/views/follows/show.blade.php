@@ -1,25 +1,27 @@
-<?php if(!isset($counter))$counter = true;?>
-<?php if(!isset($formid_suffix))$formid_suffix = "";?>
+<?php if ( !isset( $counter ) ) $counter = true; ?>
+<?php if ( !isset( $formid_suffix ) ) $formid_suffix = ""; ?>
 <div class="text-center row">
     @if( $counter )
-    <div class="col-md-5 text-right">
-        <div class="count">{{ $model->follows->count() }}</div>
-        <small>{{ trans_choice('general/labels.followers', $model->follows->count() ) }}</small>
-    </div>
+        <div class="col-md-5 text-right">
+            <div class="count">{{ $model->follows->count() }}</div>
+            <small>{{ trans_choice('general/labels.followers', $model->follows->count() ) }}</small>
+        </div>
     @endif
-    <div class="col-md-{{ ($counter)?'7':'12' }} text-left">
-        @if($follow = $model->follows->where('user_id',Auth::user()->id)->first())
-            @include('follows.button_on',['follow'=>$follow,'counter'=>$counter,'formid_suffix'=>$formid_suffix])
-        @else
-            @include('follows.button_off',['model'=>$model,'counter'=>$counter,'formid_suffix'=>$formid_suffix])
-        @endif
-    </div>
+    @if(Auth::check())
+        <div class="col-md-{{ ($counter)?'7':'12' }} text-left">
+            @if($follow = $model->follows->where('user_id',Auth::user()->id)->first())
+                @include('follows.button_on',['follow'=>$follow,'counter'=>$counter,'formid_suffix'=>$formid_suffix])
+            @else
+                @include('follows.button_off',['model'=>$model,'counter'=>$counter,'formid_suffix'=>$formid_suffix])
+            @endif
+        </div>
+    @endif
 </div>
 @section('footer')
     @parent
     <script>
         $(function () {
-            function follows{{ $formid_suffix }}(){
+            function follows{{ $formid_suffix }}() {
                 $('#follows-form{{ $formid_suffix }} .submit').on('click', function (e) {
                     e.preventDefault();
                     $.post(
@@ -63,6 +65,7 @@
                     return false;
                 });
             }
+
             follows{{ $formid_suffix }}();
         })
     </script>
