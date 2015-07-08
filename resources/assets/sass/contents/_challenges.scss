@@ -13,10 +13,12 @@
     }
   }
   .location{
-    float: right;
     .created{
       text-transform: capitalize;
     }
+  }
+  .social{
+    font-size: 1.2rem;
   }
   .user{
     font-family: $font-sans;

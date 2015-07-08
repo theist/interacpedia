@@ -66,7 +66,10 @@
                         @include('likes.show',['model'=>$challenge])
                     </div>
                     <div class="text-center row">
-                        <a class="btn btn-purple">@lang('general/labels.participate')</a>
+                        <div class="col-md-5 text-right"></div>
+                        <div class="col-md-7 text-left">
+                            <a class="btn btn-purple">@lang('general/labels.participate')</a>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -5160,10 +5160,10 @@ h4 {
       height: auto; } }
   .challenge .gray_zone.right {
     margin: -20px -20px 30px -10px; }
-.challenge .location {
-  float: right; }
-  .challenge .location .created {
-    text-transform: capitalize; }
+.challenge .location .created {
+  text-transform: capitalize; }
+.challenge .social {
+  font-size: 1.2rem; }
 .challenge .user {
   font-family: 'Open Sans', sans-serif; }
   .challenge .user .contact {
@@ -5579,66 +5579,6 @@ h4 {
       line-height: 3rem; }
     #section-profile-blue .profile .social {
       text-transform: uppercase; }
-
-.user-profile .subtitle {
-  font-family: 'Exo 2', sans-serif;
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  font-weight: 600;
-  margin: 10px 0; }
-  .user-profile .subtitle img {
-    vertical-align: text-bottom; }
-.user-profile .area {
-  background: white;
-  border: 1px solid #cdcdcd;
-  padding: 20px; }
-  .user-profile .area .subtitle {
-    font-family: 'Open Sans', sans-serif;
-    text-transform: none;
-    font-weight: 300; }
-  .user-profile .area .data {
-    font-size: 2rem;
-    margin-bottom: 10px; }
-  .user-profile .area .gray_zone {
-    background: #efefef;
-    padding: 20px;
-    font-size: 1.5rem; }
-    .user-profile .area .gray_zone .title1 {
-      font-size: 1.8rem; }
-    .user-profile .area .gray_zone .title2 {
-      font-size: 1.6rem;
-      font-weight: 600; }
-  .user-profile .area .tags {
-    padding-left: 0; }
-    .user-profile .area .tags .label-tag {
-      display: inline-block;
-      font-family: 'Open Sans', sans-serif;
-      padding: 10px;
-      border-radius: 5px;
-      font-weight: 300;
-      font-size: 1.7rem;
-      background-color: #8bf7fb;
-      color: #333333;
-      margin-right: 10px;
-      margin-bottom: 10px; }
-      .user-profile .area .tags .label-tag.small {
-        padding: 6.66667px;
-        font-size: 1.2rem; }
-
-.user_edit .header {
-  margin-top: 20px;
-  padding: 20px;
-  background: #da0080;
-  color: white;
-  text-align: center; }
-  .user_edit .header .title {
-    color: white;
-    font-family: 'Exo 2', sans-serif;
-    font-weight: 600;
-    font-size: 4rem; }
-  .user_edit .header small {
-    font-size: 3rem;
-    font-family: 'Open Sans', sans-serif; }
 
 #section-footer {
   min-height: 200px;
