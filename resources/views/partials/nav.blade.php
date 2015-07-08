@@ -37,7 +37,7 @@
                             @lang('general/menu.more') <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ action('StoriesController@index') }}">@lang('general/menu.stories')</a></li>
+                            <li><a href="{{ action('BlogController@index') }}">@lang('general/menu.blog')</a></li>
                             <li><a href="{{ action('PartnersController@index') }}">@lang('general/menu.partners')</a></li>
                         </ul>
                     </li>

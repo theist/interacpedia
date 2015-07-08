@@ -47,6 +47,7 @@ Route::resource('projects','ProjectsController');
 Route::resource('partners','PartnersController');
 Route::resource('companies','CompaniesController');
 Route::resource('messages','MessagesController');
+Route::resource('blogs','BlogController');
 Route::post('upload','UploadController@store');
 
 Route::get('challenges/{challenge}/{option}', 'ChallengesController@show');
