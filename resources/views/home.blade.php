@@ -10,7 +10,7 @@
     <div class="container">
         <div class="banner-main text-center">
             <div class="row text-center">
-                <img src="/images/icons/interacpedia/co-creacion-interactiva.png" alt="Co-Creación Interactiva"/>
+                <img src="/images/icons/interacpedia/interacpedia-icono-personas.gif" alt="Co-Creación Interactiva"/>
             </div>
             <h1>@lang('general/banner.cocreation')</h1>
             <a href="{{ action('ChallengesController@index') }}"
