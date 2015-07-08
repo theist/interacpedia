@@ -18,7 +18,7 @@
             {{ $mentor->achievements}}
         </div>
         <div class="row text-center">
-            <div id="model-follows_m{{ $mentor->id }}" class="col-md-6 col-md-offset-3">
+            <div id="model-follows_m{{ $mentor->id }}" class="col-md-8 col-md-offset-2">
                 @include('follows.show',['model'=>$mentor,'counter'=>false,'formid_suffix'=>'_m'.$mentor->id])
             </div>
         </div>
