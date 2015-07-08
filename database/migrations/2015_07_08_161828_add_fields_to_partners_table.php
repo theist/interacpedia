@@ -16,7 +16,7 @@ class AddFieldsToPartnersTable extends Migration
             $table->string('type')->after('name');
             $table->string('slogan')->after('name');
             $table->text('description')->nullable()->after('type');
-            $table->text('logo')->nullable()->after('description');
+            $table->string('logo')->nullable()->after('description');
             $table->string('location')->after('description');
             $table->string('sector')->after('location');
             $table->string('website')->after('sector');
