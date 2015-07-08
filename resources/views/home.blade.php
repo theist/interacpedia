@@ -57,7 +57,7 @@
         <div class="row partners text-center">
             <h3>@lang('partners/title.partners')</h3>
             @foreach($partners as $partner)
-                <div class="col-md-2 text-center">
+                <div class="col-md-4 text-center">
                     @include('partners.summary')
                 </div>
             @endforeach
