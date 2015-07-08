@@ -23,7 +23,7 @@ class PagesController extends Controller {
     {
         $posts =  $google->listPosts();
         $stories = Story::latest()->take(2)->get();
-        $partners = Partner::latest()->take(4)->get();
+        $partners = Partner::latest()->take(10)->get();
         $challenges = Challenge::latest()->take(4)->get();
         return view('home', compact('stories','partners','user','posts','challenges'));
     }
