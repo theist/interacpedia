@@ -5467,6 +5467,32 @@ h4 {
   font-style: italic;
   font-size: 1.2rem; }
 
+.partners .partner.summary .title h4 {
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 0;
+  color: #535353; }
+.partners .partner.summary .subtitle {
+  margin-bottom: 10px;
+  color: #535353; }
+.partners .partner.summary .body {
+  font-size: 1.3rem;
+  color: #535353;
+  margin-bottom: 10px; }
+.partners .partner.summary .location, .partners .partner.summary .origin, .partners .partner.summary .sector, .partners .partner.summary .website {
+  font-size: 1.3rem;
+  color: #535353; }
+.partners .partner.summary .content {
+  min-height: 523px;
+  background: white;
+  border: 1px solid #cdcdcd;
+  margin-bottom: 15px; }
+  .partners .partner.summary .content .fields {
+    padding: 20px; }
+@media (max-width: 767px) {
+  .partners .image img {
+    width: 100%; } }
+
 #header {
   padding: 10px 0;
   margin: 10px; }

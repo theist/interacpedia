@@ -10,7 +10,7 @@
     <div class="container">
         <div class="banner-main text-center">
             <div class="row text-center">
-                <img src="/images/icons/interacpedia/interacpedia-icono-personas.gif" alt="Co-Creación Interactiva"/>
+                <img src="/images/icons/interacpedia/interacpedia-icono-personas-morado.gif" alt="Co-Creación Interactiva"/>
             </div>
             <h1>@lang('general/banner.cocreation')</h1>
             <a href="{{ action('ChallengesController@index') }}"
@@ -58,7 +58,7 @@
             <h3>@lang('partners/title.partners')</h3>
             @foreach($partners as $partner)
                 <div class="col-md-4 text-center">
-                    @include('partners.summary')
+                    @include('partners.logo')
                 </div>
             @endforeach
         </div>
