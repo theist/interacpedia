@@ -102,5 +102,7 @@ return [
     'blogs'                         => 'Blogs',
     'posts'                         => 'Entradas de Blog',
     'challenges'                    => 'Retos',
-    'universities'                  => 'Universidades'
+    'universities'                  => 'Universidades',
+    'location'                      => 'Ubicación',
+    'sector'                        => 'Sector'
 ];

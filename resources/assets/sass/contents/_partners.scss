@@ -2,12 +2,28 @@
   .partner{
     &.summary{
       .title {
-        height: 38px;
-        margin-bottom: $grid-gutter-width/2;
         h4 {
-          text-transform: none;
-          font-family: $font-source;
+          text-transform: uppercase;
+          font-family: $font-sans;
+          margin-bottom: 0;
+          color: $light-gray;
         }
+      }
+      .subtitle{
+        margin-bottom: $grid-gutter-width/2;
+        color: $light-gray;
+      }
+      .body{
+        font-size: 1.3rem;
+        color: $light-gray;
+        margin-bottom: $grid-gutter-width/2;
+      }
+      .location,
+      .origin,
+      .sector,
+      .website{
+        font-size: 1.3rem;
+        color: $light-gray ;
       }
       .content {
         min-height: 523px;

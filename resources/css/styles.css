@@ -5467,12 +5467,21 @@ h4 {
   font-style: italic;
   font-size: 1.2rem; }
 
-.partners .partner.summary .title {
-  height: 38px;
+.partners .partner.summary .title h4 {
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 0;
+  color: #535353; }
+.partners .partner.summary .subtitle {
+  margin-bottom: 10px;
+  color: #535353; }
+.partners .partner.summary .body {
+  font-size: 1.3rem;
+  color: #535353;
   margin-bottom: 10px; }
-  .partners .partner.summary .title h4 {
-    text-transform: none;
-    font-family: 'Source Sans Pro', sans-serif; }
+.partners .partner.summary .location, .partners .partner.summary .origin, .partners .partner.summary .sector, .partners .partner.summary .website {
+  font-size: 1.3rem;
+  color: #535353; }
 .partners .partner.summary .content {
   min-height: 523px;
   background: white;
