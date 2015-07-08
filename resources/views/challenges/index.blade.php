@@ -5,7 +5,7 @@
 @stop
 
 @section('content')
-    <h1>@lang('challenges/title.recommended')</h1>
+    <h1>@lang('general/labels.challenges')</h1>
     <div class="row challenges">
         @foreach($challenges as $challenge)
             <div class="challenge summary col-md-3">
