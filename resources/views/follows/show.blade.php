@@ -26,8 +26,8 @@
                             $('#follows-form{{ $formid_suffix }}').prop('action'),
                             {
                                 "_token": $('#follows-form{{ $formid_suffix }}').find('input[name=_token]').val(),
-                                "model_id": $('#model_id').val(),
-                                "model_type": $('#model_type').val(),
+                                "model_id": $('#model_id{{ $formid_suffix }}').val(),
+                                "model_type": $('#model_type{{ $formid_suffix }}').val(),
                                 "counter": {{ ($counter)?1:0 }},
                                 "formid_suffix": '{{ $formid_suffix }}'
                             },

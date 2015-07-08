@@ -11,11 +11,11 @@
         <div class="location">{{ $mentor->location}}</div>
         <div class="body">
             <strong>@lang('general/labels.experience')</strong><br/>
-            {{ $mentor->experience}}
+            {{ $mentor->experience }}
         </div>
         <div class="body">
             <strong>@lang('general/labels.achievements')</strong><br/>
-            {{ $mentor->achievements}}
+            {{ $mentor->achievements }}
         </div>
         <div class="row text-center">
             <div id="model-follows_m{{ $mentor->id }}" class="col-md-8 col-md-offset-2">
