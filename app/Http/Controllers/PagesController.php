@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 
 use App\Interacpedia\Partner;
 use App\Interacpedia\Story;
+use App\Services\Google;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Segment;
@@ -14,14 +15,16 @@ class PagesController extends Controller {
     /**
      * Show the application homepage to the user.
      *
+     * @param Google $google
      * @return Response
      */
-    public function index()
+    public function index(Google $google)
     {
-
+        $posts =  $google->listPosts();
         $stories = Story::latest()->take(2)->get();
         $partners = Partner::latest()->take(4)->get();
-        return view('home', compact('stories','partners','user'));
+
+        return view('home', compact('stories','partners','user','posts'));
     }
 
     /**

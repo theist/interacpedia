@@ -27,9 +27,10 @@
     <div class="container">
         <div class="row stories">
             <div class="col-md-10 col-md-offset-1">
-                <h3>@lang('stories/title.stories')</h3>
-                @foreach($stories as $story)
-                    @include('stories.summary')
+                <h3>@lang('general/labels.blogs')</h3>
+                @foreach($posts as $post)
+                    <h4>{{ $post->title }}</h4>
+                    {!! $post->content !!}
                 @endforeach
             </div>
         </div>

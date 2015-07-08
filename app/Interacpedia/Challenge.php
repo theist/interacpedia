@@ -1,5 +1,6 @@
 <?php namespace App\Interacpedia;
 
+use App\Services\Google;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -164,4 +165,10 @@ class Challenge extends Model {
         return $this->morphMany('App\Interacpedia\Group', 'model')->orderBy('name', 'asc');
     }
 
+    public function getPosts(){
+        $google = new Google();
+        $posts =  $google->listPosts();
+        return $posts;
+    }
 }
+

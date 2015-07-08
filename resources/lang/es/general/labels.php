@@ -98,5 +98,7 @@ return [
     'notifications'                 => 'Notificación|Notificaciones',
     'write'                         => 'Escribir',
     'new'                           => 'Nuevo',
-    'send'                          => 'Enviar'
+    'send'                          => 'Enviar',
+    'blogs'=>'Blogs',
+    'posts'=>'Entradas de Blog'
 ];

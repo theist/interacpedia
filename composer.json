@@ -9,6 +9,10 @@
     {
       "type": "vcs",
       "url": "https://github.com/jcorrego/Laravel-Countries-Cities"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/jcorrego/google-apiclient"
     }
   ],
   "license": "MIT",
@@ -27,7 +31,8 @@
     "league/flysystem-aws-s3-v3": "~1.0",
     "cachethq/segment": "^2.1",
     "guzzlehttp/psr7": "^1.0",
-    "socialiteproviders/linkedin": "^1.1"
+    "socialiteproviders/linkedin": "^1.1",
+    "google/apiclient": "^1.1"
   },
   "require-dev": {
     "phpunit/phpunit": "~4.0",
@@ -63,6 +68,7 @@
     ]
   },
   "config": {
-    "preferred-install": "dist"
+    "preferred-install": "dist",
+    "minimum-stability": "dev"
   }
 }

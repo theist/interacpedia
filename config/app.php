@@ -155,6 +155,7 @@ return [
         'Alakkad\WorldCountriesCities\WorldCountriesCitiesServiceProvider',
         'Spatie\Backup\BackupServiceProvider',
         'CachetHQ\Segment\SegmentServiceProvider'
+        //'PulkitJalan\Google\GoogleServiceProvider'
     ],
 
     /*
@@ -212,5 +213,6 @@ return [
         'Html'      => 'Collective\Html\HtmlFacade',
         'Image'     => 'Intervention\Image\Facades\Image',
         'Segment'  => 'CachetHQ\Segment\Facades\Segment'
+        //'Google' => 'PulkitJalan\Google\Facades\Google'
     ],
 ];
