@@ -1,4 +1,4 @@
-<div class="container-fluid" id="section-submenu">
+<div class="container-fluid challenge-submenu" id="section-submenu">
     <div class="container">
         <ul class="nav nav-pills">
             <?php $i=0;?>

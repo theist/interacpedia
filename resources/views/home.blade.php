@@ -23,15 +23,30 @@
     {{--@endunless--}}
 @stop
 
+@section('section-precontent')
+    <div class="container">
+        <h3>@lang('general/labels.challenges')</h3>
+        <div class="row challenges">
+            @foreach($challenges as $challenge)
+                <div class="challenge summary col-md-3">
+                    @include('challenges.summary')
+                </div>
+            @endforeach
+        </div>
+    </div>
+@stop
 @section('section-highlight')
     <div class="container">
-        <div class="row stories">
-            <div class="col-md-10 col-md-offset-1">
-                <h3>@lang('general/labels.blogs')</h3>
-                @foreach($posts as $post)
-                    <h4>{{ $post->title }}</h4>
-                    {!! $post->content !!}
-                @endforeach
+        <div class="row challenge">
+            <div class="main">
+                <div class="content col-md-12">
+                    <h3>@lang('general/labels.posts')</h3>
+                    @foreach($posts as $post)
+                        <div class="col-md-4">
+                            @include('blogs.post',['post'=>$post])
+                        </div>
+                    @endforeach
+                </div>
             </div>
         </div>
     </div>
@@ -50,12 +65,12 @@
     </div>
 @stop
 {{--@section('footer')--}}
-    {{--<script>--}}
-        {{--$('.dropdown-toggle').on('mouseover', function (){--}}
-            {{--$(this).dropdown('toggle');--}}
-        {{--});--}}
-        {{--$('.dropdown-toggle').on('mouseout', function (){--}}
-            {{--setTimeout('$(this).dropdown(\'toggle\')',1000);--}}
-        {{--});--}}
-    {{--</script>--}}
+{{--<script>--}}
+{{--$('.dropdown-toggle').on('mouseover', function (){--}}
+{{--$(this).dropdown('toggle');--}}
+{{--});--}}
+{{--$('.dropdown-toggle').on('mouseout', function (){--}}
+{{--setTimeout('$(this).dropdown(\'toggle\')',1000);--}}
+{{--});--}}
+{{--</script>--}}
 {{--@stop--}}

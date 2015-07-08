@@ -30,6 +30,7 @@
 <div class="container-fluid" id="section-banner">@yield('section-banner')</div>
 <div class="container-fluid" id="section-featured">@yield('section-featured')</div>
 <div class="container-fluid" id="section-highlight">@yield('section-highlight')</div>
+<div class="container-fluid" id="section-precontent">@yield('section-precontent')</div>
 <div class="container-fluid" id="section-content">
     <div class="container">
         @yield('content')

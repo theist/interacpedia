@@ -1,4 +1,14 @@
 #section-submenu{
+  &.challenge-submenu{
+    form{
+      a.btn{
+        margin: 0;
+      }
+      input[type="submit"]{
+        margin: 3px;
+      }
+    }
+  }
   border-bottom: 1px solid $border-gray;
   background: white;
   .container{

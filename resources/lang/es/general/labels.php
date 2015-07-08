@@ -100,5 +100,6 @@ return [
     'new'                           => 'Nuevo',
     'send'                          => 'Enviar',
     'blogs'=>'Blogs',
-    'posts'=>'Entradas de Blog'
+    'posts'=>'Entradas de Blog',
+    'challenges'=>"Retos"
 ];

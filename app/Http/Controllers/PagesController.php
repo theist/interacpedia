@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Interacpedia\Challenge;
 use App\Interacpedia\Partner;
 use App\Interacpedia\Story;
 use App\Services\Google;
@@ -23,8 +24,8 @@ class PagesController extends Controller {
         $posts =  $google->listPosts();
         $stories = Story::latest()->take(2)->get();
         $partners = Partner::latest()->take(4)->get();
-
-        return view('home', compact('stories','partners','user','posts'));
+        $challenges = Challenge::latest()->take(4)->get();
+        return view('home', compact('stories','partners','user','posts','challenges'));
     }
 
     /**

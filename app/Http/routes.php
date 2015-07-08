@@ -31,7 +31,7 @@ Route::get('user/completecategory', 'UserController@completecategory');
 Route::get('user/completecity', 'UserController@completecity');
 Route::get('user/completeoccupations', 'UserController@completeoccupations');
 
-Route::get('challenges/{challenge}/{option}', 'ChallengesController@show');
+
 /**
  * Resource routes
  */
@@ -49,6 +49,7 @@ Route::resource('companies','CompaniesController');
 Route::resource('messages','MessagesController');
 Route::post('upload','UploadController@store');
 
+Route::get('challenges/{challenge}/{option}', 'ChallengesController@show');
 /**
  * Authentication routes
  */
