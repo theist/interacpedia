@@ -29,18 +29,20 @@
                     @endif
                     <li><a href="{{ action('ChallengesController@index') }}">@lang('general/menu.challenges')</a></li>
                     <li><a href="{{ action('ProjectsController@index') }}">@lang('general/menu.projects')</a></li>
-                    <li><a href="#">@lang('general/menu.network')</a></li>
+                    <li><a href="{{ action('PartnersController@index') }}">@lang('general/menu.partners')</a></li>
+                    <li><a href="{{ action('BlogController@index') }}">@lang('general/menu.blog')</a></li>
+                    {{--<li><a href="#">@lang('general/menu.network')</a></li>--}}
 {{--                    <li class="dropdown"><a href="#">@lang('general/menu.news') <span class="caret"></span></a></li>--}}
                     {{--<li class="dropdown"><a href="#">@lang('general/menu.blog') <span class="caret"></span></a></li>--}}
-                    <li>
-                        <a href="{{ action('PagesController@howitworks') }}" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown" role="button" aria-expanded="false">
-                            @lang('general/menu.more') <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ action('BlogController@index') }}">@lang('general/menu.blog')</a></li>
-                            <li><a href="{{ action('PartnersController@index') }}">@lang('general/menu.partners')</a></li>
-                        </ul>
-                    </li>
+                    {{--<li>--}}
+                        {{--<a href="{{ action('BlogController@index') }}" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown" role="button" aria-expanded="false">--}}
+                            {{--@lang('general/menu.more') <span class="caret"></span>--}}
+                        {{--</a>--}}
+                        {{--<ul class="dropdown-menu" role="menu">--}}
+                            {{--<li><a href="{{ action('BlogController@index') }}">@lang('general/menu.blog')</a></li>--}}
+                            {{--<li><a href="{{ action('PartnersController@index') }}">@lang('general/menu.partners')</a></li>--}}
+                        {{--</ul>--}}
+                    {{--</li>--}}
                     @if(Auth::check())
                     <li class="icon">
                         <a href=""><img src="/images/icons/40x40/usermenu-notifications.png" alt="Notifications"/></a>
