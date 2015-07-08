@@ -19,7 +19,11 @@
         <div class="body">{{ $partner->description }}</div>
         <div class="location"><strong>@lang('general/labels.location'):</strong> {{ $partner->location }}</div>
         <div class="origin"><strong>@lang('general/labels.type'):</strong> {{ $partner->origin }}</div>
-        <div class="sector"><strong>@lang('general/labels.sector'):</strong> {{ $partner->sector }}</div>
+        @if($partner->type=='company')
+            <div class="sector"><strong>@lang('general/labels.sector'):</strong> {{ $partner->sector }}</div>
+        @elseif($partner->type=='university')
+            <div class="sector"><strong>@lang('general/labels.size'):</strong> {{ $partner->size }}</div>
+        @endif
         <div class="website"><strong>@lang('general/labels.website'):</strong> {{ $partner->website }}</div>
     </div>
 </div>
