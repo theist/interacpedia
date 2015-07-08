@@ -21,6 +21,5 @@
         <div class="origin"><strong>@lang('general/labels.type'):</strong> {{ $partner->origin }}</div>
         <div class="sector"><strong>@lang('general/labels.sector'):</strong> {{ $partner->sector }}</div>
         <div class="website"><strong>@lang('general/labels.website'):</strong> {{ $partner->website }}</div>
-        </div>
     </div>
 </div>
