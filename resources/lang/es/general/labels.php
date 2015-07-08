@@ -104,5 +104,6 @@ return [
     'challenges'                    => 'Retos',
     'universities'                  => 'Universidades',
     'location'                      => 'Ubicación',
-    'sector'                        => 'Sector'
+    'sector'                        => 'Sector',
+    'size'                          => 'Tamaño'
 ];

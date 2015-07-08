@@ -9,8 +9,8 @@
         <div class="row">
             <div class="col-md-5"><img class="img-responsive" src="{{ imagestyle($partner->logo,'fit200x100') }}" alt="{{ $partner->name }}"/></div>
             <div class="col-md-7">
-                <div id="model-follows">
-                    @include('follows.show',['model'=>$partner,'counter'=>false])
+                <div id="model-follows-{{ $partner->id }}">
+                    @include('follows.show',['model'=>$partner,'counter'=>false,'formid_suffix'=>'-'.$partner->id])
                 </div>
             </div>
         </div>
