@@ -46,7 +46,8 @@ class FollowsController extends Controller {
             $follow = Auth::user()->follows()->create( $request->all() );
             $model = $follow->model;
 
-            return view( 'follows.show', compact( 'model' ) );
+            $counter = $request->get("counter",true);
+            return view( 'follows.show', compact( 'model','counter' ) );
         } else
         {
             return [ 'fail' => true ];
@@ -89,15 +90,16 @@ class FollowsController extends Controller {
     /**
      * Remove the specified resource from storage.
      *
+     * @param Request $request
      * @param Follow $follow
      * @return Response
      * @throws \Exception
      */
-    public function destroy( Follow $follow )
+    public function destroy( Request $request,Follow $follow )
     {
         $model = $follow->model;
         $follow->delete();
-
-        return view( 'follows.show', compact( 'model' ) );
+        $counter = $request->get("counter",true);
+        return view( 'follows.show', compact( 'model','counter' ) );
     }
 }

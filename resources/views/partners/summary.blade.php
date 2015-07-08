@@ -7,8 +7,8 @@
     </div>
     <div class="fields">
         <div class="row">
-            <div class="col-md-6"><img class="img-responsive" src="{{ imagestyle($partner->logo,'fit200x100') }}" alt="{{ $partner->name }}"/></div>
-            <div class="col-md-6">
+            <div class="col-md-5"><img class="img-responsive" src="{{ imagestyle($partner->logo,'fit200x100') }}" alt="{{ $partner->name }}"/></div>
+            <div class="col-md-7">
                 <div id="model-follows">
                     @include('follows.show',['model'=>$partner,'counter'=>false])
                 </div>
