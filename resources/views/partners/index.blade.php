@@ -7,7 +7,20 @@
 
 @section('content')
     <h1>@lang('partners/title.partners')</h1>
-    @foreach($partners as $partner)
-        @include('partners.summary')
-    @endforeach
+    <div class="row partners">
+        <div class="col-md-12 text-center"><h3>@lang('general/labels.universities')</h3></div>
+        @foreach($universities as $university)
+            <div class="partner summary col-md-3">
+                @include('partners.summary',['partner'=>$university])
+            </div>
+        @endforeach
+    </div>
+    <div class="row partners">
+        <div class="col-md-12 text-center"><h3>@lang('general/labels.companies')</h3></div>
+        @foreach($companies as $company)
+            <div class="partner summary col-md-3">
+                @include('partners.summary',['partner'=>$company])
+            </div>
+        @endforeach
+    </div>
 @stop

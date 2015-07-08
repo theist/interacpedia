@@ -1,9 +1,11 @@
 <div class="text-center row">
+    @unless( isset($counter) && !$counter)
     <div class="col-md-5 text-right">
         <div class="count">{{ $model->follows->count() }}</div>
         <small>{{ trans_choice('general/labels.followers', $model->follows->count() ) }}</small>
     </div>
-    <div class="col-md-7 text-left">
+    @endif
+    <div class="col-md-{{ (isset($counter)&& !$counter)?'12':'7' }} text-left">
         @if($follow = $model->follows->where('user_id',Auth::user()->id)->first())
             @include('follows.button_on',['follow'=>$follow])
         @else

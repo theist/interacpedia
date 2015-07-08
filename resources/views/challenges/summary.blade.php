@@ -1,7 +1,7 @@
 <div class="content raised">
     <div class="image">
         <a href="{{ action('ChallengesController@show',[$challenge->id]) }}">
-            <img class="img-responsive" src="{{ imagestyle($challenge->image,'fit330x297') }}"
+            <img class="img-responsive" src="{{ imagestyle($challenge->image,'fit270x214') }}"
                  alt="{{ $challenge->name }}"/>
         </a>
     </div>

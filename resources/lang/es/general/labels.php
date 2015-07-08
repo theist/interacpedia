@@ -99,7 +99,10 @@ return [
     'write'                         => 'Escribir',
     'new'                           => 'Nuevo',
     'send'                          => 'Enviar',
-    'blogs'=>'Blogs',
-    'posts'=>'Entradas de Blog',
-    'challenges'=>"Retos"
+    'blogs'                         => 'Blogs',
+    'posts'                         => 'Entradas de Blog',
+    'challenges'                    => 'Retos',
+    'universities'                  => 'Universidades',
+    'location'                      => 'Ubicación',
+    'sector'                        => 'Sector'
 ];
