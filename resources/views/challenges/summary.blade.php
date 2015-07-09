@@ -6,6 +6,15 @@
         </a>
     </div>
     <div class="fields">
+        {{--<div class="row">--}}
+            {{--<div class="col-md-5"><img class="img-responsive" src="{{ imagestyle($partner->logo,'fit200x100') }}" alt="{{ $partner->name }}"/></div>--}}
+            {{--<div class="col-md-7">--}}
+                {{--<div id="model-follows_{{ $partner->id }}">--}}
+                    {{--@include('follows.show',['model'=>$partner,'counter'=>false,'formid_suffix'=>'_'.$partner->id])--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+
         <div class="title"><h4><a href="{{ action('ChallengesController@show',[$challenge->id]) }}">{{ $challenge->name }}</a>
             </h4></div>
         <div class="body">{{ str_limit( $challenge->description,100 )}}</div>

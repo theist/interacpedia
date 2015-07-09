@@ -6,7 +6,7 @@
 @stop
 
 @section('content')
-    <h1>@lang('projects/title.recommended')</h1>
+    <h1>@lang('projects/title.projects')</h1>
     <div class="row projects">
         @foreach($projects as $project)
             <div class="project col-md-3">
