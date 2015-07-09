@@ -45,17 +45,17 @@
                     {{--</li>--}}
                     @if(Auth::check())
                     <li class="icon">
-                        <a href=""><img src="/images/icons/40x40/usermenu-notifications.png" alt="Notifications"/></a>
+                        <a href="/user/{{ Auth::user()->id }}/notifications"><img src="/images/icons/40x40/usermenu-notifications.png" alt="Notifications"/></a>
                     </li>
                     <li class="icon">
                         <a href="/user/{{ Auth::user()->id }}/messages"><img src="/images/icons/40x40/usermenu-messages.png" alt="Messages"/></a>
                     </li>
                     <li class="icon">
-                        <a href="/user/{{ Auth::user()->id }}/notifications"><img src="/images/icons/40x40/usermenu-profile.png" alt="Messages"/></a>
+                        <a href="/user/{{ Auth::user()->id }}/profile"><img src="/images/icons/40x40/usermenu-profile.png" alt="Messages"/></a>
                     </li>
-                    <li class="icon">
-                        <a href=""><img src="/images/icons/40x40/usermenu-down.png" alt="Messages"/></a>
-                    </li>
+                    {{--<li class="icon">--}}
+                        {{--<a href=""><img src="/images/icons/40x40/usermenu-down.png" alt="Messages"/></a>--}}
+                    {{--</li>--}}
                     @endif
 
                 </ul>
