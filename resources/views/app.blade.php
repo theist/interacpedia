@@ -18,6 +18,7 @@
     <link href="/js/toastr.min.css" rel="stylesheet">
 </head>
 <body>
+@include('partials.googleanalytics')
 <div class="container-fluid" id="header">
     @include('partials.header')
     @yield('header')</div>
