@@ -24,7 +24,8 @@ class Challenge extends Model {
         'desired_stage',
         'website',
         'video',
-        'files'
+        'files',
+        'partner_id'
     ];
 
     /**
@@ -100,6 +101,14 @@ class Challenge extends Model {
         return $this->belongsTo( 'App\Interacpedia\User' );
     }
 
+    /**
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function partner()
+    {
+        return $this->belongsTo( 'App\Interacpedia\Partner' );
+    }
     /**
      * Get the creators associated with this challenge
      *

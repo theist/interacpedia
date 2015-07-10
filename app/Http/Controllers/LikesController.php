@@ -45,7 +45,10 @@ class LikesController extends Controller
         {
             $like = Auth::user()->likes()->create( $request->all() );
             $model = $like->model;
-            return  view( 'likes.show', compact( 'model' ) );
+            $counter = $request->get("counter",true);
+            $format = $request->get("format",'horizontal');
+            $formid_suffix = $request->get("formid_suffix",'');
+            return  view( 'likes.show', compact( 'model','counter','formid_suffix','format' ) );
         } else
         {
             return ['fail'=>true];
@@ -96,6 +99,10 @@ class LikesController extends Controller
     {
         $model = $like->model;
         $like->delete();
-        return  view( 'likes.show', compact( 'model' ) );
+        $counter = $request->get("counter",true);
+        $format = $request->get("format",'horizontal');
+        $formid_suffix = $request->get("formid_suffix",'');
+
+        return  view( 'likes.show', compact( 'model','counter','formid_suffix','format' ) );
     }
 }

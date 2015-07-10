@@ -108,5 +108,6 @@ return [
     'size'                          => 'Tamaño',
     'achievements'                  => 'Logros',
     'experience'                    => 'Experiencia',
-    'mentors'                       => 'Mentores'
+    'mentors'                       => 'Mentores',
+    'read_more'                     => 'Leer más'
 ];

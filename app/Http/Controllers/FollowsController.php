@@ -47,8 +47,9 @@ class FollowsController extends Controller {
             $model = $follow->model;
 
             $counter = $request->get("counter",true);
+            $format = $request->get("format",'horizontal');
             $formid_suffix = $request->get("formid_suffix",'');
-            return view( 'follows.show', compact( 'model','counter','formid_suffix' ) );
+            return view( 'follows.show', compact( 'model','counter','formid_suffix','format' ) );
         } else
         {
             return [ 'fail' => true ];
@@ -101,7 +102,8 @@ class FollowsController extends Controller {
         $model = $follow->model;
         $follow->delete();
         $counter = $request->get("counter",true);
+        $format = $request->get("format",'horizontal');
         $formid_suffix = $request->get("formid_suffix",'');
-        return view( 'follows.show', compact( 'model','counter','formid_suffix' ) );
+        return view( 'follows.show', compact( 'model','counter','formid_suffix','format' ) );
     }
 }
