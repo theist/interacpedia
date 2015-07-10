@@ -113,28 +113,25 @@
                 <div class="row text-center">
                     <div class="col-md-12 ">
                         <img class="img-responsive" src="/{{ imagestyle($challenge->partner->logo,'fit200x100') }}" alt="{{ $challenge->partner->name }}"/><br>
-                        <a href="" class="btn">@lang('general/labels.contact')</a>
                     </div>
                 </div>
             @endif
-        </div>
-        @unless($challenge->coordinators->isEmpty())
-            <div class="content">
-                <h4>@lang('general/labels.leader') / @lang('general/labels.coordinator')</h4>
-                @foreach($challenge->coordinators as $coordinator)
-                    <div class="text-center row">
-                        <div class="col-md-5">
-                            <img class="img-circle" height="80" src="{{ imagestyle($coordinator->image,'fit100x100') }}" alt="{{ $coordinator->name }}"/><br/>
-                        </div>
-                        <div class="col-md-7">
-                            {{ $coordinator->name }}<br>
-                            @include('messages.add',['from'=>Auth::user()->id,'to'=>$coordinator->user->id,'label'=> Lang::get('general/labels.contact')])
-                        </div>
+            @unless($challenge->coordinators->isEmpty())
+                    <h4>@lang('general/labels.coordinators')</h4>
+                    @foreach($challenge->coordinators as $coordinator)
+                        <div class="text-center row">
+                            <div class="col-md-5">
+                                <img class="img-circle" height="80" src="{{ imagestyle($coordinator->image,'fit100x100') }}" alt="{{ $coordinator->name }}"/><br/>
+                            </div>
+                            <div class="col-md-7">
+                                {{ $coordinator->name }}<br>
+                                @include('messages.add',['from'=>Auth::user()->id,'to'=>$coordinator->user->id,'label'=> Lang::get('general/labels.contact')])
+                            </div>
 
-                    </div>
-                @endforeach
-            </div>
-        @endunless
+                        </div>
+                    @endforeach
+            @endunless
+        </div>
         @unless($challenge->mentors->isEmpty())
             <div class="content">
                 <h4>@lang('general/labels.mentors')</h4>

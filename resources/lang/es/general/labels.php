@@ -113,5 +113,5 @@ return [
     'partners'                      => 'Aliado|Aliados',
     'answer'                        => 'Responder',
     'leader'                        => 'Líder',
-    'coordinator'                   => 'Coordinador'
+    'coordinators'                  => 'Coordinadores'
 ];
