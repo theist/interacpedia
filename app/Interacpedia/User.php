@@ -78,8 +78,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
     public function unreadmessages(  )
     {
-        $unread = Message::where('from_user',$this->id)->where('read',0)->count();
-        $unread += Message::where('to_user',$this->id)->where('read',0)->count();
+        $unread = Message::where('to_user',$this->id)->where('read',0)->count();
         return $unread;
     }
 

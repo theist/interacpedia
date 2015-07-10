@@ -14,7 +14,7 @@
             </div>
             <div class="col-md-6">
                 <div class="title">
-                    @if($message->read == 0)
+                    @if($message->read == 0 && Auth::user()->id==$message->to->id)
                         <span class="label label-success">Nuevo!!</span>
                         <?php $message->read = 1;$message->save();?>
                     @endif
@@ -31,7 +31,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="title">
-                        @if($msg->read == 0)
+                        @if($msg->read == 0 && Auth::user()->id==$message->to->id)
                             <?php $msg->read = 1;$msg->save();?>
                             <span class="label label-success">Nuevo!!</span>
                         @endif

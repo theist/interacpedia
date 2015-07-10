@@ -39,7 +39,11 @@ class MessagesController extends Controller
     {
         if ( $request->ajax() )
         {
-            $message = Message::create( $request->all() );
+            //dd($request->all());
+            $data = $request->all();
+            if($data["message_id"]=="")
+                $data["message_id"] = null;
+            $message = Message::create( $data );
             return $message;
         } else
         {
