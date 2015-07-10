@@ -9,7 +9,7 @@
                 <li role="presentation" class="{{ ($active==$tag)?"active":"" }}"><a href="{{ $item['link'] }}">{{ $item['label'] }}</a></li>
                 <?php $i++?>
             @endforeach
-            @if( Auth::check())
+            @if( Auth::check() && Auth::user()->admin )
                 <div class="pull-right">
                     {!! Form::open(array('route' => array('challenges.destroy', $challenge->id), 'method' => 'delete')) !!}
                     <a class="btn" href="{{ action('ChallengesController@edit',[$challenge->id]) }}">@lang('challenges/forms.edit')</a>
