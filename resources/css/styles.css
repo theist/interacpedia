@@ -5677,6 +5677,10 @@ h4 {
     font-size: 16px;
     text-transform: uppercase;
     background: none; }
+  #section-nav li.icon .badge, #section-nav li.active.icon .badge {
+    position: absolute;
+    top: 0;
+    background: #00c853; }
   #section-nav li.icon a, #section-nav li.active.icon a {
     padding: 0; }
 

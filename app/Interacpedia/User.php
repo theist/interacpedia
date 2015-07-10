@@ -70,10 +70,19 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
     public function allmessages()
     {
-        $received = $this->messages()->where('message_id', null)->get();
-        $sent = $this->sentmessages()->where('message_id', null)->get();
-        return $received->merge($sent);
+        $messages = Message::where('from_user',$this->id)->orWhere('to_user',$this->id)->orderBy('created_at', 'desc')->get();
+        //$received = $this->messages()->where('message_id', null)->orderBy('created_at', 'desc')->get();
+        //$sent = $this->sentmessages()->where('message_id', null)->orderBy('created_at', 'desc')->get();
+        return $messages;
     }
+
+    public function unreadmessages(  )
+    {
+        $unread = Message::where('from_user',$this->id)->where('read',0)->count();
+        $unread += Message::where('to_user',$this->id)->where('read',0)->count();
+        return $unread;
+    }
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */

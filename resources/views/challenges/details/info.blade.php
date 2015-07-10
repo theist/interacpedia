@@ -128,13 +128,14 @@
                         </div>
                         <div class="col-md-7">
                             {{ $mentor->name }}<br>
-                            <a href="" class="btn">@lang('general/labels.contact')</a>
+                            @include('messages.add',['from'=>Auth::user()->id,'to'=>$mentor->user->id,'label'=> Lang::get('general/labels.contact')])
                         </div>
 
                     </div>
                 @endforeach
             </div>
-        @endunless        @unless($challenge->rewards->isEmpty())
+        @endunless
+        @unless($challenge->rewards->isEmpty())
             <div class="content">
                 <h4>@lang('general/labels.rewards')</h4>
                 @foreach($challenge->rewards as $reward)

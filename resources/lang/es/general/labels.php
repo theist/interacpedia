@@ -110,5 +110,6 @@ return [
     'experience'                    => 'Experiencia',
     'mentors'                       => 'Mentores',
     'read_more'                     => 'Leer más',
-    'partners'                     => 'Aliado|Aliados'
+    'partners'                      => 'Aliado|Aliados',
+    'answer'                        => 'Responder'
 ];

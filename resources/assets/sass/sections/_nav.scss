@@ -17,6 +17,11 @@
       background: none;
     }
     &.icon{
+      .badge{
+        position: absolute;
+        top: 0;
+        background: $green;
+      }
       a{
         padding: 0;
       }

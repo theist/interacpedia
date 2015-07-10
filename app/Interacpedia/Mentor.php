@@ -13,7 +13,8 @@ class Mentor extends Model
         'experience',
         'education',
         'location',
-        'profile'
+        'profile',
+        'user_id'
     ];
     /**
      * Get all of the Mentor follows.
@@ -22,4 +23,14 @@ class Mentor extends Model
     {
         return $this->morphMany('App\Interacpedia\Follow', 'model');
     }
+    /**
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo( 'App\Interacpedia\User' );
+    }
+
+
 }

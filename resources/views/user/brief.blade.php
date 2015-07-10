@@ -7,8 +7,12 @@
     <div class="website">http://</div>
     @if($links)
     <div class="row links">
-        <div class="col-md-6"><a href="/user/{{ $user->id }}">@lang('challenges/forms.full_bio')</a></div>
-        <div class="col-md-6"><a href="">@lang('general/labels.contact')</a></div>
+        <div class="col-md-6">
+            @include('messages.add',['from'=>Auth::user()->id,'to'=>$user->id,'suffix'=>'_int','label'=> Lang::get('general/labels.contact')])
+            <a href="/user/{{ $user->id }}">@lang('challenges/forms.full_bio')</a>
+        </div>
+        <div class="col-md-6"></div>
+
     </div>
     @endif
 </div>
