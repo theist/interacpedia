@@ -332,7 +332,7 @@
                 </div>
             @endforeach
             {!!
-            Form::select('searchings_list[]',$searchings->lists('name','id'),$challenge->searchings->lists('id'),['id'
+            Form::select('searchings_list[]',$searchings->lists('name','id'),$challenge->searchings->lists('id')->all(),['id'
             => 'searchings_list','multiple'=>'multiple','class' => 'form-control hidden']) !!}
         </div>
     </div>
@@ -349,7 +349,7 @@
                     <small>{{ $reward->name }}</small>
                 </div>
             @endforeach
-            {!! Form::select('rewards_list[]',$rewards->lists('name','id'),$challenge->rewards->lists('id'),['id' =>
+            {!! Form::select('rewards_list[]',$rewards->lists('name','id'),$challenge->rewards->lists('id')->all(),['id' =>
             'rewards_list','multiple'=>'multiple','class' => 'form-control hidden']) !!}
         </div>
     </div>

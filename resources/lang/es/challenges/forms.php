@@ -30,7 +30,7 @@ return [
     'add_creator'         => 'Agregar creador',
     'full_bio'            => 'Ver perfil',
     'customers'           => 'Con Clientes',
-    'businessplan'        => 'Plan de negocios',
+    'solutionplan'        => 'Plan de solución',
     'idea'                => 'Idea',
     'prototype'           => 'Prototipo',
     'product'             => 'Producto'

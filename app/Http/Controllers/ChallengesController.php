@@ -156,7 +156,7 @@ class ChallengesController extends Controller {
         }
         $challenge->groups()->where( 'name', 'Grupo general' )->where( 'private', false )->firstOrCreate( [ 'name' => 'Grupo general', 'private' => false ] );
 
-        return redirect( 'challenges' );
+        return redirect( 'challenges/'.$challenge->id );
     }
 
 

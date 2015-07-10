@@ -16,6 +16,13 @@ class Mentor extends Model
         'profile',
         'user_id'
     ];
+
+    /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var array
+     */
+    protected $dates = ['deleted_at'];
     /**
      * Get all of the Mentor follows.
      */

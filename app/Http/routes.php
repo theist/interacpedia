@@ -46,6 +46,7 @@ Route::resource('stories','StoriesController');
 Route::resource('projects','ProjectsController');
 Route::resource('partners','PartnersController');
 Route::resource('mentors','MentorsController');
+Route::resource('coordinators','CoordinatorsController');
 Route::resource('classgroups','ClassgroupsController');
 Route::resource('companies','CompaniesController');
 Route::resource('messages','MessagesController');
