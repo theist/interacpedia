@@ -108,9 +108,33 @@
     </div>
     <div class="col-md-3 sidebar">
         <div class="content">
-            <h4>@lang('general/labels.sponsors')</h4>
+            <h4>{{ trans_choice('general/labels.partners', 2 ) }}</h4>
+            @if($challenge->partner)
+                <div class="row text-center">
+                    <div class="col-md-12 ">
+                        <img class="img-responsive" src="/{{ imagestyle($challenge->partner->logo,'fit200x100') }}" alt="{{ $challenge->partner->name }}"/><br>
+                        <a href="" class="btn">@lang('general/labels.contact')</a>
+                    </div>
+                </div>
+            @endif
         </div>
-        @unless($challenge->rewards->isEmpty())
+        @unless($challenge->mentors->isEmpty())
+            <div class="content">
+                <h4>@lang('general/labels.mentors')</h4>
+                @foreach($challenge->mentors as $mentor)
+                    <div class="text-center row">
+                        <div class="col-md-5">
+                            <img class="img-circle" height="80" src="{{ imagestyle($mentor->image,'fit100x100') }}" alt="{{ $mentor->name }}"/><br/>
+                        </div>
+                        <div class="col-md-7">
+                            {{ $mentor->name }}<br>
+                            <a href="" class="btn">@lang('general/labels.contact')</a>
+                        </div>
+
+                    </div>
+                @endforeach
+            </div>
+        @endunless        @unless($challenge->rewards->isEmpty())
             <div class="content">
                 <h4>@lang('general/labels.rewards')</h4>
                 @foreach($challenge->rewards as $reward)

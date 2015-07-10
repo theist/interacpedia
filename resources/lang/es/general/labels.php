@@ -109,5 +109,6 @@ return [
     'achievements'                  => 'Logros',
     'experience'                    => 'Experiencia',
     'mentors'                       => 'Mentores',
-    'read_more'                     => 'Leer más'
+    'read_more'                     => 'Leer más',
+    'partners'                     => 'Aliado|Aliados'
 ];

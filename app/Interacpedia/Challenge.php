@@ -110,6 +110,16 @@ class Challenge extends Model {
         return $this->belongsTo( 'App\Interacpedia\Partner' );
     }
     /**
+     * Get the mentors associated with this challenge
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function mentors()
+    {
+        return $this->belongsToMany('App\Interacpedia\Mentor')->withTimestamps();
+    }
+
+    /**
      * Get the creators associated with this challenge
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
