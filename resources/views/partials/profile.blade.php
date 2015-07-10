@@ -24,7 +24,7 @@
                     0 @lang('user/profile.followers') / 0 @lang('user/profile.following')<br/>
                     <a class="btn" href="">@lang('user/profile.follow')</a>
                     @if(Auth::user()->id != $user->id)
-                        <a class="btn btn-darkblue" href="">@lang('user/profile.contact')</a>
+                        @include('messages.add',['from'=>Auth::user()->id,'to'=>$user->id,'label'=> Lang::get('general/labels.contact')])
                     @endif
                 </div>
             </div>

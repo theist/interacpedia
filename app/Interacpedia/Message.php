@@ -12,6 +12,7 @@ class Message extends Model
         'content',
         'title',
         'to_user',
+        'message_id'
     ];
     /**
      * Returns formatted creation date
@@ -22,6 +23,15 @@ class Message extends Model
     {
         setlocale(LC_ALL, 'es_ES');
         return Carbon::parse($date)->formatLocalized('%B %e, %G - %l:%M %p');
+    }
+
+    /**
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function message()
+    {
+        return $this->belongsTo( 'App\Interacpedia\Message');
     }
 
     /**
@@ -39,5 +49,13 @@ class Message extends Model
     public function to()
     {
         return $this->belongsTo( 'App\Interacpedia\User','to_user' );
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function messages()
+    {
+        return  $this->hasMany( 'App\Interacpedia\Message' );
     }
 }
