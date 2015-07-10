@@ -275,6 +275,7 @@
             <div class="form-group">
                 {!! Form::select('tag_list[]',$tags,$challenge->tags->lists('id'),['id' => 'tag_list','class' =>
                 'form-control select2','multiple','data-tags'=>'true']) !!}
+                <div class="help">Escoja las etiquetas o escriba nuevas y presione "ENTER" para agregar.</div>
             </div>
         </div>
         <div class="field-files col-md-5">

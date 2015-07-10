@@ -22,6 +22,7 @@
                     <div class="form-group">
                         {!! Form::select('tags_vision_list[]',$tags_vision,$user->tags()->where('type','personal_vision')->lists('id')->all(),['id' => 'tags_vision_list','class' =>
                         'form-control select2','multiple','data-tags'=>'true']) !!}
+                        <div class="help">Puede escoger de la lista o agregar nuevas opciones presionando "ENTER" para agregar.</div>
                     </div>
                 </div>
             </div>
@@ -31,9 +32,9 @@
                 @lang('general/labels.my_dreams')
             </div>
             <div class="form-group">
-
                 {!! Form::select('tags_dreams_list[]',$tags_dreams,$user->tags()->where('type','dreams')->lists('id')->all(),['id' => 'tags_dreams_list','class' =>
                 'form-control select2','multiple','data-tags'=>'true']) !!}
+                <div class="help">Puede escoger de la lista o agregar nuevas opciones presionando "ENTER" para agregar.</div>
             </div>
             <hr/>
             <div class="subtitle">
@@ -43,6 +44,7 @@
             <div class="form-group">
                 {!! Form::select('tags_likes_list[]',$tags_likes,$user->tags()->where('type','likes')->lists('id')->all(),['id' => 'tags_likes_list','class' =>
                 'form-control select2','multiple','data-tags'=>'true']) !!}
+                <div class="help">Puede escoger de la lista o agregar nuevas opciones presionando "ENTER" para agregar.</div>
             </div>
         </div>
         <div class="subtitle">
