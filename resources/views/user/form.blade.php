@@ -18,6 +18,7 @@
                         {!! Form::textarea('vision', null, ['maxlength'=>140,'class' => 'form-control maxlength', 'rows'=>7,
                         'placeholder'=>Lang::get('user/forms.personal_vision') . ' '
                         .Lang::get('general/forms.in_chars',['chars'=>140])]) !!}
+                        <div class="help">Puede escoger de la listao agregar nuevas opciones presionando "ENTER" para agregar.</div>
                     </div>
                     <div class="form-group">
                         {!! Form::select('tags_vision_list[]',$tags_vision,$user->tags()->where('type','personal_vision')->lists('id')->all(),['id' => 'tags_vision_list','class' =>
