@@ -60,8 +60,9 @@
                             @endif
                         </li>
                         <li class="icon">
-                            <a href="/user/{{ Auth::user()->id }}/profile"><img
-                                        src="/images/icons/40x40/usermenu-profile.png" alt="Messages"/></a>
+                            <a href="/user/{{ Auth::user()->id }}/profile">
+                                <img height="40" class="img-circle" src="{{ imagestyle(Auth::user()->avatar,'fit100x100') }}" alt="{{ Auth::user()->name }}"/>
+                            </a>
                         </li>
                         {{--<li class="icon">--}}
                         {{--<a href=""><img src="/images/icons/40x40/usermenu-down.png" alt="Messages"/></a>--}}
