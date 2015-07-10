@@ -7,7 +7,7 @@
     <div class="website">http://</div>
     @if($links)
     <div class="row links">
-        <div class="col-md-6"><a href="">@lang('challenges/forms.full_bio')</a></div>
+        <div class="col-md-6"><a href="/user/{{ $user->id }}">@lang('challenges/forms.full_bio')</a></div>
         <div class="col-md-6"><a href="">@lang('general/labels.contact')</a></div>
     </div>
     @endif
