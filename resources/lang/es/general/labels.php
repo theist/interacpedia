@@ -111,5 +111,7 @@ return [
     'mentors'                       => 'Mentores',
     'read_more'                     => 'Leer más',
     'partners'                      => 'Aliado|Aliados',
-    'answer'                        => 'Responder'
+    'answer'                        => 'Responder',
+    'leader'                        => 'Líder',
+    'coordinator'                   => 'Coordinador'
 ];

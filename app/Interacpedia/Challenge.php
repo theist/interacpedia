@@ -120,6 +120,15 @@ class Challenge extends Model {
     }
 
     /**
+     * Get the coordinators associated with this challenge
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function coordinators()
+    {
+        return $this->belongsToMany('App\Interacpedia\Coordinator')->withTimestamps();
+    }
+    /**
      * Get the creators associated with this challenge
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
