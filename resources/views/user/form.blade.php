@@ -15,6 +15,9 @@
                 </div>
                 <div class="col-md-7">
                     <div class="form-group">
+                        <input type="text" name="name" id="name" class="maxlength form-control" maxlength="150" value="{{ $user->name }}">
+                    </div>
+                    <div class="form-group">
                         {!! Form::textarea('vision', null, ['maxlength'=>140,'class' => 'form-control maxlength', 'rows'=>7,
                         'placeholder'=>Lang::get('user/forms.personal_vision') . ' '
                         .Lang::get('general/forms.in_chars',['chars'=>140])]) !!}
@@ -76,6 +79,46 @@
                 'form-control select2','multiple','data-tags'=>'true']) !!}
             </div>
         </div>
+        <div class="form-group">
+            {!! Form::submit($submitButtonText,['class' => 'btn btn-purple btn-big']) !!}
+            <a class="btn btn-gray btn-big cancel">@lang('general/labels.cancel')</a>
+        </div>
+    </div>
+</div>
+<div class="col-md-5">
+    <div class="content">
+        <div class="subtitle">
+            <img src="/images/icons/40x40/search.png" alt="@lang('general/labels.what_im_looking_for')"/>
+            @lang('general/labels.what_im_looking_for')
+        </div>
+        <div class="area">
+            <div class="subtitle">
+                <img src="/images/icons/32x32/resources.png" alt="@lang('general/labels.resources')"/>
+                @lang('general/labels.resources')
+            </div>
+            <div class="form-group">
+                {!! Form::select('tags_searching_resources_list[]',$tags_searching_resources,$user->tags()->where('type','searching_resources')->lists('id')->all(),['id' => 'tags_searching_resources_list','class' =>
+                'form-control select2','multiple','data-tags'=>'true']) !!}
+            </div>
+            <hr/>
+            <div class="subtitle">
+                <img src="/images/icons/32x32/experts.png" alt="@lang('general/labels.experts')"/>
+                @lang('general/labels.experts')
+            </div>
+            <div class="form-group">
+                {!! Form::select('tags_searching_experts_list[]',$tags_searching_experts,$user->tags()->where('type','searching_experts')->lists('id')->all(),['id' => 'tags_searching_experts_list','class' =>
+                'form-control select2','multiple','data-tags'=>'true']) !!}
+            </div>
+            <hr/>
+            <div class="subtitle">
+                <img src="/images/icons/32x32/personal.png" alt="@lang('general/labels.personal')"/>
+                @lang('general/labels.personal')
+            </div>
+            <div class="form-group">
+                {!! Form::select('tags_searching_personal_list[]',$tags_searching_personal,$user->tags()->where('type','searching_personal')->lists('id')->all(),['id' => 'tags_searching_personal_list','class' =>
+                'form-control select2','multiple','data-tags'=>'true']) !!}
+            </div>
+        </div>
         <div class="subtitle">
             <img src="/images/icons/40x40/offer.png" alt="@lang('general/labels.what_can_i_offer')"/>
             @lang('general/labels.what_can_i_offer')
@@ -121,45 +164,8 @@
                 </div>
             </div>
         </div>
-        <div class="subtitle">
-            <img src="/images/icons/40x40/search.png" alt="@lang('general/labels.what_im_looking_for')"/>
-            @lang('general/labels.what_im_looking_for')
-        </div>
-        <div class="area">
-            <div class="subtitle">
-                <img src="/images/icons/32x32/resources.png" alt="@lang('general/labels.resources')"/>
-                @lang('general/labels.resources')
-            </div>
-            <div class="form-group">
-                {!! Form::select('tags_searching_resources_list[]',$tags_searching_resources,$user->tags()->where('type','searching_resources')->lists('id')->all(),['id' => 'tags_searching_resources_list','class' =>
-                'form-control select2','multiple','data-tags'=>'true']) !!}
-            </div>
-            <hr/>
-            <div class="subtitle">
-                <img src="/images/icons/32x32/experts.png" alt="@lang('general/labels.experts')"/>
-                @lang('general/labels.experts')
-            </div>
-            <div class="form-group">
-                {!! Form::select('tags_searching_experts_list[]',$tags_searching_experts,$user->tags()->where('type','searching_experts')->lists('id')->all(),['id' => 'tags_searching_experts_list','class' =>
-                'form-control select2','multiple','data-tags'=>'true']) !!}
-            </div>
-            <hr/>
-            <div class="subtitle">
-                <img src="/images/icons/32x32/personal.png" alt="@lang('general/labels.personal')"/>
-                @lang('general/labels.personal')
-            </div>
-            <div class="form-group">
-                {!! Form::select('tags_searching_personal_list[]',$tags_searching_personal,$user->tags()->where('type','searching_personal')->lists('id')->all(),['id' => 'tags_searching_personal_list','class' =>
-                'form-control select2','multiple','data-tags'=>'true']) !!}
-            </div>
-        </div>
-        <div class="form-group">
-            {!! Form::submit($submitButtonText,['class' => 'btn btn-purple btn-big']) !!}
-            <a class="btn btn-gray btn-big cancel">@lang('general/labels.cancel')</a>
-        </div>
     </div>
 </div>
-
 
 @section('footer')
     <script>
