@@ -16,7 +16,7 @@ class MentorsController extends Controller
      */
     public function index()
     {
-        $mentors = Partner::latest()->get();
+        $mentors = Partner::all()->random(1);
         return view('mentors.index',compact('mentors'));
     }
 

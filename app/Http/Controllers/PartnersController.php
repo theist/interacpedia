@@ -17,7 +17,8 @@ class PartnersController extends Controller {
 	public function index()
 	{
 		$partners = Partner::latest()->get();
-        $mentors = Mentor::latest()->get();
+        $allmentors = Mentor::all();
+		$mentors = $allmentors->random($allmentors->count());
         $companies = Partner::where('type','company')->latest()->get();
         $universities = Partner::where('type','university')->latest()->get();
         return view('partners.index',compact('partners','companies','universities','mentors'));
