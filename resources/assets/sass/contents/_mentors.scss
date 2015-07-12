@@ -25,7 +25,7 @@
       }
 
       .content {
-        @media (max-width: $screen-md-max) {
+        @media (min-width: $screen-md-max) {
           min-height: 712px;
         }
         background: white;

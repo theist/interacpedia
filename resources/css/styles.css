@@ -5517,7 +5517,7 @@ h4 {
   background: white;
   border: 1px solid #cdcdcd;
   margin-bottom: 15px; }
-  @media (max-width: 1199px) {
+  @media (min-width: 1199px) {
     .mentors .mentor.summary .content {
       min-height: 712px; } }
   .mentors .mentor.summary .content .fields {
