@@ -25,7 +25,9 @@
       }
 
       .content {
-        min-height: 712px;
+        @media (max-width: $screen-md-max) {
+          min-height: 712px;
+        }
         background: white;
         border: 1px solid $border-gray;
         margin-bottom: 15px;
