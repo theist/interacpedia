@@ -108,8 +108,8 @@
       }
     }
     .content{
-      @media (max-width: $screen-md-max) {
-        min-height: 550px;
+      @media (min-width: $screen-md-max) {
+        min-height: 566px;
       }
     }
   }
