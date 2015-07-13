@@ -47,7 +47,7 @@ Route::resource('projects','ProjectsController');
 Route::resource('partners','PartnersController');
 Route::resource('mentors','MentorsController');
 Route::resource('coordinators','CoordinatorsController');
-Route::resource('classgroups','ClassgroupsController');
+Route::resource('courses','CourseController');
 Route::resource('companies','CompaniesController');
 Route::resource('messages','MessagesController');
 Route::resource('blogs','BlogController');

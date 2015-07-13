@@ -328,19 +328,19 @@ class ChallengesController extends Controller {
      */
     public function syncTags( Challenge $challenge, array $tags )
     {
-        $newtags = [ ];
+        $ids = Tag::where( 'type', 'challenge' )->get()->lists( 'id' );
+        if ( count( $ids ) > 0 )
+            $challenge->tags()->detach( $ids );
         foreach ( $tags as $tag )
         {
-            if ( $model = Tag::where( 'id', $tag )->andWhere( 'type', 'challenge' ) )
+            if ( is_numeric($tag) && $model = Tag::where( 'id', $tag )->where( 'type', 'challenge' )->first() )
             {
-                $newtags[ ] = $model->id;
+                $challenge->tags()->attach( $tag );
             } else
             {
                 $model = Tag::firstOrCreate( [ 'name' => $tag, 'type' => 'challenge' ] );
-                $newtags[ ] = $model->id;
+                $challenge->tags()->attach( $model->id );
             }
         }
-
-        $challenge->tags()->sync( $newtags );
     }
 }

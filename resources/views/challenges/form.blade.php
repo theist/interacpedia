@@ -121,9 +121,9 @@
             <div class="col-sm-11 text-left text">@lang('challenges/forms.solution')</div>
         </div>
         <div class="form-group">
-            {!! Form::textarea('solution', null, ['maxlength'=>140,'class' => 'form-control maxlength', 'rows'=>7,
+            {!! Form::textarea('solution', null, ['maxlength'=>400,'class' => 'form-control maxlength', 'rows'=>7,
             'placeholder'=>Lang::get('challenges/forms.solution') . ' '
-            .Lang::get('general/forms.in_chars',['chars'=>140])]) !!}
+            .Lang::get('general/forms.in_chars',['chars'=>400])]) !!}
         </div>
     </div>
     <div class="field-benefits">
@@ -273,7 +273,7 @@
                 </div>
             </div>
             <div class="form-group">
-                {!! Form::select('tag_list[]',$tags,$challenge->tags->lists('id'),['id' => 'tag_list','class' =>
+                {!! Form::select('tag_list[]',$tags,$challenge->tags->lists('id')->all(),['id' => 'tag_list','class' =>
                 'form-control select2','multiple','data-tags'=>'true']) !!}
                 <div class="help">Escoja las etiquetas o escriba nuevas y presione "ENTER" para agregar.</div>
             </div>

@@ -12,10 +12,7 @@ class AddClassToUserchallengeTable extends Migration
      */
     public function up()
     {
-        Schema::table('challenge_user', function (Blueprint $table) {
-            $table->integer('classgroup_id')->nullable()->unsigned()->index();
-            $table->foreign('classgroup_id')->references('id')->on('classgroups')->onDelete('cascade');
-        });
+
     }
 
     /**
@@ -25,8 +22,5 @@ class AddClassToUserchallengeTable extends Migration
      */
     public function down()
     {
-        Schema::table('challenge_user', function (Blueprint $table) {
-            $table->dropColumn('classgroup_id');
-        });
     }
 }

@@ -12,21 +12,12 @@ class CreateClassgroupsTable extends Migration
      */
     public function up()
     {
-        Schema::create('classgroups', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->string('hashtag');
-            $table->string('blogid');
-            $table->integer('user_id')->unsigned()->nullable();
-            $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-        });
-        Schema::create('classgroup_user', function(Blueprint $table)
+        Schema::create('course_user', function(Blueprint $table)
         {
-            $table->integer('classgroup_id')->unsigned()->index();
+            $table->integer('course_id')->unsigned()->index();
             $table->integer('user_id')->unsigned()->index();
             $table->timestamps();
-            $table->foreign('classgroup_id')->references('id')->on('classgroups')->onDelete('cascade');
+            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
@@ -38,7 +29,6 @@ class CreateClassgroupsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('classgroup_user');
-        Schema::drop('classgroups');
+        Schema::drop('course_user');
     }
 }
