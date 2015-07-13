@@ -31,7 +31,7 @@
                 <div class="col-sm-10 text-left text">@lang('challenges/forms.name')</div>
             </div>
             <div class="form-group">
-                {!! Form::textarea('name',null,['id' => 'name', 'maxlength' => 50, 'class' => 'form-control
+                {!! Form::textarea('name',null,['id' => 'name', 'maxlength' => 100, 'class' => 'form-control
                 maxlength','rows'=>'4']) !!}
                 <div class="help">Este nombre ayudará a otros a encontrar tu reto. Recuerda usar las pablabras más
                     importantes!
