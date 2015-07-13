@@ -113,5 +113,7 @@ return [
     'partners'                      => 'Aliado|Aliados',
     'answer'                        => 'Responder',
     'leader'                        => 'Líder',
-    'coordinators'                  => 'Coordinadores'
+    'coordinators'                  => 'Coordinadores',
+    'my_occupation_is'              => 'Mi ocupación es',
+    'educative_institution'         => 'Institución Educativa'
 ];

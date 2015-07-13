@@ -21,7 +21,7 @@
                 {!! Form::hidden('completeoccupations',true) !!}
                 <div class="row" style="margin-bottom: 30px">
                     <div class="col-md-4 col-md-offset-1 text-left">
-                        Mi ocupación es: <br/>
+                        @lang('general/labels.my_occupation_is'): <br/>
                         <select name="type" id="type" class="form-control select2">
                             @foreach($types as $type)
                                 <option {{ ($type==$occupation->type) ?"selected":""}} value="{{ $type }}">@lang('general/labels.'.$type)</option>
@@ -30,7 +30,7 @@
                     </div>
                     <div class="col-md-4 text-left">
                         <div class="career {{ ($occupation->type=="student"||$occupation->type=="")?"":"hidden" }}">
-                            Carrera: <br/>
+                            @lang('general/labels.career'): <br/>
                             <select name="career_id" id="career_id" class="form-control select2">
                                 @foreach($careers as $id=>$car)
                                     <option {{ ($id==$occupation->career_id) ?"selected":""}} value="{{ $id }}">{{ $car }}</option>
@@ -38,7 +38,7 @@
                             </select>
                         </div>
                         <div class="sector {{ ($occupation->type!="student" && $occupation->type!="")?"":"hidden" }}">
-                            Sector: <br/>
+                            @lang('general/labels.sector'): <br/>
                             <select name="sector_id" id="sector_id" class="form-control select2">
                                 @foreach($sectors as $id=>$sec)
                                     <option {{ ($id==$occupation->sector_id) ?"selected":""}} value="{{ $id }}">{{ $sec }}</option>
@@ -47,14 +47,14 @@
                         </div>
                     </div>
                     <div class="col-md-2 text-left">
-                        {{ ($occupation->type=="student"||$occupation->type=="")?"Semestre":"Experiencia" }}:<br/>
+                        <span id="experience_label">{{ ($occupation->type=="student"||$occupation->type=="")?"Semestre":"Experiencia" }}</span>:<br/>
                         <input type="text" value="{{ $occupation->experience }}" placeholder="Años" name="experience" id="experience" class="form-control"/>
                     </div>
                 </div>
                 <div class="row" style="margin-bottom: 30px">
                     <div class="col-md-4 col-md-offset-1 text-left">
                         <div class="university {{ ($occupation->type=="student"||$occupation->type=="")?"":"hidden" }}">
-                            Institución Educativa: <br/>
+                            @lang('general/labels.educative_institution'): <br/>
                             <select name="university_id" id="university_id" class="form-control select2">
                                 @foreach($universities as $id=>$uni)
                                     <option {{ ($id==$occupation->university_id) ?"selected":""}} value="{{ $id }}">{{ $uni }}</option>
@@ -62,7 +62,7 @@
                             </select>
                         </div>
                         <div class="company {{ ($occupation->type!="student"&&$occupation->type!="")?"":"hidden" }}">
-                            Empresa: <br/>
+                            @lang('general/labels.company'): <br/>
                             <select name="company_id" id="company_id" class="form-control select2">
                                 @foreach($companies as $id=>$com)
                                     <option {{ ($id==$occupation->company_id) ?"selected":""}} value="{{ $id }}">{{ $com }}</option>
@@ -72,7 +72,7 @@
                     </div>
                     <div class="col-md-4 text-left">
                         <div class="course {{ ($occupation->type=="student"||$occupation->type=="")?"":"hidden" }}">
-                            Curso: <br/>
+                            @lang('general/labels.course'): <br/>
                             <select name="course_id" id="course_id" class="form-control select2">
                                 @foreach($courses as $id=>$cou)
                                     <option {{ ($id==$occupation->course_id) ?"selected":""}} value="{{ $id }}">{{ $cou }}</option>
@@ -80,7 +80,7 @@
                             </select>
                         </div>
                         <div class="position {{ ($occupation->type!="student"&&$occupation->type!="")?"":"hidden" }}">
-                            Cargo: <br/>
+                            @lang('general/labels.position'): <br/>
                             <select name="position_id" id="position_id" class="form-control select2">
                                 @foreach($positions as $id=>$pos)
                                     <option {{ ($id==$occupation->position_id) ?"selected":""}} value="{{ $id }}">{{ $pos }}</option>
@@ -108,10 +108,12 @@
                 $('.university,.career,.course').removeClass('hidden');
                 $('.university select,.career select,.course select').select2();
                 $('.company,.sector,.position').addClass('hidden');
+                $('#experience_label').html('Semestre');
             } else {
                 $('.company,.sector,.position').removeClass('hidden');
                 $('.company select,.sector select,.position select').select2();
                 $('.university,.career,.course').addClass('hidden');
+                $('#experience_label').html('Experiencia');
             }
         });
     </script>

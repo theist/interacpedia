@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Interacpedia\Classgroup;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -16,7 +17,8 @@ class ClassgroupsController extends Controller
      */
     public function index()
     {
-        //
+        $classes = Classgroup::all();
+        return view('classgroups.index', compact('classes'));
     }
 
     /**
