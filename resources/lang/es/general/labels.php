@@ -19,7 +19,7 @@ return [
     'university'                    => 'Universidad',
     'career'                        => 'Carrera',
     'course'                        => 'Curso',
-    'courses'                        => 'Cursos',
+    'courses'                       => 'Cursos',
     'professor'                     => 'Profesor',
     'website'                       => 'Sitio Web',
     'creator'                       => 'Creador',
@@ -40,7 +40,7 @@ return [
     'previous'                      => 'Anterior',
     'next'                          => 'Siguiente',
     'student'                       => 'Estudiante',
-    'students'                       => 'Estudiantes',
+    'students'                      => 'Estudiantes',
     'employee'                      => 'Empleado',
     'other'                         => 'Otro',
     'more_images'                   => 'Más imágenes',
@@ -117,5 +117,6 @@ return [
     'leader'                        => 'Líder',
     'coordinators'                  => 'Coordinadores',
     'my_occupation_is'              => 'Mi ocupación es',
-    'educative_institution'         => 'Institución Educativa'
+    'educative_institution'         => 'Institución Educativa',
+    'unavailable'                   => 'No disponible'
 ];
