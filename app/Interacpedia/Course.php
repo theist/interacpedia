@@ -1,5 +1,6 @@
 <?php namespace App\Interacpedia;
 
+use App\Services\Google;
 use Illuminate\Database\Eloquent\Model;
 
 class Course extends Model {
