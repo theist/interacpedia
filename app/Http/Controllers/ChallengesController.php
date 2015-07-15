@@ -75,10 +75,12 @@ class ChallengesController extends Controller {
         $ch_courses = [ ];
         $ch_creators = [ $user->id ];
 
+        return view('errors.unavailable');
         return view( 'challenges.create', compact( 'user',
             'cities', 'categories', 'types', 'rewards', 'searchings',
             'actual_stages', 'desired_stages', 'tags', 'universities', 'careers', 'courses', 'professors', 'creators',
             'ch_universities', 'ch_careers', 'ch_courses', 'ch_creators' ) );
+
     }
 
     /**

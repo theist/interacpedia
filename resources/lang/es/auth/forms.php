@@ -10,7 +10,7 @@ return [
     'reset'         => 'Reasignar Contraseña',
     'needaccount'   => 'Necesita crear una cuenta?',
     'with_facebook' => 'con Facebook',
-    'with_linkedin' => 'conLinkedIn',
+    'with_linkedin' => 'con LinkedIn',
     'with_twitter'  => 'con Twitter',
     'with_google'   => 'con Google',
     'sendpassword'  => 'Enviar link para cambiar contraseña',

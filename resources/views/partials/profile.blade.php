@@ -1,3 +1,4 @@
+<?php if(!isset($user))$user = Auth::user()?>
 <div class="container-fluid" id="section-profile">
     <div class="container">
         <div class="row profile">
