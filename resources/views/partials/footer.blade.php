@@ -23,7 +23,7 @@
             <a href="https://instagram.com/interacpedia" target="_blank"><img src="/images/icons/social-networks/instagram.png" alt="Instagram"></a>
             <a href="https://www.pinterest.com/interacpedia/" target="_blank"><img src="/images/icons/social-networks/pinterest.png" alt="Pinterest"></a>
             <a href="" target="_blank"><img src="/images/icons/social-networks/linkedin.png" alt="LinkedIn"></a>
-            <a href="https://blog.interacpedia.com" target="_blank"><img src="/images/icons/social-networks/blogger.png" alt="Blogger"></a>
+            <a href="http://blog.interacpedia.com" target="_blank"><img src="/images/icons/social-networks/blogger.png" alt="Blogger"></a>
             <a href="#" target="_blank"><img src="/images/icons/social-networks/youtube.png" alt="YouTube"></a>
         </div>
         <div class="col-md-2 text-center">
