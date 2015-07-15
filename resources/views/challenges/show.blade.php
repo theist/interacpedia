@@ -24,8 +24,7 @@
     @include('challenges.details.menu',['items'=>[
                                             'info'=>['label'=>'Info','link'=>'/challenges/'. $challenge->id .'/info'],
                                             'participants'=>['label'=>'Participantes','link'=>'/challenges/'. $challenge->id .'/participants'],
-                                            'comments'=>['label'=>'Comentarios','link'=>'/challenges/'.$challenge->id.'/comments'],
-                                            'blog'=>['label'=>'Blog','link'=>'/challenges/'.$challenge->id.'/blog']
+                                            'comments'=>['label'=>'Comentarios','link'=>'/challenges/'.$challenge->id.'/comments']
                                             ],
                                     'active'=>$option
                                 ])
