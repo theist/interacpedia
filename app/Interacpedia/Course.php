@@ -39,4 +39,9 @@ class Course extends Model {
     {
         return $this->morphMany('App\Interacpedia\Follow', 'model');
     }
+    public function getPosts(){
+        $google = new Google();
+        $posts =  $google->listPosts();
+        return $posts;
+    }
 }

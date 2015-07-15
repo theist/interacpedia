@@ -54,6 +54,7 @@ Route::resource('blogs','BlogController');
 Route::post('upload','UploadController@store');
 
 Route::get('challenges/{challenge}/{option}', 'ChallengesController@show');
+Route::get('courses/{course}/{option}', 'CoursesController@show');
 /**
  * Authentication routes
  */
