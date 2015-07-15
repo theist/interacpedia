@@ -42,7 +42,7 @@
                 <div class="content col-md-12">
                     <h3>@lang('general/labels.posts')</h3>
                     @foreach($posts as $post)
-                        <div class="col-md-4">
+                        <div class="col-md-4 preview">
                             @include('blogs.post',['post'=>$post])
                         </div>
                     @endforeach

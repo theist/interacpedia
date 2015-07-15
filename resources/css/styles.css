@@ -5471,6 +5471,12 @@ h4 {
 .modal-header {
   text-align: left; }
 
+.post img {
+  display: block; }
+
+.preview .post img {
+  width: 100%; }
+
 .partners .partner.summary .title h4 {
   text-transform: uppercase;
   font-family: 'Open Sans', sans-serif;
