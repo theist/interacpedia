@@ -32,7 +32,7 @@
 
 @section('content')
     <div class="row course-details{{ $option }}">
-        @include('courses.details.'.$option,['course'=>$course])
+        @include('courses.details.'.$option,['course'=>$course,'challenges'=>$challenges])
     </div>
 @stop
 

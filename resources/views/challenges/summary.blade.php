@@ -9,7 +9,7 @@
         @if($challenge->partner)
             <div class="row">
                 <div class="col-md-6 col-md-offset-3"><img class="img-responsive"
-                                            src="{{ imagestyle($challenge->partner->logo,'fit200x100') }}"
+                                            src="/{{ imagestyle($challenge->partner->logo,'fit200x100') }}"
                                             alt="{{ $challenge->partner->name }}"/></div>
             </div>
         @endif
