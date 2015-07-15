@@ -45,9 +45,10 @@ class ProjectsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show( Project $project, $id = null, $option = null )
 	{
-		//
+		if ( $id ) $project = Project::find( $id );
+		return view( 'projects.show', compact( 'project' ) );
 	}
 
 	/**
