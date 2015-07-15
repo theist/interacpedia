@@ -15,6 +15,7 @@ return [
     'about'        => 'Acerca de',
     'interacpedia' => 'Interacpedia',
     'toggle'       => 'Mostrar navegación',
-    'more'         => 'Más'
+    'more'         => 'Más',
+    'classes'      => 'Clases'
 
 ];

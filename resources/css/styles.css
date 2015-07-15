@@ -5526,6 +5526,27 @@ h4 {
   .mentors .image img {
     width: 100%; } }
 
+.courses .course.summary .title h4 {
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 0;
+  color: #535353; }
+.courses .course.summary .subtitle {
+  margin-bottom: 10px;
+  color: #535353; }
+.courses .course.summary .links .btn {
+  font-size: 1rem; }
+.courses .course.summary .content {
+  min-height: 450px;
+  background: white;
+  border: 1px solid #cdcdcd;
+  margin-bottom: 15px; }
+  .courses .course.summary .content .fields {
+    padding: 20px; }
+@media (max-width: 767px) {
+  .courses .image img {
+    width: 100%; } }
+
 #header {
   padding: 10px 0;
   margin: 10px; }

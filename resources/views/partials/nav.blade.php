@@ -30,6 +30,7 @@
                     @if(Auth::check())
                         <li><a href="/user/profile">@lang('general/menu.profile')</a></li>
                     @endif
+                    <li><a href="{{ action('CoursesController@index') }}">@lang('general/menu.classes')</a></li>
                     <li><a href="{{ action('ChallengesController@index') }}">@lang('general/menu.challenges')</a></li>
                     <li><a href="{{ action('ProjectsController@index') }}">@lang('general/menu.projects')</a></li>
                     <li><a href="{{ action('PartnersController@index') }}">@lang('general/menu.partners')</a></li>
@@ -60,7 +61,7 @@
                             @endif
                         </li>
                         <li class="icon">
-                            <a href="/user/{{ Auth::user()->id }}/profile">
+                            <a href="/user/{{ Auth::user()->id }}">
                                 <img height="40" class="img-circle" src="{{ imagestyle(Auth::user()->avatar,'fit100x100') }}" alt="{{ Auth::user()->name }}"/>
                             </a>
                         </li>

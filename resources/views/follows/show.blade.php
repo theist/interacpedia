@@ -18,7 +18,8 @@
         </div>
     @else
         <div class="col-md-{{ ($counter && $format=='horizontal')?'7':'12' }} text-center">
-            <a class="btn btn-fixed-purple" href="/challenges/{{ $model->id }}"><i class="fa fa-share"></i> @lang('general/labels.follow')</a>
+            <?php $class = strtolower(get_class($model)) ?>
+            <a class="btn btn-fixed-purple" href="/{{ str_replace('app\\interacpedia\\','',$class) }}s/{{ $model->id }}"><i class="fa fa-share"></i> @lang('general/labels.follow')</a>
         </div>
     @endif
 </div>
