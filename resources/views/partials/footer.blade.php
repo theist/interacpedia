@@ -24,7 +24,7 @@
             <a href="https://www.pinterest.com/interacpedia/" target="_blank"><img src="/images/icons/social-networks/pinterest.png" alt="Pinterest"></a>
             <a href="https://www.linkedin.com/company/interacpedia" target="_blank"><img src="/images/icons/social-networks/linkedin.png" alt="LinkedIn"></a>
             <a href="http://blog.interacpedia.com" target="_blank"><img src="/images/icons/social-networks/blogger.png" alt="Blogger"></a>
-            <a href="#" target="_blank"><img src="/images/icons/social-networks/youtube.png" alt="YouTube"></a>
+            <a href="https://www.youtube.com/channel/UCbCznscuetD3nIg3u2cxhMw" target="_blank"><img src="/images/icons/social-networks/youtube.png" alt="YouTube"></a>
         </div>
         <div class="col-md-2 text-center">
             <h4>CONTACTO</h4>
