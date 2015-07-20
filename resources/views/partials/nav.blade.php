@@ -24,7 +24,7 @@
                             <li>
                                 <a href="{{ action('PagesController@howitworks') }}">@lang('general/menu.howitworks')</a>
                             </li>
-                            <li><a href="{{ action('PagesController@index') }}">@lang('general/menu.contact')</a></li>
+                            <li><a href="{{ action('PagesController@contact') }}">@lang('general/menu.contact')</a></li>
                         </ul>
                     </li>
                     @if(Auth::check())

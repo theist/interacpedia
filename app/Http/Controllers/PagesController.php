@@ -3,12 +3,14 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Http\Requests\ContactFormRequest;
 use App\Interacpedia\Challenge;
 use App\Interacpedia\Partner;
 use App\Interacpedia\Story;
 use App\Services\Google;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Mail;
 use Segment;
 
 class PagesController extends Controller {
@@ -58,5 +60,33 @@ class PagesController extends Controller {
     {
         return view('pages.about');
     }
+    /**
+     * @return string
+     */
+    public function contact()
+    {
+        return view('pages.contact');
+    }
 
+    /**
+     * @param ContactFormRequest $request
+     * @return string
+     */
+    public function contact_store(ContactFormRequest $request)
+    {
+        Mail::send('emails.contact',
+            array(
+                'name' => $request->get('name'),
+                'email' => $request->get('email'),
+                'user_message' => $request->get('message')
+            ), function($message)
+            {
+                $message->from('info@interacpedia.com');
+                $message->to('info@interacpedia.com', 'Interacpedia Info')->cc('jcorrego@gmail.com')->subject('Interacpedia - Contacto');
+            });
+        flash()->success( 'Gracias por contactarnos!' );
+        return \Redirect::route('contact')
+            ->with('message', 'Gracias por contactarnos!');
+
+    }
 }

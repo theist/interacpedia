@@ -40,7 +40,7 @@
             </small>
         </div>
         <div class="col-md-12 text-center">
-            <small>Tods los derechos reservados &copy; Idea Minds Group S.A.S, {{ date('Y') }}</small>
+            <small>Todos los derechos reservados &copy; Idea Minds Group S.A.S, {{ date('Y') }}</small>
         </div>
     </div>
 </div>

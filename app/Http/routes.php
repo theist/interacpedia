@@ -15,6 +15,8 @@ Route::get('/', 'PagesController@index');
 Route::get('home', 'PagesController@index');
 Route::get('how-it-works', 'PagesController@howitworks');
 Route::get('about-us', 'PagesController@about');
+Route::get('contact', ['as' => 'contact', 'uses' => 'PagesController@contact']);
+Route::post('contact', ['as' => 'contact_store', 'uses' => 'PagesController@contact_store']);
 
 /**
  * PagesController - Static routes
