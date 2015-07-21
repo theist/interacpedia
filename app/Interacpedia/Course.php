@@ -42,7 +42,10 @@ class Course extends Model {
     }
     public function getPosts(){
         $google = new Google();
-        $posts =  $google->listPosts();
+        if($this->blogid)
+            $posts =  $google->listPosts($this->blogid);
+        else
+            $posts =  $google->listPosts();
         return $posts;
     }
 }

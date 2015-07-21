@@ -19,7 +19,7 @@ class BlogController extends Controller
      */
     public function index(Google $google)
     {
-        $posts =  $google->listPosts();
+        $posts =  $google->listPosts("5935318404281787196");
         return view('blogs.index', compact('posts'));
     }
 

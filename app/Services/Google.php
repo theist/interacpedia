@@ -40,11 +40,11 @@ class Google {
         Cache::forever('service_token', $this->client->getAccessToken());
     }
 
-    public function listPosts($limit = 0)
+    public function listPosts($blogid="5935318404281787196",$limit = 0)
     {
         $options = [];
         if($limit>0)$options["maxResults"] = $limit;
-        $results = $this->service->posts->listPosts(5935318404281787196,$options);
+        $results = $this->service->posts->listPosts($blogid,$options);
         return $results;
     }
 }

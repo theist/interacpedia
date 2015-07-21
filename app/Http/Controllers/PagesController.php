@@ -23,7 +23,7 @@ class PagesController extends Controller {
      */
     public function index(Google $google)
     {
-        $posts =  $google->listPosts(3);
+        $posts =  $google->listPosts("5935318404281787196",3);
         $stories = Story::latest()->take(2)->get();
         $partners = Partner::latest()->take(20)->get();
         $challenges = Challenge::latest()->take(4)->get();
