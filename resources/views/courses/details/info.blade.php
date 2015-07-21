@@ -22,9 +22,9 @@
                 @include('user.brief',['user'=>$course->user,'links'=>true,'label'=>''])
             </div>
         @endif
-        @if($course->hashtag)
+        @if($course->twitter_widget)
             <a class="twitter-timeline" href="https://twitter.com/search?q=%40interacpedia%20%23{{ $course->hashtag }}"
-               data-widget-id="623347236169220096">Tweets acerca de @interacpedia #{{ $course->hashtag }}</a>
+               data-widget-id="{{ $course->twitter_widget }}">Tweets acerca de @interacpedia #{{ $course->hashtag }}</a>
             <script>!function (d, s, id) {
                     var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
                     if (!d.getElementById(id)) {
