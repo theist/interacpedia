@@ -35,9 +35,6 @@
                     }
                 }(document, "script", "twitter-wjs");</script>
         @endif
-        <div class="content">
-            <img class="img-responsive" src="/images/demo/facebook-block.jpg" alt="Facebook">
-        </div>
             <div id="fb-root"></div>
             <script>(function(d, s, id) {
                     var js, fjs = d.getElementsByTagName(s)[0];
