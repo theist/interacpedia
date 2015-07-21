@@ -45,7 +45,9 @@ class CommentsController extends Controller {
         //$this->createComment( $request );
         if ( $request->ajax() )
         {
-            $comment = Auth::user()->comments()->create( $request->all() );
+            $user = Auth::user();
+            $user->stats()->create(['action'=>'comments_add','value'=>$request->get('title'),'model_id'=>$request->get('model_id'),'model_type'=>$request->get('model_type')]);
+            $comment = $user->comments()->create( $request->all() );
             return  view( 'comments.show', compact( 'comment' ) );
         } else
         {

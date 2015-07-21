@@ -159,6 +159,7 @@ class UserController extends Controller {
      */
     public function update( Authenticatable $user, Request $request )
     {
+        $user->stats()->create(['action'=>'profile_update','value'=>'Form submission']);
         $this->syncTags( $user, 'personal_vision', $request->input( 'tags_vision_list', array() ) );
         $this->syncTags( $user, 'dreams', $request->input( 'tags_dreams_list', array() ) );
         $this->syncTags( $user, 'likes', $request->input( 'tags_likes_list', array() ) );
