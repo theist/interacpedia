@@ -118,5 +118,7 @@ return [
     'coordinators'                  => 'Coordinadores',
     'my_occupation_is'              => 'Mi ocupación es',
     'educative_institution'         => 'Institución Educativa',
-    'unavailable'                   => 'No disponible'
+    'unavailable'                   => 'No disponible',
+    'position'                      => 'Cargo/Ocupación',
+    'hashtag'                       => 'Hashtag'
 ];

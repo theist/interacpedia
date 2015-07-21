@@ -78,15 +78,15 @@
                 </div>
             @endif
             <hr/>
-            <div class="subtitle">
-                @lang('general/labels.favorite_companies_to_work_in')
-            </div>
-            <div class="tags">
-                <img style="margin:10px" height="60" src="/images/logos/grupo-sura.png" alt="Grupo Sura"/>
-                <img style="margin:10px" height="60" src="/images/logos/grupo-bancolombia.png" alt="Grupo Bancolombia"/>
-                <img style="margin:10px" height="60" src="/images/logos/proteccion.jpg" alt="Protección"/>
-            </div>
-            <hr/>
+            {{--<div class="subtitle">--}}
+                {{--@lang('general/labels.favorite_companies_to_work_in')--}}
+            {{--</div>--}}
+            {{--<div class="tags">--}}
+                {{--<img style="margin:10px" height="60" src="/images/logos/grupo-sura.png" alt="Grupo Sura"/>--}}
+                {{--<img style="margin:10px" height="60" src="/images/logos/grupo-bancolombia.png" alt="Grupo Bancolombia"/>--}}
+                {{--<img style="margin:10px" height="60" src="/images/logos/proteccion.jpg" alt="Protección"/>--}}
+            {{--</div>--}}
+            {{--<hr/>--}}
             <div class="subtitle">
                 @lang('general/labels.preferred_areas_to_work_in')
             </div>
@@ -154,27 +154,27 @@
                 </div>
             @endif
             <hr/>
-            <div class="subtitle">
-                <img src="/images/icons/32x32/achievements.png" alt="@lang('general/labels.my_achievements')"/>
-                @lang('general/labels.my_achievements')
-            </div>
-            <div class="row">
-                <div class="col-md-3 text-center"><div class="tags"><div class="label label-tag">Concursos</div></div></div>
-                <div class="col-md-9 gray_zone">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <div class="title1">Finalista de Concurso Ventures</div>
-                            <div class="title2">Noviembre 2014</div>
-                            <div class="text">Finalista en el concurso Ventures - Categoría Internacional, con el
-                                proyecto Street Adventure (un pilar de Prevencity).</div>
-                        </div>
-                        <div class="col-md-4">
-                            <img class="img-responsive img-thumbnail" src="/images/upload/street.jpg"
-                                 alt="Street Adventure"/>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {{--<div class="subtitle">--}}
+                {{--<img src="/images/icons/32x32/achievements.png" alt="@lang('general/labels.my_achievements')"/>--}}
+                {{--@lang('general/labels.my_achievements')--}}
+            {{--</div>--}}
+            {{--<div class="row">--}}
+                {{--<div class="col-md-3 text-center"><div class="tags"><div class="label label-tag">Concursos</div></div></div>--}}
+                {{--<div class="col-md-9 gray_zone">--}}
+                    {{--<div class="row">--}}
+                        {{--<div class="col-md-8">--}}
+                            {{--<div class="title1">Finalista de Concurso Ventures</div>--}}
+                            {{--<div class="title2">Noviembre 2014</div>--}}
+                            {{--<div class="text">Finalista en el concurso Ventures - Categoría Internacional, con el--}}
+                                {{--proyecto Street Adventure (un pilar de Prevencity).</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="col-md-4">--}}
+                            {{--<img class="img-responsive img-thumbnail" src="/images/upload/street.jpg"--}}
+                                 {{--alt="Street Adventure"/>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
         </div>
         <div class="subtitle">
             <img src="/images/icons/40x40/search.png" alt="@lang('general/labels.what_im_looking_for')"/>
