@@ -2,12 +2,18 @@
     <div class="col-md-9 main">
         <div class="content">
             <h3>@lang('general/labels.students')</h3>
-            @foreach($course->users as $cus)
-                <img class="img-circle" height="80" src="{{ imagestyle($cus->image,'fit100x100') }}" alt="{{ $cus->name }}"/>
-                {{ $cus->name }}
-            @endforeach
-            <img class="img-responsive" src="/images/demo/students-list.jpg" alt="Students">
-
+            <div class="row">
+                @foreach($course->students as $st)
+                    <div class="col-md-3 text-center">
+                        <a href="/user/{{ $st->id }}">
+                        <img class="img-circle" height="80" src="{{ imagestyle($st->avatar,'fit100x100') }}" alt="{{ $st->name }}"/>
+                        </a>
+                        <div class="name">
+                            <a href="/user/{{ $st->id }}">{{ $st->name }}</a>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
             <h3>@lang('general/labels.challenges')</h3>
 
             <div class="row challenges">
