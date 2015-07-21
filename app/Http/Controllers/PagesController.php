@@ -85,8 +85,7 @@ class PagesController extends Controller {
                 $message->to('info@interacpedia.com', 'Interacpedia Info')->cc('jcorrego@gmail.com')->subject('Interacpedia - Contacto');
             });
         flash()->success( 'Gracias por contactarnos!' );
-        return \Redirect::route('contact')
-            ->with('message', 'Gracias por contactarnos!');
+        return \Redirect::route('contact')->with('message', 'Gracias por contactarnos!');
 
     }
 }

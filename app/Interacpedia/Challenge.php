@@ -198,5 +198,13 @@ class Challenge extends Model {
         $posts =  $google->listPosts();
         return $posts;
     }
+    /**
+     * Get all of the challenge follows.
+     */
+    public function stats()
+    {
+        return $this->morphMany('App\Interacpedia\Stat', 'model');
+    }
+
 }
 

@@ -50,7 +50,7 @@ class AuthController extends Controller {
             "properties" => [
             ]
         ] );
-
+        $user->stats()->create(['action'=>'logout']);
         Auth::logout();
         flash()->success( Lang::get( 'auth/messages.logout_ok') );
         return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/');
@@ -147,6 +147,7 @@ class AuthController extends Controller {
                     $exists->save();
                     flash()->success( Lang::get( 'auth/messages.avatar_updated', [ 'name' => $name ] ) );
                 }
+                $exists->stats()->create(['action'=>'login','value'=>$name . ' login']);
                 Auth::login( $exists );
 
                 Segment::identify( [

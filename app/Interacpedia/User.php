@@ -194,5 +194,12 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     {
         return $this->belongsTo( 'App\Interacpedia\Country' );
     }
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function stats()
+    {
+        return $this->hasMany( 'App\Interacpedia\Stat' );
+    }
 
 }
