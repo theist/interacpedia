@@ -32,9 +32,9 @@ class Course extends Model {
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function users()
+    public function students()
     {
-        return $this->belongsToMany('App\Interacpedia\Challenge')->withTimestamps();
+        return $this->belongsToMany('App\Interacpedia\User');
     }
     /**
      * Get all of the challenge likes.

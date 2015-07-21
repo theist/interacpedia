@@ -56,9 +56,11 @@ class CoursesController extends Controller
         /* TO DO: move this relations into one object with properties.
          * */
         $challenges = $course->challenges();
+        $students = $course->students();
+        //dd($challenges);
         if ( Auth::check() )
         {
-            return view( 'courses.show', compact( 'course', 'user', 'option','challenges' ) );
+            return view( 'courses.show', compact( 'course', 'user', 'option','challenges','students' ) );
         } else
         {
             return view( 'courses.showbrief', compact( 'course', 'user' ) );
