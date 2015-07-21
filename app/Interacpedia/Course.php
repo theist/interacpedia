@@ -34,7 +34,7 @@ class Course extends Model {
      */
     public function students()
     {
-        return $this->belongsToMany('App\Interacpedia\User');
+        return $this->belongsToMany('App\Interacpedia\User')->withTimestamps();
     }
     /**
      * Get all of the challenge likes.
