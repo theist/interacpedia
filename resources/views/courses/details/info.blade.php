@@ -3,7 +3,8 @@
         <div class="content">
             <h3>@lang('general/labels.students')</h3>
             @foreach($course->users as $cus)
-                @include('user.brief',['user'=>$cus,'links'=>true,'label'=>' '])
+                <img class="img-circle" height="80" src="{{ imagestyle($cus->image,'fit100x100') }}" alt="{{ $cus->name }}"/>
+                {{ $cus->name }}
             @endforeach
             <img class="img-responsive" src="/images/demo/students-list.jpg" alt="Students">
 
