@@ -26,6 +26,16 @@ class Course extends Model {
     {
         return $this->belongsToMany('App\Interacpedia\Challenge')->withTimestamps();
     }
+
+    /**
+     * Get the challenges associated with this course
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function users()
+    {
+        return $this->belongsToMany('App\Interacpedia\Challenge')->withTimestamps();
+    }
     /**
      * Get all of the challenge likes.
      */

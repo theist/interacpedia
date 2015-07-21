@@ -2,6 +2,9 @@
     <div class="col-md-9 main">
         <div class="content">
             <h3>@lang('general/labels.students')</h3>
+            @foreach($course->users as $cus)
+                @include('user.brief',['user'=>$cus,'links'=>true,'label'=>' '])
+            @endforeach
             <img class="img-responsive" src="/images/demo/students-list.jpg" alt="Students">
 
             <h3>@lang('general/labels.challenges')</h3>
