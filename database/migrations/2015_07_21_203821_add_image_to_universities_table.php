@@ -13,7 +13,7 @@ class AddImageToUniversitiesTable extends Migration
     public function up()
     {
         Schema::table('universities', function (Blueprint $table) {
-            $table->string('image')->nullable();
+            $table->string('image')->nullable()->after('name');
         });
     }
 
