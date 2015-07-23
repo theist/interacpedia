@@ -2,7 +2,7 @@
 <div class="content">
     <img class="responsive" src="<?php echo $message->embed( public_path() . "/images/emails/header.jpg" ); ?>"><br/>
     <br/>
-    Hola!, gracias por hacer parte de nuestro piloto en www.interacpedia.com. <br />
+    Hola!, gracias por hacer parte de nuestro piloto en interacpedia. <br />
     <br />
     Se ha hecho una solicitud desde nuestra plataforma, para asignar una nueva clave a la cuenta asociada a este correo electrónico.
     <br />
