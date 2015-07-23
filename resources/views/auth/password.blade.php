@@ -31,7 +31,7 @@
                     <h5 class="center-block text-center">
                         <small>@lang('auth/forms.loginagain',['url'=>'/auth/login'])</small>
                         <hr/>
-                        <small>@lang('auth/forms.needaccount') <a href="{{ url('/auth/register') }}">@lang('auth/forms.signup')</a></small>
+{{--                        <small>@lang('auth/forms.needaccount') <a href="{{ url('/auth/register') }}">@lang('auth/forms.signup')</a></small>--}}
                     </h5>
                 </form>
             </div>

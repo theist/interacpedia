@@ -14,5 +14,6 @@ return [
     'with_twitter'  => 'con Twitter',
     'with_google'   => 'con Google',
     'sendpassword'  => 'Enviar link para cambiar contraseña',
-    'loginagain'    => 'Para intentar ingresar nuevamente, regrese <a href=":url">aquí</a>.'
+    'loginagain'    => 'Para intentar ingresar nuevamente, regrese <a href=":url">aquí</a>.',
+    'generate_password'   => 'Generar contraseña'
 ];

@@ -15,7 +15,7 @@
                 <h3>@lang('auth/title.login')</h3>
             </div>
             <div class="col-md-6">
-                <p class="lead">
+                <blockquote class="lead">
                     @lang('auth/messages.using_social')
                 </blockquote>
                 <div class="form-group">
@@ -45,6 +45,9 @@
                 </p>
                 <form action="{{ url('/auth/login') }}" method="post" role="form">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <blockquote class="lead">@lang('auth/messages.first_time')<br>
+                        <a class="" href="{{ url('/password/email') }}">@lang('auth/forms.generate_password')</a>
+                    </blockquote>
 
                     <div class="form-group @if ($errors->has('email')) has-error @endif">
                         <label class="sr-only">@lang('auth/forms.email')</label>
@@ -68,11 +71,8 @@
                         <button type="submit" class="btn btn-primary btn-block"> @lang('auth/forms.login')</button>
                     </div>
                     <h5 class="center-block text-center">
-                        <small><a class="" href="{{ url('/password/email') }}">@lang('auth/forms.forgot')</a>
-                        </small>
-                        <hr/>
-                        <small>@lang('auth/forms.needaccount') <a
-                                    href="{{ url('/auth/register') }}">@lang('auth/forms.signup')</a></small>
+                        {{--<hr/>--}}
+                        {{--<small>@lang('auth/forms.needaccount') <a href="{{ url('/auth/register') }}">@lang('auth/forms.signup')</a></small>--}}
                     </h5>
                 </form>
             </div>
