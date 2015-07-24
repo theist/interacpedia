@@ -27,11 +27,6 @@
           padding: $grid-gutter-width;
         }
       }
-      .student {
-        .name{
-          height: 40px;
-        }
-      }
     }
   }
   .image {
@@ -39,6 +34,13 @@
       @media (max-width: $screen-xs-max) {
         width: 100%;
       }
+    }
+  }
+}
+.challenge{
+  .student {
+    .name{
+      height: 40px;
     }
   }
 }

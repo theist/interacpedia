@@ -5549,11 +5549,12 @@ h4 {
   margin-bottom: 15px; }
   .courses .course.summary .content .fields {
     padding: 20px; }
-.courses .course.summary .student .name {
-  height: 40px; }
 @media (max-width: 767px) {
   .courses .image img {
     width: 100%; } }
+
+.challenge .student .name {
+  height: 40px; }
 
 #header {
   padding: 10px 0;
