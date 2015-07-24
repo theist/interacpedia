@@ -5221,14 +5221,16 @@ h4 {
   .challenge .university h4 {
     font-family: 'Open Sans', sans-serif; }
 .challenge.summary .title {
-  height: 48px;
+  height: 38px;
   margin-bottom: 10px; }
   .challenge.summary .title h4 {
     text-transform: none;
     font-family: 'Source Sans Pro', sans-serif; }
-@media (min-width: 1199px) {
-  .challenge.summary .content {
-    min-height: 566px; } }
+.challenge.summary .content {
+  padding: 0; }
+  @media (min-width: 1199px) {
+    .challenge.summary .content {
+      min-height: 566px; } }
 .challenge.full .image {
   border: 1px solid #cdcdcd;
   padding: 10px;

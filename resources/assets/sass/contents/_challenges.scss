@@ -100,7 +100,7 @@
   }
   &.summary{
     .title {
-      height: 48px;
+      height: 38px;
       margin-bottom: $grid-gutter-width/2;
       h4 {
         text-transform: none;
@@ -108,6 +108,7 @@
       }
     }
     .content{
+      padding: 0;
       @media (min-width: $screen-md-max) {
         min-height: 566px;
       }
