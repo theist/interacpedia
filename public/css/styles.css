@@ -5227,13 +5227,13 @@ h4 {
   .challenge.summary .title h4 {
     text-transform: none;
     font-family: 'Source Sans Pro', sans-serif; }
-.challenge.summary .image {
+.challenge.summary .content.raised {
   padding: 0; }
-.challenge.summary .content {
-  padding: 0; }
-  @media (min-width: 1199px) {
-    .challenge.summary .content {
-      min-height: 566px; } }
+  .challenge.summary .content.raised .image {
+    padding: 0; }
+@media (min-width: 1199px) {
+  .challenge.summary .content {
+    min-height: 566px; } }
 .challenge.full .image {
   border: 1px solid #cdcdcd;
   padding: 10px;

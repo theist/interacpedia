@@ -107,11 +107,13 @@
         font-family: $font-source;
       }
     }
-    .image {
-      padding: 0;
-    }
     .content{
-      padding: 0;
+      &.raised{
+        padding: 0;
+        .image {
+          padding: 0;
+        }
+      }
       @media (min-width: $screen-md-max) {
         min-height: 566px;
       }
