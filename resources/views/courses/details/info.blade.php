@@ -1,4 +1,4 @@
-<div class="row challenge full">
+<div class="row course full">
     <div class="col-md-9 main">
         <div class="content">
             <h3>@lang('general/labels.students')</h3>

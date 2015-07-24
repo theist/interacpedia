@@ -5227,6 +5227,8 @@ h4 {
   .challenge.summary .title h4 {
     text-transform: none;
     font-family: 'Source Sans Pro', sans-serif; }
+.challenge.summary .image {
+  padding: 0; }
 .challenge.summary .content {
   padding: 0; }
   @media (min-width: 1199px) {

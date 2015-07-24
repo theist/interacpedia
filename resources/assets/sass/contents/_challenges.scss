@@ -107,6 +107,9 @@
         font-family: $font-source;
       }
     }
+    .image {
+      padding: 0;
+    }
     .content{
       padding: 0;
       @media (min-width: $screen-md-max) {
@@ -120,7 +123,6 @@
       padding: $grid-gutter-width/2;
       background: white;
       img{
-
       }
     }
   }
