@@ -3,7 +3,7 @@
         <div class="content">
             <h3>@lang('general/labels.students')</h3>
             <div class="row">
-                @foreach($course->students as $st)
+                @foreach($students as $st)
                     <div class="col-md-3 text-center student">
                         <a href="/user/{{ $st->id }}">
                         <img class="img-circle" height="80" src="{{ imagestyle($st->avatar,'fit100x100') }}" alt="{{ $st->name }}"/>
