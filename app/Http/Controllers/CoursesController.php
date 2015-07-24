@@ -56,7 +56,7 @@ class CoursesController extends Controller
         /* TO DO: move this relations into one object with properties.
          * */
         $challenges = $course->challenges();
-        $students = $course->students();
+        $students = $course->students()->sortBy('name');
         //dd($challenges);
         if ( Auth::check() )
         {

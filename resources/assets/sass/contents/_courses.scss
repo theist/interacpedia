@@ -1,6 +1,6 @@
-.courses{
-  .course{
-    &.summary{
+.courses {
+  .course {
+    &.summary {
       .title {
         h4 {
           text-transform: uppercase;
@@ -9,12 +9,12 @@
           color: $light-gray;
         }
       }
-      .subtitle{
+      .subtitle {
         margin-bottom: $grid-gutter-width/2;
         color: $light-gray;
       }
-      .links{
-        .btn{
+      .links {
+        .btn {
           font-size: 1rem;
         }
       }
@@ -25,6 +25,11 @@
         margin-bottom: 15px;
         .fields {
           padding: $grid-gutter-width;
+        }
+      }
+      .student {
+        .name{
+          height: 40px;
         }
       }
     }
