@@ -120,5 +120,6 @@ return [
     'educative_institution'         => 'Institución Educativa',
     'unavailable'                   => 'No disponible',
     'position'                      => 'Cargo/Ocupación',
-    'hashtag'                       => 'Hashtag'
+    'hashtag'                       => 'Hashtag',
+    'agree'                         => 'Acepto'
 ];
