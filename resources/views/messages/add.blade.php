@@ -28,7 +28,7 @@
 
                 {!! Form::input('text','title',null,['id' => 'title'.$suffix, 'maxlength' => 100,'placeholder'=>'Asunto del mensaje','class' =>'form-control input-sm maxlength']) !!}
                 <br/>
-                {!! Form::textarea('content',null,['id' => 'content'.$suffix, 'maxlength' => 400, 'placeholder'=>'Ecriba su mensaje','class' => 'form-control maxlength','rows'=>'4']) !!}
+                {!! Form::textarea('content',null,['id' => 'content'.$suffix, 'maxlength' => 400, 'placeholder'=>'Escriba su mensaje','class' => 'form-control maxlength','rows'=>'15']) !!}
             </div>
             <div class="modal-footer">
                 <input type="submit" class="btn btn-default" value="@lang('general/labels.send')">
