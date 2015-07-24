@@ -13,7 +13,7 @@
                     <div class="name">
                         {{ $course->name }}
                     </div>
-                    <div class="data1"><h6>@lang('general/labels.university'):</h6> {{ '-' }}</div>
+                    <div class="data1"><h6>@lang('general/labels.university'):</h6> {{ $course->university->name }}</div>
                     <div class="data1"><h6>@lang('general/labels.hashtag'):</h6> #{{ $course->hashtag }}</div>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 <div class="content raised">
     <div class="image">
         <a href="{{ action('CoursesController@show',[$course->id]) }}">
-            <img class="img-responsive" src="{{ imagestyle('/images/courses/generic' . rand(1,2) . '.jpg','fit270x214') }}"
+            <img class="img-responsive" src="/{{ imagestyle('/images/courses/generic' . rand(1,2) . '.jpg','fit270x214') }}"
                  alt="{{ $course->name }}"/>
         </a>
     </div>
