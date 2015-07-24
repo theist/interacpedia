@@ -23,6 +23,24 @@
 }
 .user-profile{
   padding-top: $grid-gutter-width;
+  .field-avatar{
+    .zone{
+      min-height: 200px;
+      border: 1px solid $border-gray;
+      .choose {
+        color: $blue-messages;
+        font-weight: 600;
+        font-size: 2rem;
+      }
+      .help {
+        max-width: 200px;
+        margin: 0 auto;
+        color: $dark-grey;
+        font-size: 1.2rem;
+      }
+
+    }
+  }
   .subtitle{
     font-family: $font-exo2;
     font-size: 2.5rem;

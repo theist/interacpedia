@@ -35,16 +35,27 @@ class UploadController extends Controller {
 	 */
 	public function store(Request $request)
 	{
-        if (Input::hasFile('image')) {
-            $file = Input::file('image');
-            $name = date("Ymd-") . Input::file('image')->getClientOriginalName();
-            $dir = $request->header('upload_dir');
-            if(!$dir)$dir = "upload";
-            $path = public_path()."/images/".$dir . "/";
-            Input::file('image')->move($path, $name);
+        if (Input::hasFile('image'))
+        {
+            $file = Input::file( 'image' );
+            $name = date( "Ymd-" ) . Input::file( 'image' )->getClientOriginalName();
+            $dir = $request->header( 'upload_dir' );
+            if ( !$dir ) $dir = "upload";
+            $path = public_path() . "/images/" . $dir . "/";
+            Input::file( 'image' )->move( $path, $name );
             //$image = imagestyle("/images/" . $dir . "/" . $name,'height150') ;
             $image = "/images/" . $dir . "/" . $name;
             return $image;
+        } else if (Input::hasFile('avatar')) {
+                $file = Input::file('avatar');
+                $name = date("Ymd-") . Input::file('avatar')->getClientOriginalName();
+                $dir = $request->header('upload_dir');
+                if(!$dir)$dir = "upload";
+                $path = public_path()."/images/".$dir . "/";
+                Input::file('avatar')->move($path, $name);
+                //$image = imagestyle("/images/" . $dir . "/" . $name,'height150') ;
+                $image = "/images/" . $dir . "/" . $name;
+                return $image;
         } else if (Input::hasFile('images')) {
             $files = Input::file('images');
             foreach($files as $file){

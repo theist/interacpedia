@@ -34,6 +34,7 @@ class UserController extends Controller {
         $tags_dreams = $user->tags()->where( 'type', 'dreams' )->lists( 'name', 'id' );
         $tags_likes = $user->tags()->where( 'type', 'likes' )->lists( 'name', 'id' );
         $tags_work_in = Tag::where( 'type', 'work_in' )->lists( 'name', 'id' );
+        $tags_work_companies = Tag::where( 'type', 'work_companies' )->lists( 'name', 'id' );
         $tags_work_areas = Tag::where( 'type', 'work_areas' )->lists( 'name', 'id' );
         $tags_contribution = Tag::where( 'type', 'contribution' )->lists( 'name', 'id' );
         $tags_in_areas = Tag::where( 'type', 'in_areas' )->lists( 'name', 'id' );
@@ -44,7 +45,7 @@ class UserController extends Controller {
 
         return view( 'user.profile', compact( 'user', 'option', 'users',
             'tags_vision', 'tags_dreams', 'tags_likes',
-            'tags_work_in', 'tags_work_areas', 'tags_contribution', 'tags_in_areas',
+            'tags_work_in', 'tags_work_companies', 'tags_work_areas', 'tags_contribution', 'tags_in_areas',
             'tags_searching_resources', 'tags_searching_experts', 'tags_searching_personal' ) );
     }
 
@@ -62,6 +63,7 @@ class UserController extends Controller {
         $tags_dreams = $user->tags()->where( 'type', 'dreams' )->lists( 'name', 'id' );
         $tags_likes = $user->tags()->where( 'type', 'likes' )->lists( 'name', 'id' );
         $tags_work_in = Tag::where( 'type', 'work_in' )->lists( 'name', 'id' );
+        $tags_work_companies = Tag::where( 'type', 'work_companies' )->lists( 'name', 'id' );
         $tags_work_areas = Tag::where( 'type', 'work_areas' )->lists( 'name', 'id' );
         $tags_contribution = Tag::where( 'type', 'contribution' )->lists( 'name', 'id' );
         $tags_in_areas = Tag::where( 'type', 'in_areas' )->lists( 'name', 'id' );
@@ -72,7 +74,7 @@ class UserController extends Controller {
 
         return view( 'user.profile', compact( 'user', 'option', 'users',
             'tags_vision', 'tags_dreams', 'tags_likes',
-            'tags_work_in', 'tags_work_areas', 'tags_contribution', 'tags_in_areas',
+            'tags_work_in', 'tags_work_companies', 'tags_work_areas', 'tags_contribution', 'tags_in_areas',
             'tags_searching_resources', 'tags_searching_experts', 'tags_searching_personal' ) );
     }
 
@@ -89,6 +91,7 @@ class UserController extends Controller {
         $tags_dreams = Tag::where( 'type', 'dreams' )->lists( 'name', 'id' );
         $tags_likes = Tag::where( 'type', 'likes' )->lists( 'name', 'id' );
         $tags_work_in = Tag::where( 'type', 'work_in' )->lists( 'name', 'id' );
+        $tags_work_companies = Tag::where( 'type', 'work_companies' )->lists( 'name', 'id' );
         $tags_work_areas = Tag::where( 'type', 'work_areas' )->lists( 'name', 'id' );
         $tags_contribution = Tag::where( 'type', 'contribution' )->lists( 'name', 'id' );
         $tags_in_areas = Tag::where( 'type', 'in_areas' )->lists( 'name', 'id' );
@@ -98,7 +101,7 @@ class UserController extends Controller {
 
         return view( 'user.edit', compact( 'user',
             'tags_vision', 'tags_dreams', 'tags_likes',
-            'tags_work_in', 'tags_work_areas', 'tags_contribution', 'tags_in_areas',
+            'tags_work_in', 'tags_work_companies', 'tags_work_areas', 'tags_contribution', 'tags_in_areas',
             'tags_searching_resources', 'tags_searching_experts', 'tags_searching_personal' ) );
     }
 
@@ -164,6 +167,7 @@ class UserController extends Controller {
         $this->syncTags( $user, 'dreams', $request->input( 'tags_dreams_list', array() ) );
         $this->syncTags( $user, 'likes', $request->input( 'tags_likes_list', array() ) );
         $this->syncTags( $user, 'work_in', $request->input( 'tags_work_in_list', array() ) );
+        $this->syncTags( $user, 'work_companies', $request->input( 'tags_work_companies_list', array() ) );
         $this->syncTags( $user, 'work_areas', $request->input( 'tags_work_areas_list', array() ) );
         $this->syncTags( $user, 'contribution', $request->input( 'tags_contribution_list', array() ) );
         $this->syncTags( $user, 'in_areas', $request->input( 'tags_in_areas_list', array() ) );

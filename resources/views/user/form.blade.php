@@ -10,8 +10,20 @@
                 @lang('general/labels.personal_vision')
             </div>
             <div class="row">
-                <div class="col-md-5">
-                    <img class="img-responsive" src="/images/users/generic.png" alt="{{ $user->name }}"/>
+                <div class="field-avatar col-md-5">
+                    <input type="hidden" name="avatar" id="avatar" value="{{ $user->avatar }}"/>
+                    <div class="form-group">
+                        <div class="choose">@lang('user/forms.choose')</div>
+                        <div class="zone dropzone-previews text-center">
+                            @if($user->avatar != "")
+
+                                <img class="img-responsive" src="{{ imagestyle($user->avatar,'height120') }}"
+                                     alt="{{ $user->name }}"/>
+                                <a id="del_avatar" class="btn btn-danger">@lang('general/labels.remove')</a>
+                            @endif
+                        </div>
+                        <div class="help">@lang('user/forms.image_help')</div>
+                    </div>
                 </div>
                 <div class="col-md-7">
                     <div class="form-group">
@@ -66,9 +78,10 @@
             <div class="subtitle">
                 @lang('general/labels.favorite_companies_to_work_in')
             </div>
-            <div class="tags">
-                <img src="/images/companies/cocacola.png" alt="Coca Cola"/>
-                <img src="/images/companies/isa.png" alt="Isa"/>
+            <div class="form-group">
+                {!! Form::select('tags_work_companies_list[]',$tags_work_companies,$user->tags()->where('type','work_companies')->lists('id')->all(),['id' => 'tags_work_companies_list','class' =>
+                'form-control select2','multiple','data-tags'=>'true']) !!}
+                <div class="help">Escoja las compañías o escriba una nueva y presione "ENTER" para agregar.</div>
             </div>
             <hr/>
             <div class="subtitle">
@@ -77,6 +90,7 @@
             <div class="form-group">
                 {!! Form::select('tags_work_areas_list[]',$tags_work_areas,$user->tags()->where('type','work_areas')->lists('id')->all(),['id' => 'tags_work_areas_list','class' =>
                 'form-control select2','multiple','data-tags'=>'true']) !!}
+                <div class="help">Escoja las areas o escriba una nueva y presione "ENTER" para agregar.</div>
             </div>
         </div>
         <div class="form-group">
@@ -146,29 +160,13 @@
                 <img src="/images/icons/32x32/achievements.png" alt="@lang('general/labels.my_achievements')"/>
                 @lang('general/labels.my_achievements')
             </div>
-            <div class="row">
-                <div class="col-md-3 text-center"><div class="tags"><div class="label label-tag">Concursos</div></div></div>
-                <div class="col-md-9 gray_zone">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <div class="title1">Finalista de Concurso Ventures</div>
-                            <div class="title2">Noviembre 2014</div>
-                            <div class="text">Finalista en el concurso Ventures - Categoría Internacional, con el
-                                proyecto Street Adventure (un pilar de Prevencity).</div>
-                        </div>
-                        <div class="col-md-4">
-                            <img class="img-responsive img-thumbnail" src="/images/upload/street.jpg"
-                                 alt="Street Adventure"/>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>
 
 @section('footer')
     <script>
+        Dropzone.autoDiscover = false;
         $(function () {
             $("a.cancel").click( function(){
                 parent.history.back();
@@ -186,6 +184,30 @@
                 limitReachedClass: "label label-danger",
                 appendToParent: true,
                 placement: "bottom-right"
+            });
+            var avatarDropzone = new Dropzone(".field-avatar .zone", {
+                method: 'post',
+                url: "/upload",
+                paramName: "avatar",
+                thumbnailHeight: 120,
+                thumbnailWidth: null,
+                headers: {
+                    "X-CSRF-TOKEN": "{{ csrf_token() }}",
+                    "upload_dir": "users"
+                },
+                maxFilesize: 4,
+                clickable: true,
+                acceptedFiles: '.png,.jpg,.gif'
+            });
+            $("#del_avatar").on("click", function (file) {
+                $(".field-avatar .zone").empty();
+                $('#avatar').val('/images/users/generic.png');
+            });
+            avatarDropzone.on("drop", function (file) {
+                $(".field-avatar.zone").empty();
+            });
+            avatarDropzone.on("success", function (file, response) {
+                $('#avatar').val(response);
             });
         });
     </script>

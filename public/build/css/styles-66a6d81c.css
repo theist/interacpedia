@@ -5596,6 +5596,18 @@ h4 {
 
 .user-profile {
   padding-top: 20px; }
+  .user-profile .field-avatar .zone {
+    min-height: 200px;
+    border: 1px solid #cdcdcd; }
+    .user-profile .field-avatar .zone .choose {
+      color: #21a3af;
+      font-weight: 600;
+      font-size: 2rem; }
+    .user-profile .field-avatar .zone .help {
+      max-width: 200px;
+      margin: 0 auto;
+      color: #393c44;
+      font-size: 1.2rem; }
   .user-profile .subtitle {
     font-family: 'Exo 2', sans-serif;
     font-size: 2.5rem;

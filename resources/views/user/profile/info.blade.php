@@ -78,15 +78,16 @@
                 </div>
             @endif
             <hr/>
-            {{--<div class="subtitle">--}}
-                {{--@lang('general/labels.favorite_companies_to_work_in')--}}
-            {{--</div>--}}
-            {{--<div class="tags">--}}
-                {{--<img style="margin:10px" height="60" src="/images/logos/grupo-sura.png" alt="Grupo Sura"/>--}}
-                {{--<img style="margin:10px" height="60" src="/images/logos/grupo-bancolombia.png" alt="Grupo Bancolombia"/>--}}
-                {{--<img style="margin:10px" height="60" src="/images/logos/proteccion.jpg" alt="Protección"/>--}}
-            {{--</div>--}}
-            {{--<hr/>--}}
+            <div class="subtitle">
+                @lang('general/labels.favorite_companies_to_work_in')
+            </div>
+            @if(count($tags_work_companies)>0)
+                <div class="tags">
+                    @foreach($tags_work_companies as $tag)
+                        <li class="label label-tag ">{{ $tag }}</li>
+                    @endforeach
+                </div>
+            @endif
             <div class="subtitle">
                 @lang('general/labels.preferred_areas_to_work_in')
             </div>
