@@ -18,7 +18,7 @@ class CoursesController extends Controller
      */
     public function index()
     {
-        $courses = Course::where('name','<>','Todos')->get();
+        $courses = Course::where('name','<>','Todos')->where('hashtag','<>','')->get();
         return view('courses.index',compact('courses'));
     }
 
