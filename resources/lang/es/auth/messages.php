@@ -5,7 +5,7 @@ return [
                     <br>
                     Recuerda que debes tener asociado el correo electrónico que nos suministraste en la primera clase
                     para poder ingresar con las siguientes redes sociales, de lo contrario no podrás ingresar ya que estamos en
-                    una fase de partición cerrada.',
+                    una fase de participación cerrada.',
     'prefer_credentials'  => 'Si prefieres ingresar usando email y contraseña, también puede hacerlo aquí.',
     'sorry_invitation'    => 'Lo sentimos, este sitio se encuentra disponible solamente por invitación.
                             Gracias por intentarlo.',
