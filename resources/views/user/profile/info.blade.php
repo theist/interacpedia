@@ -11,7 +11,7 @@
             </div>
             <div class="row">
                 <div class="col-md-5">
-                    <img class="img-circle" src="{{ imagestyle($user->avatar,'scale200x200') }}" alt="{{ $user->name }}"/>
+                    <img class="img-thumbnail" src="{{ imagestyle($user->avatar,'scale200x200') }}" alt="{{ $user->name }}"/>
                 </div>
                 <div class="col-md-7">
                     <div class="data">{{ $user->vision }}</div>
