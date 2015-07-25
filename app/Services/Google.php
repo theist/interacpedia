@@ -6,8 +6,8 @@ use Illuminate\Support\Facades\Config;
 class Google {
 
     protected $client;
-
     protected $service;
+    public $blogId;
 
     function __construct() {
         /* Get config variables */
@@ -18,6 +18,7 @@ class Google {
         $this->client = new \Google_Client();
         $this->client->setApplicationName("interacpedia");
         $this->service = new \Google_Service_Blogger($this->client);
+        $this->blogId = "5935318404281787196";
 
         /* If we have an access token */
         if (Cache::has('service_token')) {
@@ -46,5 +47,10 @@ class Google {
         if($limit>0)$options["maxResults"] = $limit;
         $results = $this->service->posts->listPosts($blogid,$options);
         return $results;
+    }
+
+    public function blogUrl( $blogid="5935318404281787196" )
+    {
+        return $this->service->blogs->get($blogid)->url;
     }
 }

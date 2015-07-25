@@ -58,6 +58,18 @@ class Course extends Model {
     {
         return $this->morphMany('App\Interacpedia\Follow', 'model');
     }
+
+    public function blogUrl(  )
+    {
+        $google = new Google();
+        if($this->blogid){
+            return $google->blogUrl($this->blogid);
+        }
+        return false;
+    }
+    /**
+     * @return \Google_Service_Blogger_PostList
+     */
     public function getPosts(){
         $google = new Google();
         if($this->blogid)
@@ -66,4 +78,5 @@ class Course extends Model {
             $posts =  $google->listPosts();
         return $posts;
     }
+
 }
