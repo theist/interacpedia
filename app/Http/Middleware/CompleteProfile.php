@@ -37,11 +37,15 @@ class CompleteProfile {
         $response = $next( $request );
         if ( $this->auth->check() && $request->path() != 'user/completecategory'
             && $request->path() != 'user/completecity'
+            && $request->path() != 'user/completetyc'
+            && $request->path() != 'user/completeoccupations'
         )
         {
             $user = $this->auth->user();
 
-            if ( !$user->category ){
+            if ( !$user->agree ){
+                return new RedirectResponse( url( 'user/completetyc' ) );
+            } else if ( !$user->category ){
                 return new RedirectResponse( url( 'user/completecategory' ) );
             } else if ( !$user->birthdate || !$user->country || !$user->city ){
                 return new RedirectResponse( url( 'user/completecity' ) );

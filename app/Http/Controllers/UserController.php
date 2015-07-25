@@ -120,7 +120,23 @@ class UserController extends Controller {
     {
         return view( 'user.completecategory', compact( 'user' ) );
     }
+  /**
+     * @param Authenticatable $user
+     * @return \Illuminate\View\View
+     */
+    public function completetyc( Authenticatable $user )
+    {
+        return view( 'user.completetyc', compact( 'user' ) );
+    }
 
+    /**
+     * @param Authenticatable $user
+     * @return \Illuminate\View\View
+     */
+    public function completeend( Authenticatable $user )
+    {
+        return view( 'user.completeend', compact( 'user' ) );
+    }
     /**
      * @param Authenticatable $user
      * @return \Illuminate\View\View
@@ -187,6 +203,7 @@ class UserController extends Controller {
             $occ->course_id = $request->input( 'course_id' );
             $occ->position_id = $request->input( 'position_id' );
             $occ->save();
+            return redirect( 'user/completeend' );
         } else
         {
             $user->update( $request->all() );
@@ -194,6 +211,8 @@ class UserController extends Controller {
                 return redirect( 'user/completecity' );
             else if ( $request->input( 'completecity', false ) )
                 return redirect( 'user/completeoccupations' );
+            else if ( $request->input( 'completetyc', false ) )
+                return redirect( 'user/completecategory' );
         }
 
         return redirect( 'user/profile' );

@@ -5802,6 +5802,15 @@ h4 {
     margin-top: 20px;
     background: white;
     border-radius: 5px; }
+    .wizard .body .wizard_content .title1 {
+      font-size: 1.5rem;
+      font-weight: 600; }
+    .wizard .body .wizard_content .title2 {
+      font-size: 1.3rem;
+      font-weight: 600; }
+    .wizard .body .wizard_content.scroll {
+      overflow: scroll;
+      height: 501px; }
     .wizard .body .wizard_content h1 {
       font-family: 'Exo 2', sans-serif;
       font-size: 4rem; }

@@ -11,7 +11,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
     use Authenticatable, CanResetPassword;
 
-    protected $dates = [ 'birthdate' ];
+    protected $dates = [ 'birthdate','agree' ];
     /**
      * The database table used by the model.
      *
@@ -35,7 +35,8 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         'city_id',
         'country_id',
         'vision',
-        'admin'
+        'admin',
+        'agree'
     ];
 
     /**
@@ -169,6 +170,24 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     }
 
     public function getBirthdateAttribute( $date )
+    {
+        if ( $date )
+        {
+            return Carbon::parse( $date )->format( 'Y-m-d' );
+        } else
+        {
+            return null;
+        }
+    }
+    /**
+     * @param $date
+     */
+    public function setAgreeAttribute( $date )
+    {
+        $this->attributes[ 'agree' ] = Carbon::parse( $date );
+    }
+
+    public function getAgreeAttribute( $date )
     {
         if ( $date )
         {

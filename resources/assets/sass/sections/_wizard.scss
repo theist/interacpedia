@@ -17,6 +17,18 @@
       background: none;
     }
     .wizard_content{
+      .title1{
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+      .title2{
+        font-size: 1.3rem;
+        font-weight: 600;
+      }
+      &.scroll{
+        overflow: scroll;
+        height: 501px;
+      }
       margin-top: $grid-gutter-width;
       background: white;border-radius: 5px;
       h1{

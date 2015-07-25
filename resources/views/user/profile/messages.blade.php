@@ -1,3 +1,4 @@
+@include('messages.add')
 <div class="user-profile">
     @foreach($user->allmessages() as $message)
         <?php if ( $message->message_id ) continue; ?>

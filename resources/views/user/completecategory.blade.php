@@ -9,7 +9,7 @@
     <div class="wizard">
         <div class="header">
             <img src="/images/wizard/icon.png" alt="Interacpedia"/>
-            @lang('challenges/forms.step',['step'=>0,'total'=>5])
+            @lang('challenges/forms.step',['step'=>1,'total'=>4])
         </div>
         <div class="body row">
             <div class="col-md-10 col-md-offset-1 wizard_content text-center">
@@ -47,7 +47,8 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-2 col-md-offset-10">{!! Form::submit(Lang::get('general/labels.next'),['id'=>'next_button','class' => 'btn '.($user->category==""?'disabled':'')]) !!}</div>
+                        <div class="col-md-2"><a class="btn btn-purple" href="{{ action('UserController@completetyc') }}">@lang('general/labels.previous')</a></div>
+                        <div class="col-md-2 col-md-offset-8">{!! Form::submit(Lang::get('general/labels.next'),['id'=>'next_button','class' => 'btn '.($user->category==""?'disabled':'')]) !!}</div>
                     </div>
                     {!! Form::close() !!}
                 </div>

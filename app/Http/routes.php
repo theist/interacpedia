@@ -29,6 +29,8 @@ Route::get('user/companies', 'UserController@companies');
 Route::get('user/{user}/edit', 'UserController@edit');
 Route::get('user/{user}/{option}', 'UserController@profile');
 
+Route::get('user/completetyc', 'UserController@completetyc');
+Route::get('user/completeend', 'UserController@completeend');
 Route::get('user/completecategory', 'UserController@completecategory');
 Route::get('user/completecity', 'UserController@completecity');
 Route::get('user/completeoccupations', 'UserController@completeoccupations');

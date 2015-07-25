@@ -9,7 +9,7 @@
     <div class="wizard">
         <div class="header">
             <img src="/images/wizard/icon.png" alt="Interacpedia"/>
-            @lang('challenges/forms.step',['step'=>1,'total'=>5])
+            @lang('challenges/forms.step',['step'=>2,'total'=>4])
         </div>
         <div class="body row">
             <div class="col-md-10 col-md-offset-1 wizard_content text-center">
