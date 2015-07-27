@@ -5547,12 +5547,15 @@ h4 {
 .courses .course.summary .links .btn {
   font-size: 1rem; }
 .courses .course.summary .content {
-  min-height: 481px;
+  min-height: 300px;
   background: white;
   border: 1px solid #cdcdcd;
   margin-bottom: 15px; }
-  .courses .course.summary .content .fields {
-    padding: 20px; }
+  .courses .course.summary .content .fields .professor {
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #293896;
+    margin: 10px 0; }
 @media (max-width: 767px) {
   .courses .image img {
     width: 100%; } }

@@ -8,7 +8,7 @@
     <h1>@lang('general/labels.courses')</h1>
     <div class="row courses">
         @foreach($courses as $course)
-            <div class="course summary col-md-3">
+            <div class="course summary col-md-4">
                 @include('courses.summary')
             </div>
         @endforeach

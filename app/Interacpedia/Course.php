@@ -44,6 +44,17 @@ class Course extends Model {
     {
         return $this->belongsToMany('App\Interacpedia\User')->withTimestamps();
     }
+
+    /**
+     * Get the mentors associated with this course
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function mentors()
+    {
+        return $this->belongsToMany('App\Interacpedia\Mentor')->withTimestamps();
+    }
+
     /**
      * Get all of the challenge likes.
      */

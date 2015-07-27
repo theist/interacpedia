@@ -19,12 +19,18 @@
         }
       }
       .content {
-        min-height: 481px;
+        min-height: 300px;
         background: white;
         border: 1px solid $border-gray;
         margin-bottom: 15px;
         .fields {
-          padding: $grid-gutter-width;
+          .professor{
+            font-style: italic;
+            font-size: 1.2rem;
+            color: $blue;
+            margin: 10px 0;
+
+          }
         }
       }
     }

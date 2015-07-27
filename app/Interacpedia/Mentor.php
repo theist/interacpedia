@@ -39,5 +39,16 @@ class Mentor extends Model
         return $this->belongsTo( 'App\Interacpedia\User' );
     }
 
+    /**
+     * Get the courses associated with this mentor
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function courses()
+    {
+        return $this->belongsToMany('App\Interacpedia\Course')->withTimestamps();
+    }
+
+
 
 }
