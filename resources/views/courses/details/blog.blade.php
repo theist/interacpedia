@@ -8,8 +8,8 @@
             <hr/>
             <div class="row">
             @foreach($course->getPosts() as $post)
-                <div class="col-md-12">
-                    @include('blogs.post',['post'=>$post,'model'=>$course])
+                <div class="col-md-6">
+                    @include('blogs.summary',['post'=>$post,'model'=>$course])
                 </div>
             @endforeach
             </div>

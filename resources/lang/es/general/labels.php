@@ -121,5 +121,8 @@ return [
     'unavailable'                   => 'No disponible',
     'position'                      => 'Cargo/Ocupación',
     'hashtag'                       => 'Hashtag',
-    'agree'                         => 'Acepto'
+    'agree'                         => 'Acepto',
+    'author'                        => 'Autor',
+    'published'                     => 'Publicado',
+    'by'                            => 'Por'
 ];
