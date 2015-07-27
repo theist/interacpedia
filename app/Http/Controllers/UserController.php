@@ -33,14 +33,14 @@ class UserController extends Controller {
         $tags_vision = $user->tags()->where( 'type', 'personal_vision' )->lists( 'name', 'id' );
         $tags_dreams = $user->tags()->where( 'type', 'dreams' )->lists( 'name', 'id' );
         $tags_likes = $user->tags()->where( 'type', 'likes' )->lists( 'name', 'id' );
-        $tags_work_in = Tag::where( 'type', 'work_in' )->lists( 'name', 'id' );
-        $tags_work_companies = Tag::where( 'type', 'work_companies' )->lists( 'name', 'id' );
-        $tags_work_areas = Tag::where( 'type', 'work_areas' )->lists( 'name', 'id' );
-        $tags_contribution = Tag::where( 'type', 'contribution' )->lists( 'name', 'id' );
-        $tags_in_areas = Tag::where( 'type', 'in_areas' )->lists( 'name', 'id' );
-        $tags_searching_resources = Tag::where( 'type', 'searching_resources' )->lists( 'name', 'id' );
-        $tags_searching_experts = Tag::where( 'type', 'searching_experts' )->lists( 'name', 'id' );
-        $tags_searching_personal = Tag::where( 'type', 'searching_personal' )->lists( 'name', 'id' );
+        $tags_work_in = $user->tags()->where( 'type', 'work_in' )->lists( 'name', 'id' );
+        $tags_work_companies = $user->tags()->where( 'type', 'work_companies' )->lists( 'name', 'id' );
+        $tags_work_areas = $user->tags()->where( 'type', 'work_areas' )->lists( 'name', 'id' );
+        $tags_contribution = $user->tags()->where( 'type', 'contribution' )->lists( 'name', 'id' );
+        $tags_in_areas = $user->tags()->where( 'type', 'in_areas' )->lists( 'name', 'id' );
+        $tags_searching_resources = $user->tags()->where( 'type', 'searching_resources' )->lists( 'name', 'id' );
+        $tags_searching_experts = $user->tags()->where( 'type', 'searching_experts' )->lists( 'name', 'id' );
+        $tags_searching_personal = $user->tags()->where( 'type', 'searching_personal' )->lists( 'name', 'id' );
         $users = User::lists( 'name', 'id' );
 
         return view( 'user.profile', compact( 'user', 'option', 'users',

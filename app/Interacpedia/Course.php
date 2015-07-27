@@ -69,7 +69,6 @@ class Course extends Model {
     {
         return $this->morphMany('App\Interacpedia\Follow', 'model');
     }
-
     public function blogUrl(  )
     {
         $google = new Google();
@@ -77,6 +76,15 @@ class Course extends Model {
             return $google->blogUrl($this->blogid);
         }
         return false;
+    }
+
+    public function blogPageviews(  )
+    {
+        $google = new Google();
+        if($this->blogid){
+            return $google->pageViews($this->blogid);
+        }
+        return 0;
     }
     /**
      * @return \Google_Service_Blogger_PostList

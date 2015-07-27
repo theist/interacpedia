@@ -53,4 +53,9 @@ class Google {
     {
         return $this->service->blogs->get($blogid)->url;
     }
+    public function pageViews( $blogid="5935318404281787196" )
+    {
+        return $this->service->pageViews->get($blogid);
+    }
+
 }
