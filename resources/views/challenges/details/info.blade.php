@@ -132,23 +132,6 @@
                     @endforeach
             @endunless
         </div>
-        @unless($challenge->mentors->isEmpty())
-            <div class="content">
-                <h4>@lang('general/labels.mentors')</h4>
-                @foreach($challenge->mentors as $mentor)
-                    <div class="text-center row">
-                        <div class="col-md-5">
-                            <img class="img-circle" height="80" src="{{ imagestyle($mentor->image,'fit100x100') }}" alt="{{ $mentor->name }}"/><br/>
-                        </div>
-                        <div class="col-md-7">
-                            {{ $mentor->name }}<br>
-                            @include('messages.add',['from'=>Auth::user()->id,'to'=>$mentor->user->id,'label'=> Lang::get('general/labels.contact')])
-                        </div>
-
-                    </div>
-                @endforeach
-            </div>
-        @endunless
         @unless($challenge->rewards->isEmpty())
             <div class="content">
                 <h4>@lang('general/labels.rewards')</h4>
