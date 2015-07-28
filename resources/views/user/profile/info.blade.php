@@ -103,29 +103,6 @@
 </div>
 <div class="col-md-5">
     <div class="content">
-        <div class="subtitle row">
-            <img src="/images/icons/40x40/competences.png" alt="@lang('general/labels.validated_competences')"/>
-            @lang('general/labels.validated_competences')
-        </div>
-        <div class="area">
-            <div class="subtitle">
-                <img src="/images/icons/32x32/rewards.png" alt="@lang('general/labels.main_competences')"/>
-                @lang('general/labels.main_competences')
-            </div>
-            <div class="row">
-                <div class="col-md-2">
-                    <div class="tags"><div class="label label-tag">Generación de ideas</div></div>
-                </div>
-                <div class="col-md-10"></div>
-            </div>
-            <hr/>
-            <div class="row">
-                <div class="col-md-2">
-                    <div class="tags"><div class="label label-tag">Análisis Estratégico</div></div>
-                </div>
-                <div class="col-md-10"></div>
-            </div>
-        </div>
         <div class="subtitle">
             <img src="/images/icons/40x40/offer.png" alt="@lang('general/labels.what_can_i_offer')"/>
             @lang('general/labels.what_can_i_offer')
