@@ -124,5 +124,6 @@ return [
     'agree'                         => 'Acepto',
     'author'                        => 'Autor',
     'published'                     => 'Publicado',
-    'by'                            => 'Por'
+    'by'                            => 'Por',
+    'see_message'                   => 'Ver mensaje'
 ];

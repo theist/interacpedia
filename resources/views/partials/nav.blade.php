@@ -51,9 +51,11 @@
                         <li class="icon">
                             <a href="/user/{{ Auth::user()->id }}/notifications"><img
                                         src="/images/icons/40x40/usermenu-notifications.png" alt="Notifications"/></a>
+                            @if($count = Auth::user()->notifications()->unread()->count())
+                                <span class="badge">{{ $count }}</span>
+                            @endif
                         </li>
                         <li class="icon">
-
                             <a href="/user/{{ Auth::user()->id }}/messages"><img
                                         src="/images/icons/40x40/usermenu-messages.png" alt="Messages"/></a>
                             @if($count = Auth::user()->unreadmessages())

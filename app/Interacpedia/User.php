@@ -64,6 +64,13 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
+    public function notifications()
+    {
+        return  $this->hasMany( 'App\Interacpedia\Notification' )->orderBy('created_at', 'desc');
+    }
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function sentmessages()
     {
         return  $this->hasMany( 'App\Interacpedia\Message','from_user' );

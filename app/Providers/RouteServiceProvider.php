@@ -33,6 +33,7 @@ class RouteServiceProvider extends ServiceProvider {
         $router->model('follows', 'App\Interacpedia\Follow');
         $router->model('groups', 'App\Interacpedia\Group');
         $router->model('messages', 'App\Interacpedia\Message');
+		$router->model('notifications', 'App\Interacpedia\Notification');
 
 //
 	}

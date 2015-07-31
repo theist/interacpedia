@@ -5475,6 +5475,13 @@ h4 {
 .modal-header {
   text-align: left; }
 
+.notification .created {
+  color: #b5b5b5;
+  font-style: italic;
+  font-size: 1.2rem; }
+.notification .content {
+  display: inline; }
+
 .post img {
   display: block; }
 

@@ -29,4 +29,5 @@ class Stat extends Model
     public function model()
     {
         return $this->morphTo();
-    }}
+    }
+}

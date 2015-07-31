@@ -3,13 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Interacpedia\Message;
+use App\Interacpedia\Notification;
+use App\Interacpedia\User;
+use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class MessagesController extends Controller
-{
+class MessagesController extends Controller {
+
     /**
      * Display a listing of the resource.
      *
@@ -33,17 +36,18 @@ class MessagesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
+     * @param Request $request
      * @return Response
      */
     public function store( Request $request )
     {
         if ( $request->ajax() )
         {
-            //dd($request->all());
             $data = $request->all();
-            if($data["message_id"]=="")
-                $data["message_id"] = null;
+            if ( $data[ "message_id" ] == "" )
+                $data[ "message_id" ] = null;
             $message = Message::create( $data );
+            NotificationsController::add($message);
             return $message;
         } else
         {
@@ -54,21 +58,25 @@ class MessagesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param Authenticatable $user
+     * @param Message $message
+     * @param  int $id
      * @return Response
      */
-    public function show($id)
+    public function show( Authenticatable $user, Message $message, $id = null )
     {
-        //
+        if ( $id ) $message = Message::find( $id );
+        return view('messages.show',compact('message','user'));
+
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return Response
      */
-    public function edit($id)
+    public function edit( $id )
     {
         //
     }
@@ -76,10 +84,10 @@ class MessagesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return Response
      */
-    public function update($id)
+    public function update( $id )
     {
         //
     }
@@ -87,10 +95,10 @@ class MessagesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return Response
      */
-    public function destroy($id)
+    public function destroy( $id )
     {
         //
     }

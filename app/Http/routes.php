@@ -54,6 +54,7 @@ Route::resource('coordinators','CoordinatorsController');
 Route::resource('courses','CoursesController');
 Route::resource('companies','CompaniesController');
 Route::resource('messages','MessagesController');
+Route::resource('notifications','NotificationsController');
 Route::resource('blogs','BlogController');
 Route::post('upload','UploadController@store');
 
