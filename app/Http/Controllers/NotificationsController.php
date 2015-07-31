@@ -91,7 +91,7 @@ class NotificationsController extends Controller
 
     public static function add( $model )
     {
-        $user = Auth::user();
+        $user = User::findOrNew($model[ 'to_user' ]);
         $data = [];
         $data['user_id'] = $user->id;
         $data['model_type'] = get_class($model);
