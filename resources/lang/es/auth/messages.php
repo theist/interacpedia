@@ -16,5 +16,5 @@ return [
     'invalid_credentials' => 'La información proporcionada no coincide con nuestros registros.',
     'first_time'          => 'Si es la primera vez que vas a ingresar de esta manera, debes generar tu contraseña, lo que
                     garantiza tu seguridad. Recuerda que Interacpedia nunca te pedirá que reveles tu contraseña. Para
-                    generar tu clave por priemra vez, o si la has olvidado haz click a continuación.'
+                    generar tu clave por primera vez, o si la has olvidado haz click a continuación.'
 ];
