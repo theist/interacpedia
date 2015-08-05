@@ -21,12 +21,19 @@
             <div class="modal-body">
                 <input type="hidden" name="parent{{ $suffix }}" id="parent{{ $suffix }}" value="{{ $parent }}">
                 @if(isset($to) && $to >0)
+                    <div class="row">
+                        <div class="col-md-12">Para: {{ \App\Interacpedia\User::findOrNew($to)->name }}<br /><br /></div>
+                    </div>
                     <input type="hidden" name="to_user{{ $suffix }}" id="to_user{{ $suffix }}" value="{{ $to }}">
                 @else
                     @include('partials.forms.select',['name'=>'to_user'.$suffix,'id'=>'to_user'.$suffix,'list'=>$users,'value'=>''])
                 @endif
+                @if(isset($parent) && $parent >0)
+                    {!! Form::input('text','title','Re: '. \App\Interacpedia\Message::findOrNew($parent)->title,['id' => 'title'.$suffix, 'maxlength' => 100,'placeholder'=>'Asunto del mensaje','class' =>'form-control input-sm maxlength']) !!}
+                @else
+                    {!! Form::input('text','title',null,['id' => 'title'.$suffix, 'maxlength' => 100,'placeholder'=>'Asunto del mensaje','class' =>'form-control input-sm maxlength']) !!}
+                @endif
 
-                {!! Form::input('text','title',null,['id' => 'title'.$suffix, 'maxlength' => 100,'placeholder'=>'Asunto del mensaje','class' =>'form-control input-sm maxlength']) !!}
                 <br/>
                 {!! Form::textarea('content',null,['id' => 'content'.$suffix, 'maxlength' => 400, 'placeholder'=>'Escriba su mensaje','class' => 'form-control maxlength','rows'=>'15']) !!}
             </div>
