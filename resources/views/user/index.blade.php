@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('title')
-    @lang('general/labels.users')
+    {{ trans_choice('general/labels.users', 3 ) }}
     @parent
 @stop
 
