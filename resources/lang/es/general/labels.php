@@ -95,7 +95,7 @@ return [
     'private'                       => 'Privado',
     'without_users'                 => 'Sin Usuarios',
     'close'                         => 'Cerrar',
-    'users'                         => 'Usuario|Usuario',
+    'users'                         => 'Usuario|Usuarios',
     'messages'                      => 'Mensaje|Mensajes',
     'notifications'                 => 'Notificación|Notificaciones',
     'write'                         => 'Escribir',

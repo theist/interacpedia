@@ -26,6 +26,12 @@ class UserController extends Controller {
         $this->middleware( 'auth' );
     }
 
+    public function index()
+    {
+        $users = User::all();
+        return view('user.index',compact('users'));
+
+    }
     public function show( $id )
     {
         $user = User::find( $id );

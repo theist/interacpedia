@@ -1,0 +1,41 @@
+.users{
+  .user{
+    &.not-agree{
+      &.summary{
+        .content{
+          background: grey;
+        }
+      }
+    }
+    &.summary{
+      .image{
+        padding: $grid-gutter-width/2;
+      }
+      .title {
+        h4 {
+          font-size: 1.2rem;
+          text-transform: none;
+          font-family: $font-sans;
+          margin-bottom: 0;
+          color: $light-gray;
+        }
+      }
+      .subtitle{
+        font-size: 1.1rem;
+        color: $light-gray;
+        font-weight: 600;
+      }
+      .content {
+        @media (min-width: $screen-md-max) {
+          min-height: 100px;
+        }
+        background: white;
+        border: 1px solid $border-gray;
+        margin-bottom: 15px;
+        .fields {
+          padding: $grid-gutter-width;
+        }
+      }
+    }
+  }
+}

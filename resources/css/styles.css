@@ -5543,6 +5543,30 @@ h4 {
   .mentors .image img {
     width: 100%; } }
 
+.users .user.not-agree.summary .content {
+  background: grey; }
+.users .user.summary .image {
+  padding: 10px; }
+.users .user.summary .title h4 {
+  font-size: 1.2rem;
+  text-transform: none;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 0;
+  color: #535353; }
+.users .user.summary .subtitle {
+  font-size: 1.1rem;
+  color: #535353;
+  font-weight: 600; }
+.users .user.summary .content {
+  background: white;
+  border: 1px solid #cdcdcd;
+  margin-bottom: 15px; }
+  @media (min-width: 1199px) {
+    .users .user.summary .content {
+      min-height: 100px; } }
+  .users .user.summary .content .fields {
+    padding: 20px; }
+
 .courses .course.summary .title h4 {
   text-transform: uppercase;
   font-family: 'Open Sans', sans-serif;
