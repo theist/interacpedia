@@ -1,12 +1,12 @@
 <div class="content raised">
     <div class="image">
-        <a href="{{ action('MentorsController@show',[$mentor->id]) }}">
+        <a href="{{ action('UserController@show',[$mentor->user->id]) }}">
             <img class="img-responsive" src="{{ imagestyle($mentor->image,'fit270x214') }}"
                  alt="{{ $mentor->name }}"/>
         </a>
     </div>
     <div class="fields">
-        <div class="title"><h4><a href="{{ action('MentorsController@show',[$mentor->id]) }}">{{ $mentor->name }}</a></h4></div>
+        <div class="title"><h4><a href="{{ action('UserController@show',[$mentor->user->id]) }}">{{ $mentor->name }}</a></h4></div>
         <div class="subtitle">{{ $mentor->profile}}</div>
         <div class="location">{{ $mentor->location}}</div>
         <div class="body">
