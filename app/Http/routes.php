@@ -50,6 +50,7 @@ Route::resource('stories','StoriesController');
 Route::resource('projects','ProjectsController');
 Route::resource('partners','PartnersController');
 Route::resource('mentors','MentorsController');
+Route::resource('tutorials','TutorialsController');
 Route::resource('coordinators','CoordinatorsController');
 Route::resource('courses','CoursesController');
 Route::resource('companies','CompaniesController');

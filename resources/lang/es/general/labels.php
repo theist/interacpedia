@@ -125,5 +125,6 @@ return [
     'author'                        => 'Autor',
     'published'                     => 'Publicado',
     'by'                            => 'Por',
-    'see_message'                   => 'Ver mensaje'
+    'see_message'                   => 'Ver mensaje',
+    'tutorials'                      => 'Tutorial|Tutoriales'
 ];

@@ -5537,11 +5537,36 @@ h4 {
   margin-bottom: 15px; }
   @media (min-width: 1199px) {
     .mentors .mentor.summary .content {
-      min-height: 712px; } }
+      min-height: 713px; } }
   .mentors .mentor.summary .content .fields {
     padding: 20px; }
 @media (max-width: 767px) {
   .mentors .image img {
+    width: 100%; } }
+
+.tutorials .tutorial.summary .title h4 {
+  text-transform: none;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 0;
+  color: #535353; }
+.tutorials .tutorial.summary .subtitle {
+  color: #535353;
+  font-weight: 600; }
+.tutorials .tutorial.summary .body {
+  font-size: 1.3rem;
+  color: #535353;
+  margin-bottom: 10px; }
+.tutorials .tutorial.summary .content {
+  background: white;
+  border: 1px solid #cdcdcd;
+  margin-bottom: 15px; }
+  @media (min-width: 1199px) {
+    .tutorials .tutorial.summary .content {
+      min-height: 320px; } }
+  .tutorials .tutorial.summary .content .fields {
+    padding: 20px; }
+@media (max-width: 767px) {
+  .tutorials .image img {
     width: 100%; } }
 
 .users .user.not-agree.summary .content {

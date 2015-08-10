@@ -1,0 +1,41 @@
+.tutorials{
+  .tutorial{
+    &.summary{
+      .title {
+        h4 {
+          text-transform: none;
+          font-family: $font-sans;
+          margin-bottom: 0;
+          color: $light-gray;
+        }
+      }
+      .subtitle{
+        color: $light-gray;
+        font-weight: 600;
+      }
+      .body{
+        font-size: 1.3rem;
+        color: $light-gray;
+        margin-bottom: $grid-gutter-width/2;
+      }
+      .content {
+        @media (min-width: $screen-md-max) {
+          min-height: 320px;
+        }
+        background: white;
+        border: 1px solid $border-gray;
+        margin-bottom: 15px;
+        .fields {
+          padding: $grid-gutter-width;
+        }
+      }
+    }
+  }
+  .image {
+    img {
+      @media (max-width: $screen-xs-max) {
+        width: 100%;
+      }
+    }
+  }
+}
