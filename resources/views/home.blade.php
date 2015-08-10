@@ -40,7 +40,7 @@
         <div class="row challenge">
             <div class="main">
                 <div class="content col-md-12">
-                    <h3>@lang('general/labels.posts')</h3>
+                    <h3>@lang('general/labels.articles') Interacpedia</h3>
                     @foreach($posts as $post)
                         <div class="col-md-4 preview">
                             @include('blogs.post',['post'=>$post])
