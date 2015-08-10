@@ -16,6 +16,7 @@ return [
     'interacpedia' => 'Interacpedia',
     'toggle'       => 'Mostrar navegación',
     'more'         => 'Más',
-    'classes'      => 'Clases'
+    'classes'      => 'Clases',
+    'articles'     => 'Artículos'
 
 ];
