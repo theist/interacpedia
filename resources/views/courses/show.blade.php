@@ -24,12 +24,15 @@
 @section('section-submenu')
     <?php
     if ( Auth::check()
-            && ( $course->students->contains( function ( $key, $value ){
+            && ( $course->students->contains( function ( $key, $value )
+                    {
                         return $value->id == Auth::user()->id;
                     } ) || Auth::user()->id == $course->user->id
-                    || $course->mentors->contains( function ( $key, $value ){
+                    || Auth::user()->admin
+                    || $course->mentors->contains( function ( $key, $value )
+                    {
                         return $value->user->id == Auth::user()->id;
-                    })
+                    } )
             )
     )
     {
