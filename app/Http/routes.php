@@ -23,7 +23,7 @@ Route::post('contact', ['as' => 'contact_store', 'uses' => 'PagesController@cont
  */
 Route::get('terms-of-use','PagesController@terms');
 Route::get('privacy-policy','PagesController@privacy');
-
+Route::get('brief', ['as' => 'brief', 'uses' => 'PagesController@brief','middleware' => 'auth']);
 Route::get('user/profile', 'UserController@profile');
 Route::get('user/companies', 'UserController@companies');
 Route::get('user/{user}/edit', 'UserController@edit');

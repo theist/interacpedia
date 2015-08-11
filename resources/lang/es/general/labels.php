@@ -127,5 +127,6 @@ return [
     'by'                            => 'Por',
     'see_message'                   => 'Ver mensaje',
     'tutorials'                     => 'Tutorial|Tutoriales',
-    'articles'                      => 'Artículos'
+    'articles'                      => 'Artículos',
+    'brief'                         => 'Brief'
 ];

@@ -30,6 +30,12 @@ class PagesController extends Controller {
         return view('home', compact('stories','partners','user','posts','challenges'));
     }
 
+    public function brief()
+    {
+        $this->middleware( 'auth' );
+        return view('pages.brief');
+    }
+
     /**
      * @return string
      */
