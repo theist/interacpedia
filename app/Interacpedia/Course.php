@@ -2,12 +2,20 @@
 
 use App\Services\Google;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Course extends Model {
+    use SoftDeletes;
 
     protected $fillable = [
         'name'
     ];
+    /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var array
+     */
+    protected $dates = ['deleted_at'];
     /**
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
