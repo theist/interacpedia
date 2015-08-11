@@ -12,6 +12,7 @@
             <ul>
                 <li><a href="/how-it-works">¿Cómo funciona?</a></li>
                 <li><a href="/tutorials">Tutoriales</a></li>
+                <li><a href="/brief">Creación del Brief</a></li>
                 <li><a href="/terms-of-use">Términos de Uso</a></li>
                 <li><a href="/#">Política de Privacidad</a></li>
             </ul>
