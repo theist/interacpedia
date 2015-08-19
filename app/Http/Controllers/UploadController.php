@@ -61,7 +61,7 @@ class UploadController extends Controller {
             foreach($files as $file){
                 $name = date("Ymd-") . $file->getClientOriginalName();
                 $dir = $request->header('upload_dir');
-                if(!$dir)$dir = "upload";
+                if(!$dir)$dir = "challenges/others";
                 $path = public_path()."/images/".$dir . "/";
                 $file->move($path, $name);
                 $image = "/images/" . $dir . "/" . $name;
