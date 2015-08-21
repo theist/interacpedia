@@ -4,6 +4,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Partner extends Model {
 
+    use SoftDeletes;
+
     protected $fillable = [
         'name',
         'image',
