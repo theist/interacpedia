@@ -279,33 +279,44 @@
             </div>
         </div>
         <div class="field-files col-md-5">
-            <input type="hidden" name="files" id="files" value="{{ $challenge->files }}"/>
-
             <div class="subtitle row">
-                <div class="col-sm-2 text-center"><img src="/images/icons/32x32/files.png"
-                                                       alt="@lang('challenges/forms.files')"/></div>
-                <div class="col-sm-10 text-left text">@lang('challenges/forms.files')
+                <div class="col-sm-2 text-center">
+                    <img src="/images/icons/32x32/files.png" alt="{{ trans_choice('general/labels.documents', 1 ) }}"/>
+                </div>
+                <div class="col-sm-10 text-left text">@lang('general/labels.add') {{ trans_choice('general/labels.documents', 1 ) }}
                     <small>@lang('general/labels.optional')</small>
                 </div>
-
             </div>
             <div class="form-group">
-                <div class="zone dropzone-previews">
-                    @if($challenge->files != "")
-                        <?php $files_empty = "false" ?>
-                        @foreach(explode(",",$challenge->files ) as $file)
-                            <div class="preview">
-                                <a data-value="{{ $file }}"
-                                   class="btn btn-danger del_files">@lang('general/labels.remove')</a>
-                                {{ substr($file,strrpos($file,"/")+1) }}
-                            </div>
-                        @endforeach
-                    @else
-                        <?php $files_empty = "true" ?>
-                        <div class="help">@lang('challenges/forms.files_help')</div>
-                    @endif
-                </div>
+                <input type="file" name="document" id="document">
             </div>
+
+            {{--<input type="hidden" name="files" id="files" value="{{ $challenge->files }}"/>--}}
+            {{--<div class="subtitle row">--}}
+            {{--<div class="col-sm-2 text-center">--}}
+            {{--<img src="/images/icons/32x32/files.png" alt="@lang('challenges/forms.files')"/>--}}
+            {{--</div>--}}
+            {{--<div class="col-sm-10 text-left text">@lang('challenges/forms.files')--}}
+{{--            <small>@lang('general/labels.optional')</small>--}}
+            {{--</div>--}}
+            {{--</div>--}}
+            {{--<div class="form-group">--}}
+            {{--<div class="zone dropzone-previews">--}}
+{{--            @if($challenge->files != "")--}}
+            <?php /* $files_empty = "false" */?>
+{{--            @foreach(explode(",",$challenge->files ) as $file)--}}
+            {{--<div class="preview">--}}
+            {{--<a data-value="{{ $file }}" class="btn btn-danger del_files">@lang('general/labels.remove')</a>--}}
+{{--            {{ substr($file,strrpos($file,"/")+1) }}--}}
+            {{--</div>--}}
+            {{--@endforeach--}}
+            {{--@else--}}
+            <?php  $files_empty = "true" ?>
+            {{--<div class="help">@lang('challenges/forms.files_help')</div>--}}
+            {{--@endif--}}
+            {{--</div>--}}
+            {{--</div>--}}
+
         </div>
     </div>
 
@@ -327,7 +338,8 @@
             @foreach($searchings as $search)
                 <div class="search" data-value="{{ $search->id }}">
 
-                    <img src="{{ in_array($search->id,$challenge->searchings->lists('id')->all())?str_replace('-off.png','-on.png',$search->image):$search->image }}" alt="{{ $search->name }}" height="75" width="75"/><br/>
+                    <img src="{{ in_array($search->id,$challenge->searchings->lists('id')->all())?str_replace('-off.png','-on.png',$search->image):$search->image }}"
+                         alt="{{ $search->name }}" height="75" width="75"/><br/>
                     <small>{{ $search->name }}</small>
                 </div>
             @endforeach
@@ -345,7 +357,8 @@
         <div class="step_content row text-center">
             @foreach($rewards as $reward)
                 <div class="reward" data-value="{{ $reward->id }}">
-                    <img src="{{ in_array($reward->id,$challenge->rewards->lists('id')->all())?str_replace('-off.png','-on.png',$reward->image):$reward->image }}" alt="{{ $reward->name }}" height="75" width="75"/><br/>
+                    <img src="{{ in_array($reward->id,$challenge->rewards->lists('id')->all())?str_replace('-off.png','-on.png',$reward->image):$reward->image }}"
+                         alt="{{ $reward->name }}" height="75" width="75"/><br/>
                     <small>{{ $reward->name }}</small>
                 </div>
             @endforeach
@@ -401,7 +414,7 @@
         });
         Dropzone.autoDiscover = false;
         $(function () {
-            $("a.cancel").click( function(){
+            $("a.cancel").click(function () {
                 parent.history.back();
                 return false;
             });
@@ -418,9 +431,9 @@
                         + '<select class="form-control select2" name="creator_list[' + creatorCounter + ']" id="creator_list[' + creatorCounter + ']" style="width:100%;">'
                         + '<option></option>'
                         @foreach($creators as $id=>$item)
-                        + '<option value="{{ $id }}">{{ $item }}</option>'
+                         + '<option value="{{ $id }}">{{ $item }}</option>'
                         @endforeach
-                         + '</select>'
+                          + '</select>'
                         + '</div></div>'
                 );
                 $('.select2').select2({
@@ -444,9 +457,9 @@
                         + '<select class="form-control select2" name="university_list[' + uniCounter + ']" id="university_list[' + uniCounter + ']" style="width:100%;">'
                         + '<option></option>'
                         @foreach($universities as $id=>$item)
-                        + '<option value="{{ $id }}">{{ $item }}</option>'
+                         + '<option value="{{ $id }}">{{ $item }}</option>'
                         @endforeach
-                         + '</select>'
+                          + '</select>'
                         + '</div></div>'
                         + '<div class="field-career col-md-6"><div class="subtitle row">'
                         + '<div class="col-sm-2 text-center"><img src="/images/icons/32x32/career.png" alt="@lang('general/labels.career')"/></div>'
@@ -456,9 +469,9 @@
                         + '<select class="form-control select2" name="career_list[' + uniCounter + ']" id="career_list[' + uniCounter + ']" style="width:100%;">'
                         + '<option></option>'
                         @foreach($careers as $id=>$item)
-                        + '<option value="{{ $id }}">{{ $item }}</option>'
+                         + '<option value="{{ $id }}">{{ $item }}</option>'
                         @endforeach
-                         + '</select>'
+                          + '</select>'
                         + '</div></div>'
                         + '</div>'
                         + '<div class="row">'
@@ -470,9 +483,9 @@
                         + '<select class="form-control select2" name="course_list[' + uniCounter + ']" id="course_list[' + uniCounter + ']" style="width:100%;">'
                         + '<option></option>'
                         @foreach($courses as $id=>$item)
-                        + '<option value="{{ $id }}">{{ $item }}</option>'
+                         + '<option value="{{ $id }}">{{ $item }}</option>'
                         @endforeach
-                         + '</select>'
+                          + '</select>'
                         + '</div></div>'
                         + '<div class="field-professor col-md-6"><div class="subtitle row">'
                         + '<div class="col-sm-2 text-center"><img src="/images/icons/32x32/professor.png" alt="@lang('general/labels.professor')"/></div>'
@@ -482,9 +495,9 @@
                         + '<select class="form-control select2" name="professor_list[' + uniCounter + ']" id="professor_list[' + uniCounter + ']" style="width:100%;">'
                         + '<option></option>'
                         @foreach($professors as $id=>$item)
-                        + '<option value="{{ $id }}">{{ $item }}</option>'
+                         + '<option value="{{ $id }}">{{ $item }}</option>'
                         @endforeach
-                         + '</select>'
+                          + '</select>'
                         + '</div></div>'
                         + '</div>'
 

@@ -151,6 +151,9 @@ class ChallengesController extends Controller {
         $this->syncCourses( $challenge, $request->input( 'course_list', array() ) );
         $this->syncCreators( $challenge, $request->input( 'creator_list', array() ) );
         flash()->success( Lang::get( 'challenges/messages.edit_ok' ) );
+        if($request->file('document')){
+            $challenge->addMedia($request->file('document'))->toCollection('documents');
+        }
         if ( $challenge->image == "" )
         {
             $challenge->image = "/images/challenges/challenge.jpg";

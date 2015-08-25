@@ -17,7 +17,7 @@
         </div>
         <div class="content">
 
-            {!! Form::model($challenge,['method' => 'PATCH', 'action' => ['ChallengesController@update',$challenge->id]]) !!}
+            {!! Form::model($challenge,['files'=>true,'method' => 'PATCH', 'action' => ['ChallengesController@update',$challenge->id]]) !!}
             @include('challenges.form',['submitButtonText' => Lang::get('challenges/title.edit')])
             {!! Form::close() !!}
             @include('errors.alerts')

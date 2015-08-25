@@ -7,15 +7,16 @@
             porque estas participando en este reto. Estos documentos pueden contener información confidencial de las empresas postulantes y
                 por tanto deben ser manipulados con responsabilidad.</p>
 
-            {{--<div class="row users">--}}
-                {{--@foreach($teams as $team)--}}
-                    {{--@foreach($team->users as $st)--}}
-                        {{--<div class="user summary col-md-4 {{ $st->agree?'agree':'not-agree' }}">--}}
-                            {{--@include('user.summary',['user'=>$st])--}}
-                        {{--</div>--}}
-                    {{--@endforeach--}}
-                {{--@endforeach--}}
-            {{--</div>--}}
+            <div class="row documents">
+                @foreach($challenge->getMedia('documents') as $doc)
+                        <div class="document summary col-md-12">
+                            <hr>
+                            <strong>{{ $doc->name }}:</strong>
+                            <a target="_blank" href="{{ $doc->getUrl() }}">{{ $doc->file_name }}</a>
+                            {{ $doc->humanReadableSize }}
+                        </div>
+                @endforeach
+            </div>
         </div>
     </div>
 </div>

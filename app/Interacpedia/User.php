@@ -107,6 +107,29 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     }
 
     /**
+     * @return bool
+     */
+    public function inChallenge($id)
+    {
+        $challenge = Challenge::findOrNew($id);
+        if($this->admin)return true;
+        foreach($challenge->coordinators as $coor){
+            if($coor->id == $this->id) return true;
+        }
+        foreach($challenge->teams as $team){
+            foreach($team->users as $us){
+                if($us->id == $this->id) return true;
+            }
+        }
+        foreach($challenge->courses as $course){
+            foreach($course->mentors as $mentor){
+                if($mentor->user_id == $this->id) return true;
+            }
+        }
+        return false;
+
+    }
+    /**
      * Get the teams associated with this user
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
