@@ -222,10 +222,11 @@ class ChallengesController extends Controller {
         }
         $professors = [ ];
         $users = User::lists( 'name', 'id' );
+        $teams = $challenge->teams()->get();
 
         if ( Auth::check() )
         {
-            return view( 'challenges.show', compact( 'challenge', 'user', 'universities', 'careers', 'courses', 'professors', 'users','option' ) );
+            return view( 'challenges.show', compact( 'challenge', 'user', 'universities', 'careers', 'courses', 'professors', 'teams', 'users','option' ) );
         } else
         {
             return view( 'challenges.showbrief', compact( 'challenge', 'user', 'universities', 'careers', 'courses', 'professors', 'users' ) );

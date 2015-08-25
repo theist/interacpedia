@@ -110,6 +110,14 @@ class Challenge extends Model {
         return $this->belongsTo( 'App\Interacpedia\Partner' );
     }
 
+    /**
+     * Get the teams associated with this challenge
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function teams()
+    {
+        return $this->hasMany( 'App\Interacpedia\Team' );
+    }
 
     /**
      * Get the coordinators associated with this challenge
