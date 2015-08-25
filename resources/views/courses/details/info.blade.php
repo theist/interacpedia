@@ -3,17 +3,10 @@
         <div class="content">
             <h3>@lang('general/labels.students')</h3>
 
-            <div class="row">
+            <div class="row users">
                 @foreach($students as $st)
-                    <div class="col-md-3 text-center student">
-                        <a href="/user/{{ $st->id }}">
-                            <img class="img-circle" height="80" src="{{ imagestyle($st->avatar,'fit100x100') }}"
-                                 alt="{{ $st->name }}"/>
-                        </a>
-
-                        <div class="name">
-                            <a href="/user/{{ $st->id }}">{{ $st->name }}</a>
-                        </div>
+                    <div class="user summary col-md-4 {{ $st->agree?'agree':'not-agree' }}">
+                        @include('user.summary',['user'=>$st])
                     </div>
                 @endforeach
             </div>
