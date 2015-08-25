@@ -128,5 +128,6 @@ return [
     'see_message'                   => 'Ver mensaje',
     'tutorials'                     => 'Tutorial|Tutoriales',
     'articles'                      => 'Artículos',
-    'brief'                         => 'Brief'
+    'brief'                         => 'Brief',
+    'teams'                         => 'Equipo|Equipos'
 ];

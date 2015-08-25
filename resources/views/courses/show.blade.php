@@ -38,6 +38,7 @@
     {
         $items = [
                 'info' => [ 'label' => 'Info', 'link' => '/courses/' . $course->id . '/info' ],
+                'teams' => [ 'label' => 'Equipos', 'link' => '/courses/' . $course->id . '/teams' ],
                 'blog' => [ 'label' => 'Blog', 'link' => '/courses/' . $course->id . '/blog' ]
         ];
     } else
@@ -56,7 +57,7 @@
 
 @section('content')
     <div class="row course-details{{ $option }}">
-        @include('courses.details.'.$option,['course'=>$course,'challenges'=>$challenges])
+        @include('courses.details.'.$option,['course'=>$course,'challenges'=>$challenges,'students'=>$students,'teams'=>$teams])
     </div>
 @stop
 

@@ -5766,6 +5766,11 @@ h4 {
   #section-partners .container {
     padding: 20px 0; }
 
+.team {
+  padding: 20px; }
+  .team .student {
+    padding: 10px; }
+
 #section-content {
   background: #edfaff; }
   #section-content .container {

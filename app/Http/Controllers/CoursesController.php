@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Interacpedia\Course;
+use App\Interacpedia\Team;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -55,12 +56,20 @@ class CoursesController extends Controller
         if ( !$option ) $option = "info";
         /* TO DO: move this relations into one object with properties.
          * */
-        $challenges = $course->challenges();
-        $students = $course->students()->orderBy('name');
-        //dd($challenges);
+        $challenges = $course->challenges;
+
+        $teams = array();
+        foreach($challenges as $challenge){
+            $team = Team::firstOrCreate(['course_id'=>$course->id,'challenge_id'=>$challenge->id]);
+            $team->name = "Equipo";
+            $team->save();
+            $teams[] = $team;
+        }
+        $students = $course->students()->orderBy('name')->get();
+
         if ( Auth::check() )
         {
-            return view( 'courses.show', compact( 'course', 'user', 'option','challenges','students' ) );
+            return view( 'courses.show', compact( 'course', 'user', 'option','challenges','students','teams' ) );
         } else
         {
             return view( 'courses.showbrief', compact( 'course', 'user' ) );
