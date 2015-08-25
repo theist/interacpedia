@@ -5,7 +5,7 @@
 
             <div class="row users">
                 @foreach($students as $st)
-                    <div class="user summary col-md-4 {{ $st->agree?'agree':'not-agree' }}">
+                    <div class="user summary col-md-6 {{ $st->agree?'agree':'not-agree' }}">
                         @include('user.summary',['user'=>$st])
                     </div>
                 @endforeach
