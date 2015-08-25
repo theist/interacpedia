@@ -11,7 +11,6 @@
                 @endforeach
             </div>
             <h3>@lang('general/labels.challenges')</h3>
-
             <div class="row challenges">
                 @foreach($challenges as $challenge)
                     <div class="challenge summary col-md-4">

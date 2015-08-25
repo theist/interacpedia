@@ -105,6 +105,16 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     {
         return $this->hasMany( 'App\Interacpedia\Follow' );
     }
+
+    /**
+     * Get the teams associated with this user
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function teams()
+    {
+        return $this->belongsToMany('App\Interacpedia\Team')->withTimestamps();
+    }
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */

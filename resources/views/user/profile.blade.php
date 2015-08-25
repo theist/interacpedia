@@ -12,7 +12,6 @@
         @include('user.profile.menu',['items'=>[
                                                 'info'=>['label'=>'Info','link'=>'/user/'. $user->id .'/info'],
                                                 'challenges'=>['label'=>'Retos','link'=>'/user/'. $user->id .'/challenges'],
-                                                'projects'=>['label'=>'Proyectos','link'=>'/user/'.$user->id.'/projects'],
                                                 'messages'=>['label'=>'Mensajes','link'=>'/user/'.$user->id.'/messages'],
                                                 'notifications'=>['label'=>'Notificaciones','link'=>'/user/'.$user->id.'/notifications']
                                                 ],
@@ -21,8 +20,7 @@
     @else
         @include('user.profile.menu',['items'=>[
                                                 'info'=>['label'=>'Info','link'=>'/user/'. $user->id .'/info'],
-                                                'challenges'=>['label'=>'Retos','link'=>'/user/'. $user->id .'/challenges'],
-                                                'projects'=>['label'=>'Proyectos','link'=>'/user/'.$user->id.'/projects']
+                                                'challenges'=>['label'=>'Retos','link'=>'/user/'. $user->id .'/challenges']
                                                 ],
                                         'active'=>$option
                                     ])
