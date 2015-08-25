@@ -122,6 +122,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
             }
         }
         foreach($challenge->courses as $course){
+            if($course->user_id == $this->id) return true;
             foreach($course->mentors as $mentor){
                 if($mentor->user_id == $this->id) return true;
             }
