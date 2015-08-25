@@ -54,6 +54,14 @@ class Course extends Model {
     }
 
     /**
+     * Get the teams associated with this course
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function teams()
+    {
+        return $this->hasMany( 'App\Interacpedia\Team' );
+    }
+    /**
      * Get the mentors associated with this course
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany

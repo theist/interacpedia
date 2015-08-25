@@ -58,13 +58,13 @@ class CoursesController extends Controller
          * */
         $challenges = $course->challenges;
 
-        $teams = array();
         foreach($challenges as $challenge){
             $team = Team::firstOrCreate(['course_id'=>$course->id,'challenge_id'=>$challenge->id]);
             $team->name = "Equipo";
             $team->save();
-            $teams[] = $team;
+
         }
+        $teams = $course->teams()->get();
         $students = $course->students()->orderBy('name')->get();
 
         if ( Auth::check() )
