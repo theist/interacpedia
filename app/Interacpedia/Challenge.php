@@ -5,10 +5,14 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\DB;
+use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+use Spatie\MediaLibrary\HasMedia\Interfaces\HasMedia;
 
-class Challenge extends Model {
+
+class Challenge extends Model implements HasMedia {
 
     use SoftDeletes;
+    use HasMediaTrait;
 
     protected $fillable = [
         'name',

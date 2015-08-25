@@ -154,8 +154,9 @@ return [
         'Intervention\Image\ImageServiceProvider',
         'Alakkad\WorldCountriesCities\WorldCountriesCitiesServiceProvider',
         'Spatie\Backup\BackupServiceProvider',
-        'CachetHQ\Segment\SegmentServiceProvider'
+        'CachetHQ\Segment\SegmentServiceProvider',
         //'PulkitJalan\Google\GoogleServiceProvider'
+        Spatie\MediaLibrary\MediaLibraryServiceProvider::class,
     ],
 
     /*
