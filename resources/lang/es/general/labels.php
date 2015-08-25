@@ -129,5 +129,6 @@ return [
     'tutorials'                     => 'Tutorial|Tutoriales',
     'articles'                      => 'Artículos',
     'brief'                         => 'Brief',
-    'teams'                         => 'Equipo|Equipos'
+    'teams'                         => 'Equipo|Equipos',
+    'documents'                     => 'Documento|Documentos'
 ];

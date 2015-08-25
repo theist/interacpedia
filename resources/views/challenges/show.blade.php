@@ -24,6 +24,7 @@
     @include('challenges.details.menu',['items'=>[
                                             'info'=>['label'=>'Info','link'=>'/challenges/'. $challenge->id .'/info'],
                                             'participants'=>['label'=>'Participantes','link'=>'/challenges/'. $challenge->id .'/participants'],
+                                            'documents'=>['label'=>'Documentos','link'=>'/challenges/'.$challenge->id.'/docs'],
                                             'comments'=>['label'=>'Comentarios','link'=>'/challenges/'.$challenge->id.'/comments']
                                             ],
                                     'active'=>$option
