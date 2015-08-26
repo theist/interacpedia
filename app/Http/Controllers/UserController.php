@@ -47,7 +47,7 @@ class UserController extends Controller {
         $tags_searching_resources = $user->tags()->where( 'type', 'searching_resources' )->lists( 'name', 'id' );
         $tags_searching_experts = $user->tags()->where( 'type', 'searching_experts' )->lists( 'name', 'id' );
         $tags_searching_personal = $user->tags()->where( 'type', 'searching_personal' )->lists( 'name', 'id' );
-        $users = User::lists( 'name', 'id' );
+        $users = User::orderBy('name','asc')->lists( 'name', 'id' );
 
         return view( 'user.profile', compact( 'user', 'option', 'users',
             'tags_vision', 'tags_dreams', 'tags_likes',
@@ -76,7 +76,7 @@ class UserController extends Controller {
         $tags_searching_resources = $user->tags()->where( 'type', 'searching_resources' )->lists( 'name', 'id' );
         $tags_searching_experts = $user->tags()->where( 'type', 'searching_experts' )->lists( 'name', 'id' );
         $tags_searching_personal = $user->tags()->where( 'type', 'searching_personal' )->lists( 'name', 'id' );
-        $users = User::lists( 'name', 'id' );
+        $users = User::orderBy('name','asc')->lists( 'name', 'id' );
 
         return view( 'user.profile', compact( 'user', 'option', 'users',
             'tags_vision', 'tags_dreams', 'tags_likes',
