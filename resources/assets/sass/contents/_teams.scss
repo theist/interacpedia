@@ -1,0 +1,48 @@
+.teams {
+  .team {
+    &.summary {
+      .title {
+        h4 {
+          text-transform: uppercase;
+          font-family: $font-sans;
+          margin-bottom: 0;
+          color: $light-gray;
+        }
+      }
+      .subtitle {
+        margin-bottom: $grid-gutter-width/2;
+        color: $light-gray;
+      }
+      .links {
+        .btn {
+          font-size: 1rem;
+        }
+      }
+      .content {
+        min-height: 300px;
+        background: white;
+        border: 1px solid $border-gray;
+        margin-bottom: 15px;
+        .fields {
+          .professor{
+            font-style: italic;
+            font-size: 1.2rem;
+            color: $blue;
+            margin: 10px 0;
+          }
+          .challenge{
+            font-size: 1.6rem;
+            margin-top: $grid-gutter-width/2;
+          }
+        }
+      }
+    }
+  }
+  .image {
+    img {
+      @media (max-width: $screen-xs-max) {
+        width: 100%;
+      }
+    }
+  }
+}

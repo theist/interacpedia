@@ -35,6 +35,7 @@ class RouteServiceProvider extends ServiceProvider {
         $router->model('messages', 'App\Interacpedia\Message');
 		$router->model('notifications', 'App\Interacpedia\Notification');
 		$router->model('tutorials', 'App\Interacpedia\Tutorial');
+		$router->model('teams', 'App\Interacpedia\Team');
 
 //
 	}

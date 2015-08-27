@@ -57,6 +57,7 @@ Route::resource('companies','CompaniesController');
 Route::resource('messages','MessagesController');
 Route::resource('notifications','NotificationsController');
 Route::resource('blogs','BlogController');
+Route::resource('teams','TeamsController');
 Route::post('upload','UploadController@store');
 
 Route::get('challenges/{challenge}/delfile/{file}', 'ChallengesController@delfile');

@@ -92,10 +92,11 @@ class LikesController extends Controller
      * Remove the specified resource from storage.
      *
      * @param Like $like
+     * @param Request $request
      * @return Response
      * @throws \Exception
      */
-    public function destroy( Like $like )
+    public function destroy( Like $like, Request $request )
     {
         $model = $like->model;
         $like->delete();

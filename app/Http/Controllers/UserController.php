@@ -149,8 +149,8 @@ class UserController extends Controller {
      */
     public function completecity( Authenticatable $user )
     {
-        $cities = City::lists( 'name', 'id' );
-        $countries = Country::lists( 'name', 'id' );
+        $cities = City::orderBy('name','asc')->lists( 'name', 'id' );
+        $countries = Country::orderBy('name','asc')->lists( 'name', 'id' );
 
         return view( 'user.completecity', compact( 'user', 'cities', 'countries' ) );
     }
@@ -167,7 +167,7 @@ class UserController extends Controller {
         $careers = Career::where( 'name', '<>', 'Todas' )->lists( 'name', 'id' );
         $courses = Course::where( 'name', '<>', 'Todos' )->lists( 'name', 'id' );
         $positions = Position::where( 'name', '<>', 'Todos' )->lists( 'name', 'id' );
-        $sectors = Sector::where( 'name', '<>', 'Todos' )->lists( 'name', 'id' );
+        $sectors = Sector::where( 'name', '<>', 'Todos' )->orderBy('name','asc')->lists( 'name', 'id' );
         $occupation = Occupation::firstOrNew( [ 'user_id' => $user->id ] );
 
         return view( 'user.completeoccupations', compact( 'user', 'occupation', 'types', 'universities', 'companies',

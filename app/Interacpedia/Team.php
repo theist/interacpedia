@@ -16,6 +16,14 @@ class Team extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
+    public function course()
+    {
+        return $this->belongsTo( 'App\Interacpedia\Course' );
+    }
+    /**
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function challenge()
     {
         return $this->belongsTo( 'App\Interacpedia\Challenge' );
@@ -29,5 +37,18 @@ class Team extends Model
     {
         return $this->belongsToMany('App\Interacpedia\User')->withTimestamps();
     }
-
+    /**
+     * Get all of the challenge likes.
+     */
+    public function likes()
+    {
+        return $this->morphMany('App\Interacpedia\Like', 'model');
+    }
+    /**
+     * Get all of the challenge follows.
+     */
+    public function follows()
+    {
+        return $this->morphMany('App\Interacpedia\Follow', 'model');
+    }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Interacpedia\Team;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -16,7 +17,9 @@ class TeamsController extends Controller
      */
     public function index()
     {
-        //
+        $teams = Team::orderBy('id','asc')->get();
+        return view('teams.index',compact('teams'));
+
     }
 
     /**
