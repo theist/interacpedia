@@ -23,6 +23,7 @@
     {
         $items = [
                 'info' => [ 'label' => 'Info', 'link' => '/teams/' . $team->id . '/info' ],
+                'brief' => [ 'label' => 'Brief', 'link' => '/teams/' . $team->id . '/brief' ],
                 'docs' => [ 'label' => 'Documentos', 'link' => '/teams/' . $team->id . '/docs' ]
         ];
     } else
@@ -40,6 +41,6 @@
 @stop
 @section('content')
     <div class="row team-details{{ $option }}">
-        @include('teams.details.'.$option,['team'=>$team])
+        @include('teams.details.'.$option,['team'=>$team,'brief'=>$brief])
     </div>
 @stop

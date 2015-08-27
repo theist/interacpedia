@@ -1,0 +1,45 @@
+.step_header {
+  margin: $grid-gutter-width 0 0 0;
+  position: relative;
+  background: $blue-forms;
+  color: white;
+  font-family: $font-exo2;
+  text-align: center;
+  font-weight: 500;
+  font-size: 3rem;
+  padding: $grid-gutter-width;
+  border-radius: 4px;
+  small {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-family: $font-sans;
+    font-weight: 100;
+  }
+}
+.step_content {
+  padding: $grid-gutter-width;
+  border: 1px solid $border-gray;
+  margin-bottom: $grid-gutter-width;
+  border-radius: 5px;
+}
+.subtitle {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 2.2rem;
+  font-family: $font-sans;
+  color: $title-gray;
+  margin-bottom: $grid-gutter-width/2;
+  margin-top: $grid-gutter-width/2;
+  small {
+    text-transform: none;
+    float: right;
+    color: $text-gray;
+    font-weight: 300;
+    font-size: 1.5rem;
+  }
+  img {
+  }
+  .text {
+    white-space: normal;
+  }
+}

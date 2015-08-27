@@ -5330,43 +5330,6 @@ h4 {
   background: white;
   border: 1px solid #cdcdcd;
   padding: 20px; }
-.challenge_create .subtitle, .challenge_edit .subtitle {
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 2.2rem;
-  font-family: 'Open Sans', sans-serif;
-  color: #333333;
-  margin-bottom: 10px;
-  margin-top: 10px; }
-  .challenge_create .subtitle small, .challenge_edit .subtitle small {
-    text-transform: none;
-    float: right;
-    color: #b5b5b5;
-    font-weight: 300;
-    font-size: 1.5rem; }
-  .challenge_create .subtitle .text, .challenge_edit .subtitle .text {
-    white-space: normal; }
-.challenge_create .step_header, .challenge_edit .step_header {
-  margin: 20px 0 0 0;
-  position: relative;
-  background: #19c8d8;
-  color: white;
-  font-family: 'Exo 2', sans-serif;
-  text-align: center;
-  font-weight: 500;
-  font-size: 3rem;
-  padding: 20px;
-  border-radius: 4px; }
-  .challenge_create .step_header small, .challenge_edit .step_header small {
-    font-size: 1.8rem;
-    text-transform: uppercase;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 100; }
-.challenge_create .step_content, .challenge_edit .step_content {
-  padding: 20px;
-  border: 1px solid #cdcdcd;
-  margin-bottom: 20px;
-  border-radius: 5px; }
 .challenge_create .field-image .zone, .challenge_create .field-images .zone, .challenge_edit .field-image .zone, .challenge_edit .field-images .zone {
   height: 190px;
   padding: 20px;
@@ -5783,6 +5746,46 @@ h4 {
       list-style: none;
       color: #535353;
       font-family: 'Source Sans Pro', sans-serif; }
+
+.step_header {
+  margin: 20px 0 0 0;
+  position: relative;
+  background: #19c8d8;
+  color: white;
+  font-family: 'Exo 2', sans-serif;
+  text-align: center;
+  font-weight: 500;
+  font-size: 3rem;
+  padding: 20px;
+  border-radius: 4px; }
+  .step_header small {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100; }
+
+.step_content {
+  padding: 20px;
+  border: 1px solid #cdcdcd;
+  margin-bottom: 20px;
+  border-radius: 5px; }
+
+.subtitle {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 2.2rem;
+  font-family: 'Open Sans', sans-serif;
+  color: #333333;
+  margin-bottom: 10px;
+  margin-top: 10px; }
+  .subtitle small {
+    text-transform: none;
+    float: right;
+    color: #b5b5b5;
+    font-weight: 300;
+    font-size: 1.5rem; }
+  .subtitle .text {
+    white-space: normal; }
 
 #section-highlight {
   background: #efefef; }

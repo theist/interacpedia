@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Interacpedia\Brief;
 use App\Interacpedia\Team;
 use Illuminate\Http\Request;
 
@@ -50,13 +51,15 @@ class TeamsController extends Controller
      *
      * @param Team $team
      * @param  int $id
+     * @param null $option
      * @return Response
      */
     public function show(Team $team, $id = null, $option = null)
     {
         if ( $id ) $team = Team::find( $id );
         if ( !$option ) $option = "info";
-        return view( 'teams.show', compact( 'team','option' ) );
+        $brief = Brief::firstOrCreate(['team_id'=>$team->id]);
+        return view( 'teams.show', compact( 'team','option','brief' ) );
     }
 
     /**
