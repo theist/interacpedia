@@ -23,7 +23,7 @@
     "oriceon/toastr-5-laravel": "dev-master",
     "intervention/image": "dev-master",
     "laravel/socialite": "~2.0",
-    "laravelcollective/html": "~5.0",
+    "laravelcollective/html": "5.1.*",
     "intervention/imagecache": "~2.2",
     "enyo/dropzone": "~4.0",
     "alakkad/world-countries-cities": "dev-master",

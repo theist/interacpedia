@@ -279,44 +279,7 @@
             </div>
         </div>
         <div class="field-files col-md-5">
-            <div class="subtitle row">
-                <div class="col-sm-2 text-center">
-                    <img src="/images/icons/32x32/files.png" alt="{{ trans_choice('general/labels.documents', 1 ) }}"/>
-                </div>
-                <div class="col-sm-10 text-left text">@lang('general/labels.add') {{ trans_choice('general/labels.documents', 1 ) }}
-                    <small>@lang('general/labels.optional')</small>
-                </div>
-            </div>
-            <div class="form-group">
-                <input type="file" name="document" id="document">
-            </div>
-
-            {{--<input type="hidden" name="files" id="files" value="{{ $challenge->files }}"/>--}}
-            {{--<div class="subtitle row">--}}
-            {{--<div class="col-sm-2 text-center">--}}
-            {{--<img src="/images/icons/32x32/files.png" alt="@lang('challenges/forms.files')"/>--}}
-            {{--</div>--}}
-            {{--<div class="col-sm-10 text-left text">@lang('challenges/forms.files')--}}
-{{--            <small>@lang('general/labels.optional')</small>--}}
-            {{--</div>--}}
-            {{--</div>--}}
-            {{--<div class="form-group">--}}
-            {{--<div class="zone dropzone-previews">--}}
-{{--            @if($challenge->files != "")--}}
-            <?php /* $files_empty = "false" */?>
-{{--            @foreach(explode(",",$challenge->files ) as $file)--}}
-            {{--<div class="preview">--}}
-            {{--<a data-value="{{ $file }}" class="btn btn-danger del_files">@lang('general/labels.remove')</a>--}}
-{{--            {{ substr($file,strrpos($file,"/")+1) }}--}}
-            {{--</div>--}}
-            {{--@endforeach--}}
-            {{--@else--}}
             <?php  $files_empty = "true" ?>
-            {{--<div class="help">@lang('challenges/forms.files_help')</div>--}}
-            {{--@endif--}}
-            {{--</div>--}}
-            {{--</div>--}}
-
         </div>
     </div>
 

@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Lang;
+use Spatie\MediaLibrary\Media;
 
 class ChallengesController extends Controller {
 
@@ -132,6 +133,25 @@ class ChallengesController extends Controller {
         return redirect( 'challenges' );
     }
 
+    public function delfile( $challenge, $file, Request $request )
+    {
+        $challenge = Challenge::find( $challenge );
+        if($m = Media::find($file)){
+            $m->delete();
+            flash()->success( Lang::get( 'general/labels.file_deleted' ) );
+        }
+        return redirect( 'challenges/'.$challenge->id . '/docs' );
+    }
+
+    public function addfile( $challenge, Request $request )
+    {
+        $challenge = Challenge::find( $challenge );
+        if($request->file('document')){
+            $challenge->addMedia($request->file('document'))->usingName($request->input('name'))->toCollection('documents');
+            flash()->success( Lang::get( 'general/labels.file_uploaded' ) );
+        }
+        return redirect( 'challenges/'.$challenge->id . '/docs' );
+    }
     /**
      * Update the specified resource in storage.
      *

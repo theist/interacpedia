@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f5692e1bdf32282228ba6a98ab3f252a",
+    "hash": "9ed68fec85cd21c58afd0d828ff8e388",
     "packages": [
         {
             "name": "alakkad/world-countries-cities",
@@ -93,16 +93,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.3.0",
+            "version": "3.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "9c2a1816e3402806741f3a22a5b38efa945c0a8a"
+                "reference": "ea2c4eb0e21f316d7d22f8bf814f44dd26c45729"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/9c2a1816e3402806741f3a22a5b38efa945c0a8a",
-                "reference": "9c2a1816e3402806741f3a22a5b38efa945c0a8a",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/ea2c4eb0e21f316d7d22f8bf814f44dd26c45729",
+                "reference": "ea2c4eb0e21f316d7d22f8bf814f44dd26c45729",
                 "shasum": ""
             },
             "require": {
@@ -113,6 +113,7 @@
                 "php": ">=5.5"
             },
             "require-dev": {
+                "aws/aws-php-sns-message-validator": "^1.0",
                 "behat/behat": "~3.0",
                 "ext-dom": "*",
                 "ext-json": "*",
@@ -162,7 +163,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2015-08-20 23:06:52"
+            "time": "2015-08-25 20:05:41"
         },
         {
             "name": "cachethq/segment",

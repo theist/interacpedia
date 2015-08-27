@@ -130,5 +130,9 @@ return [
     'articles'                      => 'Artículos',
     'brief'                         => 'Brief',
     'teams'                         => 'Equipo|Equipos',
-    'documents'                     => 'Documento|Documentos'
+    'documents'                     => 'Documento|Documentos',
+    'upload'                        => 'Cargar',
+    'file_uploaded'                 => 'Archivo cargado correctamente',
+    'file_deleted'                 => 'Archivo eliminado correctamente',
+    'file'=>'Archivo'
 ];

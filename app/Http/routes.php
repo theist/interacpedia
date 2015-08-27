@@ -59,8 +59,11 @@ Route::resource('notifications','NotificationsController');
 Route::resource('blogs','BlogController');
 Route::post('upload','UploadController@store');
 
+Route::get('challenges/{challenge}/delfile/{file}', 'ChallengesController@delfile');
+Route::post('challenges/{challenge}/addfile', 'ChallengesController@addfile');
 Route::get('challenges/{challenge}/{option}', 'ChallengesController@show');
 Route::get('courses/{course}/{option}', 'CoursesController@show');
+
 /**
  * Authentication routes
  */
