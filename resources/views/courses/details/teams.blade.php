@@ -7,9 +7,12 @@
             <div class="row">
                 @foreach($teams as $team)
                     <div class="col-md-12 team">
-                        <h4>{{ trans_choice('general/labels.teams', 1) }} # {{ $team->id }}<br>
+                        <a class="pull-right btn" href="/teams/{{ $team->id }}">Ver Equipo</a>
+                        <h4><a href="/teams/{{ $team->id }}">{{ trans_choice('general/labels.teams', 1) }} # {{ $team->id }}</a>
+                            <br>
                             <small>{{ $team->challenge->name }}</small>
                         </h4>
+
                         <div class="row content users">
                             @foreach($team->users as $st)
                                 <div class="user summary col-md-4 {{ $st->agree?'agree':'not-agree' }}">

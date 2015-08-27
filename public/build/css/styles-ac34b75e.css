@@ -5631,7 +5631,7 @@ h4 {
 .teams .team.summary .links .btn {
   font-size: 1rem; }
 .teams .team.summary .content {
-  min-height: 300px;
+  min-height: 310px;
   background: white;
   border: 1px solid #cdcdcd;
   margin-bottom: 15px; }
@@ -5955,6 +5955,8 @@ h4 {
     margin: 0; }
   #section-submenu.challenge-submenu form input[type="submit"] {
     margin: 3px; }
+  #section-submenu a.back {
+    margin-top: 4px; }
   #section-submenu .container {
     padding: 10px 0; }
     #section-submenu .container .nav-pills {

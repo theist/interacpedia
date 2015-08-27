@@ -133,6 +133,7 @@ return [
     'documents'                     => 'Documento|Documentos',
     'upload'                        => 'Cargar',
     'file_uploaded'                 => 'Archivo cargado correctamente',
-    'file_deleted'                 => 'Archivo eliminado correctamente',
-    'file'=>'Archivo'
+    'file_deleted'                  => 'Archivo eliminado correctamente',
+    'file'                          => 'Archivo',
+    'return_to_course'              => "Volver a la clase"
 ];

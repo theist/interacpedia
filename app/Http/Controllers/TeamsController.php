@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Lang;
+use Spatie\MediaLibrary\Media;
 
 class TeamsController extends Controller
 {
@@ -46,12 +48,15 @@ class TeamsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param Team $team
+     * @param  int $id
      * @return Response
      */
-    public function show($id)
+    public function show(Team $team, $id = null, $option = null)
     {
-        //
+        if ( $id ) $team = Team::find( $id );
+        if ( !$option ) $option = "info";
+        return view( 'teams.show', compact( 'team','option' ) );
     }
 
     /**
@@ -86,5 +91,25 @@ class TeamsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function delfile( $team, $file, Request $request )
+    {
+        $team = Team::find( $team );
+        if($m = Media::find($file)){
+            $m->delete();
+            flash()->success( Lang::get( 'general/labels.file_deleted' ) );
+        }
+        return redirect( 'teams/'.$team->id . '/docs' );
+    }
+
+    public function addfile( $team, Request $request )
+    {
+        $team = Team::find( $team );
+        if($request->file('document')){
+            $team->addMedia($request->file('document'))->usingName($request->input('name'))->toCollection($request->input('type','brief'));
+            flash()->success( Lang::get( 'general/labels.file_uploaded' ) );
+        }
+        return redirect( 'teams/'.$team->id . '/docs' );
     }
 }

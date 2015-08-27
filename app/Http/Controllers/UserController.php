@@ -212,6 +212,9 @@ class UserController extends Controller {
             return redirect( 'user/completeend' );
         } else
         {
+            if(str_contains($request->input('birthdate')," ")){
+                $request->merge( array( 'birthdate' => date("Y-m-d",strtotime($request->input('birthdate'))) ) );
+            }
             $user->update( $request->all() );
             if ( $request->input( 'completecategory', false ) )
                 return redirect( 'user/completecity' );

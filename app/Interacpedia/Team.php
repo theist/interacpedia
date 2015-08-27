@@ -3,9 +3,13 @@
 namespace App\Interacpedia;
 
 use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+use Spatie\MediaLibrary\HasMedia\Interfaces\HasMedia;
 
-class Team extends Model
+class Team extends Model implements HasMedia
 {
+    use HasMediaTrait;
+
     protected $fillable = [
         'name',
         'challenge_id',

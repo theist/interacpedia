@@ -64,7 +64,9 @@ Route::get('challenges/{challenge}/delfile/{file}', 'ChallengesController@delfil
 Route::post('challenges/{challenge}/addfile', 'ChallengesController@addfile');
 Route::get('challenges/{challenge}/{option}', 'ChallengesController@show');
 Route::get('courses/{course}/{option}', 'CoursesController@show');
-
+Route::get('teams/{team}/delfile/{file}', 'TeamsController@delfile');
+Route::post('teams/{team}/addfile', 'TeamsController@addfile');
+Route::get('teams/{team}/{option}', 'TeamsController@show');
 /**
  * Authentication routes
  */

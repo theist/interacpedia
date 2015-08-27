@@ -30,7 +30,18 @@
                     @if(Auth::check())
                         <li><a href="/user/profile">@lang('general/menu.profile')</a></li>
                     @endif
-                    <li><a href="{{ action('CoursesController@index') }}">@lang('general/menu.classes')</a></li>
+                    <li>
+                        <a href="{{ action('CoursesController@index') }}" class="dropdown-toggle"
+                           data-hover="dropdown" data-toggle="dropdown" role="button" aria-expanded="false">
+                            @lang('general/menu.classes') <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{ action('CoursesController@index') }}">@lang('general/menu.classes')</a></li>
+                            <li>
+                                <a href="{{ action('TeamsController@index') }}">{{ trans_choice('general/labels.teams',2) }}</a>
+                            </li>
+                        </ul>
+                    </li>
                     <li><a href="{{ action('ChallengesController@index') }}">@lang('general/menu.challenges')</a></li>
                     <li><a href="{{ action('ProjectsController@index') }}">@lang('general/menu.projects')</a></li>
                     <li><a href="{{ action('PartnersController@index') }}">@lang('general/menu.partners')</a></li>
