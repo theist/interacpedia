@@ -16,6 +16,10 @@ class Team extends Model implements HasMedia
         'course_id'
     ];
 
+    public function brief()
+    {
+        return Brief::firstOrCreate(['team_id'=>$this->id]);
+    }
     /**
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

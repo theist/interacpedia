@@ -26,4 +26,30 @@ class Brief extends Model
     {
         return $this->belongsTo( 'App\Interacpedia\Team' );
     }
+
+    /**
+     * @return bool
+     */
+    public function started()
+    {
+        if($this->problem != "" || $this->solution != "" || $this->benefits != ""
+        || $this->analysis != "" || $this->obstacles != "" || $this->success != ""
+        || $this->keys != "" || $this->others != ""){
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * @return bool
+     */
+    public function completed()
+    {
+        if($this->problem != "" && $this->solution != "" && $this->benefits != ""
+            && $this->analysis != "" && $this->obstacles != "" && $this->success != ""
+            && $this->keys != "" && $this->others != ""){
+            return true;
+        }
+        return false;
+    }
 }
