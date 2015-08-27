@@ -7,8 +7,8 @@
                 acceder a estos documentos porque eres miembro de este equipo.</p>
 
             <div class="row documents">
-                @unless($team->getMedia('brief')->count() == 0)
-                    <div class="col-md-12"><h4>Brief</h4></div>
+                @unless($team->getMedia('infographics')->count() == 0)
+                    <div class="col-md-12"><h4>Infografías</h4></div>
                     @foreach($team->getMedia('brief') as $doc)
                         <div class="document summary col-md-6 panel">
                             <hr>
@@ -21,8 +21,8 @@
                         </div>
                     @endforeach
                 @endunless
-                @unless($team->getMedia('plan')->count() == 0)
-                        <div class="col-md-12"><h4>Plan</h4></div>
+                @unless($team->getMedia('others')->count() == 0)
+                        <div class="col-md-12"><h4>Otros</h4></div>
                     @foreach($team->getMedia('plan') as $doc)
                         <div class="document summary col-md-6 panel">
                             <hr>
@@ -51,7 +51,7 @@
                 </div>
                 <div class="form-group col-md-2">
                     {!! Form::label('type', Lang::get('general/labels.type')) !!}
-                    {!! Form::select('type', array('brief' => 'Brief', 'plan' => 'Plan'), null, ['placeholder' => 'Escoja un tipo...','class'=>'form-control']) !!}
+                    {!! Form::select('type', array('infographics' => 'Infografía', 'others' => 'Otros'), null, ['placeholder' => 'Escoja un tipo...','class'=>'form-control']) !!}
                     <p class="help-block">Debe escoger que tipo de archivo está cargando.</p>
                 </div>
                 <div class="form-group col-md-2">
