@@ -6,12 +6,15 @@
                 <div class="col-md-4">Aquí se deben diligenciar los datos correspondientes al brief de la primera entrega del reto. <br></div>
                 <div class="col-md-4 panel panel-info">
                     <div class="panel-heading">Formato</div>
-                    <div class="panel-body">Tambien puedes tener este formato en un documento en word si lo necesitas imprimir o usar cómo guía mientras lo completas: <a
+                    <div class="panel-body">Tambien puedes tener este formato en un documento en word si lo necesitas
+                        imprimir o usar cómo guía mientras lo completas:
+                        <a target="_blank"
                             href="/docs/brief/Formato-Brief-Interacpedia-V3.docx">Formato-Brief-Interacpedia-V3.docx</a></div>
                 </div>
                 <div class="col-md-4 panel panel-info">
                     <div class="panel-heading">Ejemplo</div>
-                    <div class="panel-body">Si deseas ver un ejemplo de Brief diligenciado, puedes descargar este documento: <a
+                    <div class="panel-body">Si deseas ver un ejemplo de Brief diligenciado, puedes descargar este documento:
+                        <a target="_blank"
                             href="/docs/brief/Ejemplo-Brief-Interacpedia-V1.pdf">Ejemplo-Brief-Interacpedia-V1.pdf</a></div>
                 </div>
             </div>
