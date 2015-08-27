@@ -11,12 +11,16 @@
 
             <div class="row documents">
                 @foreach($challenge->getMedia('documents') as $doc)
-                    <div class="document summary col-md-12">
+                    <div class="document summary col-md-6 panel">
                         <hr>
-                        <strong>{{ $doc->name }}:</strong>
-                        <a target="_blank" href="{{ $doc->getUrl() }}">{{ $doc->file_name }}</a>
-                        {{ $doc->humanReadableSize }}<br>
-                        <a href="/challenges/{{ $challenge->id }}/delfile/{{ $doc->id }}" class="deldocument btn btn-danger">Eliminar</a>
+                        <strong>{{ $doc->name }}</strong><br>
+                        <a target="_blank" href="{{ $doc->getUrl() }}">{{ $doc->file_name }}</a><br>
+                        @lang('general/labels.size'): {{ $doc->humanReadableSize }}
+                        @if(Auth::check() && Auth::user()->admin)
+                            <br>
+                            <a href="/challenges/{{ $challenge->id }}/delfile/{{ $doc->id }}"
+                               class="deldocument btn btn-danger">Eliminar</a>
+                        @endif
                     </div>
                 @endforeach
             </div>
@@ -48,7 +52,7 @@
 @section('footer')
     @parent
     <script>
-        $('.deldocument').on('click',function(){
+        $('.deldocument').on('click', function () {
             return confirm('¿Estás seguro que quieres eliminar este documento?');
         });
     </script>
