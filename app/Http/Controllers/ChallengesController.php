@@ -168,7 +168,7 @@ class ChallengesController extends Controller {
         $this->syncTags( $challenge, $request->input( 'tag_list', array() ) );
         $this->syncUniversities( $challenge, $request->input( 'university_list', array() ) );
         $this->syncCareers( $challenge, $request->input( 'career_list', array() ) );
-        $this->syncCourses( $challenge, $request->input( 'course_list', array() ) );
+        //$this->syncCourses( $challenge, $request->input( 'course_list', array() ) );
         $this->syncCreators( $challenge, $request->input( 'creator_list', array() ) );
         flash()->success( Lang::get( 'challenges/messages.edit_ok' ) );
         if($request->file('document')){
