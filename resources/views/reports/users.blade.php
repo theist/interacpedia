@@ -24,8 +24,8 @@
     <hr>
     <div class="row users">
         @foreach($users as $user)
-            <div class="user summary col-md-4 {{ $user->agree?'agree':'not-agree' }}">
-                @include('user.summary',['user'=>$user])
+            <div class="user summary details col-md-4 {{ $user->agree?'agree':'not-agree' }}">
+                @include('user.detailsummary',['user'=>$user])
             </div>
         @endforeach
     </div>

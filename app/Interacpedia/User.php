@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use Illuminate\Support\Facades\Lang;
 
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract {
 
@@ -262,4 +263,19 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this->hasMany( 'App\Interacpedia\Stat' );
     }
 
+    public function lastLogin()
+    {
+        $stat = $this->stats()->where('action','login')->orderBy('updated_at','desc')->first();
+        if($stat){
+            return $stat->updated_at->format('Y-m-d h:i');
+        } else {
+            return Lang::get('general/labels.never');
+        }
+            dd();
+        //$date = $stat->updated_at;
+        //if($date)
+        //    return Carbon::parse( $date )->format( 'Y-m-d h:i' );
+        //else
+        //    return "";
+    }
 }

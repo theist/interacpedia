@@ -8,6 +8,11 @@
       }
     }
     &.summary{
+      .data{
+        font-size: 1.1rem;
+        color: $light-gray;
+        font-weight: 600;
+      }
       .image{
         padding: $grid-gutter-width/2;
       }
