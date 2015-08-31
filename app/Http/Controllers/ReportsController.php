@@ -24,7 +24,6 @@ class ReportsController extends Controller
     {
         $types = ['Todos','Profesor','Mentor','Coordinador','Estudiante'];
         $type = $request->get('type',null);
-        //dd($type);
         if($type !== null  && $types[$type] == 'Mentor')
         {
             $mentors = Mentor::all();
@@ -45,8 +44,18 @@ class ReportsController extends Controller
         } else {
             $users = User::all();
         }
+        $sorts = ['Nombre','Login'];
+        $sort = $request->get('sort',0);
+        if($sort !==null && $sorts[$sort] == "Nombre")
+        {
+            $users = $users->sortBy( 'name' );
+        } else if($sort !==null && $sorts[$sort] == "Login"){
+                $users = $users->sortByDesc(function ($user, $key){
+                    return $user->lastLogin();
+                });
+        }
 
-        return view('reports.users',compact('users','types','type'));
+        return view('reports.users',compact('users','types','type','sorts','sort'));
     }
 
     /**

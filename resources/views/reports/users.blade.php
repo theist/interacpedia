@@ -15,8 +15,12 @@
             {!! Form::label('type', 'Tipo de Usuario') !!}
             {!! Form::select('type',$types, $type,['id' => 'types','class' =>'form-control']) !!}
         </div>
+        <div class="col-md-3 form-group">
+            {!! Form::label('sort', 'Ordenar por') !!}
+            {!! Form::select('sort',$sorts, $sort,['id' => 'sort','class' =>'form-control']) !!}
+        </div>
         <div class="col-md-2 form-group">
-                {!! Form::submit('Filtrar',['class' => 'btn btn-purple btn-big']) !!}
+                {!! Form::submit('Actualizar',['class' => 'btn btn-purple btn-big']) !!}
         </div>
         {!! Form::close() !!}
 
