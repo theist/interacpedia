@@ -25,6 +25,12 @@
         color: $light-gray;
         font-weight: 600;
       }
+      .email{
+        font-size: 1.1rem;
+        color: $light-gray;
+        font-weight: 600;
+        text-transform: none;
+      }
 
       .content {
         @media (min-width: $screen-md-max) {

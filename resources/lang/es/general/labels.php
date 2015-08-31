@@ -153,5 +153,6 @@ return [
     'brief_keys'                    => 'Actividades y/o recursos claves',
     'brief_keys_help'               => 'Menciona de forma concreta cuales son las principales actividades y recursos para lograrlo',
     'brief_others'                  => 'Otros (Depende de los creadores del reto. Remitirse al documento del reto)',
-    'brief_others_help'             => 'Modelo de Negocios, Socios o Indicadores Claves, Proposición de Valor, Impacto Social o Ambiental, Cómo crear y llegar a los clientes'
+    'brief_others_help'             => 'Modelo de Negocios, Socios o Indicadores Claves, Proposición de Valor, Impacto Social o Ambiental, Cómo crear y llegar a los clientes',
+    'report'                        => 'Reporte'
 ];

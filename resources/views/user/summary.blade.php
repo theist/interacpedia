@@ -11,7 +11,7 @@
         <div class="col-md-9">
             <div class="fields">
                 <div class="title"><h4><a href="{{ action('UserController@show',[$user->id]) }}">{{ $user->name }}</a></h4></div>
-                <div class="subtitle">{{ $user->email}}</div>
+                <div class="email">{{ $user->email}}</div>
             </div>
         </div>
     </div>

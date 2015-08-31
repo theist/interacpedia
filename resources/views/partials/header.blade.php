@@ -10,7 +10,12 @@
             <div class="usermenu col-md-5 col-md-offset-6 col-xs-12 text-right">
                 <div class="row text-right">
                     {{--<li role="presentation"><a href="#">English <span class="caret"></span></a></li>--}}
-                    <div class="col-md-2"></div>
+                    @if(Auth::user()->admin)
+                        <a class="btn btn-danger col-xs-12 col-md-2" href="{{ action('ReportsController@users') }}">@lang('general/labels.report')</a>
+                    @else
+                        <div class="col-md-2">
+                        </div>
+                    @endif
                     <a class="btn btn-purple col-xs-12 col-md-2" href="{{ action('ChallengesController@index') }}">@lang('general/labels.challenges')</a>
                     <a class="btn btn-green col-xs-12 col-md-3" href="{{ action('CoursesController@index') }}">@lang('general/labels.courses')</a>
                     {{--<a class="btn btn-purple col-xs-12 col-md-2" href="{{ action('ChallengesController@create') }}">+ @lang('general/labels.challenge')</a>--}}

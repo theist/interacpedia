@@ -5546,6 +5546,11 @@ h4 {
   font-size: 1.1rem;
   color: #535353;
   font-weight: 600; }
+.users .user.summary .email {
+  font-size: 1.1rem;
+  color: #535353;
+  font-weight: 600;
+  text-transform: none; }
 .users .user.summary .content {
   background: white;
   border: 1px solid #cdcdcd;
