@@ -266,12 +266,14 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     public function lastLogin()
     {
         $stat = $this->stats()->where('action','login')->orderBy('updated_at','desc')->first();
-        if($stat){
-            return $stat->updated_at->format('Y-m-d h:i');
+        if($stat)
+        {
+            return $stat->updated_at->format( 'Y-m-d h:i' );
+        } else if($this->agree){
+            return Carbon::parse($this->agree)->format( 'Y-m-d h:i' );
         } else {
             return Lang::get('general/labels.never');
         }
-            dd();
         //$date = $stat->updated_at;
         //if($date)
         //    return Carbon::parse( $date )->format( 'Y-m-d h:i' );
