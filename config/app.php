@@ -145,6 +145,7 @@ return [
         'App\Providers\ConfigServiceProvider',
         'App\Providers\EventServiceProvider',
         'App\Providers\RouteServiceProvider',
+        'App\Providers\AuthServiceProvider',
         'Kaom\Flash\FlashServiceProvider',
         //'Laracasts\Flash\FlashServiceProvider',
         'Kamaln7\Toastr\ToastrServiceProvider',
@@ -213,7 +214,8 @@ return [
         'Form'      => 'Collective\Html\FormFacade',
         'Html'      => 'Collective\Html\HtmlFacade',
         'Image'     => 'Intervention\Image\Facades\Image',
-        'Segment'  => 'CachetHQ\Segment\Facades\Segment'
-        //'Google' => 'PulkitJalan\Google\Facades\Google'
+        'Segment'  => 'CachetHQ\Segment\Facades\Segment',
+        //'Google' => 'PulkitJalan\Google\Facades\Google',
+        'Gate' => Illuminate\Support\Facades\Gate::class
     ],
 ];
