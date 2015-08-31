@@ -5533,10 +5533,6 @@ h4 {
 
 .users .user.not-agree.summary .content {
   background: grey; }
-.users .user.summary .data {
-  font-size: 1.1rem;
-  color: #535353;
-  font-weight: 600; }
 .users .user.summary .image {
   padding: 10px; }
 .users .user.summary .title h4 {
