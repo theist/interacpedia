@@ -15,7 +15,7 @@
         <div class="col-md-2 team">
             <h4>Detalles del equipo</h4>
             <a class="" href="/teams/{{ $team->id }}">Información</a><br>
-            <a class="" href="/teams/{{ $team->id }}/brief">Diligenciar Brief</a><br>
+            <a class="" href="/teams/{{ $team->id }}/brief">Completar Brief</a><br>
             <a class="" href="/teams/{{ $team->id }}/docs">Documentos</a><br>
             <hr>
             <h4>Estado del Brief</h4>
