@@ -4878,6 +4878,9 @@ h4 {
   margin-top: 20px;
   padding: 20px; }
 
+.border-right {
+  border-right: 1px solid #ddd; }
+
 .btn {
   text-transform: uppercase;
   background: #00c853;

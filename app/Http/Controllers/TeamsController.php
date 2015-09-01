@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Lang;
 use Spatie\MediaLibrary\Media;
 
@@ -21,8 +22,8 @@ class TeamsController extends Controller
     public function index()
     {
         $teams = Team::orderBy('id','asc')->get();
-        return view('teams.index',compact('teams'));
-
+        $myteams = Auth::user()->teams;
+        return view('teams.index',compact('teams','myteams'));
     }
 
     /**
