@@ -9,9 +9,13 @@
     <div class="row teams main">
         <div class="content col-md-12">
             <div class="row">
-                @foreach($myteams as $team)
-                    @include('teams.detailsummary',['team'=>$team])
-                @endforeach
+                @if($myteams->count()>0)
+                    @foreach($myteams as $team)
+                        @include('teams.detailsummary',['team'=>$team])
+                    @endforeach
+                @else
+                    <h5>No perteneces a ningún equipo en este momento.</h5>
+                @endif
             </div>
         </div>
     </div>
