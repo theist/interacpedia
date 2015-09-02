@@ -6,7 +6,9 @@
 @stop
 
 @section('section-profile')
-    @include('partials.profile')
+    @if(Auth::check())
+        @include('partials.profile')
+    @endif
 @stop
 
 @section('content')
