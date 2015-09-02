@@ -1,6 +1,14 @@
-@include('messages.add',['suffix'=>'1'])
+
 <div class="user-profile">
-    @foreach($user->allmessages() as $message)
+    <div class="row">
+        <div class="col-md-2">
+            @include('messages.add',['suffix'=>'1'])
+        </div>
+        <div class="col-md-10 text-right">
+            {!! $messages->render() !!}
+        </div>
+    </div>
+    @foreach($messages as $message)
         <?php if ( $message->message_id ) continue; ?>
         <div class="row area message">
             <div class="col-md-2">
@@ -22,5 +30,14 @@
         </div>
         <hr/>
     @endforeach
+    <div class="row">
+        <div class="col-md-2">
+            @include('messages.add',['suffix'=>'2'])
+        </div>
+        <div class="col-md-10 text-right">
+            {!! $messages->render() !!}
+        </div>
+    </div>
 </div>
-@include('messages.add',['suffix'=>'2'])
+
+

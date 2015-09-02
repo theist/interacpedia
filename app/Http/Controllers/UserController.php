@@ -48,8 +48,8 @@ class UserController extends Controller {
         $tags_searching_experts = $user->tags()->where( 'type', 'searching_experts' )->lists( 'name', 'id' );
         $tags_searching_personal = $user->tags()->where( 'type', 'searching_personal' )->lists( 'name', 'id' );
         $users = User::orderBy('name','asc')->lists( 'name', 'id' );
-
-        return view( 'user.profile', compact( 'user', 'option', 'users',
+        $messages = $user->allmessages();
+        return view( 'user.profile', compact( 'user', 'option', 'users','messages',
             'tags_vision', 'tags_dreams', 'tags_likes',
             'tags_work_in', 'tags_work_companies', 'tags_work_areas', 'tags_contribution', 'tags_in_areas',
             'tags_searching_resources', 'tags_searching_experts', 'tags_searching_personal' ) );
@@ -77,8 +77,8 @@ class UserController extends Controller {
         $tags_searching_experts = $user->tags()->where( 'type', 'searching_experts' )->lists( 'name', 'id' );
         $tags_searching_personal = $user->tags()->where( 'type', 'searching_personal' )->lists( 'name', 'id' );
         $users = User::orderBy('name','asc')->lists( 'name', 'id' );
-
-        return view( 'user.profile', compact( 'user', 'option', 'users',
+        $messages = $user->allmessages();
+        return view( 'user.profile', compact( 'user', 'option', 'users','messages',
             'tags_vision', 'tags_dreams', 'tags_likes',
             'tags_work_in', 'tags_work_companies', 'tags_work_areas', 'tags_contribution', 'tags_in_areas',
             'tags_searching_resources', 'tags_searching_experts', 'tags_searching_personal' ) );

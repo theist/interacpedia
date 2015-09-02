@@ -81,9 +81,15 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
         return $this->hasMany( 'App\Interacpedia\Message', 'from_user' );
     }
 
-    public function allmessages()
+    public function allmessages($items = 10)
     {
-        $messages = Message::where( 'from_user', $this->id )->orWhere( 'to_user', $this->id )->orderBy( 'created_at', 'desc' )->get();
+        $messages = Message::whereNull( 'message_id' )
+            ->where(function ($query) {
+                $query->where('to_user', $this->id)
+                    ->orWhere('from_user', $this->id);
+            })
+            ->orderBy( 'created_at', 'desc' )
+            ->paginate($items);
         //$received = $this->messages()->where('message_id', null)->orderBy('created_at', 'desc')->get();
         //$sent = $this->sentmessages()->where('message_id', null)->orderBy('created_at', 'desc')->get();
         return $messages;
