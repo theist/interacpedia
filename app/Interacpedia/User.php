@@ -81,7 +81,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
         return $this->hasMany( 'App\Interacpedia\Message', 'from_user' );
     }
 
-    public function allmessages($items = 10)
+    public function allmessages($items = 20)
     {
         $messages = Message::whereNull( 'message_id' )
             ->where(function ($query) {
