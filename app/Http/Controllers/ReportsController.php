@@ -24,6 +24,7 @@ class ReportsController extends Controller
                 $users = User::all();
                 $sheet->loadView('reports.users.export',['users'=>$users]);
             });
+            $sheet->setAutoFilter();
         })->download('xlsx');
     }
     /**

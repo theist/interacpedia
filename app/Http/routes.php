@@ -35,6 +35,8 @@ Route::get('user/completecategory', 'UserController@completecategory');
 Route::get('user/completecity', 'UserController@completecity');
 Route::get('user/completeoccupations', 'UserController@completeoccupations');
 
+Route::get('messages/mass', 'MessagesController@mass');
+
 Route::group(['middleware' => 'auth'], function () {
 	Route::any('/reports/users/export', 'ReportsController@usersexport');
 	Route::any('/reports/users', 'ReportsController@users');
