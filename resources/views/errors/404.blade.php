@@ -12,9 +12,12 @@
 @stop
 
 @section('content')
-    <div class="content">
-        <br><br><br>
-        <h4>Has accedido a una página que ya no existe.</h4>
-        <br><br><br>
+    <div class="main">
+        <div class="row content">
+            <br><br><br>
+            <h4>Has accedido a una página que ya no existe.</h4>
+            <br><br><br>
+
+        </div>
     </div>
 @stop
