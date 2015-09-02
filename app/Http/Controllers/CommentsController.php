@@ -48,6 +48,7 @@ class CommentsController extends Controller {
             $user = Auth::user();
             $user->stats()->create(['action'=>'comments_add','value'=>$request->get('title'),'model_id'=>$request->get('model_id'),'model_type'=>$request->get('model_type')]);
             $comment = $user->comments()->create( $request->all() );
+            NotificationsController::add($comment);
             return  view( 'comments.show', compact( 'comment' ) );
         } else
         {

@@ -126,6 +126,7 @@ return [
     'published'                     => 'Publicado',
     'by'                            => 'Por',
     'see_message'                   => 'Ver mensaje',
+    'see_comment'                   => 'Ver comentario',
     'tutorials'                     => 'Tutorial|Tutoriales',
     'articles'                      => 'Artículos',
     'brief'                         => 'Brief',

@@ -13,6 +13,11 @@ use App\Http\Controllers\Controller;
 
 class MessagesController extends Controller {
 
+    public function __construct()
+    {
+        $this->middleware( 'auth' );
+    }
+
     public function mass()
     {
         $users = User::where('id','>',398)->get();
