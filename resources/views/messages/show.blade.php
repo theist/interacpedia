@@ -47,7 +47,7 @@
                         <span class="label label-success">Nuevo!!</span>
                         <?php $message->read = 1;$message->save();?>
                     @endif
-                    <strong>Asunto:</strong> {{ $message->title }}</div>
+                    <strong>Asunto:</strong> {{ $message->title!=""?$message->title:"Sin Asunto" }}</div>
                 <div class="content">{{ $message->content }}</div>
             </div>
         </div>
@@ -60,14 +60,33 @@
                 </div>
                 <div class="col-md-6">
                     <div class="title">
-                        @if($msg->read == 0 && Auth::user()->id==$message->to->id)
+                        @if($msg->read == 0 && Auth::user()->id==$msg->to->id)
                             <?php $msg->read = 1;$msg->save();?>
                             <span class="label label-success">Nuevo!!</span>
                         @endif
-                        <strong>Asunto:</strong> {{ $msg->title }}</div>
+                        <strong>Asunto:</strong> {{ $msg->title!=""?$msg->title:"Sin Asunto" }}</div>
                     <div class="content">{{ $msg->content }}</div>
                 </div>
             </div>
+            @foreach($msg->messages as $msg2)
+                <?php $msg2->message_id = $message->id;$msg2->save();?>
+                <div class="row area message">
+                    <div class="col-md-2">&nbsp;</div>
+                    <div class="col-md-4">
+                        <div><strong>De:</strong> {{ $msg2->from->name }}</div>
+                        <div class="created">{{ $msg2->created_at }}</div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="title">
+                            @if($msg2->read == 0 && Auth::user()->id==$msg2->to->id)
+                                <?php $msg2->read = 1;$msg2->save();?>
+                                <span class="label label-success">Nuevo!!</span>
+                            @endif
+                            <strong>Asunto:</strong> {{ $msg2->title!=""?$msg2->title:"Sin Asunto" }}</div>
+                        <div class="content">{{ $msg2->content }}</div>
+                    </div>
+                </div>
+            @endforeach
         @endforeach
         <div class="row area">
             <div class="col-md-2">&nbsp;</div>
