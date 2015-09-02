@@ -12,7 +12,7 @@
 @section('content')
     <div class="content">
         <br><br><br>
-        <img src="/images/demo/no-disponible.png" alt="No disponible" class="img-responsive">
+        <h4>Has accedido a una página que ya no existe.</h4>
         <br><br><br>
     </div>
 @stop
