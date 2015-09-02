@@ -3,15 +3,18 @@
     &.summary{
       .title {
         h4 {
-          text-transform: none;
+          text-transform: uppercase;
           font-family: $font-sans;
           margin-bottom: 0;
           color: $light-gray;
+          font-size: 1.4rem;
         }
       }
       .subtitle{
         color: $light-gray;
         font-weight: 600;
+        text-transform: none;
+        font-size: 1.3rem;
       }
       .body{
         font-size: 1.3rem;
@@ -26,7 +29,7 @@
 
       .content {
         @media (min-width: $screen-md-max) {
-          min-height: 713px;
+          min-height: 725px;
         }
         background: white;
         border: 1px solid $border-gray;

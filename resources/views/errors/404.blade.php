@@ -15,7 +15,7 @@
     <div class="main">
         <div class="row content">
             <br><br><br>
-            <h4>Has accedido a una página que ya no existe.</h4>
+            <h4>Has accedido a una página que no existe.</h4>
             <br><br><br>
 
         </div>

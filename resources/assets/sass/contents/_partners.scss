@@ -12,6 +12,8 @@
       .subtitle{
         margin-bottom: $grid-gutter-width/2;
         color: $light-gray;
+        text-transform: none;
+        font-size: 1.4rem;
       }
       .body{
         font-size: 1.3rem;
@@ -26,7 +28,7 @@
         color: $light-gray ;
       }
       .content {
-        min-height: 539px;
+        min-height: 550px;
         background: white;
         border: 1px solid $border-gray;
         margin-bottom: 15px;
