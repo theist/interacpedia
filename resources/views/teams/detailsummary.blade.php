@@ -15,8 +15,21 @@
         <div class="col-md-2 team">
             <h4>Detalles del equipo</h4>
             <a class="" href="/teams/{{ $team->id }}">Información</a><br>
-            <a class="" href="/teams/{{ $team->id }}/brief">Completar Brief</a><br>
-            <a class="" href="/teams/{{ $team->id }}/docs">Documentos</a><br>
+            @if( Auth::check()
+                && ( $team->users->contains( function ( $key, $value )
+                    {
+                        return $value->id == Auth::user()->id;
+                    } )
+                    || Auth::user()->id == $team->course->user->id
+                    || Auth::user()->admin
+                    || Auth::user()->mentors->count() > 0
+                )
+            )
+
+                <a class="" href="/teams/{{ $team->id }}/brief">Completar Brief</a><br>
+                <a class="" href="/teams/{{ $team->id }}/docs">Documentos</a><br>
+                <a class="" href="/teams/{{ $team->id }}/comments">Comentarios</a><br>
+            @endif
             <hr>
             <h4>Estado del Brief</h4>
             @if($team->brief()->completed())
@@ -26,6 +39,7 @@
             @else
                 <span class="label label-danger">Sin Comenzar</span>
             @endif
+
         </div>
     </div>
     <hr/>
