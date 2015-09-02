@@ -1,4 +1,15 @@
 <div class="step_content">
+    <div class="field-name">
+        <div class="subtitle row">
+            <div class="col-sm-1 text-center"><img src="/images/icons/32x32/describe.png"
+                                                   alt="@lang('general/labels.brief_name')"/></div>
+            <div class="col-sm-11 text-left text">@lang('general/labels.brief_name')</div>
+        </div>
+        <div class="form-group">
+            <p class="help">@lang('general/labels.brief_name_help')</p>
+            {!! Form::text('name', null, ['maxlength'=>140,'class' => 'form-control maxlength']) !!}
+        </div>
+    </div>
     <?php $fields = [ 'problem', 'solution', 'benefits','analysis','obstacles','success','keys','others' ];?>
     @foreach($fields as $field)
         <div class="field-{{ $field }}">
@@ -9,7 +20,7 @@
             </div>
             <div class="form-group">
                 <p class="help">@lang('general/labels.brief_'. $field .'_help')</p>
-                {!! Form::textarea($field, null, ['maxlength'=>140,'class' => 'form-control maxlength', 'rows'=>7,
+                {!! Form::textarea($field, null, ['maxlength'=>($field=="problem"?140:400),'class' => 'form-control maxlength', 'rows'=>7,
                 'placeholder'=>Lang::get('general/labels.write_here')]) !!}
             </div>
         </div>
