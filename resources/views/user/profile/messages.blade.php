@@ -17,7 +17,7 @@
                     @if($message->read == 0 && Auth::user()->id==$message->to->id)
                         <span class="label label-success">Nuevo!!</span>
                     @endif
-                    <strong>Asunto:</strong> <a href="{{ action('MessagesController@show',[$message->id]) }}">{{ $message->title }}</a></div>
+                    <strong>Asunto:</strong> <a href="{{ action('MessagesController@show',[$message->id]) }}">{{ $message->title!=""?$message->title:"Sin Asunto" }}</a></div>
             </div>
         </div>
         <hr/>
