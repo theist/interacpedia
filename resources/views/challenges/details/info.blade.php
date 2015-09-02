@@ -125,7 +125,7 @@
                             </div>
                             <div class="col-md-7">
                                 {{ $coordinator->name }}<br>
-                                @include('messages.add',['from'=>Auth::user()->id,'to'=>$coordinator->user->id,'label'=> Lang::get('general/labels.contact')])
+                                @include('messages.add',['suffix'=>'coor_'.$coordinator->user->id,'from'=>Auth::user()->id,'to'=>$coordinator->user->id,'label'=> Lang::get('general/labels.contact')])
                             </div>
 
                         </div>

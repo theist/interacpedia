@@ -8,7 +8,7 @@
     @if($links)
     <div class="row links">
         <div class="col-md-6">
-            @include('messages.add',['from'=>Auth::user()->id,'to'=>$user->id,'suffix'=>'_int','label'=> Lang::get('general/labels.contact')])
+            @include('messages.add',['from'=>Auth::user()->id,'to'=>$user->id,'suffix'=>'_int_'.$user->id,'label'=> Lang::get('general/labels.contact')])
             <a href="/user/{{ $user->id }}">@lang('challenges/forms.full_bio')</a>
         </div>
         <div class="col-md-6"></div>

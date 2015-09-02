@@ -38,7 +38,7 @@
                     </div>
                     <div class="col-md-7">
                         {{ $mentor->name }}<br>
-                        @include('messages.add',['from'=>Auth::user()->id,'to'=>$mentor->user->id,'label'=> Lang::get('general/labels.contact')])
+                        @include('messages.add',['suffix'=>'ment_'.$mentor->user->id,'from'=>Auth::user()->id,'to'=>$mentor->user->id,'label'=> Lang::get('general/labels.contact')])
                     </div>
                 </div>
             @endforeach
