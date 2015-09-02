@@ -7,7 +7,7 @@
         <div class="title">{{ $comment->title }}</div>
         <div class="author">{{ $comment->user->name }}</div>
         <div class="created">{{ $comment->created_at }}</div>
-        <div class="text">{{ $comment->comment }}</div>
+        <div class="text">{!! $comment->comment !!}</div>
         @if(Auth::user()->id == $comment->user->id)
             {!! Form::open(array('route' => array('comments.destroy', $comment->id),'class'=>'delete-comment', 'method' => 'delete'))!!}
             <input  type="submit" class="btn btn-danger btn-xs deleteComment" value="@lang('general/labels.delete')">
