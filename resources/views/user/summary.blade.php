@@ -3,7 +3,7 @@
         <div class="col-md-3">
             <div class="image">
                 <a href="{{ action('UserController@show',[$user->id]) }}">
-                    <img class="img-circle" height="80" src="{{ imagestyle($user->avatar,'fit100x100') }}"
+                    <img class="img-circle img-responsive" height="80" src="{{ imagestyle($user->avatar,'fit100x100') }}"
                          alt="{{ $user->name }}"/>
                 </a>
             </div>
