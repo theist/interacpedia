@@ -16,8 +16,12 @@
                     @if($notification->type=="message")
                         <a href="{{ action('MessagesController@show',[$notification->model_id]) }}">@lang('general/labels.see_message')</a>
                     @elseif($notification->type=="comment")
-                        <?php $comment = \App\Interacpedia\Comment::findOrNew($notification->model_id);?>
-                        <a href="{{ url('teams/'.$comment->model_id.'/comments') }}">@lang('general/labels.see_comment')</a>
+                        <?php $comment = \App\Interacpedia\Comment::findOrNew( $notification->model_id );?>
+                        @if($comment->model_type == "App\\Interacpedia\\Challenge")
+                            <a href="{{ url('challenges/'.$comment->model_id.'/comments') }}">@lang('general/labels.see_comment')</a>
+                        @elseif($comment->model_type == "App\\Interacpedia\\Team")
+                            <a href="{{ url('teams/'.$comment->model_id.'/comments') }}">@lang('general/labels.see_comment')</a>
+                        @endif
                     @endif
                 </div>
             </div>
