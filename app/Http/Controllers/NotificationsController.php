@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Interacpedia\Challenge;
 use App\Interacpedia\Notification;
 use App\Interacpedia\Team;
 use App\Interacpedia\User;
@@ -119,7 +120,7 @@ class NotificationsController extends Controller
                     ';
                     $not = Notification::create($data);
                     Mail::queue('emails.notification', ['text'=>$text], function ($m) use ($user) {
-                        $m->to("jcorrego@gmail.com", $user->name)->subject('Tu equipo tiene un nuevo comentario en Interacpedia');
+                        $m->to($user->email, $user->name)->subject('Tu equipo tiene un nuevo comentario en Interacpedia');
                     });
                 }
                 foreach($team->course->mentors as $mentor){
@@ -133,7 +134,7 @@ class NotificationsController extends Controller
                     ';
                     $not = Notification::create($data);
                     Mail::queue('emails.notification', ['text'=>$text], function ($m) use ($user) {
-                        $m->to("jcorrego@gmail.com", $user->name)->subject('Uno de tus equipos tiene un nuevo comentario en Interacpedia');
+                        $m->to($user->email, $user->name)->subject('Uno de tus equipos tiene un nuevo comentario en Interacpedia');
                     });
                 }
                 $admins = User::where('admin',1)->get();
@@ -148,10 +149,26 @@ class NotificationsController extends Controller
                     $not = Notification::create( $data );
                     Mail::queue( 'emails.notification', [ 'text' => $text ], function ( $m ) use ( $user )
                     {
-                        $m->to( "jcorrego@gmail.com", $user->name )->subject( 'Un equipo tiene un nuevo comentario en Interacpedia' );
+                        $m->to( $user->email, $user->name )->subject( 'Un equipo tiene un nuevo comentario en Interacpedia' );
                     } );
                 }
-
+            } else if($model->model_type == "App\\Interacpedia\\Challenge"){
+                $challenge = Challenge::findOrNew($model->model_id);
+                $admins = User::where('admin',1)->get();
+                foreach($admins as $user){
+                    $data[ 'user_id' ] = $user->id;
+                    $data[ 'message' ] = $author->name . ' ha hecho un nuevo comentario en un reto.';
+                    $text = '<h4>Hola ' . $user->name . '</h4><br>
+                     <h5>' . $author->name . ' ha hecho un nuevo comentario en un reto.</h5><br>
+                     Reto: ' . $challenge->name . '<br>
+                     <a href="' . url( "challenges/" . $challenge->id . "/comments" ) . '">Ver Comentarios</a>
+                    ';
+                    $not = Notification::create( $data );
+                    Mail::queue( 'emails.notification', [ 'text' => $text ], function ( $m ) use ( $user )
+                    {
+                        $m->to( $user->email, $user->name )->subject( 'Un reto tiene un nuevo comentario en Interacpedia' );
+                    } );
+                }
             }
         } else {
             $data['type'] = 'other';
