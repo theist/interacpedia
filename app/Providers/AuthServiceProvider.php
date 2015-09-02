@@ -30,5 +30,9 @@ class AuthServiceProvider extends ServiceProvider
         $gate->define('delete-challenge', function ($user, $challenge) {
             return $user->admin;
         });
+        $gate->define('delete-comment', function ($user, $comment) {
+            return  ($user->id === $comment->user->id);
+        });
+
     }
 }

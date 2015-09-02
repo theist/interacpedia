@@ -8,11 +8,11 @@
         <div class="author">{{ $comment->user->name }}</div>
         <div class="created">{{ $comment->created_at }}</div>
         <div class="text">{!! str_replace("\n","<br>",$comment->comment) !!}</div>
-        @if(Auth::user()->id == $comment->user->id)
-            {!! Form::open(array('route' => array('comments.destroy', $comment->id),'class'=>'delete-comment', 'method' => 'delete'))!!}
-            <input  type="submit" class="btn btn-danger btn-xs deleteComment" value="@lang('general/labels.delete')">
-            {!! Form::close() !!}
-        @endif
+        @can('delete-comment', $comment)
+        {!! Form::open(array('route' => array('comments.destroy', $comment->id),'class'=>'delete-comment', 'method' => 'delete'))!!}
+        <input type="submit" class="btn btn-danger btn-xs deleteComment" value="@lang('general/labels.delete')">
+        {!! Form::close() !!}
+        @endcan
         <hr/>
     </div>
 </div>

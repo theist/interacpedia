@@ -25,7 +25,14 @@
                     @if($message->read == 0 && Auth::user()->id==$message->to->id)
                         <span class="label label-success">Nuevo!!</span>
                     @endif
-                    <strong>Asunto:</strong> <a href="{{ action('MessagesController@show',[$message->id]) }}">{{ $message->title!=""?$message->title:"Sin Asunto" }}</a></div>
+                    <strong>Asunto:</strong> <a href="{{ action('MessagesController@show',[$message->id]) }}">{{ $message->title!=""?$message->title:"Sin Asunto" }}</a>
+                </div>
+                @foreach($message->messages as $msg)
+                    <div class="row">
+                        <div class="col-md-6"><strong>Respuesta:</strong> {{ $msg->from->name }}</div>
+                        <div class="col-md-6">{{ $msg->created_at }}</div>
+                    </div>
+                @endforeach
             </div>
         </div>
         <hr/>
