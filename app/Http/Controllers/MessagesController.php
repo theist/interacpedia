@@ -15,7 +15,7 @@ class MessagesController extends Controller {
 
     public function mass()
     {
-        $users = User::where('id','<>',3)->get();
+        $users = User::where('id','>',398)->get();
         foreach($users as $user){
             $data = [];
             $data[ "message_id" ] = null;
