@@ -36,7 +36,9 @@ Route::get('user/completecity', 'UserController@completecity');
 Route::get('user/completeoccupations', 'UserController@completeoccupations');
 
 Route::group(['middleware' => 'auth'], function () {
+	Route::any('/reports/users/export', 'ReportsController@usersexport');
 	Route::any('/reports/users', 'ReportsController@users');
+
 });
 
 /**

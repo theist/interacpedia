@@ -14,7 +14,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
 
     use Authenticatable, Authorizable, CanResetPassword;
 
-    protected $dates = [ 'birthdate','agree' ];
+    protected $dates = [ 'birthdate', 'agree' ];
     /**
      * The database table used by the model.
      *
@@ -62,34 +62,37 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
      */
     public function messages()
     {
-        return  $this->hasMany( 'App\Interacpedia\Message','to_user' );
+        return $this->hasMany( 'App\Interacpedia\Message', 'to_user' );
     }
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function notifications()
     {
-        return  $this->hasMany( 'App\Interacpedia\Notification' )->orderBy('created_at', 'desc');
+        return $this->hasMany( 'App\Interacpedia\Notification' )->orderBy( 'created_at', 'desc' );
     }
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function sentmessages()
     {
-        return  $this->hasMany( 'App\Interacpedia\Message','from_user' );
+        return $this->hasMany( 'App\Interacpedia\Message', 'from_user' );
     }
 
     public function allmessages()
     {
-        $messages = Message::where('from_user',$this->id)->orWhere('to_user',$this->id)->orderBy('created_at', 'desc')->get();
+        $messages = Message::where( 'from_user', $this->id )->orWhere( 'to_user', $this->id )->orderBy( 'created_at', 'desc' )->get();
         //$received = $this->messages()->where('message_id', null)->orderBy('created_at', 'desc')->get();
         //$sent = $this->sentmessages()->where('message_id', null)->orderBy('created_at', 'desc')->get();
         return $messages;
     }
 
-    public function unreadmessages(  )
+    public function unreadmessages()
     {
-        $unread = Message::where('to_user',$this->id)->where('read',0)->count();
+        $unread = Message::where( 'to_user', $this->id )->where( 'read', 0 )->count();
+
         return $unread;
     }
 
@@ -112,27 +115,34 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     /**
      * @return bool
      */
-    public function inChallenge($id)
+    public function inChallenge( $id )
     {
-        $challenge = Challenge::findOrNew($id);
-        if($this->admin)return true;
-        foreach($challenge->coordinators as $coor){
-            if($coor->id == $this->id) return true;
+        $challenge = Challenge::findOrNew( $id );
+        if ( $this->admin ) return true;
+        foreach ( $challenge->coordinators as $coor )
+        {
+            if ( $coor->id == $this->id ) return true;
         }
-        foreach($challenge->teams as $team){
-            foreach($team->users as $us){
-                if($us->id == $this->id) return true;
+        foreach ( $challenge->teams as $team )
+        {
+            foreach ( $team->users as $us )
+            {
+                if ( $us->id == $this->id ) return true;
             }
         }
-        foreach($challenge->courses as $course){
-            if($course->user_id == $this->id) return true;
-            foreach($course->mentors as $mentor){
-                if($mentor->user_id == $this->id) return true;
+        foreach ( $challenge->courses as $course )
+        {
+            if ( $course->user_id == $this->id ) return true;
+            foreach ( $course->mentors as $mentor )
+            {
+                if ( $mentor->user_id == $this->id ) return true;
             }
         }
+
         return false;
 
     }
+
     /**
      * Get the teams associated with this user
      *
@@ -140,14 +150,31 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
      */
     public function teams()
     {
-        return $this->belongsToMany('App\Interacpedia\Team')->withTimestamps();
+        return $this->belongsToMany( 'App\Interacpedia\Team' )->withTimestamps();
     }
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function challenges()
     {
         return $this->hasMany( 'App\Interacpedia\Challenge' );
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function mentors()
+    {
+        return $this->hasMany( 'App\Interacpedia\Mentor' );
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function coordinators()
+    {
+        return $this->hasMany( 'App\Interacpedia\Coordinator' );
     }
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -158,12 +185,24 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     }
 
     /**
+     * Get the courses associated with this student
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function classes()
+    {
+        return $this->belongsToMany('App\Interacpedia\Course')->withTimestamps();
+    }
+
+
+    /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function companies()
     {
         return $this->hasMany( 'App\Interacpedia\Company' );
     }
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
@@ -182,10 +221,12 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
 
     public function occupation()
     {
-        $occ = Occupation::firstOrCreate(['user_id'=>$this->id]);
+        $occ = Occupation::firstOrCreate( [ 'user_id' => $this->id ] );
+
         //dd($occ);
         return $occ;
     }
+
     /**
      * Get all the tags associated with this user
      *
@@ -193,8 +234,9 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
      */
     public function tags()
     {
-        return $this->belongsToMany('App\Interacpedia\Tag')->withTimestamps();
+        return $this->belongsToMany( 'App\Interacpedia\Tag' )->withTimestamps();
     }
+
     /**
      * Get all the groups associated with this user
      *
@@ -202,7 +244,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
      */
     public function groups()
     {
-        return $this->belongsToMany('App\Interacpedia\Group');
+        return $this->belongsToMany( 'App\Interacpedia\Group' );
     }
 
     /**
@@ -223,6 +265,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
             return null;
         }
     }
+
     /**
      * @param $date
      */
@@ -241,6 +284,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
             return null;
         }
     }
+
     /**
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -249,6 +293,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     {
         return $this->belongsTo( 'App\Interacpedia\City' );
     }
+
     /**
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -257,6 +302,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     {
         return $this->belongsTo( 'App\Interacpedia\Country' );
     }
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
@@ -267,19 +313,35 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
 
     public function lastLogin()
     {
-        $stat = $this->stats()->where('action','login')->orderBy('updated_at','desc')->first();
-        if($stat)
+        $stat = $this->stats()->where( 'action', 'login' )->orderBy( 'updated_at', 'desc' )->first();
+        if ( $stat )
         {
             return $stat->updated_at->format( 'Y-m-d h:i' );
-        } else if($this->agree){
-            return Carbon::parse($this->agree)->format( 'Y-m-d h:i' );
-        } else {
-            return Lang::get('general/labels.never');
+        } else if ( $this->agree )
+        {
+            return Carbon::parse( $this->agree )->format( 'Y-m-d h:i' );
+        } else
+        {
+            return Lang::get( 'general/labels.never' );
         }
         //$date = $stat->updated_at;
         //if($date)
         //    return Carbon::parse( $date )->format( 'Y-m-d h:i' );
         //else
         //    return "";
+    }
+
+    public function perfil()
+    {
+        if ( $this->mentors()->count() )
+            return "Mentor";
+        else if ( $this->courses()->count() )
+            return "Profesor";
+        else if ( $this->coordinators()->count() )
+            return "Coordinador";
+        else if ( $this->teams()->count() )
+            return "Estudiante";
+        else
+            return "Otro";
     }
 }

@@ -10,10 +10,22 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ReportsController extends Controller
 {
 
+    public function usersexport()
+    {
+        //$users = User::all();
+        //return view('reports.users.export',compact('users'));
+        Excel::create('Reporte_Usuarios_'.date("Y-m-d"), function($excel) {
+            $excel->sheet('Listado', function($sheet) {
+                $users = User::all();
+                $sheet->loadView('reports.users.export',['users'=>$users]);
+            });
+        })->download('xlsx');
+    }
     /**
      * Users report
      *

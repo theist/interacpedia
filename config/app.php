@@ -158,6 +158,7 @@ return [
         'CachetHQ\Segment\SegmentServiceProvider',
         //'PulkitJalan\Google\GoogleServiceProvider'
         Spatie\MediaLibrary\MediaLibraryServiceProvider::class,
+        'Maatwebsite\Excel\ExcelServiceProvider',
     ],
 
     /*
@@ -216,6 +217,7 @@ return [
         'Image'     => 'Intervention\Image\Facades\Image',
         'Segment'  => 'CachetHQ\Segment\Facades\Segment',
         //'Google' => 'PulkitJalan\Google\Facades\Google',
-        'Gate' => Illuminate\Support\Facades\Gate::class
+        'Gate' => Illuminate\Support\Facades\Gate::class,
+        'Excel' => 'Maatwebsite\Excel\Facades\Excel',
     ],
 ];

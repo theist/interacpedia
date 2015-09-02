@@ -23,7 +23,9 @@
                 {!! Form::submit('Actualizar',['class' => 'btn btn-purple btn-big']) !!}
         </div>
         {!! Form::close() !!}
-
+        <div class="col-md-2 form-group">
+            <a href="/reports/users/export" class="btn">Exportar Excel</a>
+        </div>
     </div>
     <hr>
     <div class="row users">
