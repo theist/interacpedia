@@ -75,6 +75,7 @@ class BriefsController extends Controller
     public function update(Brief $brief, Request $request)
     {
         $brief->update( $request->all() );
+        NotificationsController::add($brief);
         flash()->success( Lang::get( 'general/labels.update_ok' ) );
         return redirect( 'teams/'.$brief->team->id . '/brief' );
     }

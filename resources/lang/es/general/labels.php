@@ -127,6 +127,7 @@ return [
     'by'                            => 'Por',
     'see_message'                   => 'Ver mensaje',
     'see_comment'                   => 'Ver comentario',
+    'see_brief'                     => 'Ver brief',
     'tutorials'                     => 'Tutorial|Tutoriales',
     'articles'                      => 'Artículos',
     'brief'                         => 'Brief',

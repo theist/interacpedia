@@ -13,8 +13,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
-class NotificationsController extends Controller
-{
+class NotificationsController extends Controller {
+
     /**
      * Display a listing of the resource.
      *
@@ -38,10 +38,10 @@ class NotificationsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  Request  $request
+     * @param  Request $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store( Request $request )
     {
         //
     }
@@ -49,10 +49,10 @@ class NotificationsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return Response
      */
-    public function show($id)
+    public function show( $id )
     {
         //
     }
@@ -60,10 +60,10 @@ class NotificationsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return Response
      */
-    public function edit($id)
+    public function edit( $id )
     {
         //
     }
@@ -71,11 +71,11 @@ class NotificationsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  Request  $request
-     * @param  int  $id
+     * @param  Request $request
+     * @param  int $id
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update( Request $request, $id )
     {
         //
     }
@@ -83,62 +83,90 @@ class NotificationsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return Response
      */
-    public function destroy($id)
+    public function destroy( $id )
     {
         //
     }
 
     public static function add( $model )
     {
-        $data = [];
-        $data['model_type'] = get_class($model);
-        $data['model_id'] = $model->id;
-        if($data['model_type']=="App\\Interacpedia\\Message"){
+        $data = [ ];
+        $data[ 'model_type' ] = get_class( $model );
+        $data[ 'model_id' ] = $model->id;
+        if ( $data[ 'model_type' ] == "App\\Interacpedia\\Message" )
+        {
             $user = User::findOrNew( $model[ 'to_user' ] );
             $data[ 'user_id' ] = $user->id;
             $data[ 'type' ] = 'message';
             $data[ 'message' ] = 'Has recibido un nuevo mensaje de ' . User::findOrNew( $model[ 'from_user' ] )->name;
-            $not = Notification::create($data);
-            Mail::queue('emails.newmessage', ['user' => $user,'notification'=>$not,'model'=>$model], function ($m) use ($user) {
-                $m->to($user->email, $user->name)->subject('Tienes un nuevo mensaje en Interacpedia');
-            });
-        } else if($data['model_type']=="App\\Interacpedia\\Comment"){
+            $not = Notification::create( $data );
+            Mail::queue( 'emails.newmessage', [ 'user' => $user, 'notification' => $not, 'model' => $model ], function ( $m ) use ( $user )
+            {
+                $m->to( $user->email, $user->name )->subject( 'Tienes un nuevo mensaje en Interacpedia' );
+            } );
+        } else if ( $data[ 'model_type' ] == "App\\Interacpedia\\Brief" )
+        {
+            $admins = User::where( 'admin', 1 )->get();
+            foreach ( $admins as $user )
+            {
+                $data[ 'user_id' ] = $user->id;
+                $data[ 'type' ] = 'brief';
+                $data[ 'message' ] = 'Se ha hecho una actualización a un Brief.';
+                $text = '<h4>Hola ' . $user->name . '</h4><br>
+                     <h5>' . Auth::user()->name . ' ha actualizado un brief.</h5><br>
+                     Equipo # ' . $model->team_id . '<br>
+                     <a href="' . url( "teams/" . $model->team_id . "/brief" ) . '">Ver Brief</a>
+                    ';
+                $not = Notification::create( $data );
+                Mail::queue( 'emails.notification', [ 'text' => $text ], function ( $m ) use ( $user )
+                {
+                    $m->to( $user->email, $user->name )->subject( 'Actualización a un Brief' );
+                } );
+            }
+        } else if ( $data[ 'model_type' ] == "App\\Interacpedia\\Comment" )
+        {
             $author = User::findOrNew( $model[ 'user_id' ] );
             $data[ 'type' ] = 'comment';
-            if($model->model_type == "App\\Interacpedia\\Team"){
-                $team = Team::findOrNew($model->model_id);
-                foreach($team->users as $user){
+            if ( $model->model_type == "App\\Interacpedia\\Team" )
+            {
+                $team = Team::findOrNew( $model->model_id );
+                foreach ( $team->users as $user )
+                {
                     $data[ 'user_id' ] = $user->id;
-                    $data[ 'message' ] = $author->name .' ha hecho un nuevo comentario en tu equipo.';
-                    $text = '<h4>Hola ' .$user->name . '</h4><br>
-                     <h5>' . $author->name .' ha hecho un nuevo comentario en tu equipo.</h5><br>
-                     Equipo # '. $team->id .'<br>
-                     <a href="'. url("teams/".$team->id."/comments") .'">Ver Comentarios</a>
+                    $data[ 'message' ] = $author->name . ' ha hecho un nuevo comentario en tu equipo.';
+                    $text = '<h4>Hola ' . $user->name . '</h4><br>
+                     <h5>' . $author->name . ' ha hecho un nuevo comentario en tu equipo.</h5><br>
+                     Equipo # ' . $team->id . '<br>
+                     <a href="' . url( "teams/" . $team->id . "/comments" ) . '">Ver Comentarios</a>
                     ';
-                    $not = Notification::create($data);
-                    Mail::queue('emails.notification', ['text'=>$text], function ($m) use ($user) {
-                        $m->to($user->email, $user->name)->subject('Tu equipo tiene un nuevo comentario en Interacpedia');
-                    });
+                    $not = Notification::create( $data );
+                    Mail::queue( 'emails.notification', [ 'text' => $text ], function ( $m ) use ( $user )
+                    {
+                        $m->to( $user->email, $user->name )->subject( 'Tu equipo tiene un nuevo comentario en Interacpedia' );
+                    } );
                 }
-                foreach($team->course->mentors as $mentor){
+                foreach ( $team->course->mentors as $mentor )
+                {
                     $user = $mentor->user;
                     $data[ 'user_id' ] = $user->id;
-                    $data[ 'message' ] = $author->name .' ha hecho un nuevo comentario en un equipo de una de tus clases.';
-                    $text = '<h4>Hola ' .$user->name . '</h4><br>
-                     <h5>' . $author->name .' ha hecho un nuevo comentario en un equipo de una de tus clases.</h5><br>
-                     Equipo # '. $team->id .'<br>
-                     <a href="'. url("teams/".$team->id."/comments") .'">Ver Comentarios</a>
+                    $data[ 'message' ] = $author->name . ' ha hecho un nuevo comentario en un equipo de una de tus clases.';
+                    $text = '<h4>Hola ' . $user->name . '</h4><br>
+                     <h5>' . $author->name . ' ha hecho un nuevo comentario en un equipo de una de tus clases.</h5><br>
+                     Equipo # ' . $team->id . '<br>
+                     <a href="' . url( "teams/" . $team->id . "/comments" ) . '">Ver Comentarios</a>
                     ';
-                    $not = Notification::create($data);
-                    Mail::queue('emails.notification', ['text'=>$text], function ($m) use ($user) {
-                        $m->to($user->email, $user->name)->subject('Uno de tus equipos tiene un nuevo comentario en Interacpedia');
-                    });
+                    $not = Notification::create( $data );
+                    Mail::queue( 'emails.notification', [ 'text' => $text ], function ( $m ) use ( $user )
+                    {
+                        $m->to( $user->email, $user->name )->subject( 'Uno de tus equipos tiene un nuevo comentario en Interacpedia' );
+                    } );
                 }
-                $admins = User::where('admin',1)->get();
-                foreach($admins as $user){
+                $admins = User::where( 'admin', 1 )->get();
+                foreach ( $admins as $user )
+                {
                     $data[ 'user_id' ] = $user->id;
                     $data[ 'message' ] = $author->name . ' ha hecho un nuevo comentario en un equipo.';
                     $text = '<h4>Hola ' . $user->name . '</h4><br>
@@ -152,10 +180,12 @@ class NotificationsController extends Controller
                         $m->to( $user->email, $user->name )->subject( 'Un equipo tiene un nuevo comentario en Interacpedia' );
                     } );
                 }
-            } else if($model->model_type == "App\\Interacpedia\\Challenge"){
-                $challenge = Challenge::findOrNew($model->model_id);
-                $admins = User::where('admin',1)->get();
-                foreach($admins as $user){
+            } else if ( $model->model_type == "App\\Interacpedia\\Challenge" )
+            {
+                $challenge = Challenge::findOrNew( $model->model_id );
+                $admins = User::where( 'admin', 1 )->get();
+                foreach ( $admins as $user )
+                {
                     $data[ 'user_id' ] = $user->id;
                     $data[ 'message' ] = $author->name . ' ha hecho un nuevo comentario en un reto.';
                     $text = '<h4>Hola ' . $user->name . '</h4><br>
@@ -170,9 +200,10 @@ class NotificationsController extends Controller
                     } );
                 }
             }
-        } else {
-            $data['type'] = 'other';
-            $data['message'] = 'Tienes una nueva notificacion en Interacpedia';
+        } else
+        {
+            $data[ 'type' ] = 'other';
+            $data[ 'message' ] = 'Tienes una nueva notificacion en Interacpedia';
         }
     }
 }
