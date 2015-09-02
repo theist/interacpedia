@@ -18,13 +18,15 @@
                     } )
                     || Auth::user()->id == $team->course->user->id
                     || Auth::user()->admin
+                    || Auth::user()->mentors->count() > 0
             )
     )
     {
         $items = [
                 'info' => [ 'label' => 'Info', 'link' => '/teams/' . $team->id . '/info' ],
                 'brief' => [ 'label' => 'Brief', 'link' => '/teams/' . $team->id . '/brief' ],
-                'docs' => [ 'label' => 'Documentos', 'link' => '/teams/' . $team->id . '/docs' ]
+                'docs' => [ 'label' => 'Documentos', 'link' => '/teams/' . $team->id . '/docs' ],
+                'comments' => [ 'label' => 'Comentarios', 'link' => '/teams/' . $team->id . '/comments' ]
         ];
     } else
     {

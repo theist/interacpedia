@@ -59,4 +59,12 @@ class Team extends Model implements HasMedia
     {
         return $this->morphMany('App\Interacpedia\Follow', 'model');
     }
+    /**
+     * Get all of the challenge comments.
+     */
+    public function comments()
+    {
+        return $this->morphMany('App\Interacpedia\Comment', 'model')->orderBy('created_at', 'desc');
+    }
+
 }
