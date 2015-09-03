@@ -12,7 +12,7 @@
 
     </div>
     <div class="form-group">
-        {!! Form::textarea('comment', null, ['maxlength'=>400,'id'=>'comment','class' => 'form-control maxlength',
+        {!! Form::textarea('comment', null, ['maxlength'=>600,'id'=>'comment','class' => 'form-control maxlength',
         'rows'=>5,
         'placeholder'=>Lang::get('general/labels.write_comment') . ' '
         .Lang::get('general/forms.in_chars',['chars'=>400])])

@@ -35,7 +35,7 @@
                 @endif
 
                 <br/>
-                {!! Form::textarea('content',null,['id' => 'content'.$suffix, 'maxlength' => 400, 'placeholder'=>'Escriba su mensaje','class' => 'form-control maxlength','rows'=>'15']) !!}
+                {!! Form::textarea('content',null,['id' => 'content'.$suffix, 'maxlength' => 600, 'placeholder'=>'Escriba su mensaje','class' => 'form-control maxlength','rows'=>'15']) !!}
             </div>
             <div class="modal-footer">
                 <input type="submit" class="btn btn-default" value="@lang('general/labels.send')">
