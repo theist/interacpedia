@@ -225,6 +225,7 @@ class ChallengesController extends Controller {
         if ( !$option ) $option = "info";
         /* TO DO: move this relations into one object with properties.
          * */
+
         $universities = [ ];
         $items = $challenge->universities()->lists( 'name', 'id' );
         foreach ( $items as $id => $name )

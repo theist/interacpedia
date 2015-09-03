@@ -86,6 +86,8 @@ class MessagesController extends Controller {
     public function show( Authenticatable $user, Message $message, $id = null )
     {
         if ( $id ) $message = Message::find( $id );
+        if($message->message_id && $message->message_id>0)
+            $message = Message::find( $message->message_id );
         return view('messages.show',compact('message','user'));
 
     }

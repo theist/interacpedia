@@ -13,7 +13,12 @@
         <br/>
         <hr/>
         <div style="text-align: center;font-size:10px;">
-            Para ver o responder este mensaje, haz click <a href="{{ url("messages/".$model['id']) }}">aquí</a>.
+            @if($model['message_id'] && $model['message_id']>0)
+                Para ver o responder este mensaje, haz click <a href="{{ url("messages/".$model['message_id']) }}">aquí</a>.
+            @else
+                Para ver o responder este mensaje, haz click <a href="{{ url("messages/".$model['id']) }}">aquí</a>.
+            @endif
+
         </div>
     </div>
     <br>
