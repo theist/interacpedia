@@ -35,9 +35,9 @@
                         .Lang::get('general/forms.in_chars',['chars'=>140])]) !!}
                     </div>
                     <div class="form-group">
+                        <div class="help">Agregue varias opciones separadas por comas o use la tecla "ENTER"</div>
                         {!! Form::select('tags_vision_list[]',$tags_vision,$user->tags()->where('type','personal_vision')->lists('id')->all(),['id' => 'tags_vision_list','class' =>
-                        'form-control select2','multiple','data-tags'=>'true']) !!}
-                        <div class="help">Puede escoger de la lista o agregar nuevas opciones ESCRIBIENDO y presionando "ENTER" para agregar.</div>
+                        'selectize','multiple']) !!}
                     </div>
                 </div>
             </div>
@@ -47,9 +47,9 @@
                 @lang('general/labels.my_dreams')
             </div>
             <div class="form-group">
+                <div class="help">Agregue varias opciones separadas por comas o use la tecla "ENTER"</div>
                 {!! Form::select('tags_dreams_list[]',$tags_dreams,$user->tags()->where('type','dreams')->lists('id')->all(),['id' => 'tags_dreams_list','class' =>
-                'form-control select2','multiple','data-tags'=>'true']) !!}
-                <div class="help">Puede escoger de la lista o agregar nuevas opciones ESCRIBIENDO y presionando "ENTER" para agregar.</div>
+                'selectize','multiple']) !!}
             </div>
             <hr/>
             <div class="subtitle">
@@ -57,9 +57,10 @@
                 @lang('general/labels.things_i_love')
             </div>
             <div class="form-group">
+                <div class="help">Agregue varias opciones separadas por comas o use la tecla "ENTER"</div>
                 {!! Form::select('tags_likes_list[]',$tags_likes,$user->tags()->where('type','likes')->lists('id')->all(),['id' => 'tags_likes_list','class' =>
-                'form-control select2','multiple','data-tags'=>'true']) !!}
-                <div class="help">Puede escoger de la lista o agregar nuevas opciones ESCRIBIENDO y presionando "ENTER" para agregar.</div>
+                'selectize','multiple']) !!}
+
             </div>
         </div>
         <div class="subtitle">
@@ -71,27 +72,29 @@
                 @lang('general/labels.would_like_to_work_in')
             </div>
             <div class="form-group">
+                <div class="help">Agregue varias opciones separadas por comas o use la tecla "ENTER"</div>
                 {!! Form::select('tags_work_in_list[]',$tags_work_in,$user->tags()->where('type','work_in')->lists('id')->all(),['id' => 'tags_work_in_list','class' =>
-                'form-control select2','multiple','data-tags'=>'true']) !!}
-                <div class="help">Puede escoger de la lista o agregar nuevas opciones ESCRIBIENDO y presionando "ENTER" para agregar.</div>
+                'selectize','multiple']) !!}
+
             </div>
             <hr/>
             <div class="subtitle">
                 @lang('general/labels.favorite_companies_to_work_in')
             </div>
             <div class="form-group">
+                <div class="help">Agregue varias opciones separadas por comas o use la tecla "ENTER"</div>
                 {!! Form::select('tags_work_companies_list[]',$tags_work_companies,$user->tags()->where('type','work_companies')->lists('id')->all(),['id' => 'tags_work_companies_list','class' =>
-                'form-control select2','multiple','data-tags'=>'true']) !!}
-                <div class="help">Escoja las compañías o escriba una nueva y presione "ENTER" para agregar.</div>
+                'selectize','multiple']) !!}
+
             </div>
             <hr/>
             <div class="subtitle">
                 @lang('general/labels.preferred_areas_to_work_in')
             </div>
             <div class="form-group">
+                <div class="help">Agregue varias opciones separadas por comas o use la tecla "ENTER"</div>
                 {!! Form::select('tags_work_areas_list[]',$tags_work_areas,$user->tags()->where('type','work_areas')->lists('id')->all(),['id' => 'tags_work_areas_list','class' =>
-                'form-control select2','multiple','data-tags'=>'true']) !!}
-                <div class="help">Escoja las areas o escriba una nueva y presione "ENTER" para agregar.</div>
+                'selectize','multiple']) !!}
             </div>
         </div>
         <div class="form-group">
@@ -112,9 +115,9 @@
                 @lang('general/labels.resources')
             </div>
             <div class="form-group">
+                <div class="help">Agregue varias opciones separadas por comas o use la tecla "ENTER"</div>
                 {!! Form::select('tags_searching_resources_list[]',$tags_searching_resources,$user->tags()->where('type','searching_resources')->lists('id')->all(),['id' => 'tags_searching_resources_list','class' =>
-                'form-control select2','multiple','data-tags'=>'true']) !!}
-                <div class="help">Puede escoger de la lista o agregar nuevas opciones ESCRIBIENDO y presionando "ENTER" para agregar.</div>
+                'selectize','multiple']) !!}
             </div>
             <hr/>
             <div class="subtitle">
@@ -122,9 +125,9 @@
                 @lang('general/labels.experts')
             </div>
             <div class="form-group">
+                <div class="help">Agregue varias opciones separadas por comas o use la tecla "ENTER"</div>
                 {!! Form::select('tags_searching_experts_list[]',$tags_searching_experts,$user->tags()->where('type','searching_experts')->lists('id')->all(),['id' => 'tags_searching_experts_list','class' =>
-                'form-control select2','multiple','data-tags'=>'true']) !!}
-                <div class="help">Puede escoger de la lista o agregar nuevas opciones ESCRIBIENDO y presionando "ENTER" para agregar.</div>
+                'selectize','multiple']) !!}
             </div>
             <hr/>
             <div class="subtitle">
@@ -132,9 +135,9 @@
                 @lang('general/labels.personal')
             </div>
             <div class="form-group">
+                <div class="help">Agregue varias opciones separadas por comas o use la tecla "ENTER"</div>
                 {!! Form::select('tags_searching_personal_list[]',$tags_searching_personal,$user->tags()->where('type','searching_personal')->lists('id')->all(),['id' => 'tags_searching_personal_list','class' =>
-                'form-control select2','multiple','data-tags'=>'true']) !!}
-                <div class="help">Puede escoger de la lista o agregar nuevas opciones ESCRIBIENDO y presionando "ENTER" para agregar.</div>
+                'selectize','multiple']) !!}
             </div>
         </div>
         <div class="subtitle">
@@ -147,9 +150,9 @@
                 @lang('general/labels.my_contribution')
             </div>
             <div class="form-group">
+                <div class="help">Agregue varias opciones separadas por comas o use la tecla "ENTER"</div>
                 {!! Form::select('tags_contribution_list[]',$tags_contribution,$user->tags()->where('type','contribution')->lists('id')->all(),['id' => 'tags_contribution_list','class' =>
-                'form-control select2','multiple','data-tags'=>'true']) !!}
-                <div class="help">Puede escoger de la lista o agregar nuevas opciones ESCRIBIENDO y presionando "ENTER" para agregar.</div>
+                'selectize','multiple']) !!}
             </div>
             <hr/>
             <div class="subtitle">
@@ -157,9 +160,9 @@
                 @lang('general/labels.in_this_areas')
             </div>
             <div class="form-group">
+                <div class="help">Agregue varias opciones separadas por comas o use la tecla "ENTER"</div>
                 {!! Form::select('tags_in_areas_list[]',$tags_in_areas,$user->tags()->where('type','in_areas')->lists('id')->all(),['id' => 'tags_in_areas_list','class' =>
-                'form-control select2','multiple','data-tags'=>'true']) !!}
-                <div class="help">Puede escoger de la lista o agregar nuevas opciones ESCRIBIENDO y presionando "ENTER" para agregar.</div>
+                'selectize','multiple',]) !!}
             </div>
             <hr/>
         </div>

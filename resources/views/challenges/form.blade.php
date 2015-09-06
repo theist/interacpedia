@@ -273,13 +273,14 @@
                 </div>
             </div>
             <div class="form-group">
+{{--                {!! Form::text('tag_list[]',$challenge->tags->lists('name'),['id' => 'tag_list','class'=>'selectize']) !!}--}}
                 {!! Form::select('tag_list[]',$tags,$challenge->tags->lists('id')->all(),['id' => 'tag_list','class' =>
-                'form-control select2','multiple','data-tags'=>'true']) !!}
-                <div class="help">Escoja las etiquetas o escriba nuevas y presione "ENTER" para agregar.</div>
+                'selectize','multiple']) !!}
+                <div class="help">Agregue etiquetas separadas por "," o "ENTER"</div>
             </div>
         </div>
         <div class="field-files col-md-5">
-            <?php  $files_empty = "true" ?>
+
         </div>
     </div>
 
@@ -539,38 +540,6 @@
                 if ($('#images').val() != '')
                     $('#images').val($('#images').val() + ',');
                 $('#images').val($('#images').val() + response);
-            });
-            var files_empty = {{ $files_empty }};
-            var filesDropzone = new Dropzone(".field-files .zone", {
-                method: 'post',
-                uploadMultiple: true,
-                maxFiles: 3,
-                thumbnailHeight: 80,
-                thumbnailWidth: 80,
-                url: "/upload",
-                paramName: "files",
-                headers: {
-                    "X-CSRF-TOKEN": "{{ csrf_token() }}",
-                    "upload_dir": "challenges/files"
-                },
-                maxFilesize: 2,
-                clickable: true,
-                acceptedFiles: '.pdf,.xls,.doc,.xlsx,.docx,.txt'
-            });
-            $(".del_files").on("click", function (file) {
-                $('#files').val($('#files').val().replace(',' + this.getAttribute('data-value'), ''));
-                $('#files').val($('#files').val().replace(this.getAttribute('data-value') + ',', ''));
-                $('#files').val($('#files').val().replace(this.getAttribute('data-value'), ''));
-                $(this).parent().remove();
-            });
-            filesDropzone.on("drop", function (file) {
-                if (files_empty)$(".field-files .zone").empty();
-                files_empty = false;
-            });
-            filesDropzone.on("success", function (file, response) {
-                if ($('#files').val() != '')
-                    $('#files').val($('#files').val() + ',');
-                $('#files').val($('#files').val() + response);
             });
         })
     </script>

@@ -4,6 +4,9 @@
     @lang('general/labels.edit')
     @parent
 @stop
+@section('styles')
+    <link href="/css/selectize.default.css" rel="stylesheet">
+@stop
 
 @section('content')
     <div class="user_edit">
@@ -21,4 +24,15 @@
             @include('errors.alerts')
         </div>
     </div>
+@stop
+@section('scripts')
+    <script src="/js/selectize.js"></script>
+    <script>
+        $(function() {
+            $(".selectize").selectize({
+                plugins: ['remove_button'],
+                create: true
+            });
+        });
+    </script>
 @stop

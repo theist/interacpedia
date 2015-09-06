@@ -4,6 +4,9 @@
     @lang('challenges/title.edit')
     @parent
 @stop
+@section('styles')
+    <link href="/css/selectize.default.css" rel="stylesheet">
+@stop
 
 @section('section-profile')
     @include('partials.profile')
@@ -23,4 +26,16 @@
             @include('errors.alerts')
         </div>
     </div>
+@stop
+
+@section('scripts')
+    <script src="/js/selectize.js"></script>
+    <script>
+        $(function() {
+            $(".selectize").selectize({
+                plugins: ['remove_button'],
+                create: true
+            });
+        });
+    </script>
 @stop

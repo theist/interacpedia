@@ -13,6 +13,7 @@
         @show
     </title>
     <link rel="shortcut icon" href="/favicon.ico"/>
+    @yield('styles')
     <link href="{{ elixir('css/styles.css') }}" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
     <link href="/js/toastr.min.css" rel="stylesheet">
@@ -44,10 +45,12 @@
 {!! Toastr::render() !!}
 <script>$('#flash-overlay-modal').modal();</script>
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-558390bd5379e247" async="async"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-558390bd5379e247"
+        async="async"></script>
 
 <div class="container-fluid" id="section-footer">
     @include('partials.footer')
+    @yield('scripts')
     @yield('footer')
 </div>
 </body>
