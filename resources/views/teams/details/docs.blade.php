@@ -9,7 +9,7 @@
             <div class="row documents">
                 @unless($team->getMedia('infographics')->count() == 0)
                     <div class="col-md-12"><h4>Infografías</h4></div>
-                    @foreach($team->getMedia('brief') as $doc)
+                    @foreach($team->getMedia('infographics') as $doc)
                         <div class="document summary col-md-6 panel">
                             <hr>
                             <strong>{{ $doc->name }}</strong><br>
@@ -23,7 +23,7 @@
                 @endunless
                 @unless($team->getMedia('others')->count() == 0)
                         <div class="col-md-12"><h4>Otros</h4></div>
-                    @foreach($team->getMedia('plan') as $doc)
+                    @foreach($team->getMedia('others') as $doc)
                         <div class="document summary col-md-6 panel">
                             <hr>
                             <strong>{{ $doc->name }}</strong><br>
