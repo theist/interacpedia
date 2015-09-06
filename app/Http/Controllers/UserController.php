@@ -47,7 +47,7 @@ class UserController extends Controller {
         $tags_searching_resources = $user->tags()->where( 'type', 'searching_resources' )->lists( 'name', 'id' );
         $tags_searching_experts = $user->tags()->where( 'type', 'searching_experts' )->lists( 'name', 'id' );
         $tags_searching_personal = $user->tags()->where( 'type', 'searching_personal' )->lists( 'name', 'id' );
-        $users = User::orderBy('name','asc')->lists( 'name', 'id' );
+        $users = User::orderBy('name','asc')->get();
         $messages = $user->allmessages();
         $notifications = $user->allnotifications();
         return view( 'user.profile', compact( 'user', 'option', 'users','messages', 'notifications',
@@ -77,7 +77,8 @@ class UserController extends Controller {
         $tags_searching_resources = $user->tags()->where( 'type', 'searching_resources' )->lists( 'name', 'id' );
         $tags_searching_experts = $user->tags()->where( 'type', 'searching_experts' )->lists( 'name', 'id' );
         $tags_searching_personal = $user->tags()->where( 'type', 'searching_personal' )->lists( 'name', 'id' );
-        $users = User::orderBy('name','asc')->lists( 'name', 'id' );
+
+        $users = User::orderBy('name','asc')->get();
         $messages = $user->allmessages();
         $notifications = $user->allnotifications();
         return view( 'user.profile', compact( 'user', 'option', 'users','messages', 'notifications',

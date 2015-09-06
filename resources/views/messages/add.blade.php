@@ -5,7 +5,6 @@
 <button class="btn btn-purple" data-toggle="modal" data-target="#addMessage{{ $suffix }}">
     {{ $label }}
 </button>
-
 <div class="modal fade" id="addMessage{{ $suffix }}" tabindex="-1" role="dialog" aria-labelledby="addMessageLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -26,7 +25,8 @@
                     </div>
                     <input type="hidden" name="to_user{{ $suffix }}" id="to_user{{ $suffix }}" value="{{ $to }}">
                 @else
-                    @include('partials.forms.select',['name'=>'to_user'.$suffix,'id'=>'to_user'.$suffix,'list'=>$users,'value'=>''])
+                    {!! Form::select('to_user'.$suffix,[],null,['id' => 'to_user'.$suffix,'class' => 'selectize contacts','placeholder'=>'Destinatario del mensaje...']) !!}
+{{--                    @include('partials.forms.select',['name'=>'to_user'.$suffix,'id'=>'to_user'.$suffix,'list'=>$users,'value'=>''])--}}
                 @endif
                 @if(isset($parent) && $parent >0)
                     {!! Form::input('text','title','Re: '. \App\Interacpedia\Message::findOrNew($parent)->title,['id' => 'title'.$suffix, 'maxlength' => 100,'placeholder'=>'Asunto del mensaje','class' =>'form-control input-sm maxlength']) !!}
@@ -44,21 +44,80 @@
         </div>
     </div>
 </div>
-
-@section('footer')
-    @parent
+@section('styles')
+    <link href="/css/selectize.default.css" rel="stylesheet">
+@stop
+@section('scripts')
+    <script src="/js/selectize.js"></script>
     <script>
-        $('.maxlength').maxlength({
-            alwaysShow: true,
-            warningClass: "label label-success",
-            limitReachedClass: "label label-danger",
-            appendToParent: true,
-            placement: "bottom-right"
-        });
-        $('.select2').select2({
-            placeholder: "Escoja una opción",
-            allowClear: true,
-            language: "es"
+        $(function() {
+            var REGEX_EMAIL = '([a-z0-9!#$%&\'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&\'*+/=?^_`{|}~-]+)*@' +
+                    '(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)';
+
+            $(".selectize").selectize({
+                persist: false,
+                valueField: 'id',
+                labelField: 'name',
+                searchField: ['name', 'email'],
+                options: [
+                        @if(isset($users))
+                        @foreach($users as $us)
+                        {id:{{ $us->id }}, email: '{{ $us->email }}', name: '{{ $us->name }}'},
+                        @endforeach
+                        @endif
+                ],
+                render: {
+                    item: function(item, escape) {
+                        return '<div>' +
+                                (item.name ? '<span class="name">' + escape(item.name) + '</span>' : '')  +
+                                '</div>';
+                    },
+                    option: function(item, escape) {
+                        var label = item.name || item.email;
+                        var caption = item.name ? item.email : null;
+                        return '<div>' +
+                                '<span class="name">' + escape(label) + '</span>' +
+                                (caption ? '<span class="caption">' + escape(caption) + '</span>' : '') +
+                                '</div>';
+                    }
+                },
+                createFilter: function(input) {
+                    var match, regex;
+
+                    // email@address.com
+                    regex = new RegExp('^' + REGEX_EMAIL + '$', 'i');
+                    match = input.match(regex);
+                    if (match) return !this.options.hasOwnProperty(match[0]);
+
+                    // name <email@address.com>
+                    regex = new RegExp('^([^<]*)\<' + REGEX_EMAIL + '\>$', 'i');
+                    match = input.match(regex);
+                    if (match) return !this.options.hasOwnProperty(match[2]);
+
+                    return false;
+                },
+                create: function(input) {
+                    if ((new RegExp('^' + REGEX_EMAIL + '$', 'i')).test(input)) {
+                        return {email: input};
+                    }
+                    var match = input.match(new RegExp('^([^<]*)\<' + REGEX_EMAIL + '\>$', 'i'));
+                    if (match) {
+                        return {
+                            email : match[2],
+                            name  : $.trim(match[1])
+                        };
+                    }
+                    alert('Invalid email address.');
+                    return false;
+                }
+            });
+            $('.maxlength').maxlength({
+                alwaysShow: true,
+                warningClass: "label label-success",
+                limitReachedClass: "label label-danger",
+                appendToParent: true,
+                placement: "bottom-right"
+            });
         });
         $('#addmessage-form{{ $suffix }}').on('submit', function (e) {
             e.preventDefault();
@@ -84,6 +143,5 @@
                     }
             );
             return false;
-        });
-    </script>
+        });    </script>
 @stop

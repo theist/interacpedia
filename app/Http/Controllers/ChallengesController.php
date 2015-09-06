@@ -245,7 +245,7 @@ class ChallengesController extends Controller {
             $courses[ ] = [ "id" => $id, "name" => $name ];
         }
         $professors = [ ];
-        $users = User::lists( 'name', 'id' );
+        $users = User::all();
         $teams = $challenge->teams()->get();
 
         if ( Auth::check() )
