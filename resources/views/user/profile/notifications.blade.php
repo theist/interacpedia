@@ -1,6 +1,11 @@
 <div class="user-profile">
     <div class="area">
-        @foreach($user->notifications as $notification)
+        <div class="row">
+            <div class="col-md-12 text-right">
+                {!! $notifications->render() !!}
+            </div>
+        </div>
+        @foreach($notifications as $notification)
             <div class="notification row">
                 <div class="col-md-5">
                     @if($notification->read == 0)
@@ -30,5 +35,10 @@
             </div>
             <hr/>
         @endforeach
+        <div class="row">
+            <div class="col-md-12 text-right">
+                {!! $notifications->render() !!}
+            </div>
+        </div>
     </div>
 </div>

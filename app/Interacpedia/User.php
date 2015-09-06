@@ -65,6 +65,14 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
         return $this->hasMany( 'App\Interacpedia\Message', 'to_user' );
     }
 
+    public function allnotifications($items = 20)
+    {
+        $notifications = Notification::where('user_id',$this->id)
+            ->orderBy( 'created_at', 'desc' )
+            ->paginate($items);
+        return $notifications;
+    }
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
