@@ -48,7 +48,7 @@
                         <?php $message->read = 1;$message->save();?>
                     @endif
                     <strong>Asunto:</strong> {{ $message->title!=""?$message->title:"Sin Asunto" }}</div>
-                <div class="content">{{ $message->content }}</div>
+                <div class="content">{!! str_replace("\n","<br>",$message->content) !!}</div>
             </div>
         </div>
         @foreach($message->messages as $msg)
@@ -65,7 +65,7 @@
                             <span class="label label-success">Nuevo!!</span>
                         @endif
                         <strong>Asunto:</strong> {{ $msg->title!=""?$msg->title:"Sin Asunto" }}</div>
-                    <div class="content">{{ $msg->content }}</div>
+                    <div class="content">{!! str_replace("\n","<br>",$msg->content) !!}</div>
                 </div>
             </div>
             @foreach($msg->messages as $msg2)
@@ -83,7 +83,7 @@
                                 <span class="label label-success">Nuevo!!</span>
                             @endif
                             <strong>Asunto:</strong> {{ $msg2->title!=""?$msg2->title:"Sin Asunto" }}</div>
-                        <div class="content">{{ $msg2->content }}</div>
+                        <div class="content">{!! str_replace("\n","<br>",$msg2->content) !!}</div>
                     </div>
                 </div>
             @endforeach
