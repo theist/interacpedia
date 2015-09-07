@@ -37,8 +37,8 @@
                                                                    alt="{{ $message->from->name }}"/></a>
             </div>
             <div class="col-md-4">
-                <div><strong>De:</strong> {{ $message->from->name }}</div>
-                <div><strong>Para:</strong> {{ $message->to->name }}</div>
+                <div><strong>De:</strong> <a href="/user/{{ $message->from->id }}/info">{{ $message->from->name }}</a></div>
+                <div><strong>Para:</strong> <a href="/user/{{ $message->to->id }}/info">{{ $message->to->name }}</a></div>
                 <div class="created">{{ $message->created_at }}</div>
             </div>
             <div class="col-md-6">
@@ -55,7 +55,7 @@
             <div class="row area message">
                 <div class="col-md-2">&nbsp;</div>
                 <div class="col-md-4">
-                    <div><strong>De:</strong> {{ $msg->from->name }}</div>
+                    <div><strong>De:</strong> <a href="/user/{{ $msg->from->id }}/info">{{ $msg->from->name }}</a></div>
                     <div class="created">{{ $msg->created_at }}</div>
                 </div>
                 <div class="col-md-6">
@@ -73,7 +73,7 @@
                 <div class="row area message">
                     <div class="col-md-2">&nbsp;</div>
                     <div class="col-md-4">
-                        <div><strong>De:</strong> {{ $msg2->from->name }}</div>
+                        <div><strong>De:</strong> <a href="/user/{{ $msg2->from->id }}/info">{{ $msg2->from->name }}</a></div>
                         <div class="created">{{ $msg2->created_at }}</div>
                     </div>
                     <div class="col-md-6">
