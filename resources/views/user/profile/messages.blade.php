@@ -21,6 +21,7 @@
                 <div class="created">{{ $message->created_at }}</div>
             </div>
             <div class="col-md-6">
+                <div><strong>Para:</strong> {{ $message->to->name }}</div>
                 <div class="title">
                     @if($message->read == 0 && Auth::user()->id==$message->to->id)
                         <span class="label label-success">Nuevo!!</span>
