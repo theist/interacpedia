@@ -22,8 +22,22 @@
                     @endforeach
                 @endunless
                 @unless($team->getMedia('others')->count() == 0)
-                        <div class="col-md-12"><h4>Otros</h4></div>
+                    <div class="col-md-12"><h4>Otros</h4></div>
                     @foreach($team->getMedia('others') as $doc)
+                        <div class="document summary col-md-6 panel">
+                            <hr>
+                            <strong>{{ $doc->name }}</strong><br>
+                            <a target="_blank" href="{{ $doc->getUrl() }}">{{ $doc->file_name }}</a><br>
+                            @lang('general/labels.size'): {{ $doc->humanReadableSize }}
+                            <br>
+                            <a href="/teams/{{ $team->id }}/delfile/{{ $doc->id }}"
+                               class="deldocument btn btn-danger">Eliminar</a>
+                        </div>
+                    @endforeach
+                @endunless
+                @unless($team->getMedia('teamphoto')->count() == 0)
+                    <div class="col-md-12"><h4>Foto del equipo</h4></div>
+                    @foreach($team->getMedia('teamphoto') as $doc)
                         <div class="document summary col-md-6 panel">
                             <hr>
                             <strong>{{ $doc->name }}</strong><br>
@@ -51,7 +65,7 @@
                 </div>
                 <div class="form-group col-md-2">
                     {!! Form::label('type', Lang::get('general/labels.type')) !!}
-                    {!! Form::select('type', array('infographics' => 'Infografía', 'others' => 'Otros'), null, ['placeholder' => 'Escoja un tipo...','class'=>'form-control']) !!}
+                    {!! Form::select('type', array('infographics' => 'Infografía', 'teamphoto'=>'Foto del equipo','others' => 'Otros'), null, ['placeholder' => 'Escoja un tipo...','class'=>'form-control']) !!}
                     <p class="help-block">Debe escoger que tipo de archivo está cargando.</p>
                 </div>
                 <div class="form-group col-md-2">
