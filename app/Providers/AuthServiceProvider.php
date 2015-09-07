@@ -33,9 +33,17 @@ class AuthServiceProvider extends ServiceProvider
         $gate->define('delete-comment', function ($user, $comment) {
             return  ($user->id === $comment->user->id);
         });
-        //$gate->define('view-team', function ($user, $team) {
-        //    return  ($user->id === $comment->user->id);
-        //});
+        $gate->define('view-teamdetails', function ($user, $team) {
+            return  ($user->admin
+                    || $user->mentors->count() > 0
+                    || $user->id == $team->course->user->id
+                    || ($team->users->contains( function ( $key, $value )
+                        {
+                            return $value->id == Auth::user()->id;
+                        })
+                )
+            );
+        });
 
     }
 }
