@@ -2,9 +2,15 @@
     <div class="row">
         <div class="image col-md-4">
             <a href="{{ action('TeamsController@show',[$team->id]) }}">
-                <img class="img-responsive"
-                     src="{{ imagestyle('/images/courses/generic' . rand(1,2) . '.jpg','fit270x214') }}"
-                     alt="{{ $team->name }}"/>
+                @if($team->getMedia('teamphoto')->count() > 0)
+                    <img class="img-responsive"
+                         src="{{ imagestyle($team->getMedia('teamphoto')->first()->getUrl(),'fit270x214') }}"
+                         alt="{{ $team->name }}"/>
+                @else
+                    <img class="img-responsive"
+                         src="{{ imagestyle('/images/courses/generic' . rand(1,2) . '.jpg','fit270x214') }}"
+                         alt="{{ $team->name }}"/>
+                @endif
             </a>
             @if($team->course->university)
                 <div class="row">
