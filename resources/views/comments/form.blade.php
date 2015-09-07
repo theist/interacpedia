@@ -47,10 +47,10 @@
                         $(this).prop('action'),
                         {
                             "_token": $(this).find('input[name=_token]').val(),
-                            "title": $('#title').val(),
-                            "comment": $('#comment').val(),
-                            "model_id": $('#model_id').val(),
-                            "model_type": $('#model_type').val()
+                            "title": $('#comments-form #title').val(),
+                            "comment": $('#comments-form #comment').val(),
+                            "model_id": $('#comments-form #model_id').val(),
+                            "model_type": $('#comments-form #model_type').val()
                         },
                         function (data) {
                             if (data.fail) {
@@ -59,8 +59,8 @@
                                 var target = $(".comment-create");
                                 var newEl = $(data);
                                 newEl.hide().insertAfter(target).slideDown('slow');
-                                $("#comment").val('');
-                                $("#title").val('');
+                                $("#comments-form #comment").val('');
+                                $("#comments-form #title").val('');
                                 ondelete();
                             }
                         }
