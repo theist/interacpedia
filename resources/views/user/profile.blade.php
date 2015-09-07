@@ -20,7 +20,8 @@
     @else
         @include('user.profile.menu',['items'=>[
                                                 'info'=>['label'=>'Info','link'=>'/user/'. $user->id .'/info'],
-                                                'challenges'=>['label'=>'Retos','link'=>'/user/'. $user->id .'/challenges']
+                                                'challenges'=>['label'=>'Retos','link'=>'/user/'. $user->id .'/challenges'],
+                                                'teams'=>['label'=>'Equipos','link'=>'/user/'. $user->id .'/teams']
                                                 ],
                                         'active'=>$option
                                     ])

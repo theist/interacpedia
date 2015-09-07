@@ -33,6 +33,9 @@ class AuthServiceProvider extends ServiceProvider
         $gate->define('delete-comment', function ($user, $comment) {
             return  ($user->id === $comment->user->id);
         });
+        //$gate->define('view-team', function ($user, $team) {
+        //    return  ($user->id === $comment->user->id);
+        //});
 
     }
 }
