@@ -16,13 +16,21 @@
         </div>
         <div class="fields col-md-8">
             <div class="title"><h4><a
-                            href="{{ action('TeamsController@show',[$team->id]) }}">{{ $team->name }} # {{ $team->id }}</a>
+                            href="{{ action('TeamsController@show',[$team->id]) }}">
+                        @if($team->name != "Equipo" && $team->name != "")
+                            {{ $team->name }}
+                        @else
+                            Equipo # {{ $team->id }}
+                        @endif
+
+                    </a>
                 </h4></div>
             <div class="professor">
                 <a href="/courses/{{ $team->course->id }}">{{ $team->course->name }}</a><br>
                 <strong>@lang('general/labels.professor'): </strong>{{ $team->course->user->name }}</div>
             <div class=""><strong>@lang('general/labels.students'): </strong>{{ $team->users->count() }}</div>
-            <div class="challenge"><a href="/challenges/{{ $team->challenge->id }}">{{ $team->challenge->name }}</a></div>
+            <div class="challenge"><a href="/challenges/{{ $team->challenge->id }}">{{ $team->challenge->name }}</a>
+            </div>
         </div>
         <div class="col-md-10 col-md-offset-1">
             <hr>
