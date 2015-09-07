@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Lang;
 use Spatie\MediaLibrary\Media;
 
@@ -64,6 +65,9 @@ class TeamsController extends Controller
     {
         if ( $id ) $team = Team::find( $id );
         if ( !$option ) $option = "info";
+        if($option != "info" && Gate::denies('view-teamdetails', $team)){
+            $option = "info";
+        }
         $brief = Brief::firstOrCreate(['team_id'=>$team->id]);
         return view( 'teams.show', compact( 'team','option','brief' ) );
     }
