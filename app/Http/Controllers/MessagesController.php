@@ -179,8 +179,8 @@ class MessagesController extends Controller {
                 Cuando hayan cargado la imagen y tengan definido un nombre, que alguno de los miembros
                 del equipo, me responda este mensaje con el nombre escogido.
                 Gracias! Saludos. Juan Carlos Orrego - CTO Interacpedia";
-                $message = Message::create( $data );
-                NotificationsController::add($message);
+                //$message = Message::create( $data );
+                //NotificationsController::add($message);
                 $count++;
             }
         }
