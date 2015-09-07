@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Interacpedia\Message;
 use App\Interacpedia\Notification;
+use App\Interacpedia\Team;
 use App\Interacpedia\User;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Http\Request;
@@ -20,17 +21,25 @@ class MessagesController extends Controller {
 
     public function mass()
     {
-        $users = User::where('id','>',398)->get();
-        foreach($users as $user){
-            $data = [];
-            $data[ "message_id" ] = null;
-            $data[ "to_user" ] = $user->id;
-            $data[ "from_user" ] = 3;
-            $data[ "title" ] = "¿Cómo vas?";
-            $data[ "read" ] = 0;
-            $data[ "content" ] = "Hola " . substr($user->name,0,strpos($user->name," ")) . ". Cuéntame que tal te ha parecido Interacpedia? Has escrito comentarios en los retos, posteado en el Blog, contactado el mentor de la clase o el coordinador de la empresa..? Como vas con el Brief/Plan? Recuerda que éste viernes a la 1:30 es la visita al Metro. Lleva preguntas para el Foro. Si te puedo ayudar en algo no dudes en escribirme. Saludos Santiago";
-            $message = Message::create( $data );
-            NotificationsController::add($message);
+        $teams = Team::all();
+        foreach($teams as $team){
+            $users = $team->users;
+            foreach($users as $user){
+                $data = [];
+                $data[ "message_id" ] = null;
+                $data[ "to_user" ] = $user->id;
+                $data[ "from_user" ] = 1;
+                $data[ "title" ] = "Imagen y nombre del equipo";
+                $data[ "read" ] = 0;
+                $data[ "content" ] = "Hola " . substr($user->name,0,strpos($user->name," ")) . ".
+                Para completar la información de los equipos, necesitamos que carguen una FOTO del equipo
+                en la sección de documentos, y que definan un NOMBRE para el equipo.
+                Cuando hayan cargado la imagen y tengan definido un nombre, que alguno de los miembros
+                del equipo, me responda este mensaje con el nombre escogido.
+                Gracias! Saludos. Juan Carlos Orrego - CTO Interacpedia";
+                $message = Message::create( $data );
+                NotificationsController::add($message);
+            }
         }
     }
     /**
