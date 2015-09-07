@@ -3,7 +3,7 @@
     @lang('general/labels.teams')
 </div>
 <div class="row teams">
-    @foreach($teams as $team)
+    @foreach($user->teams as $team)
         <div class="team summary col-md-4">
             @include('teams.summary')
         </div>
