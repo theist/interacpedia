@@ -23,6 +23,13 @@
                     @elseif($notification->type=="brief")
                         <?php $brief = \App\Interacpedia\Brief::findOrNew( $notification->model_id );?>
                         <a href="{{ url('teams/'.$brief->team_id.'/brief') }}">@lang('general/labels.see_brief')</a>
+                    @elseif($notification->type=="media")
+                        <?php $media = Spatie\MediaLibrary\Media::findOrNew( $notification->model_id );?>
+                        @if($media->model_type == "App\\Interacpedia\\Challenge")
+                            <a href="{{ url('challenges/'.$media->model_id.'/docs') }}">@lang('general/labels.see_docs')</a>
+                        @elseif($media->model_type == "App\\Interacpedia\\Team")
+                            <a href="{{ url('teams/'.$media->model_id.'/docs') }}">@lang('general/labels.see_docs')</a>
+                        @endif
                     @elseif($notification->type=="comment")
                         <?php $comment = \App\Interacpedia\Comment::findOrNew( $notification->model_id );?>
                         @if($comment->model_type == "App\\Interacpedia\\Challenge")
