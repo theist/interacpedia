@@ -6,7 +6,9 @@
             <hr/>
             <div class="row">
                 @foreach($teams as $team)
-                    @include('teams.summary',['team'=>$team])
+                    <div class="team summary col-md-4">
+                        @include('teams.summary',['team'=>$team])
+                    </div>
                 @endforeach
             </div>
         </div>
