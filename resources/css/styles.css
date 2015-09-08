@@ -5622,7 +5622,7 @@ h4 {
 .teams .team.summary .links .btn {
   font-size: 1rem; }
 .teams .team.summary .content {
-  min-height: 310px;
+  min-height: 350px;
   background: white;
   border: 1px solid #cdcdcd;
   margin-bottom: 15px; }
