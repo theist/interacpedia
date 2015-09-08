@@ -6,6 +6,7 @@
                     <img class="img-responsive"
                          src="{{ imagestyle($team->getMedia('teamphoto')->first()->getUrl(),'fit270x214') }}"
                          alt="{{ $team->name }}"/>
+
                 @else
                     <img class="img-responsive"
                          src="{{ imagestyle('/images/courses/generic' . rand(1,2) . '.jpg','fit270x214') }}"
