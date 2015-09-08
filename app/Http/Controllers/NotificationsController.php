@@ -117,7 +117,7 @@ class NotificationsController extends Controller {
                 $data[ 'message' ] = 'Se ha hecho una actualización a un Brief.';
                 $text = '<h4>Hola ' . $user->name . '</h4><br>
                      <h5>' . Auth::user()->name . ' ha actualizado un brief.</h5><br>
-                     Equipo # ' . $model->team_id . '<br>
+                     ' . $team->name . ': #' . $team->id . '<br>
                      <a href="' . url( "teams/" . $model->team_id . "/brief" ) . '">Ver Brief</a>
                     ';
                 $not = Notification::create( $data );
@@ -139,7 +139,7 @@ class NotificationsController extends Controller {
                     $data[ 'message' ] = $author->name . ' ha hecho un nuevo comentario en tu equipo.';
                     $text = '<h4>Hola ' . $user->name . '</h4><br>
                      <h5>' . $author->name . ' ha hecho un nuevo comentario en tu equipo.</h5><br>
-                     Equipo # ' . $team->id . '<br>
+                     ' . $team->name . ': #' . $team->id . '<br>
                      <a href="' . url( "teams/" . $team->id . "/comments" ) . '">Ver Comentarios</a>
                     ';
                     $not = Notification::create( $data );
@@ -155,7 +155,7 @@ class NotificationsController extends Controller {
                     $data[ 'message' ] = $author->name . ' ha hecho un nuevo comentario en un equipo de una de tus clases.';
                     $text = '<h4>Hola ' . $user->name . '</h4><br>
                      <h5>' . $author->name . ' ha hecho un nuevo comentario en un equipo de una de tus clases.</h5><br>
-                     Equipo # ' . $team->id . '<br>
+                     ' . $team->name . ': #' . $team->id . '<br>
                      <a href="' . url( "teams/" . $team->id . "/comments" ) . '">Ver Comentarios</a>
                     ';
                     $not = Notification::create( $data );
@@ -171,7 +171,7 @@ class NotificationsController extends Controller {
                     $data[ 'message' ] = $author->name . ' ha hecho un nuevo comentario en un equipo.';
                     $text = '<h4>Hola ' . $user->name . '</h4><br>
                      <h5>' . $author->name . ' ha hecho un nuevo comentario en un equipo.</h5><br>
-                     Equipo # ' . $team->id . '<br>
+                     ' . $team->name . ': #' . $team->id . '<br>
                      <a href="' . url( "teams/" . $team->id . "/comments" ) . '">Ver Comentarios</a>
                     ';
                     $not = Notification::create( $data );
@@ -200,8 +200,29 @@ class NotificationsController extends Controller {
                     } );
                 }
             }
-        } else
-        {
+        } else if($data[ 'model_type' ] == "Spatie\\MediaLibrary\\Media"){
+            $data[ 'type' ] = 'media';
+            if ( $model->model_type == "App\\Interacpedia\\Team" )
+            {
+                $team = Team::findOrNew( $model->model_id );
+                $admins = User::where( 'admin', 1 )->get();
+                foreach ( $admins as $user )
+                {
+                    $data[ 'user_id' ] = $user->id;
+                    $data[ 'message' ] = 'Se ha cargado un nuevo documento en un equipo.';
+                    $text = '<h4>Hola ' . $user->name . '</h4><br>
+                     <h5>Se ha cargado un nuevo documento en un equipo.</h5><br>
+                     ' . $team->name . ': #' . $team->id . '<br>
+                     <a href="' . url( "teams/" . $team->id . "/docs" ) . '">Ver Documentos</a>
+                    ';
+                    $not = Notification::create( $data );
+                    Mail::queue( 'emails.notification', [ 'text' => $text ], function ( $m ) use ( $user )
+                    {
+                        $m->to( $user->email, $user->name )->subject( 'Se ha cargado un documento a Un equipo' );
+                    } );
+                }
+            }
+        } else {
             $data[ 'type' ] = 'other';
             $data[ 'message' ] = 'Tienes una nueva notificacion en Interacpedia';
         }

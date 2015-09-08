@@ -120,7 +120,8 @@ class TeamsController extends Controller
     {
         $team = Team::find( $team );
         if($request->file('document')){
-            $team->addMedia($request->file('document'))->usingName($request->input('name'))->toCollection($request->input('type','others'));
+            $media = $team->addMedia($request->file('document'))->usingName($request->input('name'))->toCollection($request->input('type','others'));
+            NotificationsController::add($media);
             flash()->success( Lang::get( 'general/labels.file_uploaded' ) );
         }
         return redirect( 'teams/'.$team->id . '/docs' );
