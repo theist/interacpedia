@@ -6,7 +6,7 @@
 @stop
 
 @section('section-profile')
-    @include('partials.course',['course'=>$team->course])
+    @include('partials.team',['course'=>$team->course,'team'=>$team])
 @stop
 
 @section('section-submenu')
