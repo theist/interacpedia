@@ -4,7 +4,13 @@
 
             <div class="row">
                 <div class="col-md-12 team">
-                    <h4>{{ trans_choice('general/labels.teams', 1) }} # {{ $team->id }}<br>
+                    <h4>
+                        @if($team->name != "Equipo" && $team->name != "")
+                            {{ $team->name }}
+                        @else
+                            Equipo # {{ $team->id }}
+                        @endif
+                        <br>
                         <small>{{ $team->challenge->name }}</small>
                     </h4>
                     <div class="row content users">

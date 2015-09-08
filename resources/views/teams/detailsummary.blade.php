@@ -1,6 +1,11 @@
 <div class="col-md-12 team">
-    <h4><a href="/teams/{{ $team->id }}">{{ trans_choice('general/labels.teams', 1) }}
-            # {{ $team->id }}</a>
+    <h4><a href="/teams/{{ $team->id }}">
+            @if($team->name != "Equipo" && $team->name != "")
+                {{ $team->name }}
+            @else
+                Equipo # {{ $team->id }}
+            @endif
+        </a>
         <br>
         <small>{{ $team->challenge->name }}</small>
     </h4>
