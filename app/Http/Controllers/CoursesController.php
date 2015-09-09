@@ -62,7 +62,7 @@ class CoursesController extends Controller
         if ( $id ) $course = Course::find( $id );
         $user = $course->user()->getResults();
         if ( !$option ) $option = "info";
-        if(!$user->admin && $option != "info" && Gate::denies('view-coursedetails', $course)){
+        if( $option != "info" && Gate::denies('view-coursedetails', $course)){
             $option = "info";
         }
 
