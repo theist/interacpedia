@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class CoursesController extends Controller
 {
@@ -51,7 +52,9 @@ class CoursesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param Course $course
+     * @param  int $id
+     * @param null $option
      * @return Response
      */
     public function show( Course $course, $id = null, $option = null )
@@ -59,6 +62,11 @@ class CoursesController extends Controller
         if ( $id ) $course = Course::find( $id );
         $user = $course->user()->getResults();
         if ( !$option ) $option = "info";
+        if($option != "info" && Gate::denies('view-coursedetails', $course)){
+            $option = "info";
+        }
+
+
         /* TO DO: move this relations into one object with properties.
          * */
         $challenges = $course->challenges;
@@ -66,7 +74,7 @@ class CoursesController extends Controller
         foreach($challenges as $challenge){
             $team = Team::firstOrCreate(['course_id'=>$course->id,'challenge_id'=>$challenge->id]);
             $team->name = "Equipo";
-            $team->save();
+            //$team->save();
 
         }
         $teams = $course->teams()->get();
