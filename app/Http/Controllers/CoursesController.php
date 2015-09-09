@@ -62,7 +62,7 @@ class CoursesController extends Controller
         if ( $id ) $course = Course::find( $id );
         $user = $course->user()->getResults();
         if ( !$option ) $option = "info";
-        if($option != "info" && Gate::denies('view-coursedetails', $course)){
+        if(!$user->admin && $option != "info" && Gate::denies('view-coursedetails', $course)){
             $option = "info";
         }
 
@@ -71,12 +71,11 @@ class CoursesController extends Controller
          * */
         $challenges = $course->challenges;
 
-        foreach($challenges as $challenge){
-            $team = Team::firstOrCreate(['course_id'=>$course->id,'challenge_id'=>$challenge->id]);
-            $team->name = "Equipo";
-            //$team->save();
-
-        }
+        //foreach($challenges as $challenge){
+        //    $team = Team::firstOrCreate(['course_id'=>$course->id,'challenge_id'=>$challenge->id]);
+        //    $team->name = "Equipo";
+        //    $team->save();
+        //}
         $teams = $course->teams()->get();
         $students = $course->students()->orderBy('name')->get();
 
