@@ -45,6 +45,25 @@ class AuthServiceProvider extends ServiceProvider
                 )
             );
         });
-
+        $gate->define('view-challengedetails', function ($user, $challenge) {
+            return  $user->inChallenge($challenge->id);
+        });
+        $gate->define('view-eventdetails', function ($user, $event) {
+            return  $user->admin;
+        });
+        $gate->define('view-coursedetails', function ($user, $course) {
+            return  ($user->admin
+                || ($course->mentors->contains( function ( $key, $value )
+                    {
+                        return $value->user->id == Auth::user()->id;
+                    })
+                ) || $user->id == $course->user->id
+                || ($course->students->contains( function ( $key, $value )
+                    {
+                        return $value->id == Auth::user()->id;
+                    } )
+                )
+            );
+        });
     }
 }
