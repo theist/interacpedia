@@ -50,6 +50,32 @@
 @section('scripts')
     <script src="/js/selectize.js"></script>
     <script>
+        $('#addmessage-form{{ $suffix }}').on('submit', function (e) {
+            e.preventDefault();
+            $.post(
+                    $(this).prop('action'),
+                    {
+                        "_token": $(this).find('input[name=_token]').val(),
+                        "from_user": $('#from_user{{ $suffix }}').val(),
+                        "to_user": $('#to_user{{ $suffix }}').val(),
+                        "title": $('#title{{ $suffix }}').val(),
+                        "content": $('#content{{ $suffix }}').val(),
+                        "message_id": $('#parent{{ $suffix }}').val()
+                    },
+                    function (data) {
+                        if (data.fail) {
+                            ;
+                        } else {
+                            $('#addMessage{{ $suffix }}').modal('hide');
+                            $('#title{{ $suffix }}').val('');
+                            $('#content{{ $suffix }}').val('');
+                            document.location.reload();
+                        }
+                    }
+            );
+            return false;
+        });
+
         $(function() {
             var REGEX_EMAIL = '([a-z0-9!#$%&\'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&\'*+/=?^_`{|}~-]+)*@' +
                     '(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)';
@@ -119,29 +145,5 @@
                 placement: "bottom-right"
             });
         });
-        $('#addmessage-form{{ $suffix }}').on('submit', function (e) {
-            e.preventDefault();
-            $.post(
-                    $(this).prop('action'),
-                    {
-                        "_token": $(this).find('input[name=_token]').val(),
-                        "from_user": $('#from_user{{ $suffix }}').val(),
-                        "to_user": $('#to_user{{ $suffix }}').val(),
-                        "title": $('#title{{ $suffix }}').val(),
-                        "content": $('#content{{ $suffix }}').val(),
-                        "message_id": $('#parent{{ $suffix }}').val()
-                    },
-                    function (data) {
-                        if (data.fail) {
-                            ;
-                        } else {
-                            $('#addMessage{{ $suffix }}').modal('hide');
-                            $('#title{{ $suffix }}').val('');
-                            $('#content{{ $suffix }}').val('');
-                            document.location.reload();
-                        }
-                    }
-            );
-            return false;
-        });    </script>
+    </script>
 @stop
