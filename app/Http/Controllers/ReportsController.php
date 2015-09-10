@@ -23,8 +23,9 @@ class ReportsController extends Controller
             $excel->sheet('Listado', function($sheet) {
                 $users = User::all();
                 $sheet->loadView('reports.users.export',['users'=>$users]);
+                $sheet->setAutoFilter();
             });
-            $sheet->setAutoFilter();
+
         })->download('xlsx');
     }
     /**
