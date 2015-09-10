@@ -115,6 +115,7 @@ class NotificationsController extends Controller {
                 $data[ 'user_id' ] = $user->id;
                 $data[ 'type' ] = 'brief';
                 $data[ 'message' ] = 'Se ha hecho una actualización a un Brief.';
+                $team = Team::findOrNew( $model->team_id );
                 $text = '<h4>Hola ' . $user->name . '</h4><br>
                      <h5>' . Auth::user()->name . ' ha actualizado un brief.</h5><br>
                      ' . $team->name . ': #' . $team->id . '<br>
