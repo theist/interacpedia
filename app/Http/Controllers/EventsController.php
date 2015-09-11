@@ -29,7 +29,7 @@ class EventsController extends Controller
      */
     public function index()
     {
-        $events = Event::latest()->get();
+        $events = Event::orderBy('start','desc')->get();
         return view('events.index',compact('events'));
     }
 
