@@ -62,4 +62,14 @@ class Event extends Model implements HasMedia
         return $this->morphMany('App\Interacpedia\Comment', 'model')->orderBy('created_at', 'desc');
     }
 
+    public function getStartAttribute( $date )
+    {
+        setlocale(LC_ALL, 'es_ES');
+        return Carbon::parse($date)->formatLocalized('%B %e, %G');
+    }
+    public function getEndAttribute( $date )
+    {
+        setlocale(LC_ALL, 'es_ES');
+        return Carbon::parse($date)->formatLocalized('%B %e, %G');
+    }
 }
