@@ -8,11 +8,10 @@
                 @unless($event->getMedia('gallery')->count() == 0)
                     <div class="col-md-12"><h4>Galería de Imágenes</h4></div>
                     @foreach($event->getMedia('gallery') as $img)
-                        <div class="document summary col-md-6 panel">
-                            <hr>
-                            <strong>{{ $img->name }}</strong><br>
-                            <a target="_blank" href="{{ $img->getUrl() }}">{{ $img->file_name }}</a><br>
-                            @lang('general/labels.size'): {{ $img->humanReadableSize }}
+                        <div class="col-md-3">
+                            <img class="img-responsive img-thumbnail"
+                                 src="{{ imagestyle($img->getUrl(),'fit270x214') }}"
+                                 alt="{{ $timg->name }}"/>
                             <br>
                             <a href="/events/{{ $event->id }}/delfile/{{ $img->id }}"
                                class="deldocument btn btn-danger">Eliminar</a>
@@ -23,11 +22,10 @@
                 @unless($event->getMedia('eventphoto')->count() == 0)
                     <div class="col-md-12"><h4>Foto principal</h4></div>
                     @foreach($event->getMedia('eventphoto') as $img)
-                        <div class="document summary col-md-6 panel">
-                            <hr>
-                            <strong>{{ $img->name }}</strong><br>
-                            <a target="_blank" href="{{ $img->getUrl() }}">{{ $img->file_name }}</a><br>
-                            @lang('general/labels.size'): {{ $img->humanReadableSize }}
+                        <div class="col-md-3">
+                            <img class="img-responsive"
+                                 src="{{ imagestyle($img->getUrl(),'fit270x214') }}"
+                                 alt="{{ $timg->name }}"/>
                         </div>
                     @endforeach
                 @endunless
