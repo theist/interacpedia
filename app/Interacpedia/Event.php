@@ -66,11 +66,11 @@ class Event extends Model implements HasMedia
     public function getStartAttribute( $date )
     {
         setlocale(LC_ALL, 'es_ES');
-        return Carbon::parse($date)->format('%B %e, %G');
+        return Carbon::parse($date)->formatLocalized('%B %e, %G');
     }
     public function getEndAttribute( $date )
     {
         setlocale(LC_ALL, 'es_ES');
-        return Carbon::parse($date)->format('%B %e, %G');
+        return Carbon::parse($date)->formatLocalized('%B %e, %G');
     }
 }

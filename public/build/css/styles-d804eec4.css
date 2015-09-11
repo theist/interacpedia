@@ -5661,6 +5661,8 @@ h4 {
       font-size: 1.2rem;
       color: #293896;
       margin: 10px 0; }
+    .events .event.summary .content .fields .item {
+      margin: 3px 0; }
     .events .event.summary .content .fields .challenge {
       font-size: 1.6rem;
       margin-top: 10px; }
