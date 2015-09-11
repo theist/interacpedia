@@ -2,6 +2,7 @@
     <div class="main">
         <div class="content col-md-12">
             <h4>{{ trans_choice('general/labels.images', 2 ) }}</h4>
+
             <p>A continuación se muestran las imágenes de este evento.</p>
 
             <div class="row documents">
@@ -9,9 +10,12 @@
                     <div class="col-md-12"><h4>Galería de Imágenes</h4></div>
                     @foreach($event->getMedia('gallery') as $img)
                         <div class="col-md-3">
-                            <img class="img-responsive img-thumbnail"
-                                 src="{{ imagestyle($img->getUrl(),'fit270x214') }}"
-                                 alt="{{ $timg->name }}"/>
+                            <a class="images_link" href="{{ $img->getUrl() }}" data-toggle="lightbox"
+                               data-gallery="multiimages" data-title="{{ $img->name }}">
+                                <img class="img-responsive img-thumbnail"
+                                     src="{{ imagestyle($img->getUrl(),'fit270x214') }}"
+                                     alt="{{ $img->name }}"/>
+                            </a>
                             <br>
                             <a href="/events/{{ $event->id }}/delfile/{{ $img->id }}"
                                class="deldocument btn btn-danger">Eliminar</a>
