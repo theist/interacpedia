@@ -21,11 +21,11 @@
 @stop
 
 @section('section-submenu')
-    @if ( Auth::check() && Auth::user()->inChallenge($challenge->id) )
+    @can('view-challengedetails', $challenge)
         @include('challenges.details.menu',['items'=>[
                                                 'info'=>['label'=>'Info','link'=>'/challenges/'. $challenge->id .'/info'],
                                                 'participants'=>['label'=>'Participantes','link'=>'/challenges/'. $challenge->id .'/participants'],
-                                                'documents'=>['label'=>'Documentos','link'=>'/challenges/'.$challenge->id.'/docs'],
+                                                'docs'=>['label'=>'Documentos','link'=>'/challenges/'.$challenge->id.'/docs'],
                                                 'comments'=>['label'=>'Comentarios','link'=>'/challenges/'.$challenge->id.'/comments']
                                                 ],
                                         'active'=>$option
@@ -38,7 +38,7 @@
                                                 ],
                                         'active'=>$option
                                     ])
-    @endif
+    @endcan
 
 @stop
 

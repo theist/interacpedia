@@ -20,6 +20,7 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Lang;
 use Spatie\MediaLibrary\Media;
 
@@ -223,6 +224,10 @@ class ChallengesController extends Controller {
         if ( $id ) $challenge = Challenge::find( $id );
         $user = $challenge->user()->getResults();
         if ( !$option ) $option = "info";
+        if($option != "info" && Gate::denies('view-challengedetails', $challenge)){
+            $option = "info";
+        }
+
         /* TO DO: move this relations into one object with properties.
          * */
 

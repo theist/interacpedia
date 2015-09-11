@@ -25,6 +25,7 @@
                                 <a href="{{ action('PagesController@howitworks') }}">@lang('general/menu.howitworks')</a>
                             </li>
                             <li><a href="{{ action('PagesController@contact') }}">@lang('general/menu.contact')</a></li>
+                            <li><a href="{{ action('BlogController@index') }}">@lang('general/menu.articles')</a></li>
                         </ul>
                     </li>
                     @if(Auth::check())
@@ -45,7 +46,7 @@
                     <li><a href="{{ action('ChallengesController@index') }}">@lang('general/menu.challenges')</a></li>
                     <li><a href="{{ action('ProjectsController@index') }}">@lang('general/menu.projects')</a></li>
                     <li><a href="{{ action('PartnersController@index') }}">@lang('general/menu.partners')</a></li>
-                    <li><a href="{{ action('BlogController@index') }}">@lang('general/menu.articles')</a></li>
+                    <li><a href="{{ action('EventsController@index') }}">{{  trans_choice('general/labels.events',2) }}</a></li>
                     {{--<li><a href="#">@lang('general/menu.network')</a></li>--}}
                     {{--                    <li class="dropdown"><a href="#">@lang('general/menu.news') <span class="caret"></span></a></li>--}}
                     {{--<li class="dropdown"><a href="#">@lang('general/menu.blog') <span class="caret"></span></a></li>--}}

@@ -128,7 +128,7 @@ return [
     'see_message'                   => 'Ver mensaje',
     'see_comment'                   => 'Ver comentario',
     'see_brief'                     => 'Ver brief',
-    'see_docs'                     => 'Ver documentos',
+    'see_docs'                      => 'Ver documentos',
     'tutorials'                     => 'Tutorial|Tutoriales',
     'articles'                      => 'Artículos',
     'brief'                         => 'Brief',
@@ -136,12 +136,13 @@ return [
     'documents'                     => 'Documento|Documentos',
     'upload'                        => 'Cargar',
     'file_uploaded'                 => 'Archivo cargado correctamente',
+    'image_uploaded'                 => 'Imagen cargada correctamente',
     'file_deleted'                  => 'Archivo eliminado correctamente',
     'file'                          => 'Archivo',
     'return_to_course'              => 'Volver a la clase',
     'brief_problem'                 => 'Problema / Oportunidad',
     'brief_name'                    => 'Título del proyecto',
-    'brief_name_help'                    => 'Escribe un nombre para tu proyecto',
+    'brief_name_help'               => 'Escribe un nombre para tu proyecto',
     'write_here'                    => 'Escribe aquí...',
     'brief_problem_help'            => 'Describa el problema en 140 caracteres',
     'update_ok'                     => 'Actualización realizada correctamente',
@@ -163,5 +164,7 @@ return [
     'never'                         => 'Nunca',
     'last_login'                    => 'Último login',
     'received'                      => 'Recibido|Recibidos',
-    'sent'                          => 'Enviado|Enviados'
+    'sent'                          => 'Enviado|Enviados',
+    'events'                        => 'Evento|Eventos',
+    'images'                        => 'Imagen|Imágenes'
 ];

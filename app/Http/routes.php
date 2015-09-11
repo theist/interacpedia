@@ -66,6 +66,7 @@ Route::resource('notifications','NotificationsController');
 Route::resource('blogs','BlogController');
 Route::resource('teams','TeamsController');
 Route::resource('briefs','BriefsController');
+Route::resource('events','EventsController');
 Route::post('upload','UploadController@store');
 
 Route::get('challenges/{challenge}/delfile/{file}', 'ChallengesController@delfile');
@@ -75,6 +76,9 @@ Route::get('courses/{course}/{option}', 'CoursesController@show');
 Route::get('teams/{team}/delfile/{file}', 'TeamsController@delfile');
 Route::post('teams/{team}/addfile', 'TeamsController@addfile');
 Route::get('teams/{team}/{option}', 'TeamsController@show');
+Route::post('events/{event}/addfile', 'EventsController@addfile');
+Route::get('events/{event}/{option}', 'EventsController@show');
+
 /**
  * Authentication routes
  */

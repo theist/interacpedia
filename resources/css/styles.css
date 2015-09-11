@@ -5638,6 +5638,35 @@ h4 {
   .teams .image img {
     width: 100%; } }
 
+.events .event.summary .title h4 {
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 0;
+  color: #535353; }
+.events .event.summary .subtitle {
+  margin-bottom: 10px;
+  color: #535353; }
+.events .event.summary .links .btn {
+  font-size: 1rem; }
+.events .event.summary .content {
+  min-height: 350px;
+  background: white;
+  border: 1px solid #cdcdcd;
+  margin-bottom: 15px; }
+  .events .event.summary .content .fields {
+    padding: 10px; }
+    .events .event.summary .content .fields .professor {
+      font-style: italic;
+      font-size: 1.2rem;
+      color: #293896;
+      margin: 10px 0; }
+    .events .event.summary .content .fields .challenge {
+      font-size: 1.6rem;
+      margin-top: 10px; }
+@media (max-width: 767px) {
+  .events .image img {
+    width: 100%; } }
+
 #header {
   padding: 10px 0;
   margin: 10px; }

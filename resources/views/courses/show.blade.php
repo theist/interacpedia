@@ -22,36 +22,21 @@
 @stop
 
 @section('section-submenu')
-    <?php
-    if ( Auth::check()
-            && ( $course->students->contains( function ( $key, $value )
-                    {
-                        return $value->id == Auth::user()->id;
-                    } ) || Auth::user()->id == $course->user->id
-                    || Auth::user()->admin
-                    || $course->mentors->contains( function ( $key, $value )
-                    {
-                        return $value->user->id == Auth::user()->id;
-                    } )
-            )
-    )
-    {
-        $items = [
-                'info' => [ 'label' => 'Info', 'link' => '/courses/' . $course->id . '/info' ],
-                'teams' => [ 'label' => 'Equipos', 'link' => '/courses/' . $course->id . '/teams' ],
-                'blog' => [ 'label' => 'Blog', 'link' => '/courses/' . $course->id . '/blog' ]
-        ];
-    } else
-    {
-        $items = [
-                'info' => [ 'label' => 'Info', 'link' => '/courses/' . $course->id . '/info' ]
-        ];
-    }
-
-    ?>
-    @include('courses.details.menu',['items'=>$items,
-                                    'active'=>$option
-                                ])
+    @can('view-coursedetails', $course)
+        @include('courses.details.menu',['items'=>[
+                                        'info' => [ 'label' => 'Info', 'link' => '/courses/' . $course->id . '/info' ],
+                                        'teams' => [ 'label' => 'Equipos', 'link' => '/courses/' . $course->id . '/teams' ],
+                                        'blog' => [ 'label' => 'Blog', 'link' => '/courses/' . $course->id . '/blog' ]],
+                                'active'=>$option
+                            ])
+    @else
+        @include('courses.details.menu',['items'=>[
+                                        'info' => [ 'label' => 'Info', 'link' => '/courses/' . $course->id . '/info' ],
+                                        'teams' => [ 'label' => 'Equipos', 'link' => '/courses/' . $course->id . '/teams' ]
+                                        ],
+                                'active'=>$option
+                            ])
+    @endcan
 @stop
 
 
