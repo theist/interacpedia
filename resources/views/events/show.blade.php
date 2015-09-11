@@ -13,7 +13,7 @@
     @can('view-eventdetails', $event)
         <?php
         $items = [
-                'info' => [ 'label' => 'Info', 'link' => '/events/' . $event->id . '/info' ],
+                'info' => [ 'label' => 'Asistentes', 'link' => '/events/' . $event->id . '/info' ],
                 'gallery' => [ 'label' => 'Galería', 'link' => '/events/' . $event->id . '/gallery' ],
                 'comments' => [ 'label' => 'Comentarios', 'link' => '/events/' . $event->id . '/comments' ]
         ];
@@ -21,7 +21,7 @@
     @else
         <?php
         $items = [
-                'info' => [ 'label' => 'Info', 'link' => '/events/' . $event->id . '/info' ]
+                'info' => [ 'label' => 'Asistentes', 'link' => '/events/' . $event->id . '/info' ]
         ];
         ?>
     @endcan

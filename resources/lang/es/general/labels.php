@@ -136,7 +136,7 @@ return [
     'documents'                     => 'Documento|Documentos',
     'upload'                        => 'Cargar',
     'file_uploaded'                 => 'Archivo cargado correctamente',
-    'image_uploaded'                 => 'Imagen cargada correctamente',
+    'image_uploaded'                => 'Imagen cargada correctamente',
     'file_deleted'                  => 'Archivo eliminado correctamente',
     'file'                          => 'Archivo',
     'return_to_course'              => 'Volver a la clase',
@@ -166,5 +166,6 @@ return [
     'received'                      => 'Recibido|Recibidos',
     'sent'                          => 'Enviado|Enviados',
     'events'                        => 'Evento|Eventos',
-    'images'                        => 'Imagen|Imágenes'
+    'images'                        => 'Imagen|Imágenes',
+    'when'                          => 'Cuándo'
 ];

@@ -24,6 +24,7 @@
             <div class="fields">
                 {{ $event->description }}
                 <div class=""><strong>@lang('general/labels.location'): </strong>{{ $event->location }}</div>
+                <div class=""><strong>@lang('general/labels.when'): </strong>{{ $event->start }}</div>
             </div>
             <div class="col-md-10 col-md-offset-1">
                 <hr>
