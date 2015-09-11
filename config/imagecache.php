@@ -62,6 +62,7 @@ return array(
         'fit100x100grayscale'=>'App\Filters\Fit100x100Grayscale',
         'height150'=>'App\Filters\Height150',
         'height120'=>'App\Filters\Height120',
+        'width1200'=>'App\Filters\Width1200',
         'scale200x200'=>'App\Filters\Scale200x200'
     ),
 
