@@ -13,7 +13,7 @@
                             <a class="images_link" href="{{ $img->getUrl() }}" data-toggle="lightbox"
                                data-gallery="multiimages" data-title="{{ $img->name }}">
                                 <img class="img-responsive img-thumbnail"
-                                     src="{{ imagestyle($img->getUrl(),'fit270x214') }}"
+                                     src="{{ imagestyle($img->getUrl(),'fit100x100') }}"
                                      alt="{{ $img->name }}"/>
                             </a>
                             <br>
