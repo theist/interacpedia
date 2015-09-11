@@ -106,7 +106,7 @@ class EventsController extends Controller
 
     public function addfile( $event, Request $request )
     {
-        $event = Team::find( $event );
+        $event = Event::find( $event );
         if($request->file('image')){
             $media = $event->addMedia($request->file('image'))->usingName($request->input('name'))->toCollection($request->input('type','gallery'));
             //NotificationsController::add($media);
