@@ -9,7 +9,7 @@
                 @unless($event->getMedia('gallery')->count() == 0)
                     <div class="col-md-12"><h4>Galería de Imágenes</h4></div>
                     @foreach($event->getMedia('gallery') as $img)
-                        <div class="col-md-3">
+                        <div class="col-md-2">
                             <a class="images_link" href="{{ imagestyle($img->getUrl(),'width1200') }}" data-toggle="lightbox"
                                data-gallery="multiimages" data-title="{{ $img->name }}">
                                 <img class="img-responsive img-thumbnail"
