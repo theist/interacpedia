@@ -13,6 +13,10 @@
                             <strong>{{ $img->name }}</strong><br>
                             <a target="_blank" href="{{ $img->getUrl() }}">{{ $img->file_name }}</a><br>
                             @lang('general/labels.size'): {{ $img->humanReadableSize }}
+                            <br>
+                            <a href="/events/{{ $event->id }}/delfile/{{ $img->id }}"
+                               class="deldocument btn btn-danger">Eliminar</a>
+
                         </div>
                     @endforeach
                 @endunless

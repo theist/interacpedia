@@ -115,4 +115,13 @@ class EventsController extends Controller
         }
         return redirect( 'events/'.$event->id . '/gallery' );
     }
+    public function delfile( $event, $file, Request $request )
+    {
+        $event = Event::find( $event );
+        if($m = Media::find($file)){
+            $m->delete();
+            flash()->success( Lang::get( 'general/labels.file_deleted' ) );
+        }
+        return redirect( 'events/'.$event->id . '/gallery' );
+    }
 }
