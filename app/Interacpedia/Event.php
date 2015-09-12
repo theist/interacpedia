@@ -19,8 +19,8 @@ class Event extends Model implements HasMedia
      *
      * @var array
      */
-    protected $dates = ['deleted_at','start','end'];
-
+    protected $dates = ['created_at', 'updated_at', 'deleted_at','start','end'];
+    protected $dateFormat = 'F j, Y';
     protected $fillable = [
         'title',
         'description',
@@ -63,14 +63,4 @@ class Event extends Model implements HasMedia
         return $this->morphMany('App\Interacpedia\Comment', 'model')->orderBy('created_at', 'desc');
     }
 
-    public function getStartAttribute( $date )
-    {
-        setlocale(LC_ALL, 'es_ES');
-        return Carbon::parse($date)->formatLocalized('%B %e, %G');
-    }
-    public function getEndAttribute( $date )
-    {
-        setlocale(LC_ALL, 'es_ES');
-        return Carbon::parse($date)->formatLocalized('%B %e, %G');
-    }
 }
