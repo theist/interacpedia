@@ -16,7 +16,8 @@
         <div class="fields col-md-8">
             <div class="title"><h4><a
                             href="{{ action('EventsController@show',[$event->id]) }}">
-                        {{ $event->title}}
+                        {{ $event->title}}<br>
+                        <small>({{ $event->start }})</small>
                     </a>
                 </h4></div>
         </div>
@@ -25,7 +26,7 @@
                 <div class="item">{{ $event->description }}</div>
                 <br>
                 <div class="item"><strong>@lang('general/labels.location'): </strong>{{ $event->location }}</div>
-                <div class="item"><strong>@lang('general/labels.when'): </strong>{{ $event->start }}</div>
+
             </div>
             <div class="col-md-10 col-md-offset-1">
                 <hr>
