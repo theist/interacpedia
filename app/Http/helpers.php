@@ -26,7 +26,8 @@ function imagestyle($image, $style="small"){
             $path = public_path(). "/images".str_replace(".","",str_replace(" ","_",$image)).".jpg";
             if(!file_exists(substr($path,0,strrpos($path,'/'))))
                 File::makeDirectory(substr($path,0,strrpos($path,'/')), $mode = 0777, true);
-            Image::make(public_path().$image)->encode('jpg')->save( $path );
+            if(!file_exists($path))
+                Image::make(public_path().$image)->encode('jpg')->save( $path );
             return "/images/cache/".$style.str_replace(".","",str_replace(" ","_",$image)).".jpg";
         } else{
             return "/images/cache/".$style."/".$image;
