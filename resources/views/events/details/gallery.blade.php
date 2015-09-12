@@ -51,7 +51,7 @@
                 </div>
                 <div class="form-group col-md-2">
                     {!! Form::label('type', Lang::get('general/labels.type')) !!}
-                    {!! Form::select('type', array('gallery' => 'Galería', 'eventphoto'=>'Foto principal'), null, ['placeholder' => 'Escoja un tipo...','class'=>'form-control']) !!}
+                    {!! Form::select('type', array('gallery' => 'Galería', 'eventphoto'=>'Foto principal'), 'gallery', ['placeholder' => 'Escoja un tipo...','class'=>'form-control']) !!}
                     <p class="help-block">Debe clasificar la imagen que está cargando.</p>
                 </div>
                 <div class="form-group col-md-2">
