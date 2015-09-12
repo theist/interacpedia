@@ -17,7 +17,7 @@
                                      src="{{ imagestyle($img->getUrl(),'scale200x200') }}"
                                      alt="{{ $img->name }}"/>
                             </a>
-                            @if(Auth::user()->admin)
+                            @if(Auth::user()->admin && false)
                                 <br>
                                 <a href="/events/{{ $event->id }}/delfile/{{ $img->id }}"
                                    class="deldocument btn btn-danger">Eliminar</a>
