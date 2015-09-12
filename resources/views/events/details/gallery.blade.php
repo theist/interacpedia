@@ -14,7 +14,7 @@
                                data-toggle="lightbox"
                                data-gallery="multiimages" data-title="{{ $img->name }}">
                                 <img class="img-responsive img-thumbnail"
-                                     src="{{ imagestyle($img->getUrl(),'fit100x100') }}"
+                                     src="{{ imagestyle($img->getUrl(),'fit200x100') }}"
                                      alt="{{ $img->name }}"/>
                             </a>
                             @if(Auth::user()->admin)
