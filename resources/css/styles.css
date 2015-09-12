@@ -5649,7 +5649,7 @@ h4 {
 .events .event.summary .links .btn {
   font-size: 1rem; }
 .events .event.summary .content {
-  min-height: 350px;
+  min-height: 370px;
   background: white;
   border: 1px solid #cdcdcd;
   margin-bottom: 15px; }
