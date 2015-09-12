@@ -38,7 +38,7 @@ class Challenge extends Model implements HasMedia {
      * @var array
      */
     protected $dates = ['created_at','updated_at','deleted_at'];
-    protected $dateFormat = 'F j, Y';
+    //protected $dateFormat = 'Y';
 
     /**
      * Get possible values for enum field

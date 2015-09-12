@@ -20,7 +20,7 @@ class Event extends Model implements HasMedia
      * @var array
      */
     protected $dates = ['created_at', 'updated_at', 'deleted_at','start','end'];
-    protected $dateFormat = 'F j, Y';
+    //protected $dateFormat = 'Y';
     protected $fillable = [
         'title',
         'description',
