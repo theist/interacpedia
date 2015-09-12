@@ -38,7 +38,6 @@ class Challenge extends Model implements HasMedia {
      * @var array
      */
     protected $dates = ['created_at','updated_at','deleted_at'];
-    //protected $dateFormat = 'Y';
 
     /**
      * Get possible values for enum field
@@ -161,6 +160,18 @@ class Challenge extends Model implements HasMedia {
     {
         return $this->belongsTo( 'App\Interacpedia\ChallengeCategory' );
     }
+
+    public function getCreatedAtAttribute( $date )
+    {
+        setlocale(LC_ALL, 'es');
+        return Carbon::parse($date)->formatLocalized('%B %e, %G');
+    }
+    public function getUpdatedAtAttribute( $date )
+    {
+        setlocale(LC_ALL, 'es');
+        return Carbon::parse($date)->formatLocalized('%B %e, %G');
+    }
+
 
     /**
      * Get all of the challenge comments.

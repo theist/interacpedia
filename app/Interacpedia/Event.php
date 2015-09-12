@@ -20,7 +20,7 @@ class Event extends Model implements HasMedia
      * @var array
      */
     protected $dates = ['created_at', 'updated_at', 'deleted_at','start','end'];
-    //protected $dateFormat = 'Y';
+
     protected $fillable = [
         'title',
         'description',
@@ -63,4 +63,24 @@ class Event extends Model implements HasMedia
         return $this->morphMany('App\Interacpedia\Comment', 'model')->orderBy('created_at', 'desc');
     }
 
+    public function getCreatedAtAttribute( $date )
+    {
+        setlocale(LC_ALL, 'es');
+        return Carbon::parse($date)->formatLocalized('%B %e, %G');
+    }
+    public function getUpdatedAtAttribute( $date )
+    {
+        setlocale(LC_ALL, 'es');
+        return Carbon::parse($date)->formatLocalized('%B %e, %G');
+    }
+    public function getStartAttribute( $date )
+    {
+        setlocale(LC_ALL, 'es');
+        return Carbon::parse($date)->formatLocalized('%B %e, %G');
+    }
+    public function getEndAttribute( $date )
+    {
+        setlocale(LC_ALL, 'es');
+        return Carbon::parse($date)->formatLocalized('%B %e, %G');
+    }
 }
