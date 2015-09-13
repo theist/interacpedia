@@ -31,7 +31,7 @@
                         <div class="col-md-3">
                             <img class="img-responsive"
                                  src="{{ imagestyle($img->getUrl(),'fit270x214') }}"
-                                 alt="{{ $timg->name }}"/>
+                                 alt="{{ $img->name }}"/>
                         </div>
                     @endforeach
                 @endunless
