@@ -10,18 +10,18 @@
             <div class="usermenu col-md-5 col-md-offset-6 col-xs-12 text-right">
                 <div class="row text-right">
                     {{--<li role="presentation"><a href="#">English <span class="caret"></span></a></li>--}}
-                    <a class="btn btn-blue col-xs-12 col-md-2" href="{{ action('TutorialsController@index') }}">{{ trans_choice('general/labels.tutorials',2) }}</a>
+                    <a class="btn btn-blue col-xs-12 col-md-3" href="{{ action('TutorialsController@index') }}">{{ trans_choice('general/labels.tutorials',2) }}</a>
+                    <a class="btn btn-purple col-xs-12 col-md-2" href="{{ action('ChallengesController@index') }}">@lang('general/labels.challenges')</a>
+                    <a class="btn btn-green col-xs-12 col-md-2" href="{{ action('CoursesController@index') }}">@lang('general/labels.courses')</a>
+                    {{--<a class="btn btn-purple col-xs-12 col-md-2" href="{{ action('ChallengesController@create') }}">+ @lang('general/labels.challenge')</a>--}}
+                    {{--<a class="btn btn-green col-xs-12 col-md-3" href="{{ action('ProjectsController@create') }}">+ @lang('general/labels.project')</a>--}}
+                    <a class="btn btn-white col-xs-12 col-md-3" href="{{ url('auth/logout') }}">@lang('auth/title.logout')</a>
                     @if(Auth::user()->admin)
                         <a class="btn btn-danger col-xs-12 col-md-2" href="{{ action('ReportsController@users') }}">@lang('general/labels.report')</a>
                     @else
                         <div class="col-md-2">
                         </div>
                     @endif
-                    <a class="btn btn-purple col-xs-12 col-md-2" href="{{ action('ChallengesController@index') }}">@lang('general/labels.challenges')</a>
-                    <a class="btn btn-green col-xs-12 col-md-3" href="{{ action('CoursesController@index') }}">@lang('general/labels.courses')</a>
-                    {{--<a class="btn btn-purple col-xs-12 col-md-2" href="{{ action('ChallengesController@create') }}">+ @lang('general/labels.challenge')</a>--}}
-                    {{--<a class="btn btn-green col-xs-12 col-md-3" href="{{ action('ProjectsController@create') }}">+ @lang('general/labels.project')</a>--}}
-                    <a class="btn btn-white col-xs-12 col-md-3" href="{{ url('auth/logout') }}">@lang('auth/title.logout')</a>
                 </div>
             </div>
         @else
