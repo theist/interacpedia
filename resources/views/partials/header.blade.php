@@ -10,6 +10,7 @@
             <div class="usermenu col-md-5 col-md-offset-6 col-xs-12 text-right">
                 <div class="row text-right">
                     {{--<li role="presentation"><a href="#">English <span class="caret"></span></a></li>--}}
+                    <a class="btn btn-blue col-xs-12 col-md-2" href="{{ action('TutorialsController@index') }}">{{ trans_choice('general/labels.tutorials',2) }}</a>
                     @if(Auth::user()->admin)
                         <a class="btn btn-danger col-xs-12 col-md-2" href="{{ action('ReportsController@users') }}">@lang('general/labels.report')</a>
                     @else
