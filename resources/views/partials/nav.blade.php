@@ -26,6 +26,7 @@
                             </li>
                             <li><a href="{{ action('PagesController@contact') }}">@lang('general/menu.contact')</a></li>
                             <li><a href="{{ action('BlogController@index') }}">@lang('general/menu.articles')</a></li>
+                            <li><a href="{{ action('TutorialsController@index') }}">{{ trans_choice('general/labels.tutorials',2 ) }}</a></li>
                         </ul>
                     </li>
                     @if(Auth::check())
