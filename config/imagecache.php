@@ -57,6 +57,7 @@ return array(
         'large' => 'Intervention\Image\Templates\Large',
         'fit330x297'=>'App\Filters\Fit330x297',
         'fit270x214'=>'App\Filters\Fit270x214',
+        'fit270x130'=>'App\Filters\Fit270x130',
         'fit200x100'=>'App\Filters\Fit200x100',
         'fit100x100'=>'App\Filters\Fit100x100',
         'fit100x100grayscale'=>'App\Filters\Fit100x100Grayscale',

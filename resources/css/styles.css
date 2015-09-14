@@ -5526,6 +5526,49 @@ h4 {
   .mentors .image img {
     width: 100%; } }
 
+.tutorial .content.raised {
+  padding: 0; }
+.tutorial.full .image {
+  margin-bottom: 10px; }
+.tutorial.full .title1 {
+  font-family: 'Exo 2', sans-serif;
+  color: #e90089;
+  font-size: 3rem;
+  font-weight: 800; }
+.tutorial.full .title2 {
+  font-family: 'Open Sans', sans-serif;
+  color: #662d8f;
+  font-size: 2.5rem;
+  font-weight: 800; }
+.tutorial.full .text {
+  color: #414042;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2rem;
+  margin: 10px 0; }
+.tutorial.full ol.list1 {
+  list-style-type: none;
+  margin: 0;
+  margin-left: 30px;
+  padding: 0;
+  counter-reset: li-counter; }
+  .tutorial.full ol.list1 > li {
+    position: relative;
+    margin-bottom: 20px;
+    padding-left: 0.5em;
+    min-height: 3em; }
+    .tutorial.full ol.list1 > li:before {
+      position: absolute;
+      top: 5px;
+      left: -1em;
+      width: 0.8em;
+      line-height: 1;
+      font-weight: bold;
+      text-align: right;
+      content: counter(li-counter) ". ";
+      counter-increment: li-counter;
+      color: #e90089;
+      font-size: 2.5rem; }
+
 .tutorials .tutorial.summary .title h4 {
   text-transform: none;
   font-family: 'Open Sans', sans-serif;
@@ -5544,7 +5587,7 @@ h4 {
   margin-bottom: 15px; }
   @media (min-width: 1199px) {
     .tutorials .tutorial.summary .content {
-      min-height: 320px; } }
+      min-height: 250px; } }
   .tutorials .tutorial.summary .content .fields {
     padding: 20px; }
 @media (max-width: 767px) {

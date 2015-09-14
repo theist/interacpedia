@@ -22,7 +22,7 @@ class TutorialsController extends Controller
      */
     public function index()
     {
-        $tutorials = Tutorial::all();
+        $tutorials = Tutorial::orderBy('created_at','desc')->get();
         return view( 'tutorials.index', compact( 'tutorials' ) );
 
     }
@@ -57,7 +57,8 @@ class TutorialsController extends Controller
      */
     public function show(Tutorial $tutorial)
     {
-        return view( 'tutorials.show', compact( 'tutorial'));
+        $tutorials = Tutorial::where('id','<>',$tutorial->id)->orderBy('created_at','desc')->get();
+        return view( 'tutorials.show', compact( 'tutorial','tutorials'));
     }
 
     /**

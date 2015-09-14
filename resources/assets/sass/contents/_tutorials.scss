@@ -1,6 +1,61 @@
-.tutorials{
-  .tutorial{
-    &.summary{
+.tutorial {
+  .content.raised{
+    padding: 0;
+  }
+  &.full {
+    .image{
+      margin-bottom: 10px;
+    }
+    .title1 {
+      font-family: $font-exo2;
+      color: $fucsia;
+      font-size: 3rem;
+      font-weight: 800;
+    }
+    .title2 {
+      font-family: $font-sans;
+      color: $purple2;
+      font-size: 2.5rem;
+      font-weight: 800;
+    }
+    .text{
+      color: $text-gray2;
+      font-family: $font-sans;
+      font-size: 2rem;
+      margin: 10px 0;
+    }
+    ol.list1{
+      list-style-type: none;
+      margin: 0;
+      margin-left: 30px;
+      padding: 0;
+      counter-reset: li-counter;
+      >li{
+        position: relative;
+        margin-bottom: 20px;
+        padding-left: 0.5em;
+        min-height: 3em;
+        &:before{
+          position: absolute;
+          top: 5px;
+          left: -1em;
+          width: 0.8em;
+          line-height: 1;
+          font-weight: bold;
+          text-align: right;
+          content: counter(li-counter) ". ";
+          counter-increment: li-counter;
+          color: $fucsia;
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
+}
+
+.tutorials {
+  .tutorial {
+    &.summary {
       .title {
         h4 {
           text-transform: none;
@@ -9,18 +64,18 @@
           color: $light-gray;
         }
       }
-      .subtitle{
+      .subtitle {
         color: $light-gray;
         font-weight: 600;
       }
-      .body{
+      .body {
         font-size: 1.3rem;
         color: $light-gray;
         margin-bottom: $grid-gutter-width/2;
       }
       .content {
         @media (min-width: $screen-md-max) {
-          min-height: 320px;
+          min-height: 250px;
         }
         background: white;
         border: 1px solid $border-gray;
