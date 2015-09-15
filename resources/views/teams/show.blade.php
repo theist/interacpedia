@@ -15,6 +15,7 @@
         $items = [
                 'info' => [ 'label' => 'Info', 'link' => '/teams/' . $team->id . '/info' ],
                 'brief' => [ 'label' => 'Brief', 'link' => '/teams/' . $team->id . '/brief' ],
+                'plan' => [ 'label' => 'Plan', 'link' => '/teams/' . $team->id . '/plan' ],
                 'docs' => [ 'label' => 'Documentos', 'link' => '/teams/' . $team->id . '/docs' ],
                 'comments' => [ 'label' => 'Comentarios', 'link' => '/teams/' . $team->id . '/comments' ]
         ];

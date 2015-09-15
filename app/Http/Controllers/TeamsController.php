@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Interacpedia\Brief;
 use App\Interacpedia\Team;
+use App\Interacpedia\Teams\Plan;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -69,7 +70,8 @@ class TeamsController extends Controller
             $option = "info";
         }
         $brief = Brief::firstOrCreate(['team_id'=>$team->id]);
-        return view( 'teams.show', compact( 'team','option','brief' ) );
+        $plan = Plan::firstOrCreate(['team_id'=>$team->id]);
+        return view( 'teams.show', compact( 'team','option','brief','plan' ) );
     }
 
     /**

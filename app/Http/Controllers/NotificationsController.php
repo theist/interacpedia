@@ -127,6 +127,26 @@ class NotificationsController extends Controller {
                     $m->to( $user->email, $user->name )->subject( 'Actualización a un Brief' );
                 } );
             }
+        } else if ( $data[ 'model_type' ] == "App\\Interacpedia\\Teams\\Plan" )
+        {
+            $admins = User::where( 'admin', 1 )->get();
+            foreach ( $admins as $user )
+            {
+                $data[ 'user_id' ] = $user->id;
+                $data[ 'type' ] = 'brief';
+                $data[ 'message' ] = 'Se ha hecho una actualización a un Plan de proyecto.';
+                $team = Team::findOrNew( $model->team_id );
+                $text = '<h4>Hola ' . $user->name . '</h4><br>
+                     <h5>' . Auth::user()->name . ' ha actualizado un plan de proyecto.</h5><br>
+                     ' . $team->name . ': #' . $team->id . '<br>
+                     <a href="' . url( "teams/" . $model->team_id . "/plan" ) . '">Ver Plan</a>
+                    ';
+                $not = Notification::create( $data );
+                Mail::queue( 'emails.notification', [ 'text' => $text ], function ( $m ) use ( $user )
+                {
+                    $m->to( $user->email, $user->name )->subject( 'Actualización a un Plan de proyecto' );
+                } );
+            }
         } else if ( $data[ 'model_type' ] == "App\\Interacpedia\\Comment" )
         {
             $author = User::findOrNew( $model[ 'user_id' ] );

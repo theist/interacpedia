@@ -66,6 +66,7 @@ Route::resource('notifications','NotificationsController');
 Route::resource('blogs','BlogController');
 Route::resource('teams','TeamsController');
 Route::resource('briefs','BriefsController');
+Route::resource('plans','PlansController');
 Route::resource('events','EventsController');
 Route::post('upload','UploadController@store');
 
