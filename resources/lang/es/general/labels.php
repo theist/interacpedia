@@ -167,5 +167,6 @@ return [
     'sent'                          => 'Enviado|Enviados',
     'events'                        => 'Evento|Eventos',
     'images'                        => 'Imagen|Imágenes',
-    'when'                          => 'Cuándo'
+    'when'                          => 'Cuándo',
+    'uploaded'                      => 'Cargado:'
 ];

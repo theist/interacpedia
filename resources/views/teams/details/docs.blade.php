@@ -14,8 +14,8 @@
                             <hr>
                             <strong>{{ $doc->name }}</strong><br>
                             <a target="_blank" href="{{ $doc->getUrl() }}">{{ $doc->file_name }}</a><br>
-                            @lang('general/labels.size'): {{ $doc->humanReadableSize }}
-                            <br>
+                            @lang('general/labels.size'): {{ $doc->humanReadableSize }}<br>
+                            @lang('general/labels.uploaded'): {{ $doc->created_at }}<br>
                             <a href="/teams/{{ $team->id }}/delfile/{{ $doc->id }}"
                                class="deldocument btn btn-danger">Eliminar</a>
                         </div>
@@ -28,8 +28,8 @@
                             <hr>
                             <strong>{{ $doc->name }}</strong><br>
                             <a target="_blank" href="{{ $doc->getUrl() }}">{{ $doc->file_name }}</a><br>
-                            @lang('general/labels.size'): {{ $doc->humanReadableSize }}
-                            <br>
+                            @lang('general/labels.size'): {{ $doc->humanReadableSize }}<br>
+                            @lang('general/labels.uploaded'): {{ $doc->created_at }}<br>
                             <a href="/teams/{{ $team->id }}/delfile/{{ $doc->id }}"
                                class="deldocument btn btn-danger">Eliminar</a>
                         </div>
@@ -42,8 +42,8 @@
                             <hr>
                             <strong>{{ $doc->name }}</strong><br>
                             <a target="_blank" href="{{ $doc->getUrl() }}">{{ $doc->file_name }}</a><br>
-                            @lang('general/labels.size'): {{ $doc->humanReadableSize }}
-                            <br>
+                            @lang('general/labels.size'): {{ $doc->humanReadableSize }}<br>
+                            @lang('general/labels.uploaded'): {{ $doc->created_at }}<br>
                             <a href="/teams/{{ $team->id }}/delfile/{{ $doc->id }}"
                                class="deldocument btn btn-danger">Eliminar</a>
                         </div>
