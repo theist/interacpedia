@@ -23,6 +23,9 @@
                     @elseif($notification->type=="brief")
                         <?php $brief = \App\Interacpedia\Brief::findOrNew( $notification->model_id );?>
                         <a href="{{ url('teams/'.$brief->team_id.'/brief') }}">@lang('general/labels.see_brief')</a>
+                    @elseif($notification->type=="plan")
+                        <?php $plan = \App\Interacpedia\Teams\Plan::findOrNew( $notification->model_id );?>
+                        <a href="{{ url('teams/'.$plan->team_id.'/plan') }}">@lang('general/labels.see_plan')</a>
                     @elseif($notification->type=="media")
                         <?php $media = Spatie\MediaLibrary\Media::findOrNew( $notification->model_id );?>
                         @if($media->model_type == "App\\Interacpedia\\Challenge")

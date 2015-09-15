@@ -128,6 +128,7 @@ return [
     'see_message'                   => 'Ver mensaje',
     'see_comment'                   => 'Ver comentario',
     'see_brief'                     => 'Ver brief',
+    'see_plan'                     => 'Ver Plan',
     'see_docs'                      => 'Ver documentos',
     'tutorials'                     => 'Tutorial|Tutoriales',
     'articles'                      => 'Artículos',

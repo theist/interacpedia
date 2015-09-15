@@ -133,7 +133,7 @@ class NotificationsController extends Controller {
             foreach ( $admins as $user )
             {
                 $data[ 'user_id' ] = $user->id;
-                $data[ 'type' ] = 'brief';
+                $data[ 'type' ] = 'plan';
                 $data[ 'message' ] = 'Se ha hecho una actualización a un Plan de proyecto.';
                 $team = Team::findOrNew( $model->team_id );
                 $text = '<h4>Hola ' . $user->name . '</h4><br>
