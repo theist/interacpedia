@@ -1,0 +1,10 @@
+.panel{
+  &.panel-info{
+    padding: 0;
+    .panel-body{
+      &.image{
+        padding: 0;
+      }
+    }
+  }
+}

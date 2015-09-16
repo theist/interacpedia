@@ -6138,6 +6138,11 @@ h4 {
     width: 100px;
     text-align: center; }
 
+.panel.panel-info {
+  padding: 0; }
+  .panel.panel-info .panel-body.image {
+    padding: 0; }
+
 
 /*# sourceMappingURL=styles.css.map */
 /* latin-ext */
