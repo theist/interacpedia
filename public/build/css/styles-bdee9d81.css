@@ -5624,9 +5624,7 @@ h4 {
   margin-bottom: 15px; }
   @media (min-width: 1199px) {
     .users .user.summary .content {
-      min-height: 100px; } }
-  .users .user.summary .content .fields {
-    padding: 20px; }
+      min-height: 130px; } }
 
 .courses .course.summary .title h4 {
   text-transform: uppercase;
@@ -5655,8 +5653,12 @@ h4 {
 .course-detailsinfo .student .name {
   height: 40px; }
 
+.teams .team hr {
+  margin: 5px 0; }
 .teams .team .badges {
   min-height: 75px; }
+.teams .team .badgein {
+  margin: 10px 0; }
 .teams .team.summary .title h4 {
   text-transform: uppercase;
   font-family: 'Open Sans', sans-serif;
@@ -5681,7 +5683,8 @@ h4 {
     margin: 10px 0; }
   .teams .team.summary .content .fields .challenge {
     font-size: 1.6rem;
-    margin-top: 10px; }
+    margin-top: 10px;
+    min-height: 66px; }
 @media (max-width: 767px) {
   .teams .image img {
     width: 100%; } }

@@ -89,4 +89,20 @@ class Team extends Model implements HasMedia
         }
         return true;
     }
+    /**
+     * @return bool
+     */
+    public function challenge_comments()
+    {
+        foreach($this->users as $us){
+            foreach($us->comments as $comment){
+                if($comment->model_type == "App\\Interacpedia\\Challenge"
+                      && $comment->model_id == $this->challenge->id  ){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
 }

@@ -39,13 +39,13 @@
 
       .content {
         @media (min-width: $screen-md-max) {
-          min-height: 100px;
+          min-height: 130px;
         }
         background: white;
         border: 1px solid $border-gray;
         margin-bottom: 15px;
         .fields {
-          padding: $grid-gutter-width;
+          //padding: $grid-gutter-width;
         }
       }
     }

@@ -1,7 +1,13 @@
 .teams {
   .team {
+    hr{
+      margin: 5px 0;
+    }
     .badges{
       min-height: 75px;
+    }
+    .badgein{
+      margin: 10px 0;
     }
     &.summary {
       .title {
@@ -38,6 +44,7 @@
           .challenge{
             font-size: 1.6rem;
             margin-top: $grid-gutter-width/2;
+            min-height: 66px;
           }
         }
       }
