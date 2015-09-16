@@ -67,4 +67,15 @@ class Team extends Model implements HasMedia
         return $this->morphMany('App\Interacpedia\Comment', 'model')->orderBy('created_at', 'desc');
     }
 
+    /**
+     * @return bool
+     */
+    public function team_on()
+    {
+        foreach($this->users as $us){
+            if(!$us->agree)
+                return false;
+        }
+        return true;
+    }
 }

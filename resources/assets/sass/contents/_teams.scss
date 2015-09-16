@@ -1,5 +1,8 @@
 .teams {
   .team {
+    .badges{
+      min-height: 75px;
+    }
     &.summary {
       .title {
         h4 {
@@ -19,10 +22,12 @@
         }
       }
       .content {
-        min-height: 350px;
+        padding: 0;
+        min-height: 391px;
         background: white;
         border: 1px solid $border-gray;
         margin-bottom: 15px;
+        margin-top:0;
         .fields {
           .professor{
             font-style: italic;

@@ -29,7 +29,6 @@
                         @else
                             Equipo # {{ $team->id }}
                         @endif
-
                     </a>
                 </h4></div>
             <div class="professor">
@@ -37,6 +36,26 @@
                 <strong>@lang('general/labels.professor'): </strong>{{ $team->course->user->name }}</div>
             <div class=""><strong>@lang('general/labels.students'): </strong>{{ $team->users->count() }}</div>
             <div class="challenge"><a href="/challenges/{{ $team->challenge->id }}">{{ $team->challenge->name }}</a>
+            </div>
+        </div>
+        <div class="col-md-10 col-md-offset-1 badges">
+            <div class="row">
+                @if($team->brief()->completed())
+                    <div class="col-md-4">
+                        <img src="/images/badges/brief_100.png" alt="Tu equipo ha completado el Brief!"
+                             class="img-responsive" data-toggle="tooltip" data-placement="bottom"
+                             title="Tu equipo ha completado el Brief!">
+                    </div>
+                @endif
+                @if($team->team_on())
+                    <div class="col-md-4">
+                        <img src="/images/badges/team_on.png"
+                             alt="Todos los miembros del equipo se han activado en Interacpedia!"
+                             class="img-responsive" data-toggle="tooltip" data-placement="bottom"
+                             title="Todos los miembros del equipo se han activado en Interacpedia!">
+                    </div>
+                @endif
+
             </div>
         </div>
         <div class="col-md-10 col-md-offset-1">
@@ -54,3 +73,11 @@
     </div>
 </div>
 
+@section('footer')
+    @parent
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+@stop

@@ -36,16 +36,25 @@
                 <a class="" href="/teams/{{ $team->id }}/comments">Comentarios</a><br>
             @endif
             <hr>
-            <h4>Estado del Brief</h4>
             @if($team->brief()->completed())
-                <span class="label label-success">Completo</span>
-            @elseif($team->brief()->started())
-                <span class="label label-warning">Comenzado</span>
-            @else
-                <span class="label label-danger">Sin Comenzar</span>
+                <img src="/images/badges/brief_100.png" alt="Tu equipo ha completado el Brief!"
+                     class="img-responsive" data-toggle="tooltip" data-placement="bottom" title="Tu equipo ha completado el Brief!">
+            @endif
+            @if($team->team_on())
+                <img src="/images/badges/team_on.png" alt="Todos los miembros del equipo se han activado en Interacpedia!"
+                     class="img-responsive" data-toggle="tooltip" data-placement="bottom" title="Todos los miembros del equipo se han activado en Interacpedia!">
             @endif
 
         </div>
     </div>
     <hr/>
 </div>
+
+@section('footer')
+    @parent
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+@stop

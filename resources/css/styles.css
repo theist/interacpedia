@@ -5654,6 +5654,8 @@ h4 {
 .course-detailsinfo .student .name {
   height: 40px; }
 
+.teams .team .badges {
+  min-height: 75px; }
 .teams .team.summary .title h4 {
   text-transform: uppercase;
   font-family: 'Open Sans', sans-serif;
@@ -5665,10 +5667,12 @@ h4 {
 .teams .team.summary .links .btn {
   font-size: 1rem; }
 .teams .team.summary .content {
-  min-height: 350px;
+  padding: 0;
+  min-height: 391px;
   background: white;
   border: 1px solid #cdcdcd;
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+  margin-top: 0; }
   .teams .team.summary .content .fields .professor {
     font-style: italic;
     font-size: 1.2rem;
