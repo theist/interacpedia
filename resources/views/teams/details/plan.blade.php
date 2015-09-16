@@ -9,7 +9,7 @@
                 <div class="col-md-4 panel panel-info">
                     <div class="panel-heading">Tutorial</div>
                     <div class="panel-body image">
-                        <a href="tutorials/15">
+                        <a href="/tutorials/15">
                             <img class="img-responsive img-thumbnail" src="/images/tutorials/plan/header-small.jpg"
                                  alt="Como hacer el plan">
                         </a>
