@@ -358,4 +358,32 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
         else
             return "Otro";
     }
+
+
+    /**
+     * @return bool
+     */
+    public function completed()
+    {
+        $tags_vision = $this->tags()->where( 'type', 'personal_vision' )->lists( 'name', 'id' );
+        $tags_dreams = $this->tags()->where( 'type', 'dreams' )->lists( 'name', 'id' );
+        $tags_likes = $this->tags()->where( 'type', 'likes' )->lists( 'name', 'id' );
+        $tags_work_in = $this->tags()->where( 'type', 'work_in' )->lists( 'name', 'id' );
+        $tags_work_companies = $this->tags()->where( 'type', 'work_companies' )->lists( 'name', 'id' );
+        $tags_work_areas = $this->tags()->where( 'type', 'work_areas' )->lists( 'name', 'id' );
+        $tags_contribution = $this->tags()->where( 'type', 'contribution' )->lists( 'name', 'id' );
+        $tags_in_areas = $this->tags()->where( 'type', 'in_areas' )->lists( 'name', 'id' );
+        $tags_searching_resources = $this->tags()->where( 'type', 'searching_resources' )->lists( 'name', 'id' );
+        $tags_searching_experts = $this->tags()->where( 'type', 'searching_experts' )->lists( 'name', 'id' );
+        $tags_searching_personal = $this->tags()->where( 'type', 'searching_personal' )->lists( 'name', 'id' );
+
+        if($this->vision != "" && count($tags_vision)>0 && count($tags_dreams)>0
+            && count($tags_likes)>0 && count($tags_work_in)>0 && count($tags_work_companies)>0 && count($tags_work_areas)>0
+            && count($tags_contribution)>0 && count($tags_in_areas)>0 && count($tags_searching_resources)>0 && count($tags_searching_experts)>0
+            && count($tags_searching_personal)>0
+        ){
+            return true;
+        }
+        return false;
+    }
 }

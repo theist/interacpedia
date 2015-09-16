@@ -44,6 +44,10 @@
                 <img src="/images/badges/team_on.png" alt="Todos los miembros del equipo se han activado en Interacpedia!"
                      class="img-responsive" data-toggle="tooltip" data-placement="bottom" title="Todos los miembros del equipo se han activado en Interacpedia!">
             @endif
+            @if($team->perfil_ok())
+                <img src="/images/badges/perfil_ok.png" alt="Todos los miembros del equipo completaron su perfil!"
+                     class="img-responsive" data-toggle="tooltip" data-placement="bottom" title="Todos los miembros del equipo completaron su perfil!">
+            @endif
 
         </div>
     </div>

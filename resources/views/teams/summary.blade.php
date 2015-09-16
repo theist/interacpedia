@@ -21,7 +21,7 @@
                 </div>
             @endif
         </div>
-        <div class="fields col-md-8">
+        <div class="fields col-md-8 col-md-offset-0 col-xs-10 col-xs-offset-1">
             <div class="title"><h4><a
                             href="{{ action('TeamsController@show',[$team->id]) }}">
                         @if($team->name != "Equipo" && $team->name != "")
@@ -53,6 +53,14 @@
                              alt="Todos los miembros del equipo se han activado en Interacpedia!"
                              class="img-responsive" data-toggle="tooltip" data-placement="bottom"
                              title="Todos los miembros del equipo se han activado en Interacpedia!">
+                    </div>
+                @endif
+                @if($team->perfil_ok())
+                    <div class="col-md-4">
+                        <img src="/images/badges/perfil_ok.png"
+                             alt="Todos los miembros del equipo completaron su perfil!"
+                             class="img-responsive" data-toggle="tooltip" data-placement="bottom"
+                             title="Todos los miembros del equipo completaron su perfil!">
                     </div>
                 @endif
 

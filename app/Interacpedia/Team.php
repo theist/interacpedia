@@ -78,4 +78,15 @@ class Team extends Model implements HasMedia
         }
         return true;
     }
+    /**
+     * @return bool
+     */
+    public function perfil_ok()
+    {
+        foreach($this->users as $us){
+            if(!$us->completed())
+                return false;
+        }
+        return true;
+    }
 }
