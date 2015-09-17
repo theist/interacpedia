@@ -60,6 +60,11 @@ class CoursesController extends Controller
     public function show( Course $course, $id = null, $option = null )
     {
         if ( $id ) $course = Course::find( $id );
+        if(!$course){
+            flash()->error( 'La clase no existe o se ha desactivado' );
+            return redirect( '/' );
+        }
+
         $user = $course->user()->getResults();
         if ( !$option ) $option = "info";
         if( $option != "info" && Gate::denies('view-coursedetails', $course)){
