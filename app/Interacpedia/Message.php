@@ -48,7 +48,9 @@ class Message extends Model
      */
     public function to()
     {
-        return $this->belongsTo( 'App\Interacpedia\User','to_user' );
+        $to = $this->belongsTo( 'App\Interacpedia\User','to_user' );
+        if($to) return $to;
+        else return User::findOrNew($this->to_user);
     }
 
     /**
