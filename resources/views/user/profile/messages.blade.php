@@ -21,13 +21,16 @@
                 <div class="created">{{ $message->created_at }}</div>
             </div>
             <div class="col-md-6">
-                <div><strong>Para:</strong> <a href="/user/{{ $message->to->id }}/info">{{ $message->to->name }}</a></div>
-                <div class="title">
-                    @if($message->read == 0 && Auth::user()->id==$message->to->id)
-                        <span class="label label-success">Nuevo!!</span>
-                    @endif
-                    <strong>Asunto:</strong> <a href="{{ action('MessagesController@show',[$message->id]) }}">{{ $message->title!=""?$message->title:"Sin Asunto" }}</a>
-                </div>
+                @if($message->to)
+                    <div><strong>Para:</strong> <a href="/user/{{ $message->to->id }}/info">{{ $message->to->name }}</a></div>
+                    <div class="title">
+                        @if($message->read == 0 && Auth::user()->id==$message->to->id)
+                            <span class="label label-success">Nuevo!!</span>
+                        @endif
+                        <strong>Asunto:</strong> <a href="{{ action('MessagesController@show',[$message->id]) }}">{{ $message->title!=""?$message->title:"Sin Asunto" }}</a>
+                    </div>
+                @endif
+
                 @foreach($message->messages as $msg)
                     <div class="row">
                         <div class="col-md-6"><strong>Respuesta:</strong> <a href="/user/{{ $msg->from->id }}/info">{{ $msg->from->name }}</a></div>
