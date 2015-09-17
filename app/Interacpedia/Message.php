@@ -48,7 +48,7 @@ class Message extends Model
      */
     public function to()
     {
-        $to = $this->belongsTo( 'App\Interacpedia\User','to_user' );
+        $to = $this->belongsTo( 'App\Interacpedia\User','to_user' )->withTrashed();
         if($to) return $to;
         else return User::withTrashed()->findOrNew($this->to_user);
     }
