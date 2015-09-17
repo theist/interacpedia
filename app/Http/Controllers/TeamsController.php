@@ -65,6 +65,10 @@ class TeamsController extends Controller
     public function show(Team $team, $id = null, $option = null)
     {
         if ( $id ) $team = Team::find( $id );
+        if(!$team){
+            flash()->error( 'El equipo no existe o se ha desactivado' );
+            return redirect( '/' );
+        }
         if ( !$option ) $option = "info";
         if($option != "info" && Gate::denies('view-teamdetails', $team)){
             $option = "info";
