@@ -49,7 +49,7 @@ class AuthServiceProvider extends ServiceProvider
             return  $user->inChallenge($challenge->id);
         });
         $gate->define('view-eventdetails', function ($user, $event) {
-            return  $user->admin;
+            return  true;
         });
         $gate->define('view-coursedetails', function ($user, $course) {
             return  ($user->admin
