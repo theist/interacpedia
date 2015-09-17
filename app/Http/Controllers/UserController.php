@@ -36,6 +36,7 @@ class UserController extends Controller {
     {
         $user = User::find( $id );
         $option = 'info';
+        if(!$user)return redirect( '/' );
         $tags_vision = $user->tags()->where( 'type', 'personal_vision' )->lists( 'name', 'id' );
         $tags_dreams = $user->tags()->where( 'type', 'dreams' )->lists( 'name', 'id' );
         $tags_likes = $user->tags()->where( 'type', 'likes' )->lists( 'name', 'id' );
@@ -66,6 +67,8 @@ class UserController extends Controller {
     {
         if ( $id ) $user = User::find( $id );
         if ( !$option ) $option = "info";
+        if(!$user)return redirect( '/' );
+
         $tags_vision = $user->tags()->where( 'type', 'personal_vision' )->lists( 'name', 'id' );
         $tags_dreams = $user->tags()->where( 'type', 'dreams' )->lists( 'name', 'id' );
         $tags_likes = $user->tags()->where( 'type', 'likes' )->lists( 'name', 'id' );
