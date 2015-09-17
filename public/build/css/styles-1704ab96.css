@@ -5464,8 +5464,10 @@ h4 {
 .post img {
   display: block; }
 
-.preview .post img {
-  width: 100%; }
+.preview {
+  height: 60px; }
+  .preview .post img {
+    width: 100%; }
 
 .partners .partner.summary .title h4 {
   text-transform: uppercase;

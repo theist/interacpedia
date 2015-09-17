@@ -6,11 +6,12 @@
 @stop
 
 @section('section-banner')
-    {{--@unless(Auth::check() || Request::path() != '/')--}}
+    @unless(Auth::check())
     <div class="container">
         <div class="banner-main text-center">
             <div class="row text-center">
-                <img src="/images/icons/interacpedia/interacpedia-icono-personas-morado.gif" alt="Co-Creación Interactiva"/>
+                <img src="/images/icons/interacpedia/interacpedia-icono-personas-morado.gif"
+                     alt="Co-Creación Interactiva"/>
             </div>
             <h1>@lang('general/banner.cocreation')</h1>
             <a href="{{ action('ChallengesController@index') }}"
@@ -20,9 +21,20 @@
             <button class="btn btn-green">@lang('general/banner.discover_projects')</button>
         </div>
     </div>
-    {{--@endunless--}}
+    @endunless
 @stop
-
+@section('section-featured')
+    <div class="container">
+        <h3>{{ trans_choice('general/labels.teams',2) }} {{ trans_choice('general/labels.featured',2) }}</h3>
+        <div class="row teams">
+            @foreach($teams as $team)
+                <div class="team summary col-md-4">
+                    @include('teams.summary')
+                </div>
+            @endforeach
+        </div>
+    </div>
+@stop
 @section('section-precontent')
     <div class="container">
         <h3>@lang('general/labels.challenges')</h3>
@@ -43,7 +55,9 @@
                     <h3>@lang('general/labels.articles') Interacpedia</h3>
                     @foreach($posts as $post)
                         <div class="col-md-4 preview">
-                            @include('blogs.post',['post'=>$post])
+                            <a target="_blank" href="{{ $post->url }}">{{ $post->title }}</a>
+
+                            {{--@include('blogs.post',['post'=>$post])--}}
                         </div>
                     @endforeach
                 </div>

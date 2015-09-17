@@ -7,6 +7,7 @@ use App\Http\Requests\ContactFormRequest;
 use App\Interacpedia\Challenge;
 use App\Interacpedia\Partner;
 use App\Interacpedia\Story;
+use App\Interacpedia\Team;
 use App\Services\Google;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -23,11 +24,21 @@ class PagesController extends Controller {
      */
     public function index(Google $google)
     {
-        $posts =  $google->listPosts("5935318404281787196",3);
+        $posts =  $google->listPosts("5935318404281787196",6);
         $stories = Story::latest()->take(2)->get();
         $partners = Partner::latest()->take(20)->get();
         $challenges = Challenge::latest()->take(4)->get();
-        return view('home', compact('stories','partners','user','posts','challenges'));
+        $allteams = Team::all();
+        $teams = [];
+        foreach($allteams as $team){
+            $brief = $team->brief()->completed();
+            $active = $team->team_on();
+            $comments = $team->challenge_comments();
+            if( ( $brief && $active ) || ( $brief && $comments ) || ( $comments && $active ) ){
+                $teams[] = $team;
+            }
+        }
+        return view('home', compact('stories','partners','user','posts','challenges','teams'));
     }
 
     public function brief()
