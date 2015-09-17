@@ -41,14 +41,14 @@
         <div class="col-md-10 col-md-offset-1 badges">
             <div class="row">
                 @if($team->brief()->completed())
-                    <div class="col-md-4 badgein">
+                    <div class="col-xs-4 badgein">
                         <img src="/images/badges/brief_100.png" alt="Tu equipo ha completado el Brief!"
                              class="img-responsive" data-toggle="tooltip" data-placement="bottom"
                              title="Tu equipo ha completado el Brief!">
                     </div>
                 @endif
                 @if($team->team_on())
-                    <div class="col-md-4 badgein">
+                    <div class="col-xs-4 badgein">
                         <img src="/images/badges/team_on.png"
                              alt="Todos los miembros del equipo se han activado en Interacpedia!"
                              class="img-responsive" data-toggle="tooltip" data-placement="bottom"
@@ -56,7 +56,7 @@
                     </div>
                 @endif
                 @if($team->perfil_ok())
-                    <div class="col-md-4 badgein">
+                    <div class="col-xs-4 badgein">
                         <img src="/images/badges/perfil_ok.png"
                              alt="Todos los miembros del equipo completaron su perfil!"
                              class="img-responsive" data-toggle="tooltip" data-placement="bottom"
@@ -64,7 +64,7 @@
                     </div>
                 @endif
                     @if($team->challenge_comments())
-                        <div class="col-md-4 badgein">
+                        <div class="col-xs-4 badgein">
                             <img src="/images/badges/team_comments.png"
                                  alt="Algún miembro del equipo ha comentado en el reto!"
                                  class="img-responsive" data-toggle="tooltip" data-placement="bottom"
