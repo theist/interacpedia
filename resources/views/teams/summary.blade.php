@@ -38,7 +38,7 @@
             <div class="challenge"><a href="/challenges/{{ $team->challenge->id }}">{{ $team->challenge->name }}</a>
             </div>
         </div>
-        <div class="col-md-10 col-md-offset-1 badges">
+        <div class="col-xs-10 col-xs-offset-1 badges">
             <div class="row">
                 @if($team->brief()->completed())
                     <div class="col-xs-4 badgein">
