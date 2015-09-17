@@ -50,7 +50,7 @@ class Message extends Model
     {
         $to = $this->belongsTo( 'App\Interacpedia\User','to_user' );
         if($to) return $to;
-        else return User::findOrNew($this->to_user);
+        else return User::withTrashed()->findOrNew($this->to_user);
     }
 
     /**
