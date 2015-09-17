@@ -24,6 +24,7 @@
     @endunless
 @stop
 @section('section-featured')
+    @if(Auth::check())
     <div class="container">
         <h3>{{ trans_choice('general/labels.teams',2) }} {{ trans_choice('general/labels.featured',2) }}</h3>
         <div class="row teams">
@@ -34,6 +35,7 @@
             @endforeach
         </div>
     </div>
+    @endif
 @stop
 @section('section-precontent')
     <div class="container">
