@@ -10,13 +10,15 @@
                     <div class="col-md-12"><h4>Galería de Imágenes</h4></div>
                     @foreach($event->getMedia('gallery') as $img)
                         <div class="col-md-2">
-                            <a class="images_link" href="{{ imagestyle($img->getUrl(),'width1200') }}"
-                               data-toggle="lightbox"
-                               data-gallery="multiimages" data-title="{{ $img->name }}">
-                                <img class="img-responsive img-thumbnail"
-                                     src="{{ imagestyle($img->getUrl(),'scale200x200') }}"
-                                     alt="{{ $img->name }}"/>
+                            <a class="images_link" href="{{ imagestyle($img->getUrl(),'width1200') }}">
                             </a>
+                                <img class="img-responsive img-thumbnail"
+                                     data-toggle="lightbox"
+                                     data-gallery="multiimages" data-title="{{ $img->name }}"
+                                     src="{{ imagestyle($img->getUrl(),'scale200x200') }}"
+                                     alt="{{ $img->name }}"
+                                     data-remote="{{ imagestyle($img->getUrl(),'width1200') }}"/>
+
                             @if(Auth::user()->admin && false)
                                 <br>
                                 <a href="/events/{{ $event->id }}/delfile/{{ $img->id }}"
