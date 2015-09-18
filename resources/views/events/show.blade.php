@@ -40,7 +40,11 @@
     <script>
         $(document).delegate('*[data-toggle="lightbox"]', 'click', function (event) {
             event.preventDefault();
-            $(this).ekkoLightbox();
+            $(this).ekkoLightbox({
+                always_show_close: true,
+                left_arrow_class: 'fa fa-chevron-left glyphicon-chevron-left',
+                right_arrow_class: 'fa fa-chevron-right glyphicon-chevron-right'
+            });
         });
     </script>
 @stop
