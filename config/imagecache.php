@@ -64,6 +64,7 @@ return array(
         'height150'=>'App\Filters\Height150',
         'height120'=>'App\Filters\Height120',
         'width1200'=>'App\Filters\Width1200',
+        'width800'=>'App\Filters\Width800',
         'scale200x200'=>'App\Filters\Scale200x200'
     ),
 
