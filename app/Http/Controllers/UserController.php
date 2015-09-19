@@ -248,9 +248,15 @@ class UserController extends Controller {
     {
 
         $ids = Tag::where( 'type', $type )->get()->lists( 'id' );
-        //if($type=='likes') dd($ids);
-        if ( count( $ids ) > 0 )
-            $user->tags()->detach( $ids );
+        if($type=='searching_resources'){
+            //print_r($ids);
+
+        }
+        if ( count( $ids ) > 0 ){
+            $user->tags()->detach( $ids->all() );
+            //dd($ids->all());
+        }
+
         foreach ( $tags as $tag )
         {
             if ( $model = Tag::where( 'id', $tag )->where( 'type', $type )->first() )

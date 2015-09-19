@@ -31,10 +31,11 @@ class PagesController extends Controller {
         $allteams = Team::all();
         $teams = [];
         foreach($allteams as $team){
-            $brief = $team->brief()->completed();
-            $active = $team->team_on();
-            $comments = $team->challenge_comments();
-            if( ( $brief && $active ) || ( $brief && $comments ) || ( $comments && $active ) ){
+            $brief = ($team->brief()->completed())?1:0;
+            $active = ($team->team_on())?1:0;
+            $comments = ($team->challenge_comments())?1:0;
+            $prof = ($team->perfil_ok())?1:0;
+            if( ( $brief + $active + $comments + $prof) >= 3 ){
                 $teams[] = $team;
             }
         }

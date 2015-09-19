@@ -5,7 +5,9 @@
     </div>
     <div class="col-md-9">
         <div class="title">{{ $comment->title }}</div>
-        <div class="author">{{ $comment->user->name }}</div>
+        <div class="author"><a href="/user/{{ $comment->user->id }}/info">
+                {{ $comment->user->name }}
+            </a></div>
         <div class="created">{{ $comment->created_at }}</div>
         <div class="text">{!! nl2br(e($comment->comment)) !!}</div>
         @can('delete-comment', $comment)
