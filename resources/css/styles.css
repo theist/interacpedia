@@ -5048,7 +5048,8 @@ h4 {
   padding: 20px 20px; }
   @media (max-width: 767px) {
     #section-banner .banner-main, #section-banner .banner-main-video {
-      padding: 80px 20px; } }
+      padding: 10px 10px;
+      height: 330px; } }
   #section-banner .banner-main h1, #section-banner .banner-main-video h1 {
     text-transform: none;
     font-family: 'Exo 2', sans-serif;
@@ -5065,6 +5066,9 @@ h4 {
 #section-banner .banner-main-video {
   height: 587px;
   padding: 20px 20px; }
+  @media (max-width: 767px) {
+    #section-banner .banner-main-video {
+      height: 300px; } }
 #section-banner .banner-about {
   height: 597px;
   color: #ffffff;

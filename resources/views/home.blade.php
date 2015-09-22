@@ -9,7 +9,7 @@
     @unless(Auth::check())
     <div class="container">
         <div class="banner-main-video text-center">
-            <iframe width="100%" height="547" src="https://www.youtube.com/embed/8nZvdlr9tWg" frameborder="0" allowfullscreen></iframe>
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/8nZvdlr9tWg" frameborder="0" allowfullscreen></iframe>
         </div>
         <div class="banner-main text-center">
             {{--<div class="row text-center">--}}
