@@ -14,17 +14,24 @@
             </a>
         </div>
         <div class="fields col-md-8">
-            <div class="title"><h4><a
+            <div class="title">
+                <h4><a
                             href="{{ action('EventsController@show',[$event->id]) }}">
                         {{ $event->title}}<br>
-                        <small>({{ $event->start }})</small>
+                        @if($event->start)
+                            <small>({{ $event->start }})</small>
+                        @else
+                            <small>(Fecha por definir)</small>
+                        @endif
                     </a>
-                </h4></div>
+                </h4>
+            </div>
         </div>
         <div class="fields col-md-12">
             <div class="fields">
                 <div class="item">{{ $event->description }}</div>
                 <br>
+
                 <div class="item"><strong>@lang('general/labels.location'): </strong>{{ $event->location }}</div>
 
             </div>
