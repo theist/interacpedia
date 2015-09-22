@@ -29,8 +29,10 @@ class EventsController extends Controller
      */
     public function index()
     {
-        $events = Event::orderBy('start','desc')->get();
-        return view('events.index',compact('events'));
+        $finished = Event::where('status','finished')->orderBy('start','desc')->get();
+        $open = Event::where('status','open')->orderBy('start','desc')->get();
+        //$events = Event::orderBy('start','desc')->get();
+        return view('events.index',compact('open','finished'));
     }
 
     /**
