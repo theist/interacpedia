@@ -23,7 +23,7 @@
             </div>
             <div class="col-md-3">
                 <div class="location text-right">
-                    {{ $event->location }}
+                    <div class="created">Dónde: {{ $event->location }}</div>
                     <div class="created">Cuándo: {{ $event->start }}</div>
                 </div>
 
