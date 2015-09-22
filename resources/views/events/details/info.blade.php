@@ -17,11 +17,15 @@
                         @endif
                     @endif
                     <div class="row content users">
-                        @foreach($event->users as $us)
-                            <div class="user summary col-md-4 {{ $us->agree?'agree':'not-agree' }}">
-                                @include('user.summary',['user'=>$us])
-                            </div>
-                        @endforeach
+                        @if($event->users->count())
+                            @foreach($event->users as $us)
+                                <div class="user summary col-md-4 {{ $us->agree?'agree':'not-agree' }}">
+                                    @include('user.summary',['user'=>$us])
+                                </div>
+                            @endforeach
+                        @else
+                            No hay usuarios confirmados para este evento en este momento.
+                        @endif
                     </div>
                     <hr/>
                 </div>
