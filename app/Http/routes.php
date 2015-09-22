@@ -79,6 +79,8 @@ Route::post('teams/{team}/addfile', 'TeamsController@addfile');
 Route::get('teams/{team}/{option}', 'TeamsController@show');
 Route::get('events/{event}/delfile/{file}', 'EventsController@delfile');
 Route::post('events/{event}/addfile', 'EventsController@addfile');
+Route::post('events/{event}/adduser', 'EventsController@adduser');
+Route::post('events/{event}/deluser', 'EventsController@deluser');
 Route::get('events/{event}/{option}', 'EventsController@show');
 
 /**

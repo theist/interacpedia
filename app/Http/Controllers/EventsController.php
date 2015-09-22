@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Lang;
 use Spatie\MediaLibrary\Media;
@@ -108,6 +109,21 @@ class EventsController extends Controller
         //
     }
 
+    public function adduser( $event, Request $request )
+    {
+        $event = Event::find( $event );
+        $event->users()->detach(Auth::user()->id);
+        $event->users()->attach(Auth::user()->id);
+        flash()->success( 'Usuario agregado al evento!' );
+        return redirect( 'events/'.$event->id . '/info' );
+    }
+    public function deluser( $event, Request $request )
+    {
+        $event = Event::find( $event );
+        $event->users()->detach(Auth::user()->id);
+        flash()->success( 'Usuario eliminado del evento!' );
+        return redirect( 'events/'.$event->id . '/info' );
+    }
     public function addfile( $event, Request $request )
     {
         $event = Event::find( $event );

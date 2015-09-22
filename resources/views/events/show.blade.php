@@ -11,24 +11,24 @@
 
 @section('section-submenu')
     @can('view-eventdetails', $event)
-        <?php
-        $items = [
-                'info' => [ 'label' => 'Asistentes', 'link' => '/events/' . $event->id . '/info' ],
-                'gallery' => [ 'label' => 'Galería', 'link' => '/events/' . $event->id . '/gallery' ],
-                'comments' => [ 'label' => 'Comentarios', 'link' => '/events/' . $event->id . '/comments' ]
-        ];
-        ?>
+    <?php
+    $items = [
+            'info'     => [ 'label' => 'Asistentes', 'link' => '/events/' . $event->id . '/info' ],
+            'comments' => [ 'label' => 'Comentarios', 'link' => '/events/' . $event->id . '/comments' ],
+            'gallery'  => [ 'label' => 'Galería', 'link' => '/events/' . $event->id . '/gallery' ]
+    ];
+    ?>
     @else
         <?php
         $items = [
                 'info' => [ 'label' => 'Asistentes', 'link' => '/events/' . $event->id . '/info' ]
         ];
         ?>
-    @endcan
-    @include('events.details.menu',['items'=>$items,
-                                    'active'=>$option,
-                                    'event'=>$event
-                                ])
+        @endcan
+        @include('events.details.menu',['items'=>$items,
+                                        'active'=>$option,
+                                        'event'=>$event
+                                    ])
 @stop
 @section('content')
     <div class="row event-details{{ $option }}">
