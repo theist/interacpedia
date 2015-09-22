@@ -8,11 +8,14 @@
 @section('section-banner')
     @unless(Auth::check())
     <div class="container">
+        <div class="banner-main-video text-center">
+            <iframe width="100%" height="547" src="https://www.youtube.com/embed/8nZvdlr9tWg" frameborder="0" allowfullscreen></iframe>
+        </div>
         <div class="banner-main text-center">
-            <div class="row text-center">
-                <img src="/images/icons/interacpedia/interacpedia-icono-personas-morado.gif"
-                     alt="Co-Creación Interactiva"/>
-            </div>
+            {{--<div class="row text-center">--}}
+                {{--<img src="/images/icons/interacpedia/interacpedia-icono-personas-morado.gif"--}}
+                     {{--alt="Co-Creación Interactiva"/>--}}
+            {{--</div>--}}
             <h1>@lang('general/banner.cocreation')</h1>
             <a href="{{ action('ChallengesController@index') }}"
                class="btn btn-blue">@lang('general/banner.search_challenge')</a>

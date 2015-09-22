@@ -1,9 +1,10 @@
 #section-banner {
-  .banner-main {
-    height: 587px;
+  .banner-main,
+  .banner-main-video{
+    height: 220px;
     color: #ffffff;
     background: url("../../images/backgrounds/banner-main.jpg") no-repeat center center;
-    padding: 100px 20px;
+    padding: 20px 20px;
     @media (max-width: $screen-xs-max) {
       padding: 80px 20px;
     }
@@ -24,6 +25,10 @@
       padding: 20px 10px;
       margin: 10px;
     }
+  }
+  .banner-main-video{
+    height: 587px;
+    padding: 20px 20px;
   }
   .banner-about {
     height: 597px;

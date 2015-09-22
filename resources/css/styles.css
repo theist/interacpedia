@@ -5041,15 +5041,15 @@ h4 {
     height: 14px;
     display: inline-block; }
 
-#section-banner .banner-main {
-  height: 587px;
+#section-banner .banner-main, #section-banner .banner-main-video {
+  height: 220px;
   color: #ffffff;
   background: url("../../images/backgrounds/banner-main.jpg") no-repeat center center;
-  padding: 100px 20px; }
+  padding: 20px 20px; }
   @media (max-width: 767px) {
-    #section-banner .banner-main {
+    #section-banner .banner-main, #section-banner .banner-main-video {
       padding: 80px 20px; } }
-  #section-banner .banner-main h1 {
+  #section-banner .banner-main h1, #section-banner .banner-main-video h1 {
     text-transform: none;
     font-family: 'Exo 2', sans-serif;
     line-height: 40px;
@@ -5057,11 +5057,14 @@ h4 {
     font-size: 65px;
     color: #ffffff; }
     @media (max-width: 767px) {
-      #section-banner .banner-main h1 {
+      #section-banner .banner-main h1, #section-banner .banner-main-video h1 {
         font-size: 40px; } }
-  #section-banner .banner-main .btn-purple, #section-banner .banner-main .btn-green, #section-banner .banner-main .btn-blue {
+  #section-banner .banner-main .btn-purple, #section-banner .banner-main .btn-green, #section-banner .banner-main .btn-blue, #section-banner .banner-main-video .btn-purple, #section-banner .banner-main-video .btn-green, #section-banner .banner-main-video .btn-blue {
     padding: 20px 10px;
     margin: 10px; }
+#section-banner .banner-main-video {
+  height: 587px;
+  padding: 20px 20px; }
 #section-banner .banner-about {
   height: 597px;
   color: #ffffff;
