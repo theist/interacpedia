@@ -25,6 +25,10 @@
     .btn-blue {
       padding: 20px 10px;
       margin: 10px;
+      @media (max-width: $screen-xs-max) {
+        padding: 14px 5px;
+        margin: 5px;
+      }
     }
   }
   .banner-main-video{

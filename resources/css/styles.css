@@ -5063,6 +5063,10 @@ h4 {
   #section-banner .banner-main .btn-purple, #section-banner .banner-main .btn-green, #section-banner .banner-main .btn-blue, #section-banner .banner-main-video .btn-purple, #section-banner .banner-main-video .btn-green, #section-banner .banner-main-video .btn-blue {
     padding: 20px 10px;
     margin: 10px; }
+    @media (max-width: 767px) {
+      #section-banner .banner-main .btn-purple, #section-banner .banner-main .btn-green, #section-banner .banner-main .btn-blue, #section-banner .banner-main-video .btn-purple, #section-banner .banner-main-video .btn-green, #section-banner .banner-main-video .btn-blue {
+        padding: 14px 5px;
+        margin: 5px; } }
 #section-banner .banner-main-video {
   height: 587px;
   padding: 20px 20px; }
