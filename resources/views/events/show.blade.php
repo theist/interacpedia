@@ -11,13 +11,22 @@
 
 @section('section-submenu')
     @can('view-eventdetails', $event)
-    <?php
-    $items = [
-            'info'     => [ 'label' => 'Asistentes', 'link' => '/events/' . $event->id . '/info' ],
-            'comments' => [ 'label' => 'Comentarios', 'link' => '/events/' . $event->id . '/comments' ],
-            'gallery'  => [ 'label' => 'Galería', 'link' => '/events/' . $event->id . '/gallery' ]
-    ];
-    ?>
+        @if($event->status == "open")
+            <?php
+            $items = [
+                    'info'     => [ 'label' => 'Asistentes', 'link' => '/events/' . $event->id . '/info' ],
+                    'comments' => [ 'label' => 'Comentarios', 'link' => '/events/' . $event->id . '/comments' ]
+            ];
+            ?>
+        @else
+            <?php
+            $items = [
+                    'info'     => [ 'label' => 'Asistentes', 'link' => '/events/' . $event->id . '/info' ],
+                    'comments' => [ 'label' => 'Comentarios', 'link' => '/events/' . $event->id . '/comments' ],
+                    'gallery'  => [ 'label' => 'Galería', 'link' => '/events/' . $event->id . '/gallery' ]
+            ];
+            ?>
+        @endif
     @else
         <?php
         $items = [
