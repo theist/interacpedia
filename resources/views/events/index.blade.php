@@ -9,7 +9,7 @@
         <h1>{{ trans_choice('general/labels.events',2) }} Abiertos</h1>
         <div class="row events">
             @foreach($open as $event)
-                <div class="event summary col-md-4">
+                <div class="event summary col-md-6">
                     @include('events.summary')
                 </div>
             @endforeach

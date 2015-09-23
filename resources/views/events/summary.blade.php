@@ -29,7 +29,7 @@
         </div>
         <div class="fields col-md-12">
             <div class="fields">
-                <div class="item">{{ $event->description }}</div>
+                <div class="item">{!! $event->description !!}</div>
                 <br>
 
                 <div class="item"><strong>@lang('general/labels.location'): </strong>{{ $event->location }}</div>
