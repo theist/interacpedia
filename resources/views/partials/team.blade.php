@@ -25,7 +25,6 @@
                             Equipo # {{ $team->id }}
                         @endif
                     </div>
-                    <a class="btn back" href="/courses/{{ $team->course->id }}/teams">@lang('general/labels.return_to_course')</a>
                     <div class="data1"><h6>@lang('general/labels.course'):</h6> <a href="/courses/{{ $course->id }}/teams">{{ $course->name }}</a> </div>
                     <div class="data1"><h6>@lang('general/labels.challenge'):</h6> <a href="/challenges/{{ $team->challenge->id }}">{{ $team->challenge->name }}</a> </div>
                     <div class="data1"><h6>@lang('general/labels.university'):</h6> {{ $course->university->name }}</div>
