@@ -16,6 +16,9 @@
                             {!! Form::close() !!}
                         @endif
                     @endif
+                    <div class="row">
+                        {!! $event->description !!}
+                    </div>
                     <div class="row content users">
                         @if($event->users->count())
                             @foreach($event->users as $us)
