@@ -9,7 +9,7 @@
                 {{ $comment->user->name }}
             </a></div>
         <div class="created">{{ $comment->created_at }}</div>
-        <div class="text">{!! nl2br(e($comment->comment)) !!}</div>
+        <div class="text">{!! nl2br(($comment->comment)) !!}</div>
         @can('delete-comment', $comment)
         {!! Form::open(array('route' => array('comments.destroy', $comment->id),'class'=>'delete-comment', 'method' => 'delete'))!!}
         <input type="submit" class="btn btn-danger btn-xs deleteComment" value="@lang('general/labels.delete')">
