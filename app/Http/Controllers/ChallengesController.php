@@ -250,15 +250,15 @@ class ChallengesController extends Controller {
             $courses[ ] = [ "id" => $id, "name" => $name ];
         }
         $professors = [ ];
-        $users = User::all();
+        //$users = User::all();
         $teams = $challenge->teams()->get();
 
         if ( Auth::check() )
         {
-            return view( 'challenges.show', compact( 'challenge', 'user', 'universities', 'careers', 'courses', 'professors', 'teams', 'users','option' ) );
+            return view( 'challenges.show', compact( 'challenge', 'user', 'universities', 'careers', 'courses', 'professors', 'teams','option' ) );
         } else
         {
-            return view( 'challenges.showbrief', compact( 'challenge', 'user', 'universities', 'careers', 'courses', 'professors', 'users' ) );
+            return view( 'challenges.showbrief', compact( 'challenge', 'user', 'universities', 'careers', 'courses', 'professors' ) );
         }
 
     }
