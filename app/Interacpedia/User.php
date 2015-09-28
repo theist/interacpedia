@@ -134,9 +134,13 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     {
         $challenge = Challenge::findOrNew( $id );
         if ( $this->admin ) return true;
+        foreach ( $challenge->users as $us )
+        {
+            if ( $us->id == $this->id ) return true;
+        }
         foreach ( $challenge->coordinators as $coor )
         {
-            if ( $coor->id == $this->id ) return true;
+            if ( $coor->user->id == $this->id ) return true;
         }
         foreach ( $challenge->teams as $team )
         {
