@@ -35,7 +35,7 @@ class PagesController extends Controller {
             $active = ($team->team_on())?1:0;
             $comments = ($team->challenge_comments())?1:0;
             $prof = ($team->perfil_ok())?1:0;
-            if( ( $brief + $active + $comments + $prof) >= 3 ){
+            if( ( $brief + $active + $comments + $prof) >= 4 ){
                 $teams[] = $team;
             }
         }
