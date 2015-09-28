@@ -137,7 +137,7 @@ class Challenge extends Model implements HasMedia {
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function creators()
+    public function users()
     {
         return $this->belongsToMany('App\Interacpedia\User')->withTimestamps();
     }
