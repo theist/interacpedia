@@ -8,6 +8,7 @@
 @section('section-banner')
     <div class="container about-us">
         <div class="banner-about text-center">
+            <div class="row text-center"><a class="btn btn-danger" href="#" data-toggle="modal" data-target="#myModal2">English Version</a></div>
             <img class="logo img-responsive" src="/images/logos/que-es-interacpedia-logo.png" alt="Interacpedia"/>
             <h1>Plataforma colaborativa y metodología de innovación que une: <br/>
                 <span class="empresas">Empresas</span> + <span class="universidades">Universidades</span> +
@@ -102,6 +103,22 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModal2Label" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">About Interacpedia</h4>
+                    </div>
+                    <div class="modal-body">
+                        <img class="img-responsive" src="/images/infographics/about-us-en.jpg" alt="About us"/>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
