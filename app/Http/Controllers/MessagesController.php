@@ -23,156 +23,11 @@ class MessagesController extends Controller {
     {
         $count = 0;
 
-        $sent = [
-            79,
-84,
-86,
-100,
-80,
-81,
-82,
-85,
-90,
-92,
-93,
-102,
-101,
-83,
-88,
-89,
-94,
-96,
-506,
-91,
-97,
-98,
-99,
-95,
-67,
-71,
-68,
-78,
-35,
-77,
-70,
-74,
-34,
-69,
-33,
-72,
-257,
-477,
-73,
-264,
-76,
-75,
-496,
-497,
-498,
-499,
-500,
-501,
-502,
-503,
-504,
-40,
-37,
-38,
-12,
-39,
-419,
-418,
-410,
-464,
-409,
-427,
-408,
-401,
-402,
-404,
-403,
-422,
-414,
-416,
-413,
-415,
-421,
-466,
-463,
-406,
-411,
-424,
-405,
-400,
-412,
-425,
-423,
-420,
-465,
-426,
-513,
-417,
-428,
-407,
-433,
-443,
-444,
-445,
-449,
-450,
-451,
-452,
-441,
-442,
-460,
-461,
-437,
-438,
-439,
-440,
-434,
-435,
-436,
-462,
-430,
-431,
-432,
-446,
-447,
-448,
-459,
-453,
-454,
-455,
-456,
-429,
-457,
-458,
-467,
-384,
-383,
-382,
-390,
-471,
-386,
-385,
-469,
-378,
-387,
-381,
-380,
-371,
-377,
-376,
-468,
-388,
-389,
-372,
-373,
-375,
-379];
+        $sent = [];
+        $filter_teams = [4,6,10,18,21,19,27,29,33,31,34,39,38,41,42,44,52,57,56,55];
         $teams = Team::all();
         foreach($teams as $team){
+            if(count($filter_teams)>0 && !in_array($team->id,$filter_teams))continue;
             $users = $team->users;
             foreach($users as $user){
                 if(in_array($user->id,$sent))continue;
@@ -180,24 +35,22 @@ class MessagesController extends Controller {
                 $data[ "message_id" ] = null;
                 $data[ "to_user" ] = $user->id;
                 $data[ "from_user" ] = 9;
-                $data[ "title" ] = "Validación y apoyo gráfico";
+                $data[ "title" ] = "Asistencia al evento del Exito";
                 $data[ "read" ] = 0;
                 $data[ "content" ] = "Hola " . substr($user->name,0,strpos($user->name," ")) . ".
-                Soy María Fernanda Escobar, la CDO de Interacpedia.
+                Estas son las personas que se inscribieron y enviaron las preguntas para el evento del Exito:
+- Equipo 34: Mateo Ramirez y Yoel Funes - Eafit
+- Equipo 55:  Victor Grajales y Anuar Laguna- UniRemington
+- Equipo 56: Stephanie Ramires – UniRemington
+- Equipo 57: Javier Llanos y Paula Pulgarin – UniRemington
+- Equipo 10: David Giraldo – UPB
+- Equipo 6: Samuel Pulgarín - Eafit
+- Profesora: Carolina González - Eafit
 
-Quiero contarte que ésta semana te compartimos un nuevo tutorial sobre Encuestas, herramienta vital para validación de las ideas.
-http://www.interacpedia.com/tutorials
-
-Además, quiero compartirte algunas recomendaciones:
-- Valida la solución con usuarios, ellos son la principal fuente de verificación.
-- Realiza encuestas para que luego puedas sustentar tus decisiones.
-- Investiga en campo, visita los lugares, pregunta y observa.
-Ejemplo: El Metro autorizó que vayan a las estaciones a preguntar. Dí que Valerio, Diana o Maria Isabel Betancur te autorizó y cuenta que estás haciendo una investigación para el reto con Interacpedia, la universidad y la empresa.
-- Analiza bien el documento del reto: objetivos, limitaciones, qué ya están haciendo..
-
-Cómo vas con la parte gráfica de tu proyecto?
-Si te puedo ayudar en algo me cuentas.
-Fefe";
+Por ese motivo, son los únicos registrados para entrar.
+Les escribo para evitar malentendidos, por si alguien mas estaba pensando en llegar al Exito el viernes.
+Saludos
+Santiago";
                 $message = Message::create( $data );
                 NotificationsController::add($message);
                 $count++;
