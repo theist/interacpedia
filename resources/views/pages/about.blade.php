@@ -112,8 +112,7 @@
                                 Comunicadora con Posgrado en Sociología y Ciencia Política <br>
                                 New York - USA <br>
                                 10 años de experiencia en comunicación organizacional, formación, planeación de eventos, diseño y producción de medios impresos y audiovisuales. TCC, Fenalco, Organzación VID y Leonisa.
-                                <br>
-                                Directora Administrativa de Causa & Efecto: Desarrollo de competencias y cultura competitiva para desarrollar al máximo el potencial de las empresas del país.
+
                             </div>
                             <div class="col-md-12 position"></div>
                         </div>
