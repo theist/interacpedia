@@ -34,7 +34,7 @@ class MessagesController extends Controller {
                 $data = [];
                 $data[ "message_id" ] = null;
                 $data[ "to_user" ] = $user->id;
-                $data[ "from_user" ] = 9;
+                $data[ "from_user" ] = 3;
                 $data[ "title" ] = "Asistencia al evento del Exito";
                 $data[ "read" ] = 0;
                 $data[ "content" ] = "Hola " . substr($user->name,0,strpos($user->name," ")) . ".
