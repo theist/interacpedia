@@ -107,11 +107,13 @@
                         <div class="row">
                             <div class="col-md-12 text-center"><img src="/images/backgrounds/aboutus-caro.png" alt="Juan Carlos Orrego"/></div>
                             <div class="col-md-12 name">Carolina Tejada</div>
-                            <div class="col-md-12 summary">Atlas Corps Fellow at <strong>Mozilla</strong> Foundation
+                            <div class="col-md-12 summary">
+                                Forma parte de (EGLI) Emerging Global Leaders Initiative <br>
+                                Atlas Corps Fellow at <strong>Mozilla</strong> Foundation
                                 <br>
                                 Comunicadora con Posgrado en Sociología y Ciencia Política <br>
                                 New York - USA <br>
-                                10 años de experiencia en comunicación organizacional, formación, planeación de eventos, diseño y producción de medios impresos y audiovisuales. TCC, Fenalco, Organzación VID y Leonisa.
+                                10 años de experiencia en comunicación organizacional, formación, planeación de eventos, diseño y producción de medios impresos y audiovisuales. TCC, Fenalco, Organzación VID, Leonisa y Causa y Efecto.
 
                             </div>
                             <div class="col-md-12 position"></div>
