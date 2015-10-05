@@ -136,7 +136,7 @@
                         <h4 class="modal-title" id="myModalLabel">Interacpedia Infographic</h4>
                     </div>
                     <div class="modal-body">
-                        <img class="img-responsive" src="/images/infographics/infographic-interacpedia-web.jpg" alt="Infographic"/>
+                        <img class="img-responsive" src="/images/infographics/infographic-interacpedia-web.jpg" alt="Infografico"/>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
