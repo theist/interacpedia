@@ -25,7 +25,7 @@ var paths = {
 //    .pipe(gulp.dest("public/assets/selectize/"));
 
 elixir(function(mix) {
-    mix.sass("styles.scss", 'resources/css/', {includePaths: [ paths.bootstrap + 'stylesheets/']})
+    mix.sass("styles.scss", 'resources/assets/css/', {includePaths: [ paths.bootstrap + 'stylesheets/']})
         .copy(paths.bootstrap + 'fonts/bootstrap/**', 'public/fonts')
         .copy(paths.dropzone + 'dropzone.css', 'resources/css/libs')
         .copy(paths.bootstraphover + "bootstrap-hover-dropdown.min.js",'resources/js/libs')
