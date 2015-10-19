@@ -13675,6 +13675,6 @@ License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
 }).call(this);
 
 $(document).ready(function () {
-
+    //console.log('iniciado');
 });
 //# sourceMappingURL=app.js.map
