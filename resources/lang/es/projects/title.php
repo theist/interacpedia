@@ -1,5 +1,5 @@
 <?php
 return [
     'projects'    => 'Proyectos',
-    'recommended' => 'Recomendados para tí'
+    'recommended' => 'Recomendados para ti'
 ];
